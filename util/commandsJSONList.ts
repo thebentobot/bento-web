@@ -178,7 +178,7 @@ export const commandsList: commandsInterface[] = [
           
        ],
        "category":"features",
-       "description":"Searches for random GIFs based on the search input. The GIFs comes from Tenor, and has a G-rated content filter for non-NSFW channels. The filter is off in NSFW channels.",
+       "description":"Searches for a random GIF based on the search input. The GIF comes from Tenor which has a g-rated content filter for non-NSFW channels. The filter is off in NSFW channels.",
        "usage":"?gif <search input>"
     },
     {
