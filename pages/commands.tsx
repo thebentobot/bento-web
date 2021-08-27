@@ -6,10 +6,12 @@ import { featureCommands } from "../components/commands/features";
 import { infoCommands } from "../components/commands/info";
 import { moderationCommands } from "../components/commands/moderation";
 import { userCommands } from "../components/commands/user";
-import { useState } from "react";
+import React, { useState } from "react";
 import { capitalize } from "../util/capitalize";
 import { NextSeo } from "next-seo";
 import dynamic from 'next/dynamic';
+import PrefixExample from "../components/discordMessages/prefixExample";
+import PrefixExample2 from "../components/discordMessages/prefixExample2";
 
 const Admin = dynamic(() => import("../components/commands/admin"))
 const Features = dynamic(() => import("../components/commands/features"))
@@ -68,13 +70,22 @@ const animation: Variants = shouldReduceMotion ? {
 				]} />
       <div className="py-12 bg-gray-800">
         <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" initial='hidden' animate='show' variants={animation}>
-          <div className="lg:text-center">
+          <div >
             <h1 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl text-center sm:mx-auto">
             Bento 🍱 Commands
             </h1>
             <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto text-center sm:mx-auto">
-              The default prefix for Bento 🍱 is <code>?</code>.
+              The default prefix for Bento 🍱 is <code>?</code>. <br/>If you do not know the prefix for the current server, you can also mention Bento 🍱 as a prefix.
             </p>
+            <div className='mt-4 max-w-lg sm:mx-auto'>
+            <PrefixExample />
+            </div>
+            <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto text-center sm:mx-auto">
+              Or receive the prefix by just mentioning Bento 🍱
+            </p>
+            <div className='mt-4 max-w-lg sm:mx-auto'>
+            <PrefixExample2 />
+            </div>
             <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto text-center sm:mx-auto">
               Required arguments are specified with <code>{`<greater or less than signs>`}</code>.
             </p>

@@ -10,7 +10,7 @@ export default function Lastfm() {
             </DiscordMessage>
             <DiscordMessage profile='enter'>?fm</DiscordMessage>
             <DiscordMessage profile='bentoBot'>
-                <DiscordEmbed slot='embeds' color="#e4141e" authorName='Enter#0001' footerImage='https://www.last.fm/static/images/lastfm_avatar_twitter.52a5d69a85ac.png' authorImage='https://cdn.discordapp.com/avatars/188980576483540992/a_d12913067e9a4187178a3e69dc4cd2a7.gif?size=1024' authorUrl='https://www.last.fm/user/Enterxz' thumbnail='https://lastfm.freetls.fastly.net/i/u/300x300/3b96418b0b1321fc83a25ce14eea0643.jpg'>
+                <DiscordEmbed slot='embeds' color="#e4141e" authorName='Enter#0001' footerImage='https://www.last.fm/static/images/lastfm_avatar_twitter.52a5d69a85ac.png' authorImage='https://cdn.discordapp.com/avatars/188980576483540992/a_eb18d14ee9ab8e16866c118453884374.gif?size=1024' authorUrl='https://www.last.fm/user/Enterxz' thumbnail='https://lastfm.freetls.fastly.net/i/u/300x300/3b96418b0b1321fc83a25ce14eea0643.jpg'>
                 <strong>13 hours ago</strong>
                 <br />
                 <strong>Kanye West</strong> - <a href='https://www.last.fm/music/Kanye+West/_/Stronger'>Stronger</a>
@@ -104,6 +104,7 @@ export default function Lastfm() {
                     <DiscordReaction emoji="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/whatsapp/273/cross-mark_274c.png"></DiscordReaction>
                 </DiscordReactions>
             </DiscordMessage>
+            {/* 
             <DiscordMessage profile='banner'>?fm wkt</DiscordMessage>
             <DiscordMessage profile='bentoBot'>
                 <DiscordEmbed slot='embeds' embedTitle='Who in All the Cappermotes knows Kiss Me Through the Scope' color="#00fbff" authorName='Thaiboy Digital' footerImage='https://www.last.fm/static/images/lastfm_avatar_twitter.52a5d69a85ac.png' authorImage='https://i.scdn.co/image/ab6761610000e5ebbe2dfe98c26ead5955f58bcf' thumbnail='https://lastfm.freetls.fastly.net/i/u/300x300/4d36fa68a6aaa4c3806ca652d439b15a.jpg'>
@@ -144,6 +145,7 @@ export default function Lastfm() {
                 <span slot="footer">Powered by last.fm  </span>
                 </DiscordEmbed>
             </DiscordMessage>
+            */}
         </DiscordMessages>
     )
 }

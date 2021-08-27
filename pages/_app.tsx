@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         },
         enter: {
           author: 'Enter',
-          avatar: 'https://cdn.discordapp.com/avatars/188980576483540992/a_d12913067e9a4187178a3e69dc4cd2a7.gif?size=1024',
+          avatar: 'https://cdn.discordapp.com/avatars/188980576483540992/a_eb18d14ee9ab8e16866c118453884374.gif?size=1024',
           roleColor: '#03f611'
         },
         tzuwy: {
@@ -50,7 +50,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         },
         alonzo: {
           author: 'alonzo',
-          avatar: 'https://cdn.discordapp.com/avatars/370695349167325196/0b1b81f0a0180b881e1c24ac22e2e806.png?size=1024',
+          avatar: 'https://cdn.discordapp.com/avatars/370695349167325196/b4402706bd14d17aa060ebda6c9816af.png?size=1024',
           roleColor: '#99ff99'
         },
 			}

@@ -200,8 +200,8 @@ export const commandsList: commandsInterface[] = [
           "lf"
        ],
        "category":"features",
-       "description":"last.fm feature. If you don't mention a user with an argument, it searches for your last.fm. If you only mention a user and no time period, it checks for overall.\nThe possible time period arguments: overall, 7day, 1month, 3month, 6month, 12month.",
-       "usage":"?lastfm set <lastfm account name>\n?lastfm remove <lastfm account name>\n?lastfm [np] [user id or mention a user]\n?lastfm toptracks/tt [time period, or user where time period = overall] [user id or mention a user]\n?lastfm topalbums/tal [time period, or user where time period = overall] [user id or mention a user]\n?lastfm topartists/ta [time period, or user where time period = overall] [user id or mention a user]\n?lastfm recent [user id or mention a user]\n?lastfm profile [user id or mention a user]\n?lastfm wkt [artist - song]\n?lastfm wka [artist - album]\n?lastfm wk [artist]\n?lastfm gwkt [artist - song]\n?lastfm gwka [artist - album]\n?lastfm wk [artist]"
+       "description":"last.fm feature. If you don't mention a user with an argument, it searches for your last.fm. If you only mention a user and no time period, it checks for overall.\nThe possible time period arguments: overall/all, 7day/week, 1month/month, 3month, 6month, 12month/year.",
+       "usage":"?lastfm set <lastfm account name>\n?lastfm remove <lastfm account name>\n?lastfm [np] [user id or mention a user]\n?lastfm toptracks/tt [time period, or user where time period = overall] [user id or mention a user]\n?lastfm topalbums/tal [time period, or user where time period = overall] [user id or mention a user]\n?lastfm topartists/ta [time period, or user where time period = overall] [user id or mention a user]\n?lastfm recent [user id or mention a user]\n?lastfm profile [user id or mention a user]"
     },
     {
        "name":"tag",
