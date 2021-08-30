@@ -12,6 +12,8 @@ The Bento 🍱 website is written in TypeScript and powered by the [React](https
 ](https://bentobot.xyz/)
 - [About page that explains the background for the Discord bot and what technologies are used](https://bentobot.xyz/about)
 
+- [Support page that shows Patrons on Patreon and how this project uses support](https://bentobot.xyz/setup)
+
 - [Setup page that shows what happens when the bot joins a server and what to do](https://bentobot.xyz/setup)
 
 - [Commands page that shows a list of all Bento commands, some with practical examples.](https://bentobot.xyz/commands)
