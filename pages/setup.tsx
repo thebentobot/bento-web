@@ -48,7 +48,7 @@ const animation: Variants = shouldReduceMotion ? {
 							"How to setup Bento 🍱 - Check how easy it is to manage your Discord Server"
 					}
 				]} />
-      <div className="py-12 bg-gray-800">
+      <div className="py-6 lg:py-12 bg-gray-800">
         <motion.div className="max-w-7xl mx-auto" initial='hidden' animate='show' variants={animation}>
           <div className="lg:text-center">
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl sm:text-center px-4 sm:px-6 lg:px-8">
@@ -116,8 +116,8 @@ const animation: Variants = shouldReduceMotion ? {
                   >
                     Join the Bento Support Server on Discord
                   </motion.a>
-                </div>
-              </div>
+            </div>
+            </div>
           </div>
         </div>
       </motion.div>

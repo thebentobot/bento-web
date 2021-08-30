@@ -3,7 +3,7 @@ import pg from 'pg'
 import * as dotenv from "dotenv";
 dotenv.config();
 
-export const database = new Sequelize(process.env.DBdatabase as string, process.env.DBusername as string, process.env.DBpassword as string, {
+const database = new Sequelize(process.env.DBdatabase as string, process.env.DBusername as string, process.env.DBpassword as string, {
     host: process.env.host as string,
     port: 5432,
     dialect: 'postgres',

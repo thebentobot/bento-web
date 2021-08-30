@@ -220,10 +220,10 @@ const bottomAnimation: Variants = shouldReduceMotion ? {
     <div className="py-12 bg-gray-900">
       <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" initial='hidden' animate='show' variants={bottomAnimation}>
         <motion.div className="lg:text-center" whileHover={{scale: 1.05}}>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl sm:text-center">
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl text-center">
             The bot you did not know you needed
           </p>
-          <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto sm:text-center sm:max-w-xl sm:mx-auto">
+          <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto sm:text-center sm:max-w-xl mx-auto text-center">
             Bento 🍱 is a quality and well supported Discord Bot that constantly improves and always delivers when you need it the most 
           </p>
         </motion.div>
@@ -245,7 +245,7 @@ const bottomAnimation: Variants = shouldReduceMotion ? {
         </div>
         <br></br>
         <div className="lg:text-center">
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl sm:text-center">
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl text-center">
             Check all commands by clicking below!
           </p>
           <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:text-center">

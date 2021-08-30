@@ -54,6 +54,7 @@ export default function Example() {
     const { asPath } = useRouter();
     const navigation = [
         { name: 'About', href: '/about', current: asPath == '/about' ? true : false },
+        { name: 'Support', href: '/support', current: asPath == '/support' ? true : false },
         { name: 'Setup', href: '/setup', current: asPath == '/setup' ? true : false },
         { name: 'Commands', href: '/commands', current: asPath == '/commands' ? true : false },
         { name: 'Leaderboard', href: '/leaderboard', current: asPath == '/leaderboard' ? true : false },
@@ -78,8 +79,8 @@ export default function Example() {
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                 <Link href="/" passHref>
-                    <motion.p className="text-yellow-300 cursor-pointer hover:bg-yellow-300 hover:text-black hover:animate-pulse px-3 py-2 rounded-md text-sm font-medium" whileHover={{ scale: 1.1 }}
-    whileTap={{ scale: 0.9 }}>🍱 Bento</motion.p>
+                    <motion.p className="text-yellow-300 cursor-pointer hover:bg-yellow-300 hover:text-black hover:animate-pulse px-3 py-2 rounded-md text-base lg:text-sm font-medium" whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.9 }}>Bento 🍱</motion.p>
                 </Link>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
@@ -114,7 +115,7 @@ export default function Example() {
                   href={item.href}
                   className={classNames(
                     item.current ? 'bg-yellow-300 text-black' : 'text-gray-300 hover:bg-yellow-300 hover:text-black',
-                    'block px-3 py-2 rounded-md text-base font-medium'
+                    'block px-3 py-2 rounded-md text-base font-medium text-center'
                   )}
                   aria-current={item.current ? 'page' : undefined}
                   whileHover={{ scale: 1.05 }}

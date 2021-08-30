@@ -83,7 +83,7 @@ export default function LeaderboardChild({userID, rank, level, xp, username, dis
         
         <div className='flex-grow p-4 w-full md:w-auto overflow-hidden'>
           <div className='transition duration-1000 ease-in-out text-white text-left opacity-0 group-hover:opacity-100 overflow-hidden'>
-            {Math.round(((level * level * 100) - xp) / 23)} messages to level {level + 1}
+            {Math.round(((level * level * 100) - xp) / 46)} messages to level {level + 1}
           </div>
           {/*
           <div className='transition duration-300 ease-in-out mt-1 mb-1 w-full h-1 bg-gray-700 group-hover:bg-gray-500 rounded overflow-hidden'>

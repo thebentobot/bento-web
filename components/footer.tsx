@@ -31,6 +31,27 @@ export default function Footer() {
                         >
                             Discord Support Server
                         </a>
+                        <br/>
+                        <a
+                            href="https://www.patreon.com/bentobot"
+                            className="text-gray-300 hover:text-patreon"
+                        >
+                            Patreon
+                        </a>
+                        <br/>
+                        <a
+                            href="https://ko-fi.com/bentobot"
+                            className="text-gray-300 hover:text-kofi"
+                        >
+                            Ko-fi
+                        </a>
+                        <br/>
+                        <a
+                            href="https://top.gg/bot/787041583580184609"
+                            className="text-gray-300 hover:text-black"
+                        >
+                            top.gg
+                        </a>
                         </p>
                     </div>
                 </div>

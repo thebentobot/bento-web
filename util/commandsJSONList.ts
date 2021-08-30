@@ -204,6 +204,17 @@ export const commandsList: commandsInterface[] = [
        "usage":"?lastfm set <lastfm account name>\n?lastfm remove <lastfm account name>\n?lastfm [np] [user id or mention a user]\n?lastfm toptracks/tt [time period, or user where time period = overall] [user id or mention a user]\n?lastfm topalbums/tal [time period, or user where time period = overall] [user id or mention a user]\n?lastfm topartists/ta [time period, or user where time period = overall] [user id or mention a user]\n?lastfm recent [user id or mention a user]\n?lastfm profile [user id or mention a user]"
     },
     {
+      "name":"support",
+      "aliases":[
+         "patreon",
+         "kofi",
+         "topgg"
+      ],
+      "category":"info",
+      "description":"How to support Bento 🍱",
+      "usage":"?support"
+   },
+    {
        "name":"tag",
        "aliases":[
           "t"
@@ -278,7 +289,7 @@ export const commandsList: commandsInterface[] = [
     {
        "name":"help",
        "aliases":[
-          
+          "about"
        ],
        "category":"info",
        "description":"Displays bot help message or info for a command",

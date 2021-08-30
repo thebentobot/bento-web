@@ -68,7 +68,7 @@ const animation: Variants = shouldReduceMotion ? {
 							"Want to know what Bento 🍱 can do on your Discord Server? Get information about every command available with Bento 🍱 on this page."
 					}
 				]} />
-      <div className="py-12 bg-gray-800">
+      <div className="py-6 lg:py-12 bg-gray-800">
         <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" initial='hidden' animate='show' variants={animation}>
           <div >
             <h1 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl text-center sm:mx-auto">
@@ -116,7 +116,7 @@ const animation: Variants = shouldReduceMotion ? {
           <motion.div className='bg-gray-900 px-6 py-2 rounded shadow-2xl'>
             {commandsCategoryList.map((category, i) => (
               <div key={i}>
-                <motion.div className=' text-gray-300 py-2 group' whileHover={{scale: 1.05}}>
+                <motion.div className=' text-gray-300 py-2 group'>
                 <a
                   href={`#${category.category.toLowerCase()}`}
                   className="text-yellow-400 hover:underline"
@@ -145,7 +145,7 @@ const animation: Variants = shouldReduceMotion ? {
             onMouseLeave={() => setShowModal(false)}
             onClick={() => setShowModal(false)}
           >
-            <motion.div whileHover={{scale: 1.025}} className="relative w-auto my-6 mx-auto max-w-3xl py-6 px-6">
+            <motion.div className="relative w-auto my-6 mx-auto max-w-3xl py-6 px-6">
               {/*content*/}
               <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-80 bg-gray-900 outline-none py-1 px-2">
                 {/*header*/}
@@ -160,7 +160,7 @@ const animation: Variants = shouldReduceMotion ? {
                   <div>
                       {adminCommands.map((command, i) => (
                         <div key={i}>
-                        <motion.div className=' text-gray-300 group text-sm whitespace-pre-line max-w-xl mx-auto' whileHover={{scale: 1.025}}>
+                        <motion.div className=' text-gray-300 group text-sm whitespace-pre-line max-w-xl mx-auto' >
                         <a
                           href={`#${command.name.toLowerCase()}`}
                           className="text-yellow-400 hover:underline"
@@ -177,7 +177,7 @@ const animation: Variants = shouldReduceMotion ? {
                   <div>
                       {featureCommands.map((command, i) => (
                         <div key={i}>
-                        <motion.div className=' text-gray-300 group text-sm whitespace-pre-line max-w-xl mx-auto' whileHover={{scale: 1.025}}>
+                        <motion.div className=' text-gray-300 group text-sm whitespace-pre-line max-w-xl mx-auto' >
                         <a
                           href={`#${command.name.toLowerCase()}`}
                           className="text-yellow-400 hover:underline"
@@ -194,7 +194,7 @@ const animation: Variants = shouldReduceMotion ? {
                   <div>
                       {infoCommands.map((command, i) => (
                         <div key={i}>
-                        <motion.div className=' text-gray-300 group text-sm whitespace-pre-line max-w-xl mx-auto' whileHover={{scale: 1.025}}>
+                        <motion.div className=' text-gray-300 group text-sm whitespace-pre-line max-w-xl mx-auto' >
                         <a
                           href={`#${command.name.toLowerCase()}`}
                           className="text-yellow-400 hover:underline"
@@ -211,7 +211,7 @@ const animation: Variants = shouldReduceMotion ? {
                   <div>
                       {moderationCommands.map((command, i) => (
                         <div key={i}>
-                        <motion.div className=' text-gray-300 group text-sm whitespace-pre-line max-w-xl mx-auto' whileHover={{scale: 1.025}}>
+                        <motion.div className=' text-gray-300 group text-sm whitespace-pre-line max-w-xl mx-auto' >
                         <a
                           href={`#${command.name.toLowerCase()}`}
                           className="text-yellow-400 hover:underline"
@@ -228,7 +228,7 @@ const animation: Variants = shouldReduceMotion ? {
                   <div>
                       {userCommands.map((command, i) => (
                         <div key={i}>
-                        <motion.div className=' text-gray-300 group text-sm whitespace-pre-line max-w-xl mx-auto' whileHover={{scale: 1.025}}>
+                        <motion.div className=' text-gray-300 group text-sm whitespace-pre-line max-w-xl mx-auto'>
                         <a
                           href={`#${command.name.toLowerCase()}`}
                           className="text-yellow-400 hover:underline"

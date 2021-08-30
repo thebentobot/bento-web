@@ -11,6 +11,8 @@ module.exports = {
         typescript: '#007acc',
         postgresql: '#008bb9',
         tailwindcss: '#06B6D4',
+        kofi: '#29ABE0',
+        patreon: '#FF424D'
       }
     },
   },

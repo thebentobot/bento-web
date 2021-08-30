@@ -119,7 +119,7 @@ export default function Leaderboard({users, guild}: userRankingsInterface) {
             `Check out the Bento 🍱 Leaderboard for ${guild.guildName}`
 					}
 				]} />
-      <div className="py-12 bg-gray-800">
+      <div className="py-6 lg:py-12 bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center text-center overflow-hidden">
             <motion.p initial="hidden"

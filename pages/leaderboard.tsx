@@ -70,12 +70,12 @@ export default function Leaderboard({users}: userRankingsInterface) {
 							"Check out the Global Leaderboard for Bento 🍱"
 					}
 				]} />
-      <div className="py-12 bg-gray-800">
+      <div className="py-6 lg:py-12 bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
           <div className="lg:text-center text-center overflow-hidden">
             <motion.p initial="hidden"
         animate="show"
-        variants={animation} className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl sm:text-center">
+        variants={animation} className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl text-center">
               Leaderboard for Bento 🍱
             </motion.p>
             <br></br>
