@@ -35,12 +35,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         },
         fiji: {
           author: 'Fiji Spring Water',
-          avatar: 'https://cdn.discordapp.com/avatars/229341113503318018/86a8d67d1369755c3fa58e2044d1b553.png?size=1024',
+          avatar: 'https://cdn.discordapp.com/avatars/229341113503318018/e2dc85840f020cdfa386645685f37ad8.png?size=1024',
           roleColor: '#00B2FF'
         },
         enter: {
           author: 'Enter',
-          avatar: 'https://cdn.discordapp.com/avatars/188980576483540992/a_eb18d14ee9ab8e16866c118453884374.gif?size=1024',
+          avatar: 'https://cdn.discordapp.com/avatars/188980576483540992/408c76ce4dc2fbd2c6ccfe5c80f4e67b.png?size=1024',
           roleColor: '#03f611'
         },
         tzuwy: {
@@ -50,7 +50,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         },
         alonzo: {
           author: 'alonzo',
-          avatar: 'https://cdn.discordapp.com/avatars/370695349167325196/b4402706bd14d17aa060ebda6c9816af.png?size=1024',
+          avatar: 'https://cdn.discordapp.com/avatars/370695349167325196/b4b86fc02a6be67825aee4d559b142e5.png?size=1024',
           roleColor: '#99ff99'
         },
 			}

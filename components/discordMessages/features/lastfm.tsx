@@ -10,7 +10,7 @@ export default function Lastfm() {
             </DiscordMessage>
             <DiscordMessage profile='enter'>?fm</DiscordMessage>
             <DiscordMessage profile='bentoBot'>
-                <DiscordEmbed slot='embeds' color="#e4141e" authorName='Enter#0001' footerImage='https://www.last.fm/static/images/lastfm_avatar_twitter.52a5d69a85ac.png' authorImage='https://cdn.discordapp.com/avatars/188980576483540992/a_eb18d14ee9ab8e16866c118453884374.gif?size=1024' authorUrl='https://www.last.fm/user/Enterxz' thumbnail='https://lastfm.freetls.fastly.net/i/u/300x300/3b96418b0b1321fc83a25ce14eea0643.jpg'>
+                <DiscordEmbed slot='embeds' color="#e4141e" authorName='Enter#0001' footerImage='https://www.last.fm/static/images/lastfm_avatar_twitter.52a5d69a85ac.png' authorImage='https://cdn.discordapp.com/avatars/188980576483540992/408c76ce4dc2fbd2c6ccfe5c80f4e67b.png?size=1024' authorUrl='https://www.last.fm/user/Enterxz' thumbnail='https://lastfm.freetls.fastly.net/i/u/300x300/3b96418b0b1321fc83a25ce14eea0643.jpg'>
                 <strong>13 hours ago</strong>
                 <br />
                 <strong>Kanye West</strong> - <a href='https://www.last.fm/music/Kanye+West/_/Stronger'>Stronger</a>

@@ -5,7 +5,7 @@ export default function MessageLog() {
     return (
         <DiscordMessages>
             <DiscordMessage profile='bentoBot'>
-            <DiscordEmbed slot='embeds' color="#FFF000" authorName='alonzo#0011 (userID: 370695349167325196)' authorImage='https://cdn.discordapp.com/avatars/370695349167325196/b4402706bd14d17aa060ebda6c9816af.png?size=1024' timestamp={moment().toDate()}>
+            <DiscordEmbed slot='embeds' color="#FFF000" authorName='alonzo#0011 (userID: 370695349167325196)' authorImage='https://cdn.discordapp.com/avatars/370695349167325196/b4b86fc02a6be67825aee4d559b142e5.png?size=1024' timestamp={moment().toDate()}>
             <a target="_blank" rel="noopener noreferrer" href="https://discord.com/channels/714496317522444352/714836721979621448/873246980267180032">Message</a> edited in <DiscordMention type='channel'>bot-channel</DiscordMention>
                 <br />
                 <strong>Before: </strong>
