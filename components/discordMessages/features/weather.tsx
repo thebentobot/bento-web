@@ -6,7 +6,7 @@ export default function Weather() {
         <DiscordMessages>
             <DiscordMessage profile='banner' timestamp='08/15/2021'>?weather</DiscordMessage>
             <DiscordMessage profile='bentoBot' timestamp='08/15/2021'>
-                <DiscordEmbed slot='embeds' color="#EB6E4B" thumbnail='http://openweathermap.org/img/w/03n.png' authorName='Banner#1017' authorImage='https://cdn.discordapp.com/avatars/232584569289703424/a_d38527440ed3d5cd3a8045862472ff99.gif?size=1024' embedTitle='Clouds ☁️ ️in Copenhagen, Denmark 🇩🇰' footerImage='https://pbs.twimg.com/profile_images/1173919481082580992/f95OeyEW_400x400.jpg' timestamp='08/15/2021'>
+                <DiscordEmbed slot='embeds' color="#EB6E4B" thumbnail='http://openweathermap.org/img/w/03n.png' authorName='Banner#1017' authorImage='https://cdn.discordapp.com/avatars/232584569289703424/cc5e8923f457d9e00fc9605afe3da368.png?size=1024' embedTitle='Clouds ☁️ ️in Copenhagen, Denmark 🇩🇰' footerImage='https://pbs.twimg.com/profile_images/1173919481082580992/f95OeyEW_400x400.jpg' timestamp='08/15/2021'>
                     <strong>Currently</strong>
                     <br />
                     Scattered clouds ☁️

@@ -10,7 +10,7 @@ export default function Lastfm() {
             </DiscordMessage>
             <DiscordMessage profile='enter'>?fm</DiscordMessage>
             <DiscordMessage profile='bentoBot'>
-                <DiscordEmbed slot='embeds' color="#e4141e" authorName='Enter#0001' footerImage='https://www.last.fm/static/images/lastfm_avatar_twitter.52a5d69a85ac.png' authorImage='https://cdn.discordapp.com/avatars/188980576483540992/408c76ce4dc2fbd2c6ccfe5c80f4e67b.png?size=1024' authorUrl='https://www.last.fm/user/Enterxz' thumbnail='https://lastfm.freetls.fastly.net/i/u/300x300/3b96418b0b1321fc83a25ce14eea0643.jpg'>
+                <DiscordEmbed slot='embeds' color="#e4141e" authorName='Enter#0001' footerImage='https://www.last.fm/static/images/lastfm_avatar_twitter.52a5d69a85ac.png' authorImage='https://cdn.discordapp.com/avatars/188980576483540992/e742c93ebe74b6b7e3fc7e5be34c20f4.png?size=1024' authorUrl='https://www.last.fm/user/Enterxz' thumbnail='https://lastfm.freetls.fastly.net/i/u/300x300/3b96418b0b1321fc83a25ce14eea0643.jpg'>
                 <strong>13 hours ago</strong>
                 <br />
                 <strong>Kanye West</strong> - <a href='https://www.last.fm/music/Kanye+West/_/Stronger'>Stronger</a>
@@ -27,7 +27,7 @@ export default function Lastfm() {
             </DiscordMessage>
             <DiscordMessage profile='enter'>?fm 232584569289703424</DiscordMessage>
             <DiscordMessage profile='bentoBot'>
-                <DiscordEmbed slot='embeds' color="#e4141e" authorName='Banner#1017' footerImage='https://www.last.fm/static/images/lastfm_avatar_twitter.52a5d69a85ac.png' authorImage='https://cdn.discordapp.com/avatars/232584569289703424/a_d38527440ed3d5cd3a8045862472ff99.gif?size=1024' authorUrl='https://www.last.fm/user/christiankn' thumbnail='https://lastfm.freetls.fastly.net/i/u/300x300/38400dfa7dfc156b978678a61d82d809.jpg'>
+                <DiscordEmbed slot='embeds' color="#e4141e" authorName='Banner#1017' footerImage='https://www.last.fm/static/images/lastfm_avatar_twitter.52a5d69a85ac.png' authorImage='https://cdn.discordapp.com/avatars/232584569289703424/cc5e8923f457d9e00fc9605afe3da368.png?size=1024' authorUrl='https://www.last.fm/user/christiankn' thumbnail='https://lastfm.freetls.fastly.net/i/u/300x300/38400dfa7dfc156b978678a61d82d809.jpg'>
                 <strong>2 hours ago</strong>
                 <br />
                 <strong>Toro y Moi </strong> - <a href='https://www.last.fm/music/Toro+y+Moi/_/Who+I+Am'>Who I Am</a>
@@ -44,7 +44,7 @@ export default function Lastfm() {
             </DiscordMessage>
             <DiscordMessage profile='banner'>?fm toptracks 1month</DiscordMessage>
             <DiscordMessage profile='bentoBot'>
-                <DiscordEmbed slot='embeds' embedTitle='Top tracks for Banner#1017' url='https://www.last.fm/user/christiankn/library/tracks?date_preset=LAST_30_DAYS' color="#e4141e" authorName='Banner#1017' footerImage='https://www.last.fm/static/images/lastfm_avatar_twitter.52a5d69a85ac.png' authorImage='https://cdn.discordapp.com/avatars/232584569289703424/a_d38527440ed3d5cd3a8045862472ff99.gif?size=1024' authorUrl='https://www.last.fm/user/christiankn' thumbnail='https://i.scdn.co/image/ab6761610000e5eb3a8619d4545d138019f4f6d9'>
+                <DiscordEmbed slot='embeds' embedTitle='Top tracks for Banner#1017' url='https://www.last.fm/user/christiankn/library/tracks?date_preset=LAST_30_DAYS' color="#e4141e" authorName='Banner#1017' footerImage='https://www.last.fm/static/images/lastfm_avatar_twitter.52a5d69a85ac.png' authorImage='https://cdn.discordapp.com/avatars/232584569289703424/cc5e8923f457d9e00fc9605afe3da368.png?size=1024' authorUrl='https://www.last.fm/user/christiankn' thumbnail='https://i.scdn.co/image/ab6761610000e5eb3a8619d4545d138019f4f6d9'>
                 <strong>1. c2.0</strong> by <a href='https://www.last.fm/music/Charli+XCX/_/c2.0'>Charli XCX</a> - 39 plays
                 <br />
                 <strong>2. Paradise (feat. Hannah Diamond)</strong> by <a href='https://www.last.fm/music/Charli+XCX/_/Paradise+(feat.+Hannah+Diamond)'>Charli XCX</a> - 34 plays
@@ -75,7 +75,7 @@ export default function Lastfm() {
             </DiscordMessage>
             <DiscordMessage profile='fiji'>?fm recent <DiscordMention type='user'>Banner</DiscordMention></DiscordMessage>
             <DiscordMessage profile='bentoBot'>
-                <DiscordEmbed slot='embeds' embedTitle='Recent tracks for Banner#1017' url='https://www.last.fm/user/christiankn/library/' color="#e4141e" authorName='Banner#1017' footerImage='https://www.last.fm/static/images/lastfm_avatar_twitter.52a5d69a85ac.png' authorImage='https://cdn.discordapp.com/avatars/232584569289703424/a_d38527440ed3d5cd3a8045862472ff99.gif?size=1024' authorUrl='https://www.last.fm/user/christiankn' thumbnail='https://lastfm.freetls.fastly.net/i/u/300x300/38400dfa7dfc156b978678a61d82d809.jpg'>
+                <DiscordEmbed slot='embeds' embedTitle='Recent tracks for Banner#1017' url='https://www.last.fm/user/christiankn/library/' color="#e4141e" authorName='Banner#1017' footerImage='https://www.last.fm/static/images/lastfm_avatar_twitter.52a5d69a85ac.png' authorImage='https://cdn.discordapp.com/avatars/232584569289703424/cc5e8923f457d9e00fc9605afe3da368.png?size=1024' authorUrl='https://www.last.fm/user/christiankn' thumbnail='https://lastfm.freetls.fastly.net/i/u/300x300/38400dfa7dfc156b978678a61d82d809.jpg'>
                 <strong>3 hours ago</strong> | Toro y Moi - <a href='https://www.last.fm/music/Toro+y+Moi/_/Who+I+Am'>Who I am</a>
                 <br />
                 <strong>3 hours ago</strong> | Kanye West - <a href='https://www.last.fm/music/Kanye+West/_/H%E2%80%A2A%E2%80%A2M'>H•A•M</a>

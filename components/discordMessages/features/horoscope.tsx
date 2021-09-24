@@ -6,7 +6,7 @@ export default function Horoscope() {
         <DiscordMessages>
             <DiscordMessage profile='banner' timestamp='08/15/2021'>?horo</DiscordMessage>
             <DiscordMessage profile='bentoBot' timestamp='08/15/2021'>
-                <DiscordEmbed slot='embeds' color="#C0C0C0" authorName='Banner' authorImage='https://cdn.discordapp.com/avatars/232584569289703424/a_d38527440ed3d5cd3a8045862472ff99.gif?size=1024' embedTitle='Sagittarius horoscope for August 15, 2021'>
+                <DiscordEmbed slot='embeds' color="#C0C0C0" authorName='Banner' authorImage='https://cdn.discordapp.com/avatars/232584569289703424/cc5e8923f457d9e00fc9605afe3da368.png?size=1024' embedTitle='Sagittarius horoscope for August 15, 2021'>
                 You think it is in the bag. They have something to add. At least you are not bored.
                     <DiscordEmbedFields slot='fields'>
                         <DiscordEmbedField fieldTitle='Date Range' inline inlineIndex={1}>Between Nov 23 - Dec 21</DiscordEmbedField>

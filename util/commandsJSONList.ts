@@ -325,7 +325,7 @@ export const commandsList: commandsInterface[] = [
     {
        "name":"whois",
        "aliases":[
-          "profile",
+          "userinfo",
           "user"
        ],
        "category":"info",
@@ -444,14 +444,21 @@ export const commandsList: commandsInterface[] = [
     {
        "name":"rank",
        "aliases":[
-          "lvl",
-          "level",
-          "xp"
+          "profile",
+          "level"
        ],
        "category":"user",
-       "description":"Shows your rank, level, xp and Bento 🍱",
+       "description":"Shows a user\'s profile which includes ranks for levels and bento, description and potentially other personalisation.",
        "usage":"?rank [userID/mention a user]"
     },
+    {
+      "name":"sketch",
+      "aliases":[
+      ],
+      "category":"user",
+      "description":"Customise your profile for the rank command. Add background picture, change every colour, add birthday and timezone, and a funny description.",
+      "usage":`?sketch bgpic <image URL>\n?sketch desc <add/colour/opacity/status> <description text / hex colour / 0-100>\n?sketch timezone <tz database value, e.g. "Europe/Copenhagen">\n?sketch birthday <birthday e.g. "25 November">\n?sketch username <hex color>\n?sketch discriminator <hex color>\n?sketch overlay <colour/opacity/status> <hex colour/ 0-100 / status>\n?sketch bgcolour <colour/opacity/status> <hex colour / 0-100 / no argument for status>\n?sketch fm <toggle/bg/status/song/artist> <colour/opacity> <hex colour / 0-100>\n?sketch xpboard <toggle/bg/status/text/bar/barbg/text1/text2/bar1/bar2/barbg1/barbg2> <colour/opacity> <hex colour / 0-100>\n?sketch sidebar <opacity/colour/blur/rank/users/status> <hex colour/ 0-100 / number for blur amount / if it is rank or users you need to specify if it is either the server, global, bento or timezone row, before writing colour> <hex colour for rank and users>\n?sketch delete`
+   },
     {
        "name":"reminder",
        "aliases":[

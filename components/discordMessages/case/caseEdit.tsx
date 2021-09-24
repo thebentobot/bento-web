@@ -6,7 +6,7 @@ export default function CaseEdit() {
         <DiscordMessages>
             <DiscordMessage profile='banner'>?case edit warning 1 note he may get the mute mask in the future muahaha</DiscordMessage>
             <DiscordMessage profile='bentoBot'>
-            <DiscordEmbed slot='embeds' color="#ffd903" embedTitle="Warning Case Number 1's note was updated!" authorName='Bento Bot' footerImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' thumbnail='https://cdn.discordapp.com/avatars/370695349167325196/0b1b81f0a0180b881e1c24ac22e2e806.png?size=1024'>
+            <DiscordEmbed slot='embeds' color="#ffd903" embedTitle="Warning Case Number 1's note was updated!" authorName='Bento Bot' footerImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' thumbnail='https://cdn.discordapp.com/avatars/370695349167325196/e3c560e32d17a3564cbac5e6164beb14.png?size=1024'>
                 <strong>Original note</strong>
                 <br />
                 null

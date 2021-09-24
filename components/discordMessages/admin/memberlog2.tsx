@@ -6,7 +6,7 @@ export default function MemberLog2() {
         <div>
         <DiscordMessages>
             <DiscordMessage profile='bentoBot'>
-            <DiscordEmbed slot='embeds' color="#00ff1a" authorName='alonzo#0011 (userID: 370695349167325196)' authorImage='https://cdn.discordapp.com/avatars/370695349167325196/b4b86fc02a6be67825aee4d559b142e5.png?size=1024' timestamp={moment().toDate()}>
+            <DiscordEmbed slot='embeds' color="#00ff1a" authorName='alonzo#0011 (userID: 370695349167325196)' authorImage='https://cdn.discordapp.com/avatars/370695349167325196/e3c560e32d17a3564cbac5e6164beb14.png?size=1024' timestamp={moment().toDate()}>
                 Nickname updated for this user.
                 <p className='font-bold'>Previous nickname:</p>
                 i love you banner
