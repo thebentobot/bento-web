@@ -54,7 +54,7 @@ export default function Sketch() {
                 </DiscordAttachments>
             </DiscordMessage>
             <DiscordMessage profile='banner'>
-                ?sketch description add "My new album Back to life otw" "Nobody is rdy not even me"
+                ?sketch description add {"My new album Back to life otw"} {"Nobody is rdy not even me"}
             </DiscordMessage>
             <DiscordMessage profile='bentoBot'>
                 <DiscordMention type='user' highlight>Banner</DiscordMention> your description has been set.

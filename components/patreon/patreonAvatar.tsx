@@ -35,7 +35,7 @@ export default function PatreonAvatar({id, userID, name, avatar, supporter, foll
           </div>
           
           <div className='flex-grow p-4 w-full md:w-auto overflow-hidden'>
-            <div className='transition duration-1000 ease-in-out text-white text-center lg:text-left overflow-hidden text-2xl'>
+            <div className='transition duration-1000 ease-in-out text-white text-center lg:text-left overflow-hidden text-xl lg:text-2xl'>
               {name}
             </div>
             {/*
