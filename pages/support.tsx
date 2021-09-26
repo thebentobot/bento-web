@@ -19,6 +19,7 @@ export interface patreon {
   enthusiast: boolean,
   disciple: boolean,
   sponsor: boolean,
+  rank: number
 }
 
 export interface patreonData {
@@ -54,27 +55,39 @@ export default function Support({ supporters, followers, enthusiasts, disciples,
  
   const shouldReduceMotion = useReducedMotion()
 
-const animation: Variants = shouldReduceMotion ? {
-  hidden: {
-    opacity: 0,
-  },
-  show: {
-    opacity: 1,
-    transition: {
-      duration: 0.8,
+  let rankArray = [];
+
+  if (!!sponsors.length !== false) rankArray.push(sponsors)
+  if (!!disciples.length !== false) rankArray.push(disciples)
+  if (!!enthusiasts.length !== false) rankArray.push(enthusiasts)
+  if (!!followers.length !== false) rankArray.push(followers)
+  if (!!supporters.length !== false) rankArray.push(supporters)
+
+  for (let index = 0; index < rankArray.length; index++) {
+    rankArray[index].forEach(user => user.rank = index + 1)  
+  }
+
+  const animation: Variants = shouldReduceMotion ? {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+      }
+    }
+  } : {
+    hidden: {
+      opacity: 0,
+    },
+    show: {
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+      }
     }
   }
-} : {
-  hidden: {
-    opacity: 0,
-  },
-  show: {
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-    }
-  }
-}
     return (
       <div>
         <Head>

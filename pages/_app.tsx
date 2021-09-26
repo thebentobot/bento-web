@@ -25,7 +25,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         },
         adam: {
           author: 'Adam',
-          avatar: 'https://cdn.discordapp.com/avatars/223908083825377281/bca17fe842890a45c12dc58fb0b4be45.png?size=1024',
+          avatar: 'https://cdn.discordapp.com/avatars/223908083825377281/7073d12699c13267cc0559b6ed5dd162.png?size=1024',
           roleColor: '#00B2FF'
         },
         lewis: {

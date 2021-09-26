@@ -14,6 +14,7 @@ code {
 	border: none;
 	white-space: pre-wrap;
 	background-color: #202225;
+	border-radius: 0.5rem/* 8px */;
 }
 
 .discord-messages {

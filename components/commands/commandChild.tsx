@@ -34,7 +34,12 @@ import RoleChannel from "../discordMessages/role/roleChannel"
 import Bento from "../discordMessages/user/bento"
 import LeaderboardMessage from "../discordMessages/user/leaderboard"
 import Notification from "../discordMessages/user/notification"
+import Rank from "../discordMessages/user/rank"
 import Reminder from "../discordMessages/user/reminder"
+import Sketch from "../discordMessages/user/sketch"
+import Sketch2 from "../discordMessages/user/sketch2"
+import Sketch3 from "../discordMessages/user/sketch3"
+import Sketch4 from "../discordMessages/user/sketch4"
 
 interface commandsInterface {
     key: number,
@@ -429,6 +434,51 @@ export default function CommandChild ({ name, aliases, category, description, us
             </h1>
             <div className='mt-2 opacity-50 group-hover:opacity-100'>
                 <Reminder />
+            </div>
+        </div>
+        }
+        {name !== 'rank' ? null : 
+        <div>
+            <h1 id={name} className='text-lg font-extrabold text-gray-300 text-opacity-50 sm:text-xl group-hover:text-opacity-100 text-center'>
+                Examples
+            </h1>
+            <div className='mt-2 opacity-50 group-hover:opacity-100'>
+                <Rank />
+            </div>
+        </div>
+        }
+        {name !== 'sketch' ? null : 
+        <div>
+            <h1 id={name} className='text-lg font-extrabold text-gray-300 text-opacity-50 sm:text-xl group-hover:text-opacity-100 text-center'>
+                Examples
+            </h1>
+            <p className='text-xl py-2 whitespace-pre-line text-gray-300 text-opacity-50 sm:text-xl group-hover:text-opacity-100 text-center max-w-xl mx-auto'>
+                How to use some of the various arguments. <br /> A lot of the different layers has the same syntax (e.g. opacity and colour).
+                <br /> Remember that colours needs to be hex colours.
+                <br /> Opacity values are from 0 to 100.
+            </p>
+            <div className='mt-2 opacity-50 group-hover:opacity-100'>
+                <Sketch2 />
+            </div>
+            <p className='text-xl py-2 whitespace-pre-line text-gray-300 text-opacity-50 sm:text-xl group-hover:text-opacity-100 text-center max-w-xl mx-auto'>
+                For the sidebar you need to specify the row that you want to change colour of. <br /> <code>?sketch sidebar opacity 50</code> and <code>?sketch sidebar colour #34D399</code> changes the background of the sidebar, not the text. You need to specify what text to change the colour of. <br />
+                <br /> <code>?sketch sidebar rank</code> is for changing the colour of the rank text. The next argument <code>?sketch sidebar rank server</code> is where you add the row you want to change afterwards. The possible rank rows are either <code>server</code>, <code>global</code> or <code>bento</code>. <br /> Same syntax for changing the users text, where it is <code>?sketch sidebar users</code> and the possible rows <code>server</code>, <code>global</code>, <code>bento</code> or <code>timezone</code>.
+
+            </p>
+            <div className='mt-2 opacity-50 group-hover:opacity-100'>
+                <Sketch3 />
+            </div>
+            <p className='text-xl py-2 whitespace-pre-line text-gray-300 text-opacity-50 sm:text-xl group-hover:text-opacity-100 text-center max-w-xl mx-auto'>
+                For editing the xpboard, you can either choose to edit one specific element or two at the same time. <br /> When using <code>?sketch xpboard text</code> it edits for both level texts, whereas <code>?sketch xpboard text1</code> only edits the level text to the left. <br /> When editing the colours of the XP progress bars, you need to specify the colour or opacity for all three colours. <br /> Check the examples below. 
+            </p>
+            <div className='mt-2 opacity-50 group-hover:opacity-100'>
+                <Sketch4 />
+            </div>
+            <p className='text-xl py-2 whitespace-pre-line text-gray-300 text-opacity-50 sm:text-xl group-hover:text-opacity-100 text-center max-w-xl mx-auto'>
+                A practical example, which shows the rank profile initially and after sketch customisation commands.
+            </p>
+            <div className='mt-2 opacity-50 group-hover:opacity-100'>
+                <Sketch />
             </div>
         </div>
         }

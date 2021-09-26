@@ -11,6 +11,7 @@ interface patreonUserInterface {
     enthusiast: boolean,
     disciple: boolean,
     sponsor: boolean,
+    rank: number
 }
 
 interface userDataInterface {
@@ -79,6 +80,7 @@ export default function PatreonParent({items}: userDataInterface) {
                 enthusiast={patreonUser.enthusiast}
                 disciple={patreonUser.disciple}
                 sponsor={patreonUser.sponsor}
+                rank={patreonUser.rank}
                 />
                 </motion.div>
         ))}

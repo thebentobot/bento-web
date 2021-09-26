@@ -11,14 +11,15 @@ interface patreonUserChildInterface {
     enthusiast: boolean,
     disciple: boolean,
     sponsor: boolean,
+    rank: number
 }
 
-export default function PatreonAvatar({id, userID, name, avatar, supporter, follower, enthusiast, disciple, sponsor}: patreonUserChildInterface) {
+export default function PatreonAvatar({id, userID, name, avatar, supporter, follower, enthusiast, disciple, sponsor, rank}: patreonUserChildInterface) {
     const avatarURL = avatar ? avatar : `https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024`
     
     return (
       <div>
-          {sponsor === true && 
+          {rank === 1 && 
           <motion.li key={id} whileHover={{scale: 1.01}} className='transition duration-300 ease-in-out bg-gray-900 flex flex-wrap items-center w-48 lg:w-96 my-4 p-2 px-4 rounded-lg group hover:bg-gray-700 hover:bg-opacity-80 shadow overflow-hidden'>
         
           <div className='flex-shrink-0 truncate text-gray-700 text-left'>
@@ -45,7 +46,7 @@ export default function PatreonAvatar({id, userID, name, avatar, supporter, foll
             */}
           </div>
         </motion.li>}
-        {disciple === true && 
+        {rank === 2 && 
           <motion.li key={id} whileHover={{scale: 1.01}} className='transition duration-300 ease-in-out bg-gray-900 flex flex-wrap items-center w-40 lg:w-80 my-4 p-2 px-4 rounded-lg group hover:bg-gray-700 hover:bg-opacity-80 shadow overflow-hidden'>
         
           <div className='flex-shrink-0 truncate text-gray-700 text-left'>
@@ -72,7 +73,7 @@ export default function PatreonAvatar({id, userID, name, avatar, supporter, foll
             */}
           </div>
         </motion.li>}
-        {enthusiast === true && 
+        {rank === 3 && 
           <motion.li key={id} whileHover={{scale: 1.01}} className='transition duration-300 ease-in-out bg-gray-900 flex flex-wrap items-center w-32 lg:w-72 my-4 p-2 px-4 rounded-lg group hover:bg-gray-700 hover:bg-opacity-80 shadow overflow-hidden'>
         
           <div className='flex-shrink-0 truncate text-gray-700 text-left'>
@@ -99,7 +100,7 @@ export default function PatreonAvatar({id, userID, name, avatar, supporter, foll
             */}
           </div>
         </motion.li>}
-        {follower === true && 
+        {rank === 4 && 
           <motion.li key={id} whileHover={{scale: 1.01}} className='transition duration-300 ease-in-out bg-gray-900 flex flex-wrap items-center w-28 lg:w-64 my-4 px-4 rounded-lg group hover:bg-gray-700 hover:bg-opacity-80 shadow overflow-hidden'>
         
           <div className='flex-shrink-0 truncate text-gray-700 text-left'>
@@ -126,7 +127,7 @@ export default function PatreonAvatar({id, userID, name, avatar, supporter, foll
             */}
           </div>
         </motion.li>}
-        {supporter === true && 
+        {rank === 5 && 
           <motion.li key={id} whileHover={{scale: 1.01}} className='transition duration-300 ease-in-out bg-gray-900 flex flex-wrap items-center w-60 my-4 rounded-lg group hover:bg-gray-700 hover:bg-opacity-80 shadow overflow-hidden'>
           <div className='flex-grow p-4 w-full md:w-auto overflow-hidden'>
             <div className='transition duration-1000 ease-in-out text-white text-center overflow-hidden text-sm'>
