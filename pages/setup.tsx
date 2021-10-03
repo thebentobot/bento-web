@@ -82,7 +82,7 @@ const animation: Variants = shouldReduceMotion ? {
           </motion.div>
           <div className="lg:text-center">
             <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto text-center sm:mx-auto px-4 sm:px-6 lg:px-8">
-              Do you want to disable TikTok or set a welcome message? <br></br>Find out how by clicking below!
+              Do you want to disable the leaderboard or set a welcome message? <br></br>Find out how by clicking below!
             </p>
           </div>
           <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:text-center">

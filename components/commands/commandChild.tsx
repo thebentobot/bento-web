@@ -10,7 +10,6 @@ import MessageLog from "../discordMessages/admin/messagelog"
 import ModLog from "../discordMessages/admin/modlog"
 import Prefix from "../discordMessages/admin/prefix"
 import Settings from "../discordMessages/admin/settings"
-import TikTok from "../discordMessages/admin/tiktok"
 import Welcome1 from "../discordMessages/admin/welcome1"
 import Welcome2 from "../discordMessages/admin/welcome2"
 import CaseCheck from "../discordMessages/case/caseCheck"
@@ -196,16 +195,6 @@ export default function CommandChild ({ name, aliases, category, description, us
             </p>
             <div className='mt-2 opacity-50 group-hover:opacity-100'>
                 <RoleChannel />
-            </div>
-        </div>
-        }
-        {name !== 'tiktok' ? null : 
-        <div>
-            <h1 id={name} className='text-lg font-extrabold text-gray-300 text-opacity-50 sm:text-xl group-hover:text-opacity-100 text-center'>
-                Example of when TikTok is enabled
-            </h1>
-            <div className='mt-2 opacity-50 group-hover:opacity-100'>
-                <TikTok />
             </div>
         </div>
         }

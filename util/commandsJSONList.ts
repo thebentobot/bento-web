@@ -14,7 +14,7 @@ interface commandsCategoryInterface {
 export const commandsCategoryList: commandsCategoryInterface[] = [
    {
       "category": "Admin",
-      "description": "Server settings where you can e.g. enable role management, welcome messages and disable TikTok's. These commands requires certain role permissions, which are specified for each command."
+      "description": "Server settings where you can e.g. enable role management, welcome messages and disable the leaderboard. These commands requires certain role permissions, which are specified for each command."
    },
    {
       "category": "Features",
