@@ -20,12 +20,12 @@ function MyApp({ Component, pageProps }: AppProps) {
 				},
         banner: {
           author: 'Banner',
-          avatar: 'https://cdn.discordapp.com/avatars/232584569289703424/cc5e8923f457d9e00fc9605afe3da368.png?size=1024',
+          avatar: 'https://cdn.discordapp.com/avatars/232584569289703424/49012e2ed5dec9328fae00c3244e81e4.png?size=1024',
           roleColor: '#ff00fa'
         },
         adam: {
           author: 'Adam',
-          avatar: 'https://cdn.discordapp.com/avatars/223908083825377281/7073d12699c13267cc0559b6ed5dd162.png?size=1024',
+          avatar: 'https://cdn.discordapp.com/avatars/223908083825377281/11f334bfd93d854b8196c1202f4a8c9f.png?size=1024',
           roleColor: '#00B2FF'
         },
         lewis: {
@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         },
         enter: {
           author: 'Enter',
-          avatar: 'https://cdn.discordapp.com/avatars/188980576483540992/e742c93ebe74b6b7e3fc7e5be34c20f4.png?size=1024',
+          avatar: 'https://cdn.discordapp.com/avatars/188980576483540992/a9f07f10434d98e823a513a330e80d5b.png?size=1024',
           roleColor: '#03f611'
         },
         tzuwy: {
@@ -50,7 +50,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         },
         alonzo: {
           author: 'alonzo',
-          avatar: 'https://cdn.discordapp.com/avatars/370695349167325196/e3c560e32d17a3564cbac5e6164beb14.png?size=1024',
+          avatar: 'https://cdn.discordapp.com/avatars/370695349167325196/df2ca2a3b91c18f2f811b0b6f4c0be5f.png?size=1024',
           roleColor: '#99ff99'
         },
 			}
