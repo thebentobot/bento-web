@@ -7,6 +7,8 @@ import { motion, Variants } from "framer-motion"
 import { NextSeo } from "next-seo";
 import { getData } from "../api/guilds";
 import { useRouter } from "next/router";
+import useSWR, { SWRConfig } from 'swr'
+import fetcher from "../../util/fetch";
 
 const animation: Variants = {
   hidden: { opacity: 0 },
@@ -56,7 +58,6 @@ export const getServerSideProps: GetServerSideProps = async ({query}) => {
 
 export const getStaticPaths: GetStaticPaths<{id: string}> = async () => {
   const guilds = await getData()
-  //console.log(guilds)
 
   const paths = guilds.map((guild) => ({
     params: { id: `${guild.guildID}`}
@@ -77,46 +78,44 @@ export const getStaticProps: GetStaticProps = async (context: any) => {
 
   return {
     props: {
-      users: resUsers, guild: resServer
-    }, revalidate: 60*10
+      fallback: {
+        'api/leaderboard/': resUsers, 'api/guild/': resServer
+      }
+    }
+    //, revalidate: 60*10
     // 60*60*6 = 6 hours
      // revalidate isn't supported by netlify yet
     // https://github.com/netlify/netlify-plugin-nextjs/issues/151
   }
 }
 
-export default function Leaderboard({users, guild}: userRankingsInterface) {
-    const {isFallback} = useRouter()
-
-    if (isFallback) {
-      return (<div className="py-12 bg-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <button type="button" className="bg-yellow-400 ..." disabled>
-  <svg className="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
-
-  </svg>
-  Processing Leaderboard for the first time
-</button>
-        </div>
-      </div>
+export function Users () {
+  const router = useRouter()
+  const { id } = router.query
+  const { data: userData, error: userError } = useSWR<LeaderboardRankingsInterface[]>(id ? `/api/leaderboard/?id=${id}` : null, id ? fetcher : null, id ? {refreshInterval: 30000, revalidateOnFocus: true} : {})
+  const { data: guildData, error: guildError } = useSWR<guildInterface>(id ? `/api/guild/?id=${id}` : null, id ? fetcher : null, id ? {refreshInterval: 30000, revalidateOnFocus: true} : {})
+  if (userError || guildError) {
+    return (
+      <div><p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
+      Error
+    </p></div>
     )
-    }
-
+  } else {
     return (
       <div>
         <Head>
-        <title>Bento 🍱 | Leaderboard for {guild.guildName}</title>
+        <title>Bento 🍱 | Leaderboard for {guildData?.guildName}</title>
       </Head>
       <NextSeo 
-				description={`Check out the Bento 🍱 Leaderboard for ${guild.guildName}`}
+				description={`Check out the Bento 🍱 Leaderboard for ${guildData?.guildName}`}
 				openGraph={{
-					title: `Bento 🍱 | Leaderboard for ${guild.guildName}`
+					title: `Bento 🍱 | Leaderboard for ${guildData?.guildName}`
 				}}
 				additionalMetaTags={[
 					{
 						name: 'summary',
 						content:
-            `Check out the Bento 🍱 Leaderboard for ${guild.guildName}`
+            `Check out the Bento 🍱 Leaderboard for ${guildData?.guildName}`
 					}
 				]} />
       <div className="py-6 lg:py-12 bg-gray-800">
@@ -125,23 +124,37 @@ export default function Leaderboard({users, guild}: userRankingsInterface) {
             <motion.p initial="hidden"
         animate="show"
         variants={animation} className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
-              Leaderboard for {guild.guildName}
+              Leaderboard for {guildData?.guildName}
             </motion.p>
             <motion.div className='bg-gray-900 mx-auto my-auto p-2 mt-8 w-64 rounded shadow-lg bg-opacity-50' initial="hidden"
         animate="show"
         variants={animation}>
             <motion.img width={256} height={256} initial="hidden"
         animate="show"
-        variants={animation} className='mx-auto shadow-lg' src={guild.icon}></motion.img>
+        variants={animation} className='mx-auto shadow-lg' src={guildData?.icon}></motion.img>
             </motion.div>
             <br></br>
-            <div className='max-w-screen-2xl mx-auto px-3'>
-              <LeaderboardParent items={users}/>
-            </div>
+            {userData ? <div className='max-w-screen-2xl mx-auto px-3'>
+              <LeaderboardParent items={userData}/>
+            </div> : <div>
+  <motion.div initial="hidden"
+        animate="show"
+        variants={animation} style={{borderTopColor: 'transparent'}}
+      className="w-16 h-16 border-4 border-yellow-400 border-solid rounded-full animate-spin mx-auto"></motion.div>
+</div>}
           </div>
         </div>
       </div>
       </div>
       
     );
+  }
+}
+
+export default function Leaderboard({fallback}: any) {
+    return (
+      <SWRConfig value={{fallback}}>
+        <Users />
+      </SWRConfig>
+    )
   }

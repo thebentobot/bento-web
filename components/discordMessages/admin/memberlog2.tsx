@@ -1,12 +1,13 @@
 import { DiscordEmbed, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react';
 import moment from 'moment';
+import { adamAvatar, alonzoAvatar } from '../../../pages/_app';
 
 export default function MemberLog2() {
     return (
         <div>
         <DiscordMessages>
             <DiscordMessage profile='bentoBot'>
-            <DiscordEmbed slot='embeds' color="#00ff1a" authorName='alonzo#0011 (userID: 370695349167325196)' authorImage='https://cdn.discordapp.com/avatars/370695349167325196/e3c560e32d17a3564cbac5e6164beb14.png?size=1024' timestamp={moment().toDate()}>
+            <DiscordEmbed slot='embeds' color="#00ff1a" authorName='alonzo#0011 (userID: 370695349167325196)' authorImage={alonzoAvatar} timestamp={moment().toDate()}>
                 Nickname updated for this user.
                 <p className='font-bold'>Previous nickname:</p>
                 i love you banner
@@ -19,7 +20,7 @@ export default function MemberLog2() {
             <div className='hidden lg:contents'>
             <DiscordMessages>
             <DiscordMessage profile='bentoBot'>
-            <DiscordEmbed slot='embeds' embedTitle='Adaam#3206 joined the server!' color="#00ff1a" timestamp={moment().toDate()} thumbnail='https://cdn.discordapp.com/avatars/223908083825377281/bca17fe842890a45c12dc58fb0b4be45.png?size=1024'>
+            <DiscordEmbed slot='embeds' embedTitle='Adaam#3206 joined the server!' color="#00ff1a" timestamp={moment().toDate()} thumbnail={adamAvatar}>
                 <strong>Account created:</strong> 9/9/2016 20:50:47 +00:00
                 <br />
                 <strong >Bans on other servers:</strong> <code>0</code>

@@ -1,5 +1,6 @@
 import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions } from '@skyra/discord-components-react';
 import moment from 'moment'
+import { alonzoAvatar } from '../../../pages/_app';
 
 export default function CaseUser() {
     return (
@@ -7,7 +8,7 @@ export default function CaseUser() {
             <DiscordMessage profile='banner'>?case user 370695349167325196 mute</DiscordMessage>
             <DiscordMessage profile='bentoBot'>
                 Amount of mutes 1/10
-                <DiscordEmbed slot='embeds' color="#ffd903" embedTitle='Banner’s Lab Rat (alonzo#0011)' authorName='Bento Bot' footerImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' thumbnail='https://cdn.discordapp.com/avatars/370695349167325196/e3c560e32d17a3564cbac5e6164beb14.png?size=1024'>
+                <DiscordEmbed slot='embeds' color="#ffd903" embedTitle='Banner’s Lab Rat (alonzo#0011)' authorName='Bento Bot' footerImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' thumbnail={alonzoAvatar}>
                 <strong>Reason for Mute</strong>
                 <br />
                 stop with the kim lip smh
@@ -29,7 +30,7 @@ export default function CaseUser() {
             <DiscordMessage profile='banner'>?case user 370695349167325196 overview</DiscordMessage>
             <DiscordMessage profile='bentoBot'>
                 Amount of mutes 1/10
-                <DiscordEmbed slot='embeds' color="#ffd903" embedTitle='Overview for Banner’s lab rat (alonzo#0011)' authorName='Bento Bot' footerImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' thumbnail='https://cdn.discordapp.com/avatars/370695349167325196/e3c560e32d17a3564cbac5e6164beb14.png?size=1024'>
+                <DiscordEmbed slot='embeds' color="#ffd903" embedTitle='Overview for Banner’s lab rat (alonzo#0011)' authorName='Bento Bot' footerImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' thumbnail={alonzoAvatar}>
                 <DiscordEmbedFields slot='fields'>
                         <DiscordEmbedField fieldTitle='Bans' inline inlineIndex={1}>This user has received 0 bans</DiscordEmbedField>
                         <DiscordEmbedField fieldTitle='Kicks' inline inlineIndex={1}>This user has received 10 mutes <br /> Last mute was on Friday, August 13th 2021, 00:57:31 AM +00:00 </DiscordEmbedField>

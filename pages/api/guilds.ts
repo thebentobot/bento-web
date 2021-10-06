@@ -6,6 +6,6 @@ import { guild } from '../../database/models/guild';
 
 export async function getData() {
   initModels(database)
-  const guildData = await guild.findAll({raw: true});
+  const guildData = await guild.findAll({raw: true, limit: 50, order: [['memberCount', 'DESC']]});
   return guildData
 }

@@ -19,7 +19,7 @@
     "dotenv": "^10.0.0",
     "framer-motion": "^4.1.17",
     "moment": "^2.29.1",
-    "next": "11.1.1",
+    "next": "^11.1.0",
     "next-seo": "^4.26.0",
     "next-transpile-modules": "^8.0.0",
     "pg": "^8.7.1",
@@ -30,7 +30,8 @@
     "react-markdown": "^7.0.0",
     "react-query": "^3.19.6",
     "sequelize": "^6.6.5",
-    "sequelize-auto": "^0.8.3"
+    "sequelize-auto": "^0.8.3",
+    "swr": "^1.0.1"
   },
   "devDependencies": {
     "@types/node-fetch": "^2.5.11",

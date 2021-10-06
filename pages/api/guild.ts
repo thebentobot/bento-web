@@ -9,3 +9,8 @@ export async function getData(guildID: string) {
   const guildData = await guild.findOne({raw: true, where: {guildID: guildID}});
   return guildData
 }
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse){
+  const guildID = req.query.id as string
+  res.status(200).json(await getData(guildID as string))
+}

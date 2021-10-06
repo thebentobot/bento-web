@@ -1,5 +1,6 @@
 import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react';
 import moment from 'moment'
+import { alonzoAvatar } from '../../../pages/_app';
 
 export default function Reminder() {
     return (
@@ -32,7 +33,7 @@ export default function Reminder() {
         <br />
         <DiscordMessages>
             <DiscordMessage timestamp='08/16/2021' profile='bentoBot'>
-                <DiscordEmbed slot='embeds' thumbnail='https://cdn.discordapp.com/avatars/370695349167325196/e3c560e32d17a3564cbac5e6164beb14.png?size=1024' color="#ffd903" embedTitle='In 21 days' authorName='Reminder' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024'>
+                <DiscordEmbed slot='embeds' thumbnail={alonzoAvatar} color="#ffd903" embedTitle='In 21 days' authorName='Reminder' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024'>
                 STAYC COMEBACK
                 <span slot="footer">Remind Date: Monday, September 6th 2021, 08:00:00 AM +00:00  </span>
                 </DiscordEmbed>

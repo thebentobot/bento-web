@@ -28,29 +28,6 @@ export default function Commands() {
     setCommand(category)
   }
 
-  const shouldReduceMotion = useReducedMotion()
-
-const animation: Variants = shouldReduceMotion ? {
-  hidden: {
-    opacity: 0,
-  },
-  show: {
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-    }
-  }
-} : {
-  hidden: {
-    opacity: 0,
-  },
-  show: {
-    opacity: 1,
-    transition: {
-      duration: 0.8,
-    }
-  }
-}
     return (
       <div>
         <Head>
@@ -69,7 +46,7 @@ const animation: Variants = shouldReduceMotion ? {
 					}
 				]} />
       <div className="py-6 lg:py-12 bg-gray-800">
-        <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" initial='hidden' animate='show' variants={animation}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div >
             <h1 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl text-center sm:mx-auto">
             Bento 🍱 Commands
@@ -105,8 +82,8 @@ const animation: Variants = shouldReduceMotion ? {
           </div>
           </div>
           </div>
-        </motion.div>
-        <motion.div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8" initial='hidden' animate='show' variants={animation}>
+        </div>
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <h2 className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl text-center sm:mx-auto">
               Command Categories
@@ -259,7 +236,7 @@ const animation: Variants = shouldReduceMotion ? {
         </>
       ) : null}
           </motion.div>         
-        </motion.div>
+        </div>
         <br />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">

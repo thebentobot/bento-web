@@ -1,11 +1,12 @@
 import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react';
 import moment from 'moment';
+import { alonzoAvatar, bannerAvatar } from '../../../pages/_app';
 
 export default function ModLog() {
     return (
         <DiscordMessages>
             <DiscordMessage profile='bentoBot'>
-            <DiscordEmbed slot='embeds' color="#000000" embedTitle='Banner’s lab rat (alonzo#0011) was muted for 8 hours!' authorName='Banner#1017' authorImage='https://cdn.discordapp.com/avatars/232584569289703424/cc5e8923f457d9e00fc9605afe3da368.png?size=1024' timestamp={moment().toDate()} thumbnail='https://cdn.discordapp.com/avatars/370695349167325196/0b1b81f0a0180b881e1c24ac22e2e806.png?size=1024'>
+            <DiscordEmbed slot='embeds' color="#000000" embedTitle='Banner’s lab rat (alonzo#0011) was muted for 8 hours!' authorName='Banner#1017' authorImage={bannerAvatar} timestamp={moment().toDate()} thumbnail={alonzoAvatar}>
             This user has been muted <strong>10 times</strong> on this server
                 <DiscordEmbedFields slot='fields'>
                         <DiscordEmbedField fieldTitle='Reason' inline inlineIndex={1}>Annoying</DiscordEmbedField>

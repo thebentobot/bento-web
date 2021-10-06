@@ -15,7 +15,7 @@ interface patreonUserInterface {
 }
 
 interface userDataInterface {
-    items: patreonUserInterface[]
+    items: patreonUserInterface[] | undefined
 }
 
 export default function PatreonParent({items}: userDataInterface) {
@@ -64,11 +64,11 @@ export default function PatreonParent({items}: userDataInterface) {
         }
     }
     return (
-        <motion.ul className='flex flex-wrap' initial="hidden"
+        <motion.ul className='flex lg:block flex-wrap mx-auto' initial="hidden"
         animate="show"
         variants={animation}>
-            {items.map((patreonUser, i) => (
-                <motion.div key={i} variants={animationItem} className='mx-auto'>
+            {items?.map((patreonUser, i) => (
+                <motion.div key={i} variants={animationItem} className='mx-auto inline-block p-1'>
                 <PatreonAvatar 
                 key={patreonUser.id} 
                 id={patreonUser.id}

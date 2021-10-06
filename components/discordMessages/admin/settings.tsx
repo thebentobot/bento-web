@@ -6,7 +6,7 @@ export default function Settings() {
         <DiscordMessages>
             <DiscordMessage profile='fiji'>?settings</DiscordMessage>
             <DiscordMessage profile='bentoBot'>
-                <DiscordEmbed slot='embeds' color="#f9d61b" authorName='Bento' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' authorUrl='/' embedTitle='Server settings for Bento Bot' footerImage='https://cdn.discordapp.com/avatars/232584569289703424/a_eb8033c166bb275c48749af8c7b50d80.gif?size=1024' timestamp={moment().toDate()}>
+                <DiscordEmbed slot='embeds' color="#f9d61b" authorName='Bento' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' authorUrl='/' embedTitle='Server settings for Bento Bot' footerImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' timestamp={moment().toDate()}>
                     <DiscordEmbedFields slot='fields'>
                         <DiscordEmbedField fieldTitle='Tiktok' inline inlineIndex={1}>Enabled</DiscordEmbedField>
                         <DiscordEmbedField fieldTitle='Media' inline inlineIndex={2}>Enabled</DiscordEmbedField>

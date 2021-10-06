@@ -24,3 +24,7 @@ export async function getData() {
   LIMIT 50;`, {type: QueryTypes.SELECT});
   return globalRank
 }
+
+export default async function handler(req: NextApiRequest, res: NextApiResponse){
+  res.status(200).json(await getData())
+}

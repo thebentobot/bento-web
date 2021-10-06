@@ -1,5 +1,6 @@
 import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react';
 import moment from 'moment'
+import { adamAvatar, tzuwyAvatar } from '../../../pages/_app';
 
 export default function Notification() {
     return (
@@ -32,7 +33,7 @@ export default function Notification() {
                 Link to message:
                 <br />
                 <a href='https://discord.com/channels/714496317522444352/714825604838719570/872462217587601508'>https://discord.com/channels/714496317522444352/714825604838719570/872462217587601508</a>
-                <DiscordEmbed slot='embeds' color="#ffd903" authorName='Bento Bot' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' thumbnail='https://cdn.discordapp.com/avatars/150443906511667200/daf485b105036c46aba8c283af0358db.png?size=1024'>
+                <DiscordEmbed slot='embeds' color="#ffd903" authorName='Bento Bot' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' thumbnail={tzuwyAvatar}>
                 🗨️ tzuwy#0001 mentioned <code>pizza</code> in <DiscordMention type='channel'>general</DiscordMention> on <strong>Bento Bot</strong>.
                 <br /> 
                 Link to the message <a href='https://discord.com/channels/714496317522444352/714825604838719570/872462217587601508'>here</a>
@@ -58,7 +59,7 @@ export default function Notification() {
         </p>
         <DiscordMessages>
             <DiscordMessage profile='bentoBot'>
-                <DiscordEmbed slot='embeds' embedTitle='Your saved notifications' color="#ffd903" thumbnail='https://cdn.discordapp.com/avatars/223908083825377281/bca17fe842890a45c12dc58fb0b4be45.png?size=1024'>
+                <DiscordEmbed slot='embeds' embedTitle='Your saved notifications' color="#ffd903" thumbnail={adamAvatar}>
                     <strong>pizza</strong> (Bento Bot) | <strong>burger</strong> (G) | <strong>beer</strong> (G)
                     <span slot="footer">Notifications marked with (G) is enabled globally. <br /> Notifications in total: 3.   </span>
                 </DiscordEmbed>

@@ -1,11 +1,12 @@
 import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react';
 import moment from 'moment'
+import { bannerAvatar } from '../../pages/_app';
 
 export default function BentoGreeting() {
     return (
         <DiscordMessages>
             <DiscordMessage profile='bentoBot'>
-                <DiscordEmbed slot='embeds' color="#f9d61b" authorName='Bento' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' authorUrl='https://bento.com' embedTitle='Hello! My name is Bento 🍱' footerImage='https://cdn.discordapp.com/avatars/232584569289703424/cc5e8923f457d9e00fc9605afe3da368.png?size=1024' timestamp={moment().toDate()}>
+                <DiscordEmbed slot='embeds' color="#f9d61b" authorName='Bento' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' authorUrl='https://bento.com' embedTitle='Hello! My name is Bento 🍱' footerImage={bannerAvatar} timestamp={moment().toDate()}>
                 Thank you for choosing me to service your server!
                 <br></br>
                 My default prefix is <code>?</code>.

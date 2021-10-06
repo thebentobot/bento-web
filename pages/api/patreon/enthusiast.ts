@@ -9,3 +9,8 @@ export async function getData() {
   const patreonEnthusiastData = await patreon.findAll({raw: true, where: {enthusiast: true}});
   return patreonEnthusiastData
 }
+/*
+export default async function handler(req: NextApiRequest, res: NextApiResponse){
+  res.status(200).json(await getData())
+}
+*/

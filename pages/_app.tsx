@@ -7,6 +7,16 @@ import { motion } from 'framer-motion'
 import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
 import SEO from '../next-seo.config'
+import { SWRConfig } from 'swr'
+import fetcher from '../util/fetch'
+
+export const alonzoAvatar = 'https://cdn.discordapp.com/avatars/370695349167325196/44cd8f5424b41b057d82ff5e8de737c1.png?size=1024'
+export const tzuwyAvatar = 'https://cdn.discordapp.com/avatars/150443906511667200/daf485b105036c46aba8c283af0358db.png?size=1024'
+export const enterAvatar = 'https://cdn.discordapp.com/avatars/188980576483540992/a9f07f10434d98e823a513a330e80d5b.png?size=1024'
+export const fijiAvatar = 'https://cdn.discordapp.com/avatars/229341113503318018/e2dc85840f020cdfa386645685f37ad8.png?size=1024'
+export const lewisAvatar = 'https://cdn.discordapp.com/avatars/166142440233893888/a985e46ae81da885ca44310f50d21014.png?size=1024'
+export const adamAvatar = 'https://cdn.discordapp.com/avatars/223908083825377281/11f334bfd93d854b8196c1202f4a8c9f.png?size=1024'
+export const bannerAvatar = 'https://cdn.discordapp.com/avatars/232584569289703424/49012e2ed5dec9328fae00c3244e81e4.png?size=1024'
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -20,37 +30,37 @@ function MyApp({ Component, pageProps }: AppProps) {
 				},
         banner: {
           author: 'Banner',
-          avatar: 'https://cdn.discordapp.com/avatars/232584569289703424/49012e2ed5dec9328fae00c3244e81e4.png?size=1024',
+          avatar: bannerAvatar,
           roleColor: '#ff00fa'
         },
         adam: {
           author: 'Adam',
-          avatar: 'https://cdn.discordapp.com/avatars/223908083825377281/11f334bfd93d854b8196c1202f4a8c9f.png?size=1024',
+          avatar: adamAvatar,
           roleColor: '#00B2FF'
         },
         lewis: {
           author: 'Lewis',
-          avatar: 'https://cdn.discordapp.com/avatars/166142440233893888/a985e46ae81da885ca44310f50d21014.png?size=1024',
+          avatar: lewisAvatar,
           roleColor: '#00B2FF'
         },
         fiji: {
           author: 'Fiji Spring Water',
-          avatar: 'https://cdn.discordapp.com/avatars/229341113503318018/e2dc85840f020cdfa386645685f37ad8.png?size=1024',
+          avatar: fijiAvatar,
           roleColor: '#00B2FF'
         },
         enter: {
           author: 'Enter',
-          avatar: 'https://cdn.discordapp.com/avatars/188980576483540992/a9f07f10434d98e823a513a330e80d5b.png?size=1024',
+          avatar: enterAvatar,
           roleColor: '#03f611'
         },
         tzuwy: {
           author: 'tzuwy',
-          avatar: 'https://cdn.discordapp.com/avatars/150443906511667200/daf485b105036c46aba8c283af0358db.png?size=1024',
+          avatar: tzuwyAvatar,
           roleColor: '#f0dacb'
         },
         alonzo: {
           author: 'alonzo',
-          avatar: 'https://cdn.discordapp.com/avatars/370695349167325196/df2ca2a3b91c18f2f811b0b6f4c0be5f.png?size=1024',
+          avatar: alonzoAvatar,
           roleColor: '#99ff99'
         },
 			}
@@ -83,6 +93,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
   return (
+    <SWRConfig value={{fetcher}}>
     <div className="bg-gray-800 flex flex-col min-h-screen">
       <Head>
       <link rel="icon" href="/favicon.ico" />
@@ -155,6 +166,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
       <Footer />
     </div>
+    </SWRConfig>
   )
 }
 export default MyApp

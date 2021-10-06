@@ -90,9 +90,11 @@ export default function PatreonAvatar({id, userID, name, avatar, supporter, foll
           </div>
           
           <div className='flex-grow lg:p-4 w-full md:w-auto overflow-hidden'>
-            <div className='transition duration-1000 ease-in-out text-white text-center lg:text-left overflow-hidden text-base lg:text-lg'>
+          {name.length > 15 ? <div className='transition duration-1000 ease-in-out text-white text-center lg:text-left overflow-hidden text-base'>
               {name}
-            </div>
+            </div> : <div className='transition duration-1000 ease-in-out text-white text-center lg:text-left overflow-hidden text-lg'>
+              {name}
+            </div>}
             {/*
             <div className='transition duration-300 ease-in-out mt-1 mb-1 w-full h-1 bg-gray-700 group-hover:bg-gray-500 rounded overflow-hidden'>
              <motion.div animate={controls} className='transition duration-1000 ease-in-out rounded h-full bg-gradient-to-r from-red-500 via-yellow-500 to-yellow-300 opacity-75 hover:opacity-100 overflow-hidden' style={{width: '0%'}}></motion.div> 

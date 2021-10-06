@@ -51,6 +51,14 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
+// SWR should be implemented in the same way as ./leaderboard.tsx
+// it didn't work because it came with an error about
+// Rendered fewer hooks than expected. This may be caused by an accidental early return statement in React Hooks
+
+// so we'll just use server side rendering till netlify can revalidate
+
+// or we can try again some day
+
 export default function Support({ supporters, followers, enthusiasts, disciples, sponsors }: patreonData) {
  
   const shouldReduceMotion = useReducedMotion()
