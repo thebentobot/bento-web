@@ -64,7 +64,7 @@ export default function PatreonParent({items}: userDataInterface) {
         }
     }
     return (
-        <motion.ul className='flex lg:block flex-wrap mx-auto' initial="hidden"
+        <motion.ul className='block flex-wrap mx-auto text-center' initial="hidden"
         animate="show"
         variants={animation}>
             {items?.map((patreonUser, i) => (

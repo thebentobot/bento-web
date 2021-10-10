@@ -13,9 +13,9 @@ import fetcher from '../util/fetch'
 export const alonzoAvatar = 'https://cdn.discordapp.com/avatars/370695349167325196/44cd8f5424b41b057d82ff5e8de737c1.png?size=1024'
 export const tzuwyAvatar = 'https://cdn.discordapp.com/avatars/150443906511667200/daf485b105036c46aba8c283af0358db.png?size=1024'
 export const enterAvatar = 'https://cdn.discordapp.com/avatars/188980576483540992/a9f07f10434d98e823a513a330e80d5b.png?size=1024'
-export const fijiAvatar = 'https://cdn.discordapp.com/avatars/229341113503318018/e2dc85840f020cdfa386645685f37ad8.png?size=1024'
+export const fijiAvatar = 'https://cdn.discordapp.com/avatars/229341113503318018/244e3283aea558fb07d1ef236b41e5e2.png?size=1024'
 export const lewisAvatar = 'https://cdn.discordapp.com/avatars/166142440233893888/a985e46ae81da885ca44310f50d21014.png?size=1024'
-export const adamAvatar = 'https://cdn.discordapp.com/avatars/223908083825377281/11f334bfd93d854b8196c1202f4a8c9f.png?size=1024'
+export const adamAvatar = 'https://cdn.discordapp.com/avatars/229341113503318018/244e3283aea558fb07d1ef236b41e5e2.png?size=1024'
 export const bannerAvatar = 'https://cdn.discordapp.com/avatars/232584569289703424/49012e2ed5dec9328fae00c3244e81e4.png?size=1024'
 
 function MyApp({ Component, pageProps }: AppProps) {

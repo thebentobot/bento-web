@@ -4,7 +4,9 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        'pulse-bento': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite' 
+        'pulse-bento': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'bounce200': 'bounce 1s infinite 200ms',
+        'bounce400': 'bounce 1s infinite 400ms',
       },
       colors: {
         discordBlue: '	#7289da',
