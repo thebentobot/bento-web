@@ -15,7 +15,7 @@ export const tzuwyAvatar = 'https://cdn.discordapp.com/avatars/15044390651166720
 export const enterAvatar = 'https://cdn.discordapp.com/avatars/188980576483540992/a9f07f10434d98e823a513a330e80d5b.png?size=1024'
 export const fijiAvatar = 'https://cdn.discordapp.com/avatars/229341113503318018/244e3283aea558fb07d1ef236b41e5e2.png?size=1024'
 export const lewisAvatar = 'https://cdn.discordapp.com/avatars/166142440233893888/a985e46ae81da885ca44310f50d21014.png?size=1024'
-export const adamAvatar = 'https://cdn.discordapp.com/avatars/229341113503318018/244e3283aea558fb07d1ef236b41e5e2.png?size=1024'
+export const adamAvatar = 'https://cdn.discordapp.com/avatars/223908083825377281/39109a66ccf9305002c8cbd96451dc08.png?size=1024'
 export const bannerAvatar = 'https://cdn.discordapp.com/avatars/232584569289703424/49012e2ed5dec9328fae00c3244e81e4.png?size=1024'
 
 function MyApp({ Component, pageProps }: AppProps) {
