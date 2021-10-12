@@ -26,7 +26,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 					author: 'Bento',
 					avatar: `https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024`,
 					roleColor: '#f9d61b',
-          bot: true
+          bot: true,
+          verified: true
 				},
         banner: {
           author: 'Banner',
