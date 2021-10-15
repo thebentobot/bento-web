@@ -459,6 +459,70 @@ export const commandsList: commandsInterface[] = [
       "description":"Customise your profile for the rank command. Add background picture, change every colour, add birthday and timezone, and a funny description.",
       "usage":`?sketch bgpic <image URL>\n?sketch desc <add/colour/opacity/status> <description text / hex colour / 0-100>\n?sketch timezone <tz database value, e.g. "Europe/Copenhagen">\n?sketch birthday <birthday e.g. "25 November">\n?sketch username <hex color>\n?sketch discriminator <hex color>\n?sketch overlay <colour/opacity/status> <hex colour/ 0-100>\n?sketch bgcolour <colour/opacity/status> <hex colour / 0-100>\n?sketch fm <toggle/bg/status/song/artist> <colour/opacity> <hex colour / 0-100>\n?sketch xpboard <toggle/bg/status/text/bar/barbg/text1/text2/bar1/bar2/barbg1/barbg2> <colour/opacity> <hex colour / 0-100>\n?sketch sidebar <opacity/colour/blur/rank/users/status> <hex colour/ 0-100 / number for blur amount / if it is rank or users you need to specify if it is either the server, global, bento or timezone row, before writing colour> <hex colour for rank and users>\n?sketch delete`
    },
+   {
+      "name":"8ball",
+      "aliases":[
+      ],
+      "category":"features",
+      "description":"Ask Bento a question and you will get an answer",
+      "usage":`?8ball <question>`
+   },
+   {
+      "name":"cat",
+      "aliases":[
+      ],
+      "category":"features",
+      "description":"Make Bento send a random cat 🐱🥺",
+      "usage":`?cat`
+   },
+   {
+      "name":"choose",
+      "aliases":[
+      ],
+      "category":"features",
+      "description":"Make Bento choose one of the options",
+      "usage":`?choose <option 1> <option 2> <option ∞>`
+   },
+   {
+      "name":"colour",
+      "aliases":["color"
+      ],
+      "category":"features",
+      "description":"Make Bento send a picture of the hexcode/RGB colour you sent",
+      "usage":`?colour <hexcode colour / RGB colour>`
+   },
+   {
+      "name":"dog",
+      "aliases":[
+      ],
+      "category":"features",
+      "description":"Make Bento send a random dog 🐶🥺",
+      "usage":`?dog`
+   },
+   {
+      "name":"roll",
+      "aliases":[
+      ],
+      "category":"features",
+      "description":"Make Bento roll a random number between 1 and the value you set (max. 100)",
+      "usage":`?roll <number between 1-100>`
+   },
+   {
+      "name":"rps",
+      "aliases":[
+      ],
+      "category":"features",
+      "description":"Play Rock, Paper, Scissors with Bento 🍱",
+      "usage":`?rps <rock, paper, scissors>`
+   },
+   {
+      "name":"streamable",
+      "aliases":[
+      ],
+      "category":"features",
+      "description":"Get a Streamable link of your desired video. There is a 250 MB / 10 minute / up to 720p 60 fps limit per video.",
+      "usage":`?streamable <valid video URL or attachment> [title for the video]`
+   },
     {
        "name":"reminder",
        "aliases":[
