@@ -1,4 +1,4 @@
-import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions } from '@skyra/discord-components-react';
+import { DiscordAttachment, DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions } from '@skyra/discord-components-react';
 import moment from 'moment'
 import { bannerAvatar, enterAvatar } from '../../../pages/_app';
 
@@ -104,6 +104,10 @@ export default function Lastfm() {
                     <DiscordReaction emoji="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/282/right-arrow_27a1-fe0f.png"></DiscordReaction>
                     <DiscordReaction emoji="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/whatsapp/273/cross-mark_274c.png"></DiscordReaction>
                 </DiscordReactions>
+            </DiscordMessage>
+            <DiscordMessage profile='banner'>?fm collage topalbums 6month <DiscordMention type='user'>Fiji Spring Water</DiscordMention> 4x4</DiscordMessage>
+            <DiscordMessage profile='bentoBot'>
+                <DiscordAttachment height={300} width={300} url='https://cdn.discordapp.com/attachments/714836721979621448/898810063211347998/Alqhaman-6month-2021-10-16T055017.735Z.png'></DiscordAttachment>
             </DiscordMessage>
             {/* 
             <DiscordMessage profile='banner'>?fm wkt</DiscordMessage>
