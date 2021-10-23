@@ -178,8 +178,8 @@ export const commandsList: commandsInterface[] = [
           
        ],
        "category":"features",
-       "description":"Searches for a random GIF based on the search input. The GIF comes from Tenor which has a g-rated content filter for non-NSFW channels. The filter is off in NSFW channels.",
-       "usage":"?gif <search input>"
+       "description":"Searches for a random GIF based on the search input.\nThe GIFs comes from Gfycat, who has removed adult content from their site, so no fear of NSFW content (NSFW filtering is applied just to be sure).\nIf you want to see multiple posts add --multi after the search input, and if you want to specify how many multiple posts it is --count followed by a number between 1-50.\n--tenor searches for GIFs with Tenor.\nTenor has a g-rated content filter for non-NSFW channels. The filter is off in NSFW channels. It is not possible to see multiple Tenor posts.",
+       "usage":"?gif <search input> [--tenor] [--multi [--count <number between 1-50>]]"
     },
     {
        "name":"horoscope",

@@ -18,6 +18,7 @@ import CaseEdit from "../discordMessages/case/caseEdit"
 import CaseList from "../discordMessages/case/caseList"
 import CaseSearch from "../discordMessages/case/caseSearch"
 import CaseUser from "../discordMessages/case/caseUser"
+import Gif from "../discordMessages/features/gif"
 import Horoscope from "../discordMessages/features/horoscope"
 import Lastfm from "../discordMessages/features/lastfm"
 import Tag from "../discordMessages/features/tag"
@@ -433,6 +434,16 @@ export default function CommandChild ({ name, aliases, category, description, us
             </h1>
             <div className='mt-2 opacity-50 group-hover:opacity-100'>
                 <Rank />
+            </div>
+        </div>
+        }
+        {name !== 'gif' ? null : 
+        <div>
+            <h1 id={name} className='text-lg font-extrabold text-gray-300 text-opacity-50 sm:text-xl group-hover:text-opacity-100 text-center'>
+                Examples
+            </h1>
+            <div className='mt-2 opacity-50 group-hover:opacity-100'>
+                <Gif />
             </div>
         </div>
         }

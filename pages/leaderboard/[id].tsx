@@ -132,12 +132,7 @@ export function Users () {
             {userData ? <motion.img width={256} height={256} initial="hidden"
         animate="show"
         variants={animation} className='mx-auto shadow-lg' src={guildData?.icon}></motion.img>
-      : <div>
-      <motion.div initial="hidden"
-            animate="show"
-            variants={animation} style={{borderTopColor: 'transparent'}}
-          className="w-16 h-16 border-4 border-yellow-400 border-solid rounded-full animate-spin mx-auto"></motion.div>
-    </div>}
+      : ''}
             </motion.div>
             <br></br>
             {userData ? <div className='max-w-screen-2xl mx-auto px-3'>
