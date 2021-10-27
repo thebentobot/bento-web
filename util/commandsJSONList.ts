@@ -45,6 +45,15 @@ export const commandsList: commandsInterface[] = [
        "usage":"?autorole status\n?autorole set <roleID or role mention>\n?autorole delete <roleID>\n?autorole list"
     },
     {
+      "name":"gfycat",
+      "aliases":[
+         
+      ],
+      "category":"features",
+      "description":"Various Gfycat features. Create GIFs with video URLs or video attachments, get gfycat user profiles or feeds, get info about a gfycat post, or search for gfycat posts just like the gif command.",
+      "usage":"?gfycat create <video url, or attachment> [--full if you want the whole video as a gif. If this is added, no need to specify start seconds and duration] <seconds to start at> <duration of the gif> [title of your gfycat post]\n?gfycat user profile <gfycat username>\n?gfycat user feed <gfycat username> [count number between 1-30]\n?gfycat info <gfycat post name e.g. naiveamusingfritillarybutterfly>\n?gfycat search <search input> [--multi [--count <number between 1-30>]]"
+   },
+    {
        "name":"bye",
        "aliases":[
           
