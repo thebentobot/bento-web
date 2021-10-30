@@ -15,7 +15,7 @@ export default function Gfycat() {
                 <DiscordEmbed
 							slot="embeds"
 							video="https://cdn.discordapp.com/attachments/790353119795871747/901890386472083486/final_60d9ce9be41395002f59db35_859548.mp4"
-                            image='https://cdn.discordapp.com/attachments/498990980209573921/903042717871906877/unknown.png'
+                            image='https://cdn.discordapp.com/attachments/734282792447377410/903815573526437948/unknown.png'
                         ></DiscordEmbed>
             </DiscordMessage>
             <DiscordMessage profile='bentoBot'>
