@@ -31,7 +31,7 @@ The Bento 🍱 website is written in TypeScript and powered by the [React](https
 ### Installing the database side of Bento 🍱
 
 * Either locally run/install [PostgreSQL](https://www.postgresql.org/) or get a PostgreSQL database elsewhere. Other SQL databases may be possible considering Bento uses [Sequelize](https://sequelize.org/), but it is not tested and isn't recommended because the code may use PostgreSQL specific features, and it requires additional changes to the code. May be possible to use NoSQL with refactoring of code.
-* The creation of the database tabels. An SQL schema file will be provided in the future, but it is possible to recreate the tables by looking through the [Sequelize-auto](https://github.com/sequelize/sequelize-auto) generated models [here](https://github.com/thebentobot/bento-web/tree/master/database/models)
+* The creation of the database tables. An SQL DDL schema file can be found [here](https://github.com/thebentobot/bentoTS/blob/master/src/database/DDL.sql)
 
 ### Installing Bento 🍱 web
 
