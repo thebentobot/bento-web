@@ -383,8 +383,8 @@ export const commandsList: commandsInterface[] = [
           
        ],
        "category":"moderation",
-       "description":"Removes messages. If you don't mention a channel, it deletes in the channel you're in. If you don't mention a user, it deletes x number of messages in the current channel.",
-       "usage":"?prune <1-100> [mention a user or a user id] [all channels or mention a channel or a channel id]"
+       "description":"Removes messages. If you don't mention a channel, it deletes in the channel you're in. If you don't mention a user, it deletes x number of messages in the current channel. If you mention a user but no channel, it deletes the messages for the user in all channels on the server.",
+       "usage":"?prune <1-100> [mention a user or a user id] [all, or mention a channel or a channel id]"
     },
     {
        "name":"say",

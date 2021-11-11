@@ -12,7 +12,7 @@ import fetcher from '../util/fetch'
 
 export const alonzoAvatar = 'https://cdn.discordapp.com/avatars/370695349167325196/28495cfc3e5e3c405db7a98d66f81c1c.png?size=1024'
 export const tzuwyAvatar = 'https://cdn.discordapp.com/avatars/150443906511667200/daf485b105036c46aba8c283af0358db.png?size=1024'
-export const enterAvatar = 'https://cdn.discordapp.com/avatars/188980576483540992/f72c5a6056761f41fac9258a61ac1ce8.png?size=1024'
+export const enterAvatar = 'https://cdn.discordapp.com/avatars/188980576483540992/ed246783031262e8cd8d8610566c5880.png?size=1024'
 export const fijiAvatar = 'https://cdn.discordapp.com/avatars/229341113503318018/9fe7c729963f59924a946b20d11b4c52.png?size=1024'
 export const lewisAvatar = 'https://cdn.discordapp.com/avatars/166142440233893888/a985e46ae81da885ca44310f50d21014.png?size=1024'
 export const adamAvatar = 'https://cdn.discordapp.com/avatars/223908083825377281/54328c9b31bccf29a66c0878cefe8572.png?size=1024'
