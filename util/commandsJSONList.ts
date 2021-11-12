@@ -45,6 +45,15 @@ export const commandsList: commandsInterface[] = [
        "usage":"?autorole status\n?autorole set <roleID or role mention>\n?autorole delete <roleID>\n?autorole list"
     },
     {
+      "name":"channeldisable",
+      "aliases":[
+         "chd"
+      ],
+      "category":"admin",
+      "description":"Disable Bento commands for multiple channels (unless it's a user who has permission to manage messages)",
+      "usage":"?channeldisable <status>\n?channeldisable set <channelID or channel mention>\n?channeldisable delete <channelID or channel mention>\n?channeldisable list"
+   },
+    {
       "name":"gfycat",
       "aliases":[
          
@@ -72,13 +81,13 @@ export const commandsList: commandsInterface[] = [
        "usage":"?caseglobal server <enable/disable/status>\n?caseglobal reasons <enable/disable/status>"
     },
     {
-      "name":"leaderboardSettings",
+      "name":"leaderboardsettings",
       "aliases":[
          "lbs"
       ],
       "category":"admin",
       "description":"Enable or disable the XP and levelling system on this server.",
-      "usage":"?leaderboardSettings <enable/disable/status>"
+      "usage":"?leaderboardsettings <enable/disable/status>"
    },
     {
        "name":"leaderboard",
