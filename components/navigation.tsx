@@ -1,11 +1,11 @@
-import { useRouter } from 'next/router';
-import { Disclosure} from '@headlessui/react';
-import { MenuIcon, XIcon } from '@heroicons/react/outline';
+import { useRouter } from 'next/router'
+import { Disclosure} from '@headlessui/react'
+import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { motion, useReducedMotion, Variants } from "framer-motion"
 import Link from 'next/link'
 
 function classNames(...classes:any) {
-  return classes.filter(Boolean).join(' ');
+  return classes.filter(Boolean).join(' ')
 };
 
 export default function Example() {
@@ -51,14 +51,14 @@ export default function Example() {
     }
   }
 
-    const { asPath } = useRouter();
+    const { asPath } = useRouter()
     const navigation = [
-        { name: 'About', href: '/about', current: asPath == '/about' ? true : false },
-        { name: 'Support', href: '/support', current: asPath == '/support' ? true : false },
-        { name: 'Setup', href: '/setup', current: asPath == '/setup' ? true : false },
-        { name: 'Commands', href: '/commands', current: asPath == '/commands' ? true : false },
-        { name: 'Leaderboard', href: '/leaderboard', current: asPath == '/leaderboard' ? true : false },
-      ];
+        { name: 'About', href: '/about', current: asPath === '/about' ? true : false },
+        { name: 'Support', href: '/support', current: asPath === '/support' ? true : false },
+        { name: 'Setup', href: '/setup', current: asPath === '/setup' ? true : false },
+        { name: 'Commands', href: '/commands', current: asPath === '/commands' ? true : false },
+        { name: 'Leaderboard', href: '/leaderboard', current: asPath === '/leaderboard' ? true : false },
+      ]
   return (
     <Disclosure as="nav" className="bg-gray-900">
       {({ open }) => (
@@ -131,5 +131,5 @@ export default function Example() {
       )}
     </Disclosure>
     
-  );
+  )
 }

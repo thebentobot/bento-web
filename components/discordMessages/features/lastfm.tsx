@@ -1,6 +1,6 @@
-import { DiscordAttachment, DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions } from '@skyra/discord-components-react';
+import { DiscordAttachment, DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions } from '@skyra/discord-components-react'
 import moment from 'moment'
-import { bannerAvatar, enterAvatar } from '../../../pages/_app';
+import { bannerAvatar, enterAvatar } from '../../../pages/_app'
 
 export default function Lastfm() {
     return (

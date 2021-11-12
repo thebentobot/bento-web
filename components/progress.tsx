@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState } from "react"
 
 export default function Progress (done: any): JSX.Element {
-	const [style, setStyle] = useState({});
+	const [style, setStyle] = useState({})
 	
 	setTimeout(() => {
 		const newStyle = {
@@ -9,8 +9,8 @@ export default function Progress (done: any): JSX.Element {
 			width: `${done}%`
 		}
 		
-		setStyle(newStyle);
-	}, 200);
+		setStyle(newStyle)
+	}, 200)
 	
 	return (
 		<div className='progress'>

@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import { useState } from "react";
+import { useState } from "react"
 
 interface LeaderboardChildRankingsInterface {
     rank: string,
@@ -12,7 +12,7 @@ interface LeaderboardChildRankingsInterface {
 }
 
 const Progress = ({done}: any) => {
-	const [style, setStyle] = useState({});
+	const [style, setStyle] = useState({})
 	
 	setTimeout(() => {
 		const newStyle = {
@@ -20,8 +20,8 @@ const Progress = ({done}: any) => {
 			width: `${done}%`
 		}
 		
-		setStyle(newStyle);
-	}, 500);
+		setStyle(newStyle)
+	}, 500)
 	
 	return (
 		<div className='transition duration-300 ease-in-out mt-1 mb-1 w-full h-1 bg-gray-700 group-hover:bg-gray-500 rounded overflow-hidden'>
@@ -33,27 +33,27 @@ const Progress = ({done}: any) => {
 
 export default function LeaderboardChild({userID, rank, level, xp, username, discriminator, avatarURL}: LeaderboardChildRankingsInterface) {
   const avatar = avatarURL ? avatarURL : `https://cdn.discordapp.com/embed/avatars/${Number(discriminator) % 5}.png`
-  let topUsersStyle = {};
+  let topUsersStyle = {}
 
     switch (Number(rank)) {
       case 1:
         topUsersStyle = {
           color: '#FFD700',
           fontWeight: 1000,
-        };
-      break;
+        }
+      break
       case 2:
         topUsersStyle = {
           color: "#C0C0C0",
           fontWeight: 700,
-        };
-      break;
+        }
+      break
       case 3:
         topUsersStyle = {
           color: "#CD7F32",
           fontWeight: 500,
-        };
-      break;
+        }
+      break
     }
 
     const percent = (xp / (level * level * 100)) * 100

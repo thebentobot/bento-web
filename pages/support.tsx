@@ -1,15 +1,15 @@
-import Head from "next/head";
+import Head from "next/head"
 import { motion, useReducedMotion, Variants } from "framer-motion"
-import { NextSeo } from 'next-seo';
-import { GetStaticProps } from "next";
-import { getData as getPatreonSupportersData } from "./api/patreon/supporter";
-import { getData as getPatreonFollowersData } from "./api/patreon/follower";
-import { getData as getPatreonEnthusiastsData } from "./api/patreon/enthusiast";
-import { getData as getPatreonDisciplesData } from "./api/patreon/disciple";
-import { getData as getPatreonSponsorsData } from "./api/patreon/sponsor";
-import PatreonParent from "../components/patreon/patreonParent";
+import { NextSeo } from 'next-seo'
+import { GetStaticProps } from "next"
+import { getData as getPatreonSupportersData } from "./api/patreon/supporter"
+import { getData as getPatreonFollowersData } from "./api/patreon/follower"
+import { getData as getPatreonEnthusiastsData } from "./api/patreon/enthusiast"
+import { getData as getPatreonDisciplesData } from "./api/patreon/disciple"
+import { getData as getPatreonSponsorsData } from "./api/patreon/sponsor"
+import PatreonParent from "../components/patreon/patreonParent"
 import useSWR, { SWRConfig } from 'swr'
-import fetcher from "../util/fetch";
+import fetcher from "../util/fetch"
 
 export interface patreon {
   id: number,
@@ -87,7 +87,7 @@ export function Patreon() {
   const { data: discipleData, error: discipleError } = useSWR<patreon[]>('/api/patreon/disciple', fetcher, {refreshInterval: 30000, revalidateOnFocus: true})
   const { data: sponsorData, error: sponsorError } = useSWR<patreon[]>('/api/patreon/sponsor', fetcher, {refreshInterval: 30000, revalidateOnFocus: true})
 
-  let rankArray = [];
+  let rankArray = []
   if (!!sponsorData?.length !== false) rankArray.push(sponsorData)
   if (!!discipleData?.length !== false) rankArray.push(discipleData)
   if (!!enthusiastData?.length !== false) rankArray.push(enthusiastData)
@@ -195,7 +195,7 @@ export function Patreon() {
       </div>
       </div>
       
-    );
+    )
   } else {
     return (
       <div>
@@ -369,7 +369,7 @@ export function Patreon() {
       </div>
       </div>
       
-    );
+    )
   }
 }
 

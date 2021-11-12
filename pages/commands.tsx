@@ -1,17 +1,17 @@
-import Head from "next/head";
-import { commandsCategoryList, commandsList } from "../util/commandsJSONList";
+import Head from "next/head"
+import { commandsCategoryList, commandsList } from "../util/commandsJSONList"
 import { motion, useReducedMotion, Variants } from "framer-motion"
-import { adminCommands } from "../components/commands/admin";
-import { featureCommands } from "../components/commands/features";
-import { infoCommands } from "../components/commands/info";
-import { moderationCommands } from "../components/commands/moderation";
-import { userCommands } from "../components/commands/user";
-import React, { useState } from "react";
-import { capitalize } from "../util/capitalize";
-import { NextSeo } from "next-seo";
-import dynamic from 'next/dynamic';
-import PrefixExample from "../components/discordMessages/prefixExample";
-import PrefixExample2 from "../components/discordMessages/prefixExample2";
+import { adminCommands } from "../components/commands/admin"
+import { featureCommands } from "../components/commands/features"
+import { infoCommands } from "../components/commands/info"
+import { moderationCommands } from "../components/commands/moderation"
+import { userCommands } from "../components/commands/user"
+import React, { useState } from "react"
+import { capitalize } from "../util/capitalize"
+import { NextSeo } from "next-seo"
+import dynamic from 'next/dynamic'
+import PrefixExample from "../components/discordMessages/prefixExample"
+import PrefixExample2 from "../components/discordMessages/prefixExample2"
 
 const Admin = dynamic(() => import("../components/commands/admin"))
 const Features = dynamic(() => import("../components/commands/features"))
@@ -20,8 +20,8 @@ const Moderation = dynamic(() => import("../components/commands/moderation"))
 const User = dynamic(() => import("../components/commands/user"))
 
 export default function Commands() {
-  const [showModal, setShowModal] = useState(false);
-  const [showCommand, setCommand] = useState('');
+  const [showModal, setShowModal] = useState(false)
+  const [showCommand, setCommand] = useState('')
 
   function buttonFunction(category: string) {
     setShowModal(true)
@@ -324,5 +324,5 @@ export default function Commands() {
         </div>
       </div>
       </div>     
-    );
+    )
   }

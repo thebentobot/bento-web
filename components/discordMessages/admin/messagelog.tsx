@@ -1,6 +1,6 @@
-import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react';
-import moment from 'moment';
-import { alonzoAvatar, bannerAvatar } from '../../../pages/_app';
+import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
+import moment from 'moment'
+import { alonzoAvatar, bannerAvatar } from '../../../pages/_app'
 
 export default function MessageLog() {
     return (

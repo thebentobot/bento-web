@@ -1,6 +1,6 @@
-import Head from "next/head";
+import Head from "next/head"
 import { motion, useReducedMotion, Variants } from "framer-motion"
-import { NextSeo } from 'next-seo';
+import { NextSeo } from 'next-seo'
 import Link from 'next/link'
 
 export default function About() {
@@ -178,5 +178,5 @@ const animation: Variants = shouldReduceMotion ? {
       </div>
       </div>
       
-    );
+    )
   }

@@ -1,4 +1,4 @@
-import LeaderboardChild from "./leaderboardChild";
+import LeaderboardChild from "./leaderboardChild"
 import { motion, useReducedMotion, Variants } from "framer-motion"
 
 interface LeaderboardParentRankingsInterface {

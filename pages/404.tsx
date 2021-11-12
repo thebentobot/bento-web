@@ -1,7 +1,7 @@
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/router'
 
 export default function NotFound() {
-    const { asPath } = useRouter();
+    const { asPath } = useRouter()
     return (
         <div className="py-12 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,5 +16,5 @@ export default function NotFound() {
           </div>
         </div>
       </div>
-    );
+    )
 }

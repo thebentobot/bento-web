@@ -1,6 +1,6 @@
-import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions } from '@skyra/discord-components-react';
+import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions } from '@skyra/discord-components-react'
 import moment from 'moment'
-import { alonzoAvatar, bannerAvatar } from '../../../pages/_app';
+import { alonzoAvatar, bannerAvatar } from '../../../pages/_app'
 
 export default function CaseCheck() {
     return (

@@ -7,7 +7,7 @@ import { getData as serverDataFetch } from './api/stats/servers'
 import { motion, Variants, useReducedMotion } from "framer-motion"
 import { NextSeo } from 'next-seo'
 import useSWR, { SWRConfig } from 'swr'
-import fetcher from "../util/fetch";
+import fetcher from "../util/fetch"
 
 const features = [
   {
@@ -34,7 +34,7 @@ const features = [
       'Do you only care for the moderation tools and think some of the extra features are unnecessary? Bento 🍱 allows you to enable and disable features according to your server and its preferences. Don\'t want a leaderboard for your server? Disable it. Don\'t want GIFs at all? Disable it.',
     icon: CogIcon,
   },
-];
+]
 
 export interface Data {
   usersCount: number,
@@ -277,7 +277,7 @@ const bottomAnimation: Variants = shouldReduceMotion ? {
     </motion.div>
       </div>
     </div>
-  );
+  )
   } else {
 
 const animation: Variants = shouldReduceMotion ? {
@@ -484,7 +484,7 @@ const bottomAnimation: Variants = shouldReduceMotion ? {
     </motion.div>
       </div>
     </div>
-  );
+  )
   }
 }
 

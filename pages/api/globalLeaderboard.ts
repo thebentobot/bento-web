@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { QueryTypes } from 'sequelize';
+import { QueryTypes } from 'sequelize'
 import database from '../../database/database'
 import { initModels, user } from '../../database/models/init-models'
 
@@ -21,7 +21,7 @@ export async function getData() {
   FROM "user" AS t
   GROUP BY t.level, t.xp, t.username, t.discriminator, t."avatarURL"
   ORDER BY t.level DESC, t.xp DESC
-  LIMIT 50;`, {type: QueryTypes.SELECT});
+  LIMIT 50;`, {type: QueryTypes.SELECT})
   return globalRank
 }
 

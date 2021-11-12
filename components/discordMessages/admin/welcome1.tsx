@@ -1,4 +1,4 @@
-import { DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react';
+import { DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
 
 export default function Welcome1() {
     return (

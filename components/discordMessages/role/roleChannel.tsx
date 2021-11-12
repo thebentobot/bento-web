@@ -1,5 +1,5 @@
-import { DiscordEmbed, DiscordEmbedFields, DiscordEmbedField, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react';
-import moment from 'moment';
+import { DiscordEmbed, DiscordEmbedFields, DiscordEmbedField, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
+import moment from 'moment'
 
 export default function RoleChannel() {
     return (

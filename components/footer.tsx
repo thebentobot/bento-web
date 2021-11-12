@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function Footer() {
     return (
         <div className="bg-gray-800 mt-4">
@@ -57,5 +55,5 @@ export default function Footer() {
                 </div>
             </footer>
         </div>
-    );
+    )
 }

@@ -1,4 +1,4 @@
-import PatreonAvatar from "./patreonAvatar";
+import PatreonAvatar from "./patreonAvatar"
 import { motion, useReducedMotion, Variants } from "framer-motion"
 
 interface patreonUserInterface {

@@ -1,4 +1,4 @@
-import { DiscordAttachment, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react';
+import { DiscordAttachment, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
 
 export default function Bento() {
     return (

@@ -1,6 +1,6 @@
-import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react';
+import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
 import moment from 'moment'
-import { adamAvatar, bannerAvatar } from '../../../pages/_app';
+import { adamAvatar, bannerAvatar } from '../../../pages/_app'
 
 export default function Horoscope() {
     return (

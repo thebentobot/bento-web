@@ -1,4 +1,4 @@
-import { DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions, DiscordEmbed } from '@skyra/discord-components-react';
+import { DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions, DiscordEmbed } from '@skyra/discord-components-react'
 // 'position:relative; padding-bottom:calc(56.25% + 44px)'
 export default function Gfycat() {
     return (

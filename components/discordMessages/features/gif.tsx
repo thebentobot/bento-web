@@ -1,4 +1,4 @@
-import { DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions } from '@skyra/discord-components-react';
+import { DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions } from '@skyra/discord-components-react'
 // 'position:relative; padding-bottom:calc(56.25% + 44px)'
 export default function Gif() {
     return (

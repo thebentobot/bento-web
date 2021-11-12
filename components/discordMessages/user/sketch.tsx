@@ -1,4 +1,4 @@
-import { DiscordMention, DiscordMessage, DiscordMessages, DiscordAttachments, DiscordAttachment } from '@skyra/discord-components-react';
+import { DiscordMention, DiscordMessage, DiscordMessages, DiscordAttachments, DiscordAttachment } from '@skyra/discord-components-react'
 
 export default function Sketch() {
     return (

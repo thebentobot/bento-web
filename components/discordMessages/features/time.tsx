@@ -1,4 +1,4 @@
-import { DiscordMessage, DiscordMessages } from '@skyra/discord-components-react';
+import { DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
 
 export default function Time() {
     return (

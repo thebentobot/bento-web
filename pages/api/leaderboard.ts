@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { QueryTypes } from 'sequelize';
+import { QueryTypes } from 'sequelize'
 import database from '../../database/database'
 import { initModels, user } from '../../database/models/init-models'
 
@@ -22,7 +22,7 @@ export async function getData(guildID: string) {
     WHERE t."guildID" = :guild
     GROUP BY t.level, t.xp, u.username, u.discriminator, t."avatarURL"
     ORDER BY t.level DESC, t.xp DESC
-    LIMIT 50;`, {type: QueryTypes.SELECT, replacements: {guild: guildID}});
+    LIMIT 50;`, {type: QueryTypes.SELECT, replacements: {guild: guildID}})
     return serverRank
 }
 

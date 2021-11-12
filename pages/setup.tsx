@@ -1,9 +1,9 @@
-import Head from "next/head";
-import BentoGreeting from "../components/discordMessages/bentoGreeting";
-import Prefix from "../components/discordMessages/admin/prefix";
+import Head from "next/head"
+import BentoGreeting from "../components/discordMessages/bentoGreeting"
+import Prefix from "../components/discordMessages/admin/prefix"
 import { motion, useReducedMotion, Variants } from "framer-motion"
-import { NextSeo } from "next-seo";
-import dynamic from 'next/dynamic';
+import { NextSeo } from "next-seo"
+import dynamic from 'next/dynamic'
 
 const Settings = dynamic(() => import("../components/discordMessages/admin/settings"))
 
@@ -123,5 +123,5 @@ const animation: Variants = shouldReduceMotion ? {
       </motion.div>
       </div>
       
-    );
+    )
   }

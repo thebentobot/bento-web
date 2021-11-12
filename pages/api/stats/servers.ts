@@ -5,7 +5,7 @@ import { guild, initModels } from '../../../database/models/init-models'
 
 export async function getData() {
   initModels(database)
-  const serverData = await guild.findAndCountAll();
+  const serverData = await guild.findAndCountAll()
   return { count: serverData.count }
 }
 

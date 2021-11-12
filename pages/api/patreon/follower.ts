@@ -2,11 +2,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import database from '../../../database/database'
 import { initModels, patreon } from '../../../database/models/init-models'
-import { guild } from '../../../database/models/guild';
 
 export async function getData() {
   initModels(database)
-  const patreonFollowerData = await patreon.findAll({raw: true, where: {follower: true}});
+  const patreonFollowerData = await patreon.findAll({raw: true, where: {follower: true}})
   return patreonFollowerData
 }
 

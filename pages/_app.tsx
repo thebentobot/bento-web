@@ -65,10 +65,10 @@ function MyApp({ Component, pageProps }: AppProps) {
           roleColor: '#99ff99'
         },
 			}
-		};
-	}, []);
+		}
+	}, [])
 
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false)
 
   // Top: 0 takes us all the way back to the top of the page
   // Behavior: smooth keeps it smooth!
@@ -76,23 +76,23 @@ function MyApp({ Component, pageProps }: AppProps) {
     window.scrollTo({
       top: 0,
       behavior: "smooth"
-    });
-  };
+    })
+  }
 
   useEffect(() => {
     // Button is displayed after scrolling for 250 pixels
     const toggleVisibility = () => {
       if (window.pageYOffset > 250) {
-        setIsVisible(true);
+        setIsVisible(true)
       } else {
-        setIsVisible(false);
+        setIsVisible(false)
       }
-    };
+    }
 
-    window.addEventListener("scroll", toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility)
 
-    return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
+    return () => window.removeEventListener("scroll", toggleVisibility)
+  }, [])
   return (
     <SWRConfig value={{fetcher}}>
     <div className="bg-gray-800 flex flex-col min-h-screen">
