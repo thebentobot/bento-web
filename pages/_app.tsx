@@ -16,7 +16,7 @@ export const enterAvatar = 'https://cdn.discordapp.com/avatars/18898057648354099
 export const fijiAvatar = 'https://cdn.discordapp.com/avatars/229341113503318018/9fe7c729963f59924a946b20d11b4c52.png?size=1024'
 export const lewisAvatar = 'https://cdn.discordapp.com/avatars/166142440233893888/a985e46ae81da885ca44310f50d21014.png?size=1024'
 export const adamAvatar = 'https://cdn.discordapp.com/avatars/223908083825377281/54328c9b31bccf29a66c0878cefe8572.png?size=1024'
-export const bannerAvatar = 'https://cdn.discordapp.com/avatars/232584569289703424/7a4ee1b03c120145868734cbe3d6c9d2.png?size=1024'
+export const bannerAvatar = 'https://cdn.discordapp.com/avatars/232584569289703424/b1b8f416be5ef1c9677afc11f56d4450.png?size=1024'
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
