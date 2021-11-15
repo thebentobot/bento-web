@@ -64,7 +64,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       fallback: {
-        'api/stats/servers': resServers, '/api/stats/users': resUsers
+        '/api/stats/servers': resServers, '/api/stats/users': resUsers
       }
     }
     //, revalidate: 60*10
