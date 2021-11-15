@@ -119,9 +119,11 @@ export default function PatreonAvatar({id, userID, name, avatar, supporter, foll
           </div>
           
           <div className='flex-grow p-4 w-full md:w-auto overflow-hidden'>
-            <div className='transition duration-1000 ease-in-out text-white text-center lg:text-left overflow-hidden text-base'>
+          {name.length > 15 ? <div className='transition duration-1000 ease-in-out text-white text-center lg:text-left overflow-hidden text-sm'>
               {name}
-            </div>
+            </div> : <div className='transition duration-1000 ease-in-out text-white text-center lg:text-left overflow-hidden text-base'>
+              {name}
+            </div>}
             {/*
             <div className='transition duration-300 ease-in-out mt-1 mb-1 w-full h-1 bg-gray-700 group-hover:bg-gray-500 rounded overflow-hidden'>
              <motion.div animate={controls} className='transition duration-1000 ease-in-out rounded h-full bg-gradient-to-r from-red-500 via-yellow-500 to-yellow-300 opacity-75 hover:opacity-100 overflow-hidden' style={{width: '0%'}}></motion.div> 
@@ -133,9 +135,11 @@ export default function PatreonAvatar({id, userID, name, avatar, supporter, foll
         {rank === 5 && 
           <motion.li key={id} whileHover={{scale: 1.01}} className='transition duration-300 ease-in-out bg-gray-900 flex flex-wrap items-center w-60 my-4 rounded-lg group hover:bg-gray-700 hover:bg-opacity-80 shadow overflow-hidden'>
           <div className='flex-grow p-4 w-full md:w-auto overflow-hidden'>
-            <div className='transition duration-1000 ease-in-out text-white text-center overflow-hidden text-sm'>
+          {name.length > 15 ? <div className='transition duration-1000 ease-in-out text-white text-center lg:text-left overflow-hidden text-xs'>
               {name}
-            </div>
+            </div> : <div className='transition duration-1000 ease-in-out text-white text-center lg:text-left overflow-hidden text-sm'>
+              {name}
+            </div>}
             {/*
             <div className='transition duration-300 ease-in-out mt-1 mb-1 w-full h-1 bg-gray-700 group-hover:bg-gray-500 rounded overflow-hidden'>
              <motion.div animate={controls} className='transition duration-1000 ease-in-out rounded h-full bg-gradient-to-r from-red-500 via-yellow-500 to-yellow-300 opacity-75 hover:opacity-100 overflow-hidden' style={{width: '0%'}}></motion.div> 

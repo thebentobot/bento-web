@@ -188,7 +188,7 @@ const bottomAnimation: Variants = shouldReduceMotion ? {
               A Discord bot with server moderation tools and various entertaining commands.
               </motion.p>
               <motion.p className="mt-3 text-base text-white sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0" initial='hidden' animate='show' variants={animation}>
-              A Bento Box 🍱 is ready for {Math.floor(85000 / 100) / 10.0 + "k"} Users on {105 - 2} Servers
+              A Bento Box 🍱 is ready for {Math.floor(100000 / 100) / 10.0 + "k"} Users on {180 - 2} Servers
               </motion.p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow">
@@ -386,17 +386,12 @@ const bottomAnimation: Variants = shouldReduceMotion ? {
               <motion.p className="mt-3 text-base text-gray-400 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0" initial='hidden' animate='show' variants={animation}>
               A Verified Discord Bot with Server Moderation Tools and Various Entertaining Commands.
               </motion.p>
-              {(userData && serverData) ? 
+              
               <motion.p className="mt-3 text-base text-white sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0" initial='hidden' animate='show' variants={animation}>
-              A Bento Box 🍱 is ready for {Math.floor(userData.count / 100) / 10.0 + "k"} Users on {serverData.count - 2} Servers
+              A Bento Box 🍱 is ready for {Math.floor(userData?.count as number / 100) / 10.0 + "k"} Users on {serverData?.count as number - 4} Servers
               </motion.p>
-              :
-              <motion.div className='flex mt-3 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0' initial='hidden' animate='show' variants={animation}>
-                <div className='h-2.5 w-2.5 bg-current rounded-full mr-1 animate-bounce bg-yellow-300'></div>
-                <div className='h-2.5 w-2.5 bg-current rounded-full mr-1 animate-bounce200 bg-yellow-300'></div>
-                <div className='h-2.5 w-2.5 bg-current rounded-full animate-bounce400 bg-yellow-300'></div> 
-              </motion.div>
-              }
+              
+              
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow">
                   <motion.a
