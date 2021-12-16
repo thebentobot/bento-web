@@ -30,8 +30,7 @@
     "react-markdown": "^7.0.0",
     "react-query": "^3.19.6",
     "sequelize": "^6.6.5",
-    "sequelize-auto": "^0.8.3",
-    "swr": "^1.0.1"
+    "sequelize-auto": "^0.8.3"
   },
   "devDependencies": {
     "@types/node-fetch": "^2.5.11",
