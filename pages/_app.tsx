@@ -7,15 +7,13 @@ import { motion } from 'framer-motion'
 import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
 import SEO from '../next-seo.config'
-import { SWRConfig } from 'swr'
-import fetcher from '../util/fetch'
 
 export const alonzoAvatar = 'https://cdn.discordapp.com/avatars/370695349167325196/28495cfc3e5e3c405db7a98d66f81c1c.png?size=1024'
 export const tzuwyAvatar = 'https://cdn.discordapp.com/avatars/150443906511667200/daf485b105036c46aba8c283af0358db.png?size=1024'
-export const enterAvatar = 'https://cdn.discordapp.com/avatars/188980576483540992/ed246783031262e8cd8d8610566c5880.png?size=1024'
+export const enterAvatar = 'https://cdn.discordapp.com/avatars/188980576483540992/5d5f3b2e0579a93258664214c812f809.png?size=1024'
 export const fijiAvatar = 'https://cdn.discordapp.com/avatars/229341113503318018/9fe7c729963f59924a946b20d11b4c52.png?size=1024'
 export const lewisAvatar = 'https://cdn.discordapp.com/avatars/166142440233893888/a985e46ae81da885ca44310f50d21014.png?size=1024'
-export const adamAvatar = 'https://cdn.discordapp.com/avatars/223908083825377281/fd3256b39a16d3261c4e9bdb53211433.png?size=1024'
+export const adamAvatar = 'https://cdn.discordapp.com/avatars/223908083825377281/eb61ddb3d1ab00a0b88ffcda55b42b17.png?size=1024'
 export const bannerAvatar = 'https://cdn.discordapp.com/avatars/232584569289703424/b1b8f416be5ef1c9677afc11f56d4450.png?size=1024'
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -94,7 +92,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     return () => window.removeEventListener("scroll", toggleVisibility)
   }, [])
   return (
-    <SWRConfig value={{fetcher}}>
     <div className="bg-gray-800 flex flex-col min-h-screen">
       <Head>
       <link rel="icon" href="/favicon.ico" />
@@ -167,7 +164,6 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Component {...pageProps} />
       <Footer />
     </div>
-    </SWRConfig>
   )
 }
 export default MyApp

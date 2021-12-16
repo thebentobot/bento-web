@@ -1,12 +1,12 @@
-import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next";
-import Head from "next/head";
-import LeaderboardParent from "../../components/leaderboard/leaderboardParent";
-import { getData as getUsersData} from "../api/leaderboard";
-import { getData as getGuildData } from "../api/guild";
+import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next"
+import Head from "next/head"
+import LeaderboardParent from "../../components/leaderboard/leaderboardParent"
+import { getData as getUsersData} from "../api/leaderboard"
+import { getData as getGuildData } from "../api/guild"
 import { motion, Variants } from "framer-motion"
-import { NextSeo } from "next-seo";
-import { getData } from "../api/guilds";
-import { useRouter } from "next/router";
+import { NextSeo } from "next-seo"
+import { getData } from "../api/guilds"
+import { useRouter } from "next/router"
 
 const animation: Variants = {
   hidden: { opacity: 0 },
@@ -143,5 +143,5 @@ export default function Leaderboard({users, guild}: userRankingsInterface) {
       </div>
       </div>
       
-    );
+    )
   }

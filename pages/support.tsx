@@ -1,13 +1,13 @@
-import Head from "next/head";
+import Head from "next/head"
 import { motion, useReducedMotion, Variants } from "framer-motion"
-import { NextSeo } from 'next-seo';
-import { GetStaticProps } from "next";
-import { getData as getPatreonSupportersData } from "./api/patreon/supporter";
-import { getData as getPatreonFollowersData } from "./api/patreon/follower";
-import { getData as getPatreonEnthusiastsData } from "./api/patreon/enthusiast";
-import { getData as getPatreonDisciplesData } from "./api/patreon/disciple";
-import { getData as getPatreonSponsorsData } from "./api/patreon/sponsor";
-import PatreonParent from "../components/patreon/patreonParent";
+import { NextSeo } from 'next-seo'
+import { GetStaticProps } from "next"
+import { getData as getPatreonSupportersData } from "./api/patreon/supporter"
+import { getData as getPatreonFollowersData } from "./api/patreon/follower"
+import { getData as getPatreonEnthusiastsData } from "./api/patreon/enthusiast"
+import { getData as getPatreonDisciplesData } from "./api/patreon/disciple"
+import { getData as getPatreonSponsorsData } from "./api/patreon/sponsor"
+import PatreonParent from "../components/patreon/patreonParent"
 
 export interface patreon {
   id: number,
@@ -55,7 +55,7 @@ export default function Support({ supporters, followers, enthusiasts, disciples,
  
   const shouldReduceMotion = useReducedMotion()
 
-  let rankArray = [];
+  let rankArray = []
 
   if (!!sponsors.length !== false) rankArray.push(sponsors)
   if (!!disciples.length !== false) rankArray.push(disciples)
@@ -232,5 +232,5 @@ export default function Support({ supporters, followers, enthusiasts, disciples,
       </div>
       </div>
       
-    );
+    )
   }

@@ -32,7 +32,7 @@ const features = [
       'Do you only care for the moderation tools and think some of the extra features are unnecessary? Bento 🍱 allows you to enable and disable features according to your server and its preferences. Don\'t want a leaderboard for your server? Disable it. Don\'t want GIFs at all? Disable it.',
     icon: CogIcon,
   },
-];
+]
 
 export interface Data {
   usersCount: number,
@@ -173,7 +173,7 @@ const bottomAnimation: Variants = shouldReduceMotion ? {
                 <span className="block text-yellow-300 xl:inline">Bento</span>
               </motion.h1>
               <motion.p className="mt-3 text-base text-gray-400 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0" initial='hidden' animate='show' variants={animation}>
-              A Discord bot with server moderation tools and various entertaining commands.
+              A Verified Discord bot with server moderation tools and various entertaining commands.
               </motion.p>
               <motion.p className="mt-3 text-base text-white sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0" initial='hidden' animate='show' variants={animation}>
               A Bento Box 🍱 is ready for {Math.floor(usersCount / 100) / 10.0 + "k"} Users on {serversCount - 2} Servers
@@ -265,5 +265,5 @@ const bottomAnimation: Variants = shouldReduceMotion ? {
     </motion.div>
       </div>
     </div>
-  );
+  )
 }

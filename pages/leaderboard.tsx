@@ -1,9 +1,9 @@
-import { GetServerSideProps, GetStaticProps } from "next";
-import Head from "next/head";
-import LeaderboardParent from "../components/leaderboard/leaderboardParent";
-import { getData } from "./api/globalLeaderboard";
+import { GetServerSideProps, GetStaticProps } from "next"
+import Head from "next/head"
+import LeaderboardParent from "../components/leaderboard/leaderboardParent"
+import { getData } from "./api/globalLeaderboard"
 import { motion, Variants } from "framer-motion"
-import { NextSeo } from "next-seo";
+import { NextSeo } from "next-seo"
 
 const animation: Variants = {
   hidden: { opacity: 0 },
@@ -87,5 +87,5 @@ export default function Leaderboard({users}: userRankingsInterface) {
       </div>
       </div>
       
-    );
+    )
   }
