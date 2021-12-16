@@ -8,7 +8,3 @@ export async function getData() {
   const userData = await guild.sum('memberCount')
   return { count: userData }
 }
-
-export default async function handler(req: NextApiRequest, res: NextApiResponse){
-  res.status(200).json(await getData())
-}

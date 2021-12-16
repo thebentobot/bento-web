@@ -8,7 +8,3 @@ export async function getData() {
   const patreonSupporterData = await patreon.findAll({raw: true, where: {supporter: true}})
   return patreonSupporterData
 }
-
-export default async function handler(req: NextApiRequest, res: NextApiResponse){
-  res.status(200).json(await getData())
-}
