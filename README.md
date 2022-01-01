@@ -1,6 +1,3 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/dea94f5f-5f46-4ee3-8712-843d6f2e4632/deploy-status)](https://app.netlify.com/sites/inspiring-noether-f4d49e/deploys)
-
-
 # [Invite the Discord bot Bento 🍱 to your own server here!](https://discord.com/api/oauth2/authorize?client_id=787041583580184609&permissions=261926943991&scope=bot%20applications.commands)
 
 # Website for Bento 🍱
