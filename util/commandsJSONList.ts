@@ -107,7 +107,7 @@ export const commandsList: commandsInterface[] = [
        ],
        "category":"user",
        "description":"Shows the XP/level leaderboard for a server, globally for the bot, or global/local Bentos 🍱",
-       "usage":"?leaderboard [<global/bento>] [global]"
+       "usage":"?leaderboard [global] to see message/xp leaderboard, where the global argument shows globally for the bot.\n?leaderboard bento [global] shows leaderboard for the amount of Bento 🍱 with a global option as well.\n?leaderboard rps [paper, rock, scissors, all] [wins, ties, losses] shows the server leaderboard for the RPS game, where it's possible to order by wins, ties and losses. By adding global before rock, paper and scissor, it is then possible to view the global leaderboard."
     },
     {
        "name":"media",
@@ -540,7 +540,7 @@ export const commandsList: commandsInterface[] = [
       ],
       "category":"features",
       "description":"Play Rock, Paper, Scissors with Bento 🍱",
-      "usage":`?rps <rock, paper, scissors>`
+      "usage":`?rps <rock, paper, scissors> to play the game\n?rps stats [user mention or id] to see stats.`
    },
    {
       "name":"streamable",

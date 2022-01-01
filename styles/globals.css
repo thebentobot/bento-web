@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+	background-color: black;
+}
+
 code {
 	padding: 0.2em;
 	margin: -0.2em 0;

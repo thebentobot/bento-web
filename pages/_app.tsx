@@ -14,7 +14,7 @@ export const enterAvatar = 'https://cdn.discordapp.com/avatars/18898057648354099
 export const fijiAvatar = 'https://cdn.discordapp.com/avatars/229341113503318018/9fe7c729963f59924a946b20d11b4c52.png?size=1024'
 export const lewisAvatar = 'https://cdn.discordapp.com/avatars/166142440233893888/a985e46ae81da885ca44310f50d21014.png?size=1024'
 export const adamAvatar = 'https://cdn.discordapp.com/avatars/223908083825377281/2e3b979ff1f426a51a64d5d8de2289c2.png?size=1024'
-export const bannerAvatar = 'https://cdn.discordapp.com/avatars/232584569289703424/b1b8f416be5ef1c9677afc11f56d4450.png?size=1024'
+export const bannerAvatar = 'https://cdn.discordapp.com/avatars/232584569289703424/ccacb62344ac6d84f74807108ed3d31b.png?size=1024'
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -93,6 +93,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   }, [])
   return (
     <div className="bg-gray-800 flex flex-col min-h-screen">
+      <script>
+    const theme = localStorage.getItem(`theme``) || `light``;
+    document.body.className = theme;
+  </script>
       <Head>
       <link rel="icon" href="/favicon.ico" />
                         <meta content="Bento 🍱" property="og:title" />
