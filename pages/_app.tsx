@@ -8,13 +8,13 @@ import Head from 'next/head'
 import { DefaultSeo } from 'next-seo'
 import SEO from '../next-seo.config'
 
-export const alonzoAvatar = 'https://cdn.discordapp.com/avatars/370695349167325196/28495cfc3e5e3c405db7a98d66f81c1c.png?size=1024'
-export const tzuwyAvatar = 'https://cdn.discordapp.com/avatars/150443906511667200/daf485b105036c46aba8c283af0358db.png?size=1024'
-export const enterAvatar = 'https://cdn.discordapp.com/avatars/188980576483540992/5d5f3b2e0579a93258664214c812f809.png?size=1024'
-export const fijiAvatar = 'https://cdn.discordapp.com/avatars/229341113503318018/7b7f79911a05867d23afbbed27e94825.png?size=1024'
-export const lewisAvatar = 'https://cdn.discordapp.com/avatars/166142440233893888/a985e46ae81da885ca44310f50d21014.png?size=1024'
-export const adamAvatar = 'https://cdn.discordapp.com/avatars/223908083825377281/2e3b979ff1f426a51a64d5d8de2289c2.png?size=1024'
-export const bannerAvatar = 'https://cdn.discordapp.com/avatars/232584569289703424/ccacb62344ac6d84f74807108ed3d31b.png?size=1024'
+export const alonzoAvatar = '/alonzo.png'
+export const tzuwyAvatar = '/tzuwy.png'
+export const enterAvatar = '/enter.png'
+export const fijiAvatar = '/fiji.png'
+export const lewisAvatar = '/lewis.png'
+export const adamAvatar = '/adam.gif'
+export const bannerAvatar = '/banner.png'
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -22,44 +22,44 @@ function MyApp({ Component, pageProps }: AppProps) {
 			profiles: {
 				bentoBot: {
 					author: 'Bento',
-					avatar: `https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024`,
+					avatar: `/bento.png`,
 					roleColor: '#f9d61b',
           bot: true,
           verified: true
 				},
         banner: {
           author: 'Banner',
-          avatar: bannerAvatar,
+          avatar: '/banner.png',
           roleColor: '#ff00fa'
         },
         adam: {
           author: 'Adam',
-          avatar: adamAvatar,
+          avatar: '/adam.gif',
           roleColor: '#00B2FF'
         },
         lewis: {
           author: 'Lewis',
-          avatar: lewisAvatar,
+          avatar: '/lewis.png',
           roleColor: '#00B2FF'
         },
         fiji: {
           author: 'Fiji Spring Water',
-          avatar: fijiAvatar,
+          avatar: '/fiji.png',
           roleColor: '#00B2FF'
         },
         enter: {
           author: 'Enter',
-          avatar: enterAvatar,
+          avatar: '/enter.png',
           roleColor: '#03f611'
         },
         tzuwy: {
           author: 'tzuwy',
-          avatar: tzuwyAvatar,
+          avatar: '/tzuwy.png',
           roleColor: '#f0dacb'
         },
         alonzo: {
           author: 'alonzo',
-          avatar: alonzoAvatar,
+          avatar: '/alonzo.png',
           roleColor: '#99ff99'
         },
 			}

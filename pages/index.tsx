@@ -209,7 +209,7 @@ const bottomAnimation: Variants = shouldReduceMotion ? {
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <motion.img
           className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-          src="https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024"
+          src="/bento.png"
           width={375}
           height={375}
           alt=""
