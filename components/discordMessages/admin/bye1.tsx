@@ -3,10 +3,10 @@ import { DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-
 export default function Bye1() {
     return (
         <DiscordMessages>
-            <DiscordMessage profile='banner'>
+            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>
                 ?bye channel 714496317983948975
             </DiscordMessage>
-            <DiscordMessage profile='bentoBot'>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
             Bye messages will now appear in <DiscordMention type='channel'>general</DiscordMention>
             </DiscordMessage>
         </DiscordMessages>

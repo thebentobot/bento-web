@@ -4,8 +4,8 @@ import moment from 'moment'
 export default function PrefixExample2() {
     return (
         <DiscordMessages>
-            <DiscordMessage profile='banner' highlight><DiscordMention>Bento</DiscordMention></DiscordMessage>
-            <DiscordMessage profile='bentoBot'>
+            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa' highlight><DiscordMention>Bento</DiscordMention></DiscordMessage>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
             The Bento 🍱 prefix on this server is: <code>?</code>.
             </DiscordMessage>
         </DiscordMessages>

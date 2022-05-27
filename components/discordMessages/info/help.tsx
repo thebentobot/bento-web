@@ -4,8 +4,8 @@ import moment from 'moment'
 export default function Help() {
     return (
         <DiscordMessages>
-            <DiscordMessage profile='lewis'>?help weather</DiscordMessage>
-            <DiscordMessage profile='bentoBot'>
+            <DiscordMessage author="Lewis" avatar="/lewis.png" roleColor='#00B2FF'>?help weather</DiscordMessage>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordEmbed slot='embeds' color="#ffd903">
                     <strong>Command Name: </strong> weather
                     <br />

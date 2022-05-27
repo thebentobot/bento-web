@@ -4,7 +4,7 @@ import moment from 'moment'
 export default function RoleChannel() {
     return (
         <DiscordMessages>
-            <DiscordMessage profile='bentoBot'>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b' timestamp={moment().toDate()}>
             <strong>Assign yourself a role!</strong>
             <br />
             <br />
@@ -31,7 +31,7 @@ export default function RoleChannel() {
             <br />
             <br />
             The <strong>News</strong> role is if you want updates about Bento regarding new features, technical issues, downtime, bugs etc.
-            <DiscordEmbed slot='embeds' title='Available Roles' color="#ffe9a4" timestamp={moment().toDate()}>
+            <DiscordEmbed slot='embeds' title='Available Roles' color="#ffe9a4">
                 <DiscordEmbedFields slot='fields'>
                     <DiscordEmbedField fieldTitle='Main Roles' inline inlineIndex={1}><code>Tester</code>, <code>Co-Developer</code></DiscordEmbedField>
                     <DiscordEmbedField fieldTitle='Sub Roles' inline inlineIndex={1}><code>News</code></DiscordEmbedField>
@@ -39,10 +39,10 @@ export default function RoleChannel() {
                 </DiscordEmbedFields>
             </DiscordEmbed>
             </DiscordMessage>
-            <DiscordMessage profile='fiji'>
+            <DiscordMessage author="Fiji Spring Water" avatar="/fiji.png" roleColor='#00B2FF'>
                 +other bajer
             </DiscordMessage>
-            <DiscordMessage profile='bentoBot'>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordEmbed slot='embeds' title='Fiji Spring Water#1949' color="#FFFFFF">
                     <DiscordEmbedFields slot='fields'>
                         <DiscordEmbedField fieldTitle='Assigned Roles' inline inlineIndex={1}>Beer</DiscordEmbedField>

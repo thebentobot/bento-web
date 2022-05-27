@@ -5,8 +5,8 @@ import { adamAvatar, bannerAvatar } from '../../../pages/_app'
 export default function Horoscope() {
     return (
         <DiscordMessages>
-            <DiscordMessage profile='banner' timestamp='08/15/2021'>?horo</DiscordMessage>
-            <DiscordMessage profile='bentoBot' timestamp='08/15/2021'>
+            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa' timestamp='08/15/2021'>?horo</DiscordMessage>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b' timestamp='08/15/2021'>
                 <DiscordEmbed slot='embeds' color="#C0C0C0" authorName='Banner' authorImage={bannerAvatar} embedTitle='Sagittarius horoscope for August 15, 2021'>
                 You think it is in the bag. They have something to add. At least you are not bored.
                     <DiscordEmbedFields slot='fields'>
@@ -19,8 +19,8 @@ export default function Horoscope() {
                     </DiscordEmbedFields>
                 </DiscordEmbed>
             </DiscordMessage>
-            <DiscordMessage profile='banner' timestamp='08/15/2021'>?horo <DiscordMention type='user'>Adam</DiscordMention></DiscordMessage>
-            <DiscordMessage profile='bentoBot' timestamp='08/15/2021'>
+            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa' timestamp='08/15/2021'>?horo <DiscordMention type='user'>Adam</DiscordMention></DiscordMessage>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b' timestamp='08/15/2021'>
                 <DiscordEmbed slot='embeds' color="#800080" authorName='Adam' authorImage={adamAvatar} embedTitle='Virgo horoscope for August 15, 2021'>
                 There is a way out. Light streams through. Gloom and doom are history.
                     <DiscordEmbedFields slot='fields'>

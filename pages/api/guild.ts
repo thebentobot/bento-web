@@ -1,11 +1,18 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { guild } from '@prisma/client'
 import type { NextApiRequest, NextApiResponse } from 'next'
-import database from '../../database/database'
-import { initModels } from '../../database/models/init-models'
-import { guild } from '../../database/models/guild'
+import { prisma } from '../../util/prisma'
 
 export async function getData(guildID: string) {
-  initModels(database)
-  const guildData = await guild.findOne({raw: true, where: {guildID: guildID}})
-  return guildData
+  const guildData = await prisma.guild.findUnique({
+    where: {
+      guildID: BigInt(guildID)
+    }
+  })
+  const parsedLmao = JSON.parse(JSON.stringify(guildData, (key, value) =>
+  typeof value === 'bigint'
+      ? value.toString()
+      : value // return everything else unchanged
+)) as guild
+  return parsedLmao
 }

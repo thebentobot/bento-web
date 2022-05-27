@@ -5,8 +5,8 @@ import { alonzoAvatar, bannerAvatar } from '../../../pages/_app'
 export default function MessageLog() {
     return (
         <DiscordMessages>
-            <DiscordMessage profile='bentoBot'>
-            <DiscordEmbed slot='embeds' color="#FFF000" authorName='alonzo#0011 (userID: 370695349167325196)' authorImage={alonzoAvatar} timestamp={moment().toDate()}>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b' timestamp={moment().toDate()}>
+            <DiscordEmbed slot='embeds' color="#FFF000" authorName='alonzo#0011 (userID: 370695349167325196)' authorImage={alonzoAvatar}>
             <a target="_blank" rel="noopener noreferrer" href="https://discord.com/channels/714496317522444352/714836721979621448/873246980267180032">Message</a> edited in <DiscordMention type='channel'>bot-channel</DiscordMention>
                 <br />
                 <strong>Before: </strong>
@@ -21,8 +21,8 @@ export default function MessageLog() {
                 <span slot="footer">Edited at </span>
             </DiscordEmbed>
             </DiscordMessage>
-            <DiscordMessage profile='bentoBot'>
-            <DiscordEmbed slot='embeds' color="#FF2D00" authorName='Banner (userID: 232584569289703424)' authorImage={bannerAvatar} timestamp={moment().toDate()}>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b' timestamp={moment().toDate()}>
+            <DiscordEmbed slot='embeds' color="#FF2D00" authorName='Banner (userID: 232584569289703424)' authorImage={bannerAvatar}>
             Message deleted in <DiscordMention type='channel'>bot-channel</DiscordMention>
                 <br />
                 <strong>Deleted message: </strong>

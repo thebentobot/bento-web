@@ -38,18 +38,6 @@ export interface Data {
   usersCount: number,
   serversCount: number
 }
-/*
-export const getServerSideProps: GetServerSideProps = async () => {
-  const resUsers = await userDataFetch()
-  const resServers = await serverDataFetch()
-
-  return {
-    props: {
-      usersCount: resUsers.count, serversCount: resServers.count
-    },
-  }
-}
-*/
 
 export const getStaticProps: GetStaticProps = async () => {
   const resUsers = await userDataFetch()
@@ -181,7 +169,7 @@ const bottomAnimation: Variants = shouldReduceMotion ? {
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow">
                   <motion.a
-                    href="https://discord.com/api/oauth2/authorize?client_id=787041583580184609&permissions=261926943991&scope=bot%20applications.commands"
+                    href="https://discord.com/api/oauth2/authorize?client_id=787041583580184609&permissions=1644167687254&scope=bot%20applications.commands"
                     className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-300 hover:bg-yellow-400 hover:text-black md:py-4 md:text-lg md:px-10"
                     whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.9 }}

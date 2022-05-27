@@ -1,12 +1,12 @@
-import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
+import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordEmbedFooter, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
 import moment from 'moment'
 import { bannerAvatar } from '../../pages/_app'
 
 export default function BentoGreeting() {
     return (
         <DiscordMessages>
-            <DiscordMessage profile='bentoBot'>
-                <DiscordEmbed slot='embeds' color="#f9d61b" authorName='Bento' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' authorUrl='https://bento.com' embedTitle='Hello! My name is Bento 🍱' footerImage={bannerAvatar} timestamp={moment().toDate()}>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b' timestamp={moment().toDate()}>
+                <DiscordEmbed slot='embeds' color="#f9d61b" authorName='Bento' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' authorUrl='https://bento.com' embedTitle='Hello! My name is Bento 🍱'>
                 Thank you for choosing me to service your server!
                 <br></br>
                 My default prefix is <code>?</code>.
@@ -20,10 +20,15 @@ export default function BentoGreeting() {
                         <DiscordEmbedField fieldTitle='Need help? Or do you have some ideas or feedback to Bento 🍱? Feel free to join the support server'><a href='https://discord.gg/dd68WwP'>https://discord.gg/dd68WwP</a></DiscordEmbedField>
                         <DiscordEmbedField fieldTitle='Want to check out the code for Bento 🍱?'><a href='https://github.com/thebentobot/bentoTS'>https://github.com/thebentobot/bentoTS</a></DiscordEmbedField>
                     </DiscordEmbedFields>
-                    <span slot='footer'>Bento 🍱 is created by Banner#1017</span>
+                    <DiscordEmbedFooter
+              slot="footer"
+              footerImage={bannerAvatar}
+            >
+              Bento 🍱 is created by Banner#1017
+            </DiscordEmbedFooter>
                 </DiscordEmbed>
             </DiscordMessage>
-            <DiscordMessage profile='adam' highlight>Hello <DiscordMention>Bento</DiscordMention>! 😁</DiscordMessage>
+            <DiscordMessage author="Adam" avatar="/adam.webp" roleColor='#00B2FF' highlight>Hello <DiscordMention>Bento</DiscordMention>! 😁</DiscordMessage>
         </DiscordMessages>
     )
 }

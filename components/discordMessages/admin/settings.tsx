@@ -1,12 +1,12 @@
-import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
+import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordEmbedFooter, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
 import moment from 'moment'
 
 export default function Settings() {
     return (
         <DiscordMessages>
-            <DiscordMessage profile='fiji'>?settings</DiscordMessage>
-            <DiscordMessage profile='bentoBot'>
-                <DiscordEmbed slot='embeds' color="#f9d61b" authorName='Bento' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' authorUrl='/' embedTitle='Server settings for Bento Bot' footerImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' timestamp={moment().toDate()}>
+            <DiscordMessage author="Fiji Spring Water" avatar="/fiji.png" roleColor='#00B2FF'>?settings</DiscordMessage>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b' timestamp={moment().toDate()}>
+                <DiscordEmbed slot='embeds' color="#f9d61b" authorName='Bento' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' authorUrl='/' embedTitle='Server settings for Bento Bot' >
                     <DiscordEmbedFields slot='fields'>
                         <DiscordEmbedField fieldTitle='Tiktok' inline inlineIndex={1}>Enabled</DiscordEmbedField>
                         <DiscordEmbedField fieldTitle='Media' inline inlineIndex={2}>Enabled</DiscordEmbedField>
@@ -20,6 +20,12 @@ export default function Settings() {
                         <DiscordEmbedField fieldTitle='Mute role' inline inlineIndex={1}>Not configured</DiscordEmbedField>
                         <DiscordEmbedField fieldTitle='Auto assigned role' inline inlineIndex={1}>Not configured</DiscordEmbedField>
                     </DiscordEmbedFields>
+                    <DiscordEmbedFooter
+              slot="footer"
+              footerImage="https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024"
+            >
+              
+            </DiscordEmbedFooter>
                 </DiscordEmbed>
             </DiscordMessage>
         </DiscordMessages>

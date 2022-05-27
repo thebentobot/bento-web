@@ -3,10 +3,10 @@ import { DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-
 export default function RoleAdd() {
     return (
         <DiscordMessages>
-            <DiscordMessage profile='banner'>
+            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>
             ?role add sub news: News, News: News
             </DiscordMessage>
-            <DiscordMessage profile='bentoBot'>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
             <strong>Role commands added: </strong> News, News
             <br />
             <strong>Available role added: </strong> News

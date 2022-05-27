@@ -1,13 +1,13 @@
-import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
+import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordEmbedFooter, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
 import moment from 'moment'
 import { bannerAvatar } from '../../../pages/_app'
 
 export default function Weather() {
     return (
         <DiscordMessages>
-            <DiscordMessage profile='banner' timestamp='08/15/2021'>?weather</DiscordMessage>
-            <DiscordMessage profile='bentoBot' timestamp='08/15/2021'>
-                <DiscordEmbed slot='embeds' color="#EB6E4B" thumbnail='http://openweathermap.org/img/w/03n.png' authorName='Banner#1017' authorImage={bannerAvatar} embedTitle='Clouds ☁️ ️in Copenhagen, Denmark 🇩🇰' footerImage='https://pbs.twimg.com/profile_images/1173919481082580992/f95OeyEW_400x400.jpg' timestamp='08/15/2021'>
+            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa' timestamp='08/15/2021'>?weather</DiscordMessage>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b' timestamp='08/15/2021'>
+                <DiscordEmbed slot='embeds' color="#EB6E4B" thumbnail='http://openweathermap.org/img/w/03n.png' authorName='Banner#1017' authorImage={bannerAvatar} embedTitle='Clouds ☁️ ️in Copenhagen, Denmark 🇩🇰'>
                     <strong>Currently</strong>
                     <br />
                     Scattered clouds ☁️
@@ -38,12 +38,16 @@ Feels like 17°C (62°F)</DiscordEmbedField>
 ' inline inlineIndex={3}>↙️ (200°)
 </DiscordEmbedField>
                     </DiscordEmbedFields>
-                    <span slot="footer">Powered by OpenWeather  </span>
+                    <DiscordEmbedFooter
+              slot="footer"
+              footerImage="https://pbs.twimg.com/profile_images/1173919481082580992/f95OeyEW_400x400.jpg"
+            >
+            </DiscordEmbedFooter>
                 </DiscordEmbed>
             </DiscordMessage>
-            <DiscordMessage profile='enter' timestamp='08/15/2021'>?weather seoul</DiscordMessage>
-            <DiscordMessage profile='bentoBot' timestamp='08/15/2021'>
-                <DiscordEmbed slot='embeds' color="#EB6E4B" thumbnail='http://openweathermap.org/img/w/01n.png' authorName='OpenWeather' authorImage='https://pbs.twimg.com/profile_images/1173919481082580992/f95OeyEW_400x400.jpg' embedTitle='Clear ☀️ in Seoul, Republic of Korea 🇰🇷' footerImage='https://pbs.twimg.com/profile_images/1173919481082580992/f95OeyEW_400x400.jpg' timestamp='08/15/2021'>
+            <DiscordMessage author="Enter" avatar="/enter.png" roleColor='#03f611' timestamp='08/15/2021'>?weather seoul</DiscordMessage>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b' timestamp='08/15/2021'>
+                <DiscordEmbed slot='embeds' color="#EB6E4B" thumbnail='http://openweathermap.org/img/w/01n.png' authorName='OpenWeather' authorImage='https://pbs.twimg.com/profile_images/1173919481082580992/f95OeyEW_400x400.jpg' embedTitle='Clear ☀️ in Seoul, Republic of Korea 🇰🇷'>
                     <strong>Currently</strong>
                     <br />
                     Clear sky ☀️
@@ -80,6 +84,11 @@ Feels like 23°C (73°F)</DiscordEmbedField>
 ' inline inlineIndex={3}>↖️ (100°)
 </DiscordEmbedField>
                     </DiscordEmbedFields>
+                    <DiscordEmbedFooter
+              slot="footer"
+              footerImage="https://pbs.twimg.com/profile_images/1173919481082580992/f95OeyEW_400x400.jpg"
+            >
+            </DiscordEmbedFooter>
                 </DiscordEmbed>
             </DiscordMessage>
         </DiscordMessages>

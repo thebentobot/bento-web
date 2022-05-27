@@ -4,10 +4,10 @@ import moment from 'moment'
 export default function LeaderboardMessage() {
     return (
         <DiscordMessages>
-            <DiscordMessage timestamp='08/16/2021' profile='fiji'>?lb global</DiscordMessage>
-            <DiscordMessage timestamp='08/16/2021' profile='bentoBot'>
+            <DiscordMessage timestamp='08/16/2021' author="Fiji Spring Water" avatar="/fiji.png" roleColor='#00B2FF'>?lb global</DiscordMessage>
+            <DiscordMessage timestamp='08/16/2021' author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 Current Page 1/5
-                <DiscordEmbed slot='embeds' timestamp='08/16/2021' color="#ffd903" embedTitle='Leaderboard for Bento' thumbnail='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024'>
+                <DiscordEmbed slot='embeds' color="#ffd903" embedTitle='Leaderboard for Bento' thumbnail='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024'>
                 <DiscordEmbedFields slot='fields'>
                         <DiscordEmbedField fieldTitle={`1. Mig Ysrael#0360`} inline inlineIndex={1}>Level 24, 3864 XP</DiscordEmbedField>
                         <DiscordEmbedField fieldTitle={`2. Fiji Spring Water#1949`} inline inlineIndex={1}>Level 21, 37139 XP</DiscordEmbedField>
@@ -27,10 +27,10 @@ export default function LeaderboardMessage() {
                         <DiscordReaction emoji="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/whatsapp/273/cross-mark_274c.png"></DiscordReaction>
                     </DiscordReactions>
             </DiscordMessage>
-            <DiscordMessage timestamp='08/16/2021' profile='lewis'>?lb bento global</DiscordMessage>
-            <DiscordMessage timestamp='08/16/2021' profile='bentoBot'>
+            <DiscordMessage timestamp='08/16/2021' author="Lewis" avatar="/lewis.png" roleColor='#00B2FF'>?lb bento global</DiscordMessage>
+            <DiscordMessage timestamp='08/16/2021' author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 Current Page 1/5
-                <DiscordEmbed slot='embeds' timestamp='08/16/2021' color="#ffd903" embedTitle='Bento 🍱 Leaderboard for Bento' thumbnail='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024'>
+                <DiscordEmbed slot='embeds' color="#ffd903" embedTitle='Bento 🍱 Leaderboard for Bento' thumbnail='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024'>
                 <DiscordEmbedFields slot='fields'>
                         <DiscordEmbedField fieldTitle={`1. alonzo#0011`} inline inlineIndex={1}>48 Bento 🍱</DiscordEmbedField>
                         <DiscordEmbedField fieldTitle={`2. tzuwy#0001`} inline inlineIndex={1}>47 Bento 🍱</DiscordEmbedField>

@@ -1,8 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { QueryTypes } from 'sequelize'
-import database from '../../database/database'
-import { initModels, user } from '../../database/models/init-models'
+import { prisma } from '../../util/prisma'
 
 interface Rankings {
     rank: string,
@@ -16,11 +14,11 @@ interface Rankings {
 }
 
 export async function getData() {
-  const globalRank: Array<Rankings> = await database.query(`
+  const globalRank: Array<Rankings> = await prisma.$queryRaw`
   SELECT row_number() over (ORDER BY t.level DESC, t.xp DESC) AS rank, t.level, t.xp, t.username, t.discriminator, t."avatarURL"
   FROM "user" AS t
   GROUP BY t.level, t.xp, t.username, t.discriminator, t."avatarURL"
   ORDER BY t.level DESC, t.xp DESC
-  LIMIT 50;`, {type: QueryTypes.SELECT})
+  LIMIT 50;`
   return globalRank
 }

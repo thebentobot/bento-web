@@ -4,8 +4,8 @@ import moment from 'moment'
 export default function CaseList() {
     return (
         <DiscordMessages>
-            <DiscordMessage profile='banner'>?case list mute 2021-07-01 2021-08-25</DiscordMessage>
-            <DiscordMessage profile='bentoBot'>
+            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>?case list mute 2021-07-01 2021-08-25</DiscordMessage>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 Current page: 1/2
                 <DiscordEmbed slot='embeds' color="#ffd903" embedTitle='Mute Case List for Bento Bot between 2021-07-01 and 2021-08-25' authorName='Bento' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' thumbnail='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024'>
                 <strong>Mute Case Number 20:</strong> Adaam#3206. August 15th 2021.

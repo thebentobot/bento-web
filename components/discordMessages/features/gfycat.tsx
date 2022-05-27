@@ -3,14 +3,14 @@ import { DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, Disco
 export default function Gfycat() {
     return (
         <DiscordMessages>
-            <DiscordMessage profile='fiji'>
+            <DiscordMessage author="Fiji Spring Water" avatar="/fiji.png" roleColor='#00B2FF'>
                 ?gfycat create <a href='https://youtu.be/lw3Or6eqIpI'>https://youtu.be/lw3Or6eqIpI</a> 13 10 future hendrix
             </DiscordMessage>
-            <DiscordMessage profile='bentoBot'>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordMention type='user'>Fiji Spring Water</DiscordMention> your Gfycat is ready! <br />
                 <div style={{position: 'relative', paddingBottom: 'calc(56.25% + 44px)'}}><iframe src='https://gfycat.com/ifr/NaiveAmusingFritillarybutterfly' frameBorder='0' scrolling='no' width='100%' height='100%' style={{position: 'absolute', top: '0', left: '0'}} allowFullScreen></iframe></div>
             </DiscordMessage>
-            <DiscordMessage profile='banner'>
+            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>
                 ?gfycat create --full
                 <DiscordEmbed
 							slot="embeds"
@@ -18,14 +18,14 @@ export default function Gfycat() {
                             image='https://cdn.discordapp.com/attachments/734282792447377410/903815573526437948/unknown.png'
                         ></DiscordEmbed>
             </DiscordMessage>
-            <DiscordMessage profile='bentoBot'>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordMention type='user'>Banner</DiscordMention> your Gfycat is ready! <br />
                 <div style={{position: 'relative', paddingBottom: 'calc(56.25% + 44px)'}}><iframe src='https://gfycat.com/ifr/floweryunsungcobra' frameBorder='0' scrolling='no' width='100%' height='100%' style={{position: 'absolute', top: '0', left: '0'}} allowFullScreen></iframe></div>
             </DiscordMessage>
-            <DiscordMessage profile='enter'>
+            <DiscordMessage author="Enter" avatar="/enter.png" roleColor='#03f611'>
                 ?gfycat user profile strike1005jw
             </DiscordMessage>
-            <DiscordMessage profile='bentoBot'>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordEmbed color='#333e0d' embedTitle='Strike' authorName='strike1005jw' authorUrl='https://gfycat.com/@strike1005jw' authorImage='https://profiles.gfycat.com/8232b8b165bda3f95cab1e7ff21d60bf619691a93fe9df6d9f479af5428f234d.png' thumbnail='https://profiles.gfycat.com/8232b8b165bda3f95cab1e7ff21d60bf619691a93fe9df6d9f479af5428f234d.png'>
                 Wiz*one forever <br /> <br />
                 Views: 3M <br />
@@ -36,10 +36,10 @@ export default function Gfycat() {
                 Profile URL: <a href='https://discord.gg/znfWtdJK7R'>https://discord.gg/znfWtdJK7R</a> 
                 </DiscordEmbed>
             </DiscordMessage>
-            <DiscordMessage profile='enter'>
+            <DiscordMessage author="Enter" avatar="/enter.png" roleColor='#03f611'>
                 ?gfycat user feed strike1005jw 10
             </DiscordMessage>
-            <DiscordMessage profile='bentoBot'>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
             Current Gfycat: 4/10 <br />
             <strong>211009 Studio Choom - Jo Yuri(조유리) Glassy (22)</strong> <br />
             Made by <a href='https://gfycat.com/@strike1005jw'>https://gfycat.com/@strike1005jw</a> <br />
@@ -48,10 +48,10 @@ export default function Gfycat() {
             <a href='https://gfycat.com/JadedMasculineFoal'>https://gfycat.com/JadedMasculineFoal</a> <br />
             <div style={{position: 'relative', paddingBottom: 'calc(56.25% + 44px)'}}><iframe src='https://gfycat.com/ifr/JadedMasculineFoal' frameBorder='0' scrolling='no' width='100%' height='100%' style={{position: 'absolute', top: '0', left: '0'}} allowFullScreen></iframe></div>
             </DiscordMessage>
-            <DiscordMessage profile='banner'>
+            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>
                 ?gfycat info naiveamusingfritillarybutterfly
             </DiscordMessage>
-            <DiscordMessage profile='bentoBot'>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordEmbed color='#000000'>
                 Total Views: 1 <br /> <br />
                 0 Likes ❤️ <br />
@@ -63,16 +63,16 @@ export default function Gfycat() {
                     <DiscordReaction emoji="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/whatsapp/273/cross-mark_274c.png"></DiscordReaction>
                 </DiscordReactions>
             </DiscordMessage>
-            <DiscordMessage profile='banner'>
+            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>
                 ?gfycat search ecco2k
             </DiscordMessage>
-            <DiscordMessage profile='bentoBot'>
-                <div style={{position: 'relative', paddingBottom: 'calc(56.25% + 44px)'}}><iframe src='https://gfycat.com/ifr/SplendidScholarlyDiscus' frameBorder='0' scrolling='no' width='100%' height='100%' style={{position: 'absolute', top: '0', left: '0'}} allowFullScreen></iframe></div>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
+                <div style={{position: 'relative', paddingBottom: 'calc(56.25% + 44px)'}}><iframe src='https://gfycat.com/ifr/grayunfoldedgreendarnerdragonfly' frameBorder='0' scrolling='no' width='100%' height='100%' style={{position: 'absolute', top: '0', left: '0'}} allowFullScreen></iframe></div>
             </DiscordMessage>
-            <DiscordMessage profile='enter'>
+            <DiscordMessage author="Enter" avatar="/enter.png" roleColor='#03f611'>
                 ?gfycat search yeonjung --multi --count 30
             </DiscordMessage>
-            <DiscordMessage profile='bentoBot'>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 Current Gfycat: 10/30 <br />
                 <strong>Yeonjung</strong> <br />
                 Made by <a href='https://gfycat.com/@theangrycamel'>https://gfycat.com/@theangrycamel</a> <br />

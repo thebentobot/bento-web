@@ -6,8 +6,8 @@ export default function MemberLog2() {
     return (
         <div>
         <DiscordMessages>
-            <DiscordMessage profile='bentoBot'>
-            <DiscordEmbed slot='embeds' color="#00ff1a" authorName='alonzo#0011 (userID: 370695349167325196)' authorImage={alonzoAvatar} timestamp={moment().toDate()}>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b' timestamp={moment().toDate()}>
+            <DiscordEmbed slot='embeds' color="#00ff1a" authorName='alonzo#0011 (userID: 370695349167325196)' authorImage={alonzoAvatar}>
                 Nickname updated for this user.
                 <p className='font-bold'>Previous nickname:</p>
                 i love you banner
@@ -19,8 +19,8 @@ export default function MemberLog2() {
             </DiscordMessages>
             <div className='hidden lg:contents'>
             <DiscordMessages>
-            <DiscordMessage profile='bentoBot'>
-            <DiscordEmbed slot='embeds' embedTitle='Adaam#3206 joined the server!' color="#00ff1a" timestamp={moment().toDate()} thumbnail={adamAvatar}>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b' timestamp={moment().toDate()}>
+            <DiscordEmbed slot='embeds' embedTitle='Adaam#3206 joined the server!' color="#00ff1a" thumbnail={adamAvatar}>
                 <strong>Account created:</strong> 9/9/2016 20:50:47 +00:00
                 <br />
                 <strong >Bans on other servers:</strong> <code>0</code>

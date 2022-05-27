@@ -3,16 +3,16 @@ import { DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions } fr
 export default function Gif() {
     return (
         <DiscordMessages>
-            <DiscordMessage profile='banner'>
+            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>
                 ?gif ecco2k
             </DiscordMessage>
-            <DiscordMessage profile='bentoBot'>
-                <div style={{position: 'relative', paddingBottom: 'calc(56.25% + 44px)'}}><iframe src='https://gfycat.com/ifr/SplendidScholarlyDiscus' frameBorder='0' scrolling='no' width='100%' height='100%' style={{position: 'absolute', top: '0', left: '0'}} allowFullScreen></iframe></div>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
+                <div style={{position: 'relative', paddingBottom: 'calc(56.25% + 44px)'}}><iframe src='https://gfycat.com/ifr/grayunfoldedgreendarnerdragonfly' frameBorder='0' scrolling='no' width='100%' height='100%' style={{position: 'absolute', top: '0', left: '0'}} allowFullScreen></iframe></div>
             </DiscordMessage>
-            <DiscordMessage profile='enter'>
+            <DiscordMessage author="Enter" avatar="/enter.png" roleColor='#03f611'>
                 ?gif yeonjung --multi --count 30
             </DiscordMessage>
-            <DiscordMessage profile='bentoBot'>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 Current Gfycat: 10/30 <br />
                 <strong>Yeonjung</strong> <br />
                 Made by <a href='https://gfycat.com/@theangrycamel'>https://gfycat.com/@theangrycamel</a> <br />

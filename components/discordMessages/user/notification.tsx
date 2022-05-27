@@ -11,13 +11,13 @@ export default function Notification() {
             You start off by saving a <code>keyword</code>, where when people mention the word, you will receive a DM.
         </p>
         <DiscordMessages>
-            <DiscordMessage profile='adam'>?notification add pizza</DiscordMessage>
+            <DiscordMessage author="Adam" avatar="/adam.webp" roleColor='#00B2FF'>?notification add pizza</DiscordMessage>
         </DiscordMessages>
         <p className='text-xl py-2 whitespace-pre-line text-gray-300 text-opacity-50 sm:text-xl group-hover:text-opacity-100 text-center max-w-xl mx-auto'>
             Where you receive this DM after saving it.
         </p>
         <DiscordMessages>
-            <DiscordMessage profile='bentoBot'>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordEmbed slot='embeds' color="#ffd903">
                 Your notification <code>pizza</code> has been saved!
                 <br />
@@ -29,7 +29,7 @@ export default function Notification() {
             When a user mentions this saved keyword, you will be notified like this:
         </p>
         <DiscordMessages>
-            <DiscordMessage profile='bentoBot'>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 Link to message:
                 <br />
                 <a href='https://discord.com/channels/714496317522444352/714825604838719570/872462217587601508'>https://discord.com/channels/714496317522444352/714825604838719570/872462217587601508</a>
@@ -58,7 +58,7 @@ export default function Notification() {
             You can also get a list of all your notifications
         </p>
         <DiscordMessages>
-            <DiscordMessage profile='bentoBot'>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordEmbed slot='embeds' embedTitle='Your saved notifications' color="#ffd903" thumbnail={adamAvatar}>
                     <strong>pizza</strong> (Bento Bot) | <strong>burger</strong> (G) | <strong>beer</strong> (G)
                     <span slot="footer">Notifications marked with (G) is enabled globally. <br /> Notifications in total: 3.   </span>
@@ -70,10 +70,10 @@ export default function Notification() {
             <br /> or use the global command below.
         </p>
         <DiscordMessages>
-            <DiscordMessage profile='adam'>?noti global pizza</DiscordMessage>
-            <DiscordMessage highlight profile='bentoBot'><DiscordMention>Adam</DiscordMention> Your notification was just <code>enabled</code> globally.</DiscordMessage>
-            <DiscordMessage profile='adam'>?noti global pizza</DiscordMessage>
-            <DiscordMessage highlight profile='bentoBot'><DiscordMention>Adam</DiscordMention> Your notification was just <code>disabled</code> globally.</DiscordMessage>
+            <DiscordMessage author="Adam" avatar="/adam.webp" roleColor='#00B2FF'>?noti global pizza</DiscordMessage>
+            <DiscordMessage highlight author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'><DiscordMention>Adam</DiscordMention> Your notification was just <code>enabled</code> globally.</DiscordMessage>
+            <DiscordMessage author="Adam" avatar="/adam.webp" roleColor='#00B2FF'>?noti global pizza</DiscordMessage>
+            <DiscordMessage highlight author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'><DiscordMention>Adam</DiscordMention> Your notification was just <code>disabled</code> globally.</DiscordMessage>
         </DiscordMessages>
         </div>
     )

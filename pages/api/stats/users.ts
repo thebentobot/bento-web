@@ -1,10 +1,12 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-import database from '../../../database/database'
-import { guild, initModels, user } from '../../../database/models/init-models'
+import { prisma } from '../../../util/prisma'
 
 export async function getData() {
-  initModels(database)
-  const userData = await guild.sum('memberCount')
-  return { count: userData }
+  const userData = await prisma.guild.aggregate({
+    _sum: {
+      memberCount: true
+    }
+  })
+  return { count: userData._sum.memberCount }
 }

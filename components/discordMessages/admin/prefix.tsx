@@ -3,10 +3,10 @@ import { DiscordMessage, DiscordMessages } from '@skyra/discord-components-react
 export default function Prefix() {
     return (
         <DiscordMessages>
-            <DiscordMessage profile='lewis'>
+            <DiscordMessage author="Lewis" avatar="/lewis.png" roleColor='#00B2FF'>
                 ?prefix -
             </DiscordMessage>
-            <DiscordMessage profile='bentoBot'>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 Your server prefix has been updated to <code>-</code>
             </DiscordMessage>
         </DiscordMessages>

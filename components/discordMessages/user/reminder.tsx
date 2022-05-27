@@ -6,7 +6,7 @@ export default function Reminder() {
     return (
         <div>
         <DiscordMessages>
-            <DiscordMessage timestamp='08/16/2021' profile='enter'>
+            <DiscordMessage timestamp='08/16/2021' author="Enter" avatar="/enter.png" roleColor='#03f611'>
             ?remind time 4 hours add stayc to comeback list. September 6.
             </DiscordMessage>
         </DiscordMessages>
@@ -14,7 +14,7 @@ export default function Reminder() {
             Where you receive this DM from Bento 🍱, if they’re enabled.
         </p>
         <DiscordMessages>
-            <DiscordMessage timestamp='08/16/2021' profile='bentoBot'>
+            <DiscordMessage timestamp='08/16/2021' author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
             Your reminder has been set!
             <br />
             In 30 minutes you will be reminded to <code>add stayc to comeback list. September 6.</code>.
@@ -26,13 +26,13 @@ export default function Reminder() {
             It is also possible to save for exact dates with the <code>schedule</code> argument instead of time, and also possible to get a DM with a list of all reminders by using <code>?reminder list</code>.
         </p>
         <DiscordMessages>
-            <DiscordMessage timestamp='08/16/2021' profile='alonzo'>
+            <DiscordMessage timestamp='08/16/2021' author="alonzo" avatar="/alonzo.png" roleColor='#99ff99'>
             ?remind schedule 06-09-2021 10:00 +02:00 STAYC COMEBACK
             </DiscordMessage>
         </DiscordMessages>
         <br />
         <DiscordMessages>
-            <DiscordMessage timestamp='08/16/2021' profile='bentoBot'>
+            <DiscordMessage timestamp='08/16/2021' author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordEmbed slot='embeds' thumbnail={alonzoAvatar} color="#ffd903" embedTitle='In 21 days' authorName='Reminder' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024'>
                 STAYC COMEBACK
                 <span slot="footer">Remind Date: Monday, September 6th 2021, 08:00:00 AM +00:00  </span>

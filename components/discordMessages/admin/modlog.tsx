@@ -5,8 +5,8 @@ import { alonzoAvatar, bannerAvatar } from '../../../pages/_app'
 export default function ModLog() {
     return (
         <DiscordMessages>
-            <DiscordMessage profile='bentoBot'>
-            <DiscordEmbed slot='embeds' color="#000000" embedTitle='Banner’s lab rat (alonzo#0011) was muted for 8 hours!' authorName='Banner#1017' authorImage={bannerAvatar} timestamp={moment().toDate()} thumbnail={alonzoAvatar}>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b' timestamp={moment().toDate()}>
+            <DiscordEmbed slot='embeds' color="#000000" embedTitle='Banner’s lab rat (alonzo#0011) was muted for 8 hours!' authorName='Banner#1017' authorImage={bannerAvatar} thumbnail={alonzoAvatar}>
             This user has been muted <strong>10 times</strong> on this server
                 <DiscordEmbedFields slot='fields'>
                         <DiscordEmbedField fieldTitle='Reason' inline inlineIndex={1}>Annoying</DiscordEmbedField>
@@ -17,7 +17,7 @@ export default function ModLog() {
                 <span slot="footer">Mute Case Number: 17  </span>
             </DiscordEmbed>
             </DiscordMessage>
-            <DiscordMessage profile='bentoBot'>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
             A channel called <strong>report-bugs</strong> under the category <strong>#Bento Bot</strong> was created at <strong>Thu Aug 05 2021 23:39:30 GMT+0000 (Coordinated Universal Time).</strong>
             <br />
             Get more info in the audit log.

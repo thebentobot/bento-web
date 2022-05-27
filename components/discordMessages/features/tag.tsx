@@ -5,7 +5,7 @@ import { bannerAvatar } from '../../../pages/_app'
 export default function Tag() {
     return (
         <DiscordMessages>
-            <DiscordMessage timestamp='08/16/2021' profile='banner'>
+            <DiscordMessage timestamp='08/16/2021' author="Banner" avatar="/banner.png" roleColor='#ff00fa'>
                 ?tag add nav <a href='https://cdn.discordapp.com/attachments/565375372909084684/621159237623480340/Nav.mp4'>https://cdn.discordapp.com/attachments/565375372909084684/621159237623480340/Nav.mp4</a>
                 <DiscordEmbed
 							slot="embeds"
@@ -13,7 +13,7 @@ export default function Tag() {
 							image="https://cdn.discordapp.com/attachments/875028048016187412/876553778554359898/unknown.png"
 						></DiscordEmbed>
             </DiscordMessage>
-            <DiscordMessage timestamp='08/16/2021' profile='bentoBot'>
+            <DiscordMessage timestamp='08/16/2021' author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 The tag <code>nav</code> was successfully saved!
                 <br />
                 Content:
@@ -25,10 +25,10 @@ export default function Tag() {
 							image="https://cdn.discordapp.com/attachments/875028048016187412/876553778554359898/unknown.png"
 						></DiscordEmbed>
             </DiscordMessage>
-            <DiscordMessage timestamp='08/16/2021' profile='fiji'>
+            <DiscordMessage timestamp='08/16/2021' author="Fiji Spring Water" avatar="/fiji.png" roleColor='#00B2FF'>
                 ?nav
             </DiscordMessage>
-            <DiscordMessage timestamp='08/16/2021' profile='bentoBot'>
+            <DiscordMessage timestamp='08/16/2021' author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
             <a href='https://cdn.discordapp.com/attachments/565375372909084684/621159237623480340/Nav.mp4'>https://cdn.discordapp.com/attachments/565375372909084684/621159237623480340/Nav.mp4</a>
                 <DiscordEmbed
 							slot="embeds"
@@ -36,10 +36,10 @@ export default function Tag() {
 							image="https://cdn.discordapp.com/attachments/875028048016187412/876553778554359898/unknown.png"
 						></DiscordEmbed>
             </DiscordMessage>
-            <DiscordMessage timestamp='08/16/2021' profile='adam'>
+            <DiscordMessage timestamp='08/16/2021' author="Adam" avatar="/adam.webp" roleColor='#00B2FF'>
                 ?tag info nav
             </DiscordMessage>
-            <DiscordMessage timestamp='08/16/2021' profile='bentoBot'>
+            <DiscordMessage timestamp='08/16/2021' author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
             <DiscordEmbed slot='embeds' color="#ffd903" authorName='All the Cappermotes' thumbnail={bannerAvatar} authorImage='https://cdn.discordapp.com/icons/521080679606386698/882317d9d10df050ba1802546ce11775.png?size=1024' embedTitle='nav'>
                     <DiscordEmbedFields slot='fields'>
                         <DiscordEmbedField fieldTitle='Author of the tag' inline inlineIndex={1}>Banner#1017</DiscordEmbedField>

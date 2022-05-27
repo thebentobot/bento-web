@@ -1,10 +1,18 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import { patreon } from '@prisma/client'
 import type { NextApiRequest, NextApiResponse } from 'next'
-import database from '../../../database/database'
-import { initModels, patreon } from '../../../database/models/init-models'
+import { prisma } from '../../../util/prisma'
 
 export async function getData() {
-  initModels(database)
-  const patreonDiscipleData = await patreon.findAll({raw: true, where: {disciple: true}})
-  return patreonDiscipleData
+  const patreonDiscipleData = await prisma.patreon.findMany({
+    where: {
+      disciple: true
+    }
+  })
+  const parsedLmao = JSON.parse(JSON.stringify(patreonDiscipleData, (key, value) =>
+  typeof value === 'bigint'
+      ? value.toString()
+      : value // return everything else unchanged
+)) as patreon[]
+  return parsedLmao
 }

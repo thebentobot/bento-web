@@ -1,13 +1,13 @@
-import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions } from '@skyra/discord-components-react'
+import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordEmbedFooter, DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions } from '@skyra/discord-components-react'
 import moment from 'moment'
 import { alonzoAvatar, bannerAvatar } from '../../../pages/_app'
 
 export default function CaseDelete() {
     return (
         <DiscordMessages>
-            <DiscordMessage profile='banner'>?case delete warning 3</DiscordMessage>
-            <DiscordMessage profile='bentoBot'>
-            <DiscordEmbed slot='embeds' color="#ffd903" embedTitle='Are you sure that you want to delete Warning Case Number 3: Banner’s Lab Rat(alonzo#0011)' authorName='Banner#1017' footerImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' authorImage={bannerAvatar} thumbnail={alonzoAvatar}>
+            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>?case delete warning 3</DiscordMessage>
+            <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
+            <DiscordEmbed slot='embeds' color="#ffd903" embedTitle='Are you sure that you want to delete Warning Case Number 3: Banner’s Lab Rat(alonzo#0011)' authorName='Banner#1017' authorImage={bannerAvatar} thumbnail={alonzoAvatar}>
                 <strong>Reason for Warning</strong>
                 <br />
                 trying to fill me with bs
@@ -18,7 +18,12 @@ export default function CaseDelete() {
                         <DiscordEmbedField fieldTitle='UserID for the User who gave the warning' inline inlineIndex={1}>232584569289703424</DiscordEmbedField>
                         <DiscordEmbedField fieldTitle='Notes about this case' inline inlineIndex={1}>he is annoying he will get the boot at some point definitely</DiscordEmbedField>
                 </DiscordEmbedFields>
-                <span slot="footer">Warning Case Number: 3  </span>
+                <DiscordEmbedFooter
+              slot="footer"
+              footerImage="https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024"
+            >
+              Warning Case Number: 3
+            </DiscordEmbedFooter>
                 </DiscordEmbed>
                 <DiscordReactions slot="reactions">
                         <DiscordReaction emoji="https://emojipedia-us.s3.amazonaws.com/source/skype/289/check-mark_2714-fe0f.png"></DiscordReaction>

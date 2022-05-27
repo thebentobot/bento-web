@@ -13,7 +13,7 @@ export const tzuwyAvatar = '/tzuwy.png'
 export const enterAvatar = '/enter.png'
 export const fijiAvatar = '/fiji.png'
 export const lewisAvatar = '/lewis.png'
-export const adamAvatar = '/adam.gif'
+export const adamAvatar = '/adam.webp'
 export const bannerAvatar = '/banner.png'
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         },
         adam: {
           author: 'Adam',
-          avatar: '/adam.gif',
+          avatar: '/adam.webp',
           roleColor: '#00B2FF'
         },
         lewis: {
@@ -91,6 +91,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     return () => window.removeEventListener("scroll", toggleVisibility)
   }, [])
+  
   return (
     <div className="bg-gray-800 flex flex-col min-h-screen">
       <script>
