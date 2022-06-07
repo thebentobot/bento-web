@@ -11,5 +11,14 @@ updates:
       interval: 'daily'
       time: '06:00'
       timezone: 'Europe/Copenhagen'
-    reviewers:
+    assignees:
+      - 'banner4422'
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: '06:00'
+      timezone: 'Europe/Copenhagen'
+    assignees:
       - 'banner4422'
