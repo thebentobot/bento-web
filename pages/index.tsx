@@ -6,6 +6,7 @@ import { getData as userDataFetch } from './api/stats/users'
 import { getData as serverDataFetch } from './api/stats/servers'
 import { motion, Variants, useReducedMotion } from "framer-motion"
 import { NextSeo } from 'next-seo'
+import Image from 'next/image'
 
 const features = [
   {
@@ -195,14 +196,9 @@ const bottomAnimation: Variants = shouldReduceMotion ? {
         </div>
       </div>
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <motion.img
-          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+        <Image className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
           src="/bento.png"
-          width={375}
-          height={375}
-          alt=""
-          initial='hidden' animate='show' variants={animation}
-        />
+          alt="Bento logo" layout='fill' />
       </div>
     </div>
     <div className="py-12 bg-gray-900">
