@@ -24,7 +24,7 @@
     "next-seo": "^5.4.0",
     "next-transpile-modules": "^9.0.0",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node-fetch": "^2.5.11",
