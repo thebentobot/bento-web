@@ -1,4 +1,4 @@
-import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
+import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordInlineCode, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
 import moment from 'moment'
 
 export default function PrefixExample2() {
@@ -6,7 +6,7 @@ export default function PrefixExample2() {
         <DiscordMessages>
             <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa' highlight><DiscordMention>Bento</DiscordMention></DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
-            The Bento 🍱 prefix on this server is: <code>?</code>.
+            The Bento 🍱 prefix on this server is: <DiscordInlineCode>?</DiscordInlineCode>.
             </DiscordMessage>
         </DiscordMessages>
     )

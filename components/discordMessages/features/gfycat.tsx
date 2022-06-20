@@ -1,4 +1,4 @@
-import { DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions, DiscordEmbed } from '@skyra/discord-components-react'
+import { DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions, DiscordEmbed, DiscordEmbedDescription } from '@skyra/discord-components-react'
 // 'position:relative; padding-bottom:calc(56.25% + 44px)'
 export default function Gfycat() {
     return (
@@ -53,10 +53,12 @@ export default function Gfycat() {
             </DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordEmbed color='#000000'>
+                <DiscordEmbedDescription slot='description'>
                 Total Views: 1 <br /> <br />
                 0 Likes ❤️ <br />
                 Frame rate: 23.976025 <br />
                 Width and Height: 1920x1080 <br />
+                </DiscordEmbedDescription>
                 </DiscordEmbed>
                 <DiscordReactions slot="reactions">
                     <DiscordReaction emoji="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/clockwise-vertical-arrows_1f503.png"></DiscordReaction>
