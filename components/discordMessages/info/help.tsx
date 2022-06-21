@@ -1,4 +1,4 @@
-import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
+import { DiscordEmbed, DiscordEmbedDescription, DiscordEmbedField, DiscordEmbedFields, DiscordEmbedFooter, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
 import moment from 'moment'
 
 export default function Help() {
@@ -7,6 +7,7 @@ export default function Help() {
             <DiscordMessage author="Lewis" avatar="/lewis.png" roleColor='#00B2FF'>?help weather</DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordEmbed slot='embeds' color="#ffd903">
+                <DiscordEmbedDescription slot='description'>
                     <strong>Command Name: </strong> weather
                     <br />
                     <strong>Aliases: </strong>
@@ -20,7 +21,10 @@ export default function Help() {
                     <strong>Usage: </strong> ?weather [save] {`<city>`}, [country code]
                     <br />
                     <strong>Website: </strong> <a href='https://www.bentobot.xyz/commands#weather'>https://www.bentobot.xyz/commands#weather</a>
-                    <span slot="footer">{`<>`} = REQUIRED | [] = OPTIONAL  </span>
+                    </DiscordEmbedDescription>
+                    <DiscordEmbedFooter
+              slot="footer"
+            > {`<>`} = REQUIRED | [] = OPTIONAL</DiscordEmbedFooter>
                 </DiscordEmbed>
             </DiscordMessage>
         </DiscordMessages>

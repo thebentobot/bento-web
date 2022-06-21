@@ -1,4 +1,4 @@
-import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
+import { DiscordEmbed, DiscordEmbedDescription, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
 import moment from 'moment'
 import { adamAvatar, tzuwyAvatar } from '../../../pages/_app'
 
@@ -19,9 +19,11 @@ export default function Notification() {
         <DiscordMessages>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordEmbed slot='embeds' color="#ffd903">
+                <DiscordEmbedDescription slot='description'>
                 Your notification <code>pizza</code> has been saved!
                 <br />
                 You will be notified when your notification content are mentioned on the server you saved it on. Use the global argument for the notification command to enable global notifications.
+                </DiscordEmbedDescription>
                 </DiscordEmbed>
             </DiscordMessage>
         </DiscordMessages>
@@ -34,6 +36,7 @@ export default function Notification() {
                 <br />
                 <a href='https://discord.com/channels/714496317522444352/714825604838719570/872462217587601508'>https://discord.com/channels/714496317522444352/714825604838719570/872462217587601508</a>
                 <DiscordEmbed slot='embeds' color="#ffd903" authorName='Bento Bot' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' thumbnail={tzuwyAvatar}>
+                <DiscordEmbedDescription slot='description'>
                 🗨️ tzuwy#0001 mentioned <code>pizza</code> in <DiscordMention type='channel'>general</DiscordMention> on <strong>Bento Bot</strong>.
                 <br /> 
                 Link to the message <a href='https://discord.com/channels/714496317522444352/714825604838719570/872462217587601508'>here</a>
@@ -49,6 +52,7 @@ export default function Notification() {
                 <strong>[12:42:49 +00:00] tzuwy#0001</strong>
                 <br />
                 <strong>pizza</strong> is tasty
+                </DiscordEmbedDescription>
                 </DiscordEmbed>
             </DiscordMessage>        
         </DiscordMessages>
@@ -60,8 +64,10 @@ export default function Notification() {
         <DiscordMessages>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordEmbed slot='embeds' embedTitle='Your saved notifications' color="#ffd903" thumbnail={adamAvatar}>
+                <DiscordEmbedDescription slot='description'>
                     <strong>pizza</strong> (Bento Bot) | <strong>burger</strong> (G) | <strong>beer</strong> (G)
                     <span slot="footer">Notifications marked with (G) is enabled globally. <br /> Notifications in total: 3.   </span>
+                    </DiscordEmbedDescription>
                 </DiscordEmbed>
             </DiscordMessage>        
         </DiscordMessages>

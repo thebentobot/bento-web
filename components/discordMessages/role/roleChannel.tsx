@@ -1,10 +1,11 @@
-import { DiscordEmbed, DiscordEmbedFields, DiscordEmbedField, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
+import { DiscordEmbed, DiscordEmbedFields, DiscordEmbedField, DiscordMention, DiscordMessage, DiscordMessages, DiscordEmbedDescription } from '@skyra/discord-components-react'
 import moment from 'moment'
 
 export default function RoleChannel() {
     return (
         <DiscordMessages>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b' timestamp={moment().toDate()}>
+            <DiscordEmbedDescription slot='description'>
             <strong>Assign yourself a role!</strong>
             <br />
             <br />
@@ -31,6 +32,7 @@ export default function RoleChannel() {
             <br />
             <br />
             The <strong>News</strong> role is if you want updates about Bento regarding new features, technical issues, downtime, bugs etc.
+            </DiscordEmbedDescription>
             <DiscordEmbed slot='embeds' title='Available Roles' color="#ffe9a4">
                 <DiscordEmbedFields slot='fields'>
                     <DiscordEmbedField fieldTitle='Main Roles' inline inlineIndex={1}><code>Tester</code>, <code>Co-Developer</code></DiscordEmbedField>

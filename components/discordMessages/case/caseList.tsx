@@ -1,5 +1,4 @@
-import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions } from '@skyra/discord-components-react'
-import moment from 'moment'
+import { DiscordEmbed, DiscordEmbedDescription, DiscordEmbedFooter, DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions } from '@skyra/discord-components-react'
 
 export default function CaseList() {
     return (
@@ -8,6 +7,7 @@ export default function CaseList() {
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 Current page: 1/2
                 <DiscordEmbed slot='embeds' color="#ffd903" embedTitle='Mute Case List for Bento Bot between 2021-07-01 and 2021-08-25' authorName='Bento' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' thumbnail='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024'>
+                <DiscordEmbedDescription slot='description'>
                 <strong>Mute Case Number 20:</strong> Adaam#3206. August 15th 2021.
                 <br />
                 <strong>Mute Case Number 19:</strong> azu#1931. August 15th 2021.
@@ -28,7 +28,13 @@ export default function CaseList() {
                 <br />
                 <strong>Mute Case Number 9:</strong> alonzo#0011. July 30th 2021.
                 <br />
-                <span slot="footer">Amount of mute cases: 13 </span> 
+                </DiscordEmbedDescription>
+                <DiscordEmbedFooter
+              slot="footer"
+              footerImage="https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024"
+            >
+              Amount of mute cases: 13
+            </DiscordEmbedFooter>
                 </DiscordEmbed>
                 <DiscordReactions slot="reactions">
                         <DiscordReaction emoji="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/twitter/282/left-arrow_2b05-fe0f.png"></DiscordReaction>

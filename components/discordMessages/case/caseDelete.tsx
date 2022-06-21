@@ -1,4 +1,4 @@
-import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordEmbedFooter, DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions } from '@skyra/discord-components-react'
+import { DiscordEmbed, DiscordEmbedDescription, DiscordEmbedField, DiscordEmbedFields, DiscordEmbedFooter, DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions } from '@skyra/discord-components-react'
 import moment from 'moment'
 import { alonzoAvatar, bannerAvatar } from '../../../pages/_app'
 
@@ -8,9 +8,11 @@ export default function CaseDelete() {
             <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>?case delete warning 3</DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
             <DiscordEmbed slot='embeds' color="#ffd903" embedTitle='Are you sure that you want to delete Warning Case Number 3: Banner’s Lab Rat(alonzo#0011)' authorName='Banner#1017' authorImage={bannerAvatar} thumbnail={alonzoAvatar}>
+            <DiscordEmbedDescription slot='description'>
                 <strong>Reason for Warning</strong>
                 <br />
                 trying to fill me with bs
+                </DiscordEmbedDescription>
                 <DiscordEmbedFields slot='fields'>
                         <DiscordEmbedField fieldTitle='UserID' inline inlineIndex={1}>370695349167325196</DiscordEmbedField>
                         <DiscordEmbedField fieldTitle='Date of occurence' inline inlineIndex={1}>Friday, July 30th 2021, 05:12:20 AM +00:00</DiscordEmbedField>

@@ -1,4 +1,4 @@
-import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordEmbedFooter, DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions } from '@skyra/discord-components-react'
+import { DiscordEmbed, DiscordEmbedDescription, DiscordEmbedField, DiscordEmbedFields, DiscordEmbedFooter, DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions } from '@skyra/discord-components-react'
 import moment from 'moment'
 import { alonzoAvatar } from '../../../pages/_app'
 
@@ -9,9 +9,11 @@ export default function CaseSearch() {
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 Result 1/5
                 <DiscordEmbed slot='embeds' color="#ffd903" embedTitle='Banner’s Lab Rat (alonzo#0011)' authorName='Bento Bot' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' thumbnail={alonzoAvatar}>
+                <DiscordEmbedDescription slot='description'>
                 <strong>Reason for Mute</strong>
                 <br />
                 annoying
+                </DiscordEmbedDescription>
                 <DiscordEmbedFields slot='fields'>
                         <DiscordEmbedField fieldTitle='Date of occurence' inline inlineIndex={1}>Saturday, August 7th 2021, 23:45:26 PM +00:00</DiscordEmbedField>
                         <DiscordEmbedField fieldTitle='Date of unmute' inline inlineIndex={1}>Sunday, August 8th 2021, 07:45:26 AM +00:00</DiscordEmbedField>

@@ -1,4 +1,4 @@
-import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordEmbedFooter, DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions } from '@skyra/discord-components-react'
+import { DiscordEmbed, DiscordEmbedDescription, DiscordEmbedField, DiscordEmbedFields, DiscordEmbedFooter, DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions } from '@skyra/discord-components-react'
 import moment from 'moment'
 import { alonzoAvatar } from '../../../pages/_app'
 
@@ -8,6 +8,7 @@ export default function CaseEdit() {
             <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>?case edit warning 1 note he may get the mute mask in the future muahaha</DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
             <DiscordEmbed slot='embeds' color="#ffd903" embedTitle="Warning Case Number 1's note was updated!" authorName='Bento Bot' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' thumbnail={alonzoAvatar}>
+            <DiscordEmbedDescription slot='description'>
                 <strong>Original note</strong>
                 <br />
                 null
@@ -15,6 +16,7 @@ export default function CaseEdit() {
                 <strong>New note</strong>
                 <br />
                 he may get the mute mask in the future muahaha
+                </DiscordEmbedDescription>
                 <DiscordEmbedFields slot='fields'>
                         <DiscordEmbedField fieldTitle='Case User' inline inlineIndex={1}>Alonzo#0011</DiscordEmbedField>
                         <DiscordEmbedField fieldTitle='UserID' inline inlineIndex={1}>370695349167325196</DiscordEmbedField>
