@@ -20,5 +20,10 @@ export async function getData() {
   GROUP BY t.level, t.xp, t.username, t.discriminator, t."avatarURL"
   ORDER BY t.level DESC, t.xp DESC
   LIMIT 50;`
-  return globalRank
+  const parsedLmao = JSON.parse(JSON.stringify(globalRank, (key, value) =>
+  typeof value === 'bigint'
+      ? value.toString()
+      : value // return everything else unchanged
+)) as Rankings[]
+  return parsedLmao
 }
