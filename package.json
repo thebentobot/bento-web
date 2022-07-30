@@ -21,7 +21,7 @@
     "framer-motion": "^6.5.1",
     "moment": "^2.29.4",
     "next": "^12.2.2",
-    "next-seo": "^5.4.0",
+    "next-seo": "^5.5.0",
     "next-transpile-modules": "^9.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.2.0"
