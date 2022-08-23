@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@babel/core": "^7.18.10",
+    "@babel/core": "^7.18.13",
     "@headlessui/react": "^1.6.6",
     "@heroicons/react": "^1.0.1",
     "@prisma/client": "^4.2.1",
