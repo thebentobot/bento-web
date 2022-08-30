@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export default function Footer() {
     return (
         <div className="bg-gray-800 mt-4">
@@ -27,19 +29,21 @@ export default function Footer() {
                             Links
                         </p>
                         <p>
+                        <Link href="/terms-of-service" passHref>
                         <a
-                            href="/terms-of-service"
                             className="text-gray-300 hover:text-yellow-300"
                         >
                             Terms of Service
                         </a>
+                        </Link>
                         <br/>
+                        <Link href="/privacy-policy" passHref>
                         <a
-                            href="/privacy-policy"
                             className="text-gray-300 hover:text-yellow-300"
                         >
                             Privacy Policy
                         </a>
+                        </Link>
                         <br/>
                         <a
                             href="https://github.com/thebentobot"
