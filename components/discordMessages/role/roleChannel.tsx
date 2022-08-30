@@ -41,7 +41,7 @@ export default function RoleChannel() {
                 </DiscordEmbedFields>
             </DiscordEmbed>
             </DiscordMessage>
-            <DiscordMessage author="Fiji Spring Water" avatar="/fiji.png" roleColor='#00B2FF'>
+            <DiscordMessage author="Fiji Spring Water" avatar="/fiji.webp" roleColor='#00B2FF'>
                 +other bajer
             </DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>

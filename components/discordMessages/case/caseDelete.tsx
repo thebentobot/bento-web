@@ -5,7 +5,7 @@ import { alonzoAvatar, bannerAvatar } from '../../../pages/_app'
 export default function CaseDelete() {
     return (
         <DiscordMessages>
-            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>?case delete warning 3</DiscordMessage>
+            <DiscordMessage author="Banner" avatar="/banner.webp" roleColor='#ff00fa'>?case delete warning 3</DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
             <DiscordEmbed slot='embeds' color="#ffd903" embedTitle='Are you sure that you want to delete Warning Case Number 3: Banner’s Lab Rat(alonzo#0011)' authorName='Banner#1017' authorImage={bannerAvatar} thumbnail={alonzoAvatar}>
             <DiscordEmbedDescription slot='description'>

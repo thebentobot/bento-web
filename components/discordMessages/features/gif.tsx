@@ -3,13 +3,13 @@ import { DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions } fr
 export default function Gif() {
     return (
         <DiscordMessages>
-            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>
+            <DiscordMessage author="Banner" avatar="/banner.webp" roleColor='#ff00fa'>
                 ?gif ecco2k
             </DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <div style={{position: 'relative', paddingBottom: 'calc(56.25% + 44px)'}}><iframe src='https://gfycat.com/ifr/grayunfoldedgreendarnerdragonfly' frameBorder='0' scrolling='no' width='100%' height='100%' style={{position: 'absolute', top: '0', left: '0'}} allowFullScreen></iframe></div>
             </DiscordMessage>
-            <DiscordMessage author="Enter" avatar="/enter.png" roleColor='#03f611'>
+            <DiscordMessage author="Enter" avatar="/enter.webp" roleColor='#03f611'>
                 ?gif yeonjung --multi --count 30
             </DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>

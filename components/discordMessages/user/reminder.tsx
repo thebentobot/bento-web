@@ -6,7 +6,7 @@ export default function Reminder() {
     return (
         <div>
         <DiscordMessages>
-            <DiscordMessage timestamp='08/16/2021' author="Enter" avatar="/enter.png" roleColor='#03f611'>
+            <DiscordMessage timestamp='08/16/2021' author="Enter" avatar="/enter.webp" roleColor='#03f611'>
             ?remind time 4 hours add stayc to comeback list. September 6.
             </DiscordMessage>
         </DiscordMessages>
@@ -26,7 +26,7 @@ export default function Reminder() {
             It is also possible to save for exact dates with the <code>schedule</code> argument instead of time, and also possible to get a DM with a list of all reminders by using <code>?reminder list</code>.
         </p>
         <DiscordMessages>
-            <DiscordMessage timestamp='08/16/2021' author="alonzo" avatar="/alonzo.png" roleColor='#99ff99'>
+            <DiscordMessage timestamp='08/16/2021' author="alonzo" avatar="/alonzo.webp" roleColor='#99ff99'>
             ?remind schedule 06-09-2021 10:00 +02:00 STAYC COMEBACK
             </DiscordMessage>
         </DiscordMessages>

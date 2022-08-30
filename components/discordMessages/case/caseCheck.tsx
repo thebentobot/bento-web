@@ -5,7 +5,7 @@ import { alonzoAvatar, bannerAvatar } from '../../../pages/_app'
 export default function CaseCheck() {
     return (
         <DiscordMessages>
-            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>?case check warning 3</DiscordMessage>
+            <DiscordMessage author="Banner" avatar="/banner.webp" roleColor='#ff00fa'>?case check warning 3</DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordEmbed slot='embeds' color="#ffd903" embedTitle='Warning Case Number 3: Banner’s lab rat (alonzo#0011)' authorName='Banner#1017' authorImage={bannerAvatar} thumbnail={alonzoAvatar}>
                 <DiscordEmbedDescription slot='description'>

@@ -5,7 +5,7 @@ import { bannerAvatar } from '../../../pages/_app'
 export default function Tag() {
     return (
         <DiscordMessages>
-            <DiscordMessage timestamp='08/16/2021' author="Banner" avatar="/banner.png" roleColor='#ff00fa'>
+            <DiscordMessage timestamp='08/16/2021' author="Banner" avatar="/banner.webp" roleColor='#ff00fa'>
                 ?tag add nav <a href='https://cdn.discordapp.com/attachments/565375372909084684/621159237623480340/Nav.mp4'>https://cdn.discordapp.com/attachments/565375372909084684/621159237623480340/Nav.mp4</a>
                 <DiscordEmbed
 							slot="embeds"
@@ -25,7 +25,7 @@ export default function Tag() {
 							image="https://cdn.discordapp.com/attachments/875028048016187412/876553778554359898/unknown.png"
 						></DiscordEmbed>
             </DiscordMessage>
-            <DiscordMessage timestamp='08/16/2021' author="Fiji Spring Water" avatar="/fiji.png" roleColor='#00B2FF'>
+            <DiscordMessage timestamp='08/16/2021' author="Fiji Spring Water" avatar="/fiji.webp" roleColor='#00B2FF'>
                 ?nav
             </DiscordMessage>
             <DiscordMessage timestamp='08/16/2021' author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>

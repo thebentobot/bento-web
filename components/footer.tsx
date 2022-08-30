@@ -7,6 +7,17 @@ export default function Footer() {
                         <p className="text-yellow-300 font-medium ">
                             Bento
                         </p>
+                        <p className="text-gray-300">
+            Logo drawn by {" "}
+                    <a
+                        href="https://twitter.com/dannalanart"
+                        target="_blank"
+                        rel="noreferrer"
+                        className=" text-blue-400 hover:underline"
+                    >
+                        Dan
+                    </a>.{" "}
+            </p>
                         <p className="text-sm text-gray-400">
                             Source code licensed AGPLv3
                         </p>
@@ -17,6 +28,20 @@ export default function Footer() {
                         </p>
                         <p>
                         <a
+                            href="/terms-of-service"
+                            className="text-gray-300 hover:text-yellow-300"
+                        >
+                            Terms of Service
+                        </a>
+                        <br/>
+                        <a
+                            href="/privacy-policy"
+                            className="text-gray-300 hover:text-yellow-300"
+                        >
+                            Privacy Policy
+                        </a>
+                        <br/>
+                        <a
                             href="https://github.com/thebentobot"
                             className="text-gray-300 hover:text-white"
                         >
@@ -25,7 +50,7 @@ export default function Footer() {
                         <br/>
                         <a
                             href="https://discord.gg/dd68WwP"
-                            className="text-gray-300 hover:text-white"
+                            className="text-gray-300 hover:text-discordBlue"
                         >
                             Discord Support Server
                         </a>

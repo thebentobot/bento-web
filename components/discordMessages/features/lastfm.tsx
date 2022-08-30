@@ -5,11 +5,11 @@ import { bannerAvatar, enterAvatar } from '../../../pages/_app'
 export default function Lastfm() {
     return (
         <DiscordMessages>
-            <DiscordMessage author="Fiji Spring Water" avatar="/fiji.png" roleColor='#00B2FF'>?lastfm set Alqhaman</DiscordMessage>
+            <DiscordMessage author="Fiji Spring Water" avatar="/fiji.webp" roleColor='#00B2FF'>?lastfm set Alqhaman</DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 Last.fm username set to <code>Alqhaman</code>.
             </DiscordMessage>
-            <DiscordMessage author="Enter" avatar="/enter.png" roleColor='#03f611'>?fm</DiscordMessage>
+            <DiscordMessage author="Enter" avatar="/enter.webp" roleColor='#03f611'>?fm</DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordEmbed slot='embeds' color="#e4141e" authorName='Enter#0001' authorImage={enterAvatar} authorUrl='https://www.last.fm/user/Enterxz' thumbnail='https://lastfm.freetls.fastly.net/i/u/300x300/3b96418b0b1321fc83a25ce14eea0643.jpg'>
                 <DiscordEmbedDescription slot='description'>
@@ -33,7 +33,7 @@ export default function Lastfm() {
             </DiscordEmbedFooter>
                 </DiscordEmbed>
             </DiscordMessage>
-            <DiscordMessage author="Enter" avatar="/enter.png" roleColor='#03f611'>?fm 232584569289703424</DiscordMessage>
+            <DiscordMessage author="Enter" avatar="/enter.webp" roleColor='#03f611'>?fm 232584569289703424</DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordEmbed slot='embeds' color="#e4141e" authorName='Banner#1017' authorImage={bannerAvatar} authorUrl='https://www.last.fm/user/christiankn' thumbnail='https://lastfm.freetls.fastly.net/i/u/300x300/38400dfa7dfc156b978678a61d82d809.jpg'>
                 <DiscordEmbedDescription slot='description'>
@@ -57,7 +57,7 @@ export default function Lastfm() {
             </DiscordEmbedFooter>
                 </DiscordEmbed>
             </DiscordMessage>
-            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>?fm toptracks 1month</DiscordMessage>
+            <DiscordMessage author="Banner" avatar="/banner.webp" roleColor='#ff00fa'>?fm toptracks 1month</DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordEmbed slot='embeds' embedTitle='Top tracks for Banner#1017' url='https://www.last.fm/user/christiankn/library/tracks?date_preset=LAST_30_DAYS' color="#e4141e" authorName='Banner#1017' authorImage={bannerAvatar} authorUrl='https://www.last.fm/user/christiankn' thumbnail='https://i.scdn.co/image/ab6761610000e5eb3a8619d4545d138019f4f6d9'>
                 <DiscordEmbedDescription slot='description'>
@@ -96,7 +96,7 @@ export default function Lastfm() {
                     <DiscordReaction emoji="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/whatsapp/273/cross-mark_274c.png"></DiscordReaction>
                 </DiscordReactions>
             </DiscordMessage>
-            <DiscordMessage author="Fiji Spring Water" avatar="/fiji.png" roleColor='#00B2FF'>?fm recent <DiscordMention type='user'>Banner</DiscordMention></DiscordMessage>
+            <DiscordMessage author="Fiji Spring Water" avatar="/fiji.webp" roleColor='#00B2FF'>?fm recent <DiscordMention type='user'>Banner</DiscordMention></DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordEmbed slot='embeds' embedTitle='Recent tracks for Banner#1017' url='https://www.last.fm/user/christiankn/library/' color="#e4141e" authorName='Banner#1017' authorImage={bannerAvatar} authorUrl='https://www.last.fm/user/christiankn' thumbnail='https://lastfm.freetls.fastly.net/i/u/300x300/38400dfa7dfc156b978678a61d82d809.jpg'>
                 <DiscordEmbedDescription slot='description'>
@@ -134,12 +134,12 @@ export default function Lastfm() {
                     <DiscordReaction emoji="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/whatsapp/273/cross-mark_274c.png"></DiscordReaction>
                 </DiscordReactions>
             </DiscordMessage>
-            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>?fm collage topalbums 6month <DiscordMention type='user'>Fiji Spring Water</DiscordMention> 4x4</DiscordMessage>
+            <DiscordMessage author="Banner" avatar="/banner.webp" roleColor='#ff00fa'>?fm collage topalbums 6month <DiscordMention type='user'>Fiji Spring Water</DiscordMention> 4x4</DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordAttachment height={300} width={300} url='https://cdn.discordapp.com/attachments/714836721979621448/898810063211347998/Alqhaman-6month-2021-10-16T055017.735Z.png'></DiscordAttachment>
             </DiscordMessage>
             {/* 
-            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>?fm wkt</DiscordMessage>
+            <DiscordMessage author="Banner" avatar="/banner.webp" roleColor='#ff00fa'>?fm wkt</DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordEmbed slot='embeds' embedTitle='Who in All the Cappermotes knows Kiss Me Through the Scope' color="#00fbff" authorName='Thaiboy Digital' footerImage='https://www.last.fm/static/images/lastfm_avatar_twitter.52a5d69a85ac.png' authorImage='https://i.scdn.co/image/ab6761610000e5ebbe2dfe98c26ead5955f58bcf' thumbnail='https://lastfm.freetls.fastly.net/i/u/300x300/4d36fa68a6aaa4c3806ca652d439b15a.jpg'>
                 <strong>1.</strong> <DiscordMention type='user'>Fiji Spring Water</DiscordMention> - <strong>48 plays</strong>
@@ -153,7 +153,7 @@ export default function Lastfm() {
                 <span slot="footer">Powered by last.fm  </span>
                 </DiscordEmbed>
             </DiscordMessage>
-            <DiscordMessage author="Fiji Spring Water" avatar="/fiji.png" roleColor='#00B2FF'>?fm gwk yung lean</DiscordMessage>
+            <DiscordMessage author="Fiji Spring Water" avatar="/fiji.webp" roleColor='#00B2FF'>?fm gwk yung lean</DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordEmbed slot='embeds' embedTitle='Who in Bento knows Yung Lean' color="#003b00" footerImage='https://www.last.fm/static/images/lastfm_avatar_twitter.52a5d69a85ac.png' thumbnail='https://i.scdn.co/image/ab6761610000e5ebb4435845acb9da6f206af96c'>
                 <strong>1.</strong> Fiji Spring Water#1949 - <strong>2355 plays</strong>
