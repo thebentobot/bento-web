@@ -5,7 +5,7 @@ import { adamAvatar, bannerAvatar } from '../../../pages/_app'
 export default function Horoscope() {
     return (
         <DiscordMessages>
-            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa' timestamp='08/15/2021'>?horo</DiscordMessage>
+            <DiscordMessage author="Banner" avatar="/banner.webp" roleColor='#ff00fa' timestamp='08/15/2021'>?horo</DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b' timestamp='08/15/2021'>
                 <DiscordEmbed slot='embeds' color="#C0C0C0" authorName='Banner' authorImage={bannerAvatar} embedTitle='Sagittarius horoscope for August 15, 2021'>
                 <DiscordEmbedDescription slot='description'>
@@ -21,7 +21,7 @@ export default function Horoscope() {
                     </DiscordEmbedFields>
                 </DiscordEmbed>
             </DiscordMessage>
-            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa' timestamp='08/15/2021'>?horo <DiscordMention type='user'>Adam</DiscordMention></DiscordMessage>
+            <DiscordMessage author="Banner" avatar="/banner.webp" roleColor='#ff00fa' timestamp='08/15/2021'>?horo <DiscordMention type='user'>Adam</DiscordMention></DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b' timestamp='08/15/2021'>
                 <DiscordEmbed slot='embeds' color="#800080" authorName='Adam' authorImage={adamAvatar} embedTitle='Virgo horoscope for August 15, 2021'>
                 <DiscordEmbedDescription slot='description'>

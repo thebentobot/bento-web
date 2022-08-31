@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export default function Footer() {
     return (
         <div className="bg-gray-800 mt-4">
@@ -7,6 +9,17 @@ export default function Footer() {
                         <p className="text-yellow-300 font-medium ">
                             Bento
                         </p>
+                        <p className="text-gray-300">
+            Logo drawn by {" "}
+                    <a
+                        href="https://twitter.com/dannalanart"
+                        target="_blank"
+                        rel="noreferrer"
+                        className=" text-blue-400 hover:underline"
+                    >
+                        Dan
+                    </a>.{" "}
+            </p>
                         <p className="text-sm text-gray-400">
                             Source code licensed AGPLv3
                         </p>
@@ -16,6 +29,22 @@ export default function Footer() {
                             Links
                         </p>
                         <p>
+                        <Link href="/terms-of-service" passHref>
+                        <a
+                            className="text-gray-300 hover:text-yellow-300"
+                        >
+                            Terms of Service
+                        </a>
+                        </Link>
+                        <br/>
+                        <Link href="/privacy-policy" passHref>
+                        <a
+                            className="text-gray-300 hover:text-yellow-300"
+                        >
+                            Privacy Policy
+                        </a>
+                        </Link>
+                        <br/>
                         <a
                             href="https://github.com/thebentobot"
                             className="text-gray-300 hover:text-white"
@@ -25,7 +54,7 @@ export default function Footer() {
                         <br/>
                         <a
                             href="https://discord.gg/dd68WwP"
-                            className="text-gray-300 hover:text-white"
+                            className="text-gray-300 hover:text-discordBlue"
                         >
                             Discord Support Server
                         </a>

@@ -5,7 +5,7 @@ import { alonzoAvatar } from '../../../pages/_app'
 export default function CaseUser() {
     return (
         <DiscordMessages>
-            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>?case user 370695349167325196 mute</DiscordMessage>
+            <DiscordMessage author="Banner" avatar="/banner.webp" roleColor='#ff00fa'>?case user 370695349167325196 mute</DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 Amount of mutes 1/10
                 <DiscordEmbed slot='embeds' color="#ffd903" embedTitle='Banner’s Lab Rat (alonzo#0011)' authorName='Bento Bot' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' thumbnail={alonzoAvatar}>
@@ -35,7 +35,7 @@ export default function CaseUser() {
                         <DiscordReaction emoji="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/whatsapp/273/cross-mark_274c.png"></DiscordReaction>
                     </DiscordReactions>
             </DiscordMessage>
-            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>?case user 370695349167325196 overview</DiscordMessage>
+            <DiscordMessage author="Banner" avatar="/banner.webp" roleColor='#ff00fa'>?case user 370695349167325196 overview</DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 Amount of mutes 1/10
                 <DiscordEmbed slot='embeds' color="#ffd903" embedTitle='Overview for Banner’s lab rat (alonzo#0011)' authorName='Bento Bot' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' thumbnail={alonzoAvatar}>

@@ -3,7 +3,7 @@ import { DiscordMention, DiscordMessage, DiscordMessages, DiscordAttachments, Di
 export default function Rank() {
     return (
         <DiscordMessages>
-            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>
+            <DiscordMessage author="Banner" avatar="/banner.webp" roleColor='#ff00fa'>
                 ?rank
             </DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
@@ -13,7 +13,7 @@ export default function Rank() {
                     </DiscordAttachment>
                 </DiscordAttachments>
             </DiscordMessage>
-            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>
+            <DiscordMessage author="Banner" avatar="/banner.webp" roleColor='#ff00fa'>
                 ?rank <DiscordMention type='user'>Fiji Spring Water</DiscordMention>
             </DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
@@ -23,7 +23,7 @@ export default function Rank() {
                     </DiscordAttachment>
                 </DiscordAttachments>
             </DiscordMessage>
-            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>
+            <DiscordMessage author="Banner" avatar="/banner.webp" roleColor='#ff00fa'>
                 ?rank 182194567498432513
             </DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>

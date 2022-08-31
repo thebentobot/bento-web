@@ -3,13 +3,13 @@ import { DiscordMention, DiscordEmbed, DiscordMessage, DiscordMessages, DiscordA
 export default function Sketch2() {
     return (
         <DiscordMessages>
-            <DiscordMessage author="Lewis" avatar="/lewis.png" roleColor='#00B2FF'>
+            <DiscordMessage author="Lewis" avatar="/lewis.webp" roleColor='#00B2FF'>
                 ?sketch bgcolour colour #DC2626
             </DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordMention type='user'>Lewis</DiscordMention> your background colour has been set.
             </DiscordMessage>
-            <DiscordMessage author="Lewis" avatar="/lewis.png" roleColor='#00B2FF'>
+            <DiscordMessage author="Lewis" avatar="/lewis.webp" roleColor='#00B2FF'>
                 ?sketch bgcolour status
             </DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>

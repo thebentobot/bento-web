@@ -3,7 +3,7 @@ import { DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-
 export default function Bye2() {
     return (
         <DiscordMessages>
-            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>
+            <DiscordMessage author="Banner" avatar="/banner.webp" roleColor='#ff00fa'>
                 ?bye message Goodbye {`{user}`}!
             </DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>

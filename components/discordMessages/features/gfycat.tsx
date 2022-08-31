@@ -3,14 +3,14 @@ import { DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, Disco
 export default function Gfycat() {
     return (
         <DiscordMessages>
-            <DiscordMessage author="Fiji Spring Water" avatar="/fiji.png" roleColor='#00B2FF'>
+            <DiscordMessage author="Fiji Spring Water" avatar="/fiji.webp" roleColor='#00B2FF'>
                 ?gfycat create <a href='https://youtu.be/lw3Or6eqIpI'>https://youtu.be/lw3Or6eqIpI</a> 13 10 future hendrix
             </DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordMention type='user'>Fiji Spring Water</DiscordMention> your Gfycat is ready! <br />
                 <div style={{position: 'relative', paddingBottom: 'calc(56.25% + 44px)'}}><iframe src='https://gfycat.com/ifr/NaiveAmusingFritillarybutterfly' frameBorder='0' scrolling='no' width='100%' height='100%' style={{position: 'absolute', top: '0', left: '0'}} allowFullScreen></iframe></div>
             </DiscordMessage>
-            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>
+            <DiscordMessage author="Banner" avatar="/banner.webp" roleColor='#ff00fa'>
                 ?gfycat create --full
                 <DiscordEmbed
 							slot="embeds"
@@ -22,7 +22,7 @@ export default function Gfycat() {
                 <DiscordMention type='user'>Banner</DiscordMention> your Gfycat is ready! <br />
                 <div style={{position: 'relative', paddingBottom: 'calc(56.25% + 44px)'}}><iframe src='https://gfycat.com/ifr/floweryunsungcobra' frameBorder='0' scrolling='no' width='100%' height='100%' style={{position: 'absolute', top: '0', left: '0'}} allowFullScreen></iframe></div>
             </DiscordMessage>
-            <DiscordMessage author="Enter" avatar="/enter.png" roleColor='#03f611'>
+            <DiscordMessage author="Enter" avatar="/enter.webp" roleColor='#03f611'>
                 ?gfycat user profile strike1005jw
             </DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
@@ -36,7 +36,7 @@ export default function Gfycat() {
                 Profile URL: <a href='https://discord.gg/znfWtdJK7R'>https://discord.gg/znfWtdJK7R</a> 
                 </DiscordEmbed>
             </DiscordMessage>
-            <DiscordMessage author="Enter" avatar="/enter.png" roleColor='#03f611'>
+            <DiscordMessage author="Enter" avatar="/enter.webp" roleColor='#03f611'>
                 ?gfycat user feed strike1005jw 10
             </DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
@@ -48,7 +48,7 @@ export default function Gfycat() {
             <a href='https://gfycat.com/JadedMasculineFoal'>https://gfycat.com/JadedMasculineFoal</a> <br />
             <div style={{position: 'relative', paddingBottom: 'calc(56.25% + 44px)'}}><iframe src='https://gfycat.com/ifr/JadedMasculineFoal' frameBorder='0' scrolling='no' width='100%' height='100%' style={{position: 'absolute', top: '0', left: '0'}} allowFullScreen></iframe></div>
             </DiscordMessage>
-            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>
+            <DiscordMessage author="Banner" avatar="/banner.webp" roleColor='#ff00fa'>
                 ?gfycat info naiveamusingfritillarybutterfly
             </DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
@@ -65,13 +65,13 @@ export default function Gfycat() {
                     <DiscordReaction emoji="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/whatsapp/273/cross-mark_274c.png"></DiscordReaction>
                 </DiscordReactions>
             </DiscordMessage>
-            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>
+            <DiscordMessage author="Banner" avatar="/banner.webp" roleColor='#ff00fa'>
                 ?gfycat search ecco2k
             </DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <div style={{position: 'relative', paddingBottom: 'calc(56.25% + 44px)'}}><iframe src='https://gfycat.com/ifr/grayunfoldedgreendarnerdragonfly' frameBorder='0' scrolling='no' width='100%' height='100%' style={{position: 'absolute', top: '0', left: '0'}} allowFullScreen></iframe></div>
             </DiscordMessage>
-            <DiscordMessage author="Enter" avatar="/enter.png" roleColor='#03f611'>
+            <DiscordMessage author="Enter" avatar="/enter.webp" roleColor='#03f611'>
                 ?gfycat search yeonjung --multi --count 30
             </DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
