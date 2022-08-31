@@ -11,12 +11,14 @@ import dynamic from 'next/dynamic'
 import HomePage from '../components/HomePage'
 
 const features: {name: string, description: string, icon: typeof CogIcon | typeof ChatIcon | typeof FireIcon | typeof UsersIcon }[] = [
+  /*
   {
-    name: 'XXX',
+    name: 'TODO',
     description:
-      'XXX',
+      'TODO',
     icon: ChatIcon,
   },
+  */
   {
     name: 'Amusing Chat XP System For Your Users',
     description:
@@ -26,15 +28,17 @@ const features: {name: string, description: string, icon: typeof CogIcon | typeo
   {
     name: 'Amazing Extra Features',
     description:
-      'Make your personal profile, check the weather or time anywhere in the world, check your horoscope, look up a Tenor GIF, get an Urban Dictionary definition, compare LastFM statistics, set reminders or keyword notifications, and make your own custom tags to remember good memes or memories',
+      'Make your personal profile, check the weather anywhere in the world, check your horoscope, search for stuff on Gfycat, get an Urban Dictionary definition, compare LastFM statistics, set reminders or keyword notifications, and make your own custom tags to remember good memes or memories',
     icon: FireIcon,
   },
+  /*
   {
     name: 'Accommodating Server Settings',
     description:
       'Do you only care for the moderation tools and think some of the extra features are unnecessary? Bento 🍱 allows you to enable and disable features according to your server and its preferences. Don\'t want a leaderboard for your server? Disable it. Don\'t want GIFs at all? Disable it.',
     icon: CogIcon,
   },
+  */
 ]
 
 export interface Data {

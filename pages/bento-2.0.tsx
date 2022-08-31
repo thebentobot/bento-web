@@ -3,27 +3,27 @@ import { motion, useReducedMotion, Variants } from "framer-motion"
 
 const features: {name: string, description: string, icon: typeof CogIcon | typeof ChatIcon | typeof FireIcon | typeof UsersIcon }[] = [
   {
-    name: 'Magnificent Moderation Tools',
+    name: 'Slash Commands, Select Menus, Buttons',
     description:
-      'Case descriptive system for warnings, kicks, mutes and bans, which you can edit on the go. Check cases across servers who has Bento 🍱 and more',
+      'There is huge possibilities in the new Discord Bot features. Now it is way easier for users to use and remember various arguments + using them correctly, more intuition with the Select Menus and Buttons. A huge step for user experience.',
     icon: ChatIcon,
   },
   {
-    name: 'Amusing Chat XP System For Your Users',
+    name: 'Amazing New Features',
     description:
-      'Users gain XP for every minute they chat and are able to see who has written the most by the server\'s own leaderboard. Every 12th hour, users are able to give a 🍱 to another user. Serverwide leaderboards are available as well',
+      'The help menu is a select menu now, huge buttons for the gfycat feature, the possibility of having select choices for certain commands. In the foreseeable future, the introduction of whoknows lastfm commands and favourite/bias game will be a huge step into the direction of becoming a bot for media and entertainment for its users.',
     icon: UsersIcon,
   },
   {
-    name: 'Amazing Extra Features',
+    name: 'Message commands will ASAP be supported again',
     description:
-      'Make your personal profile, check the weather or time anywhere in the world, check your horoscope, look up a Tenor GIF, get an Urban Dictionary definition, compare LastFM statistics, set reminders or keyword notifications, and make your own custom tags to remember good memes or memories',
+      'Most of the current supported commands are message command supported, but Discord has not approved Bentos application for access to message content yet. So if you prefer message commands, it will soon be possible again!',
     icon: FireIcon,
   },
   {
-    name: 'Accommodating Server Settings',
+    name: 'Some commands have not been migrated over YET',
     description:
-      'Do you only care for the moderation tools and think some of the extra features are unnecessary? Bento 🍱 allows you to enable and disable features according to your server and its preferences. Don\'t want a leaderboard for your server? Disable it. Don\'t want GIFs at all? Disable it.',
+      'Features such as leaderboards, e.g. toptracks for lastfm, the possibility to sketch your own profile, notifications and reminders. All user oriented, media and entertainment commands from the last version of Bento 🍱 will be migrated over. Also a huge overhaul with the settings commands, utilising select menus and modals.',
     icon: CogIcon,
   },
 ]
@@ -84,10 +84,18 @@ const bottomAnimation: Variants = shouldReduceMotion ? {
             Bento 2.0
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto sm:text-center sm:max-w-xl mx-auto text-center">
-            Bento 🍱 is a quality and well supported Discord Bot that constantly improves and always delivers when you need it the most 
+            Bento 2.0 🍱 is a huge improvement over the previous iteration of Bento 🍱 and a foundational change in terms of visions for the future of the project.
+          </p>
+          <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto sm:text-center sm:max-w-xl mx-auto text-center">
+            Improving overall infrastructure and reliability, implementing new Discord API features such as Slash Commands, Select Menus and Buttons.
+          </p>
+          <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto sm:text-center sm:max-w-xl mx-auto text-center">
+            The focus for the future will be on <strong>media and entertainment commands</strong>, which means that moderation commands will be deprecated.
           </p>
         </motion.div>
-
+        <p className="mt-2 text-9xl leading-8 font-extrabold tracking-tight text-yellow-300 sm:text-4xl text-center">
+            New features and disclaimers
+        </p>
         <div className="mt-10">
           <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
             {features.map(feature => <motion.div key={feature.name} className="relative bg-gray-900 px-6 py-6 rounded shadow-lg" whileHover={{
@@ -110,25 +118,10 @@ const bottomAnimation: Variants = shouldReduceMotion ? {
               </motion.div>)}
           </dl>
         </div>
-        <br></br>
-        <div className="lg:text-center">
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl text-center">
-            Check all commands by clicking below!
-          </p>
-          <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:text-center">
-
-            <div className="rounded-md shadow">
-                  <motion.a href="/commands" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-300 hover:bg-yellow-400 hover:text-black md:py-4 md:text-lg md:px-10" whileHover={{
-                scale: 1.1
-              }} whileTap={{
-                scale: 0.9
-              }}>
-                    A list of All Commands
-                  </motion.a>
-                </div>
-              </div>
-        </div>
     </motion.div>
       </div>
     )
 }
+
+/*
+*/
