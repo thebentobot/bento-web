@@ -15,7 +15,7 @@
     "@prisma/client": "^4.3.1",
     "@skyra/discord-components-core": "^3.4.0",
     "@skyra/discord-components-react": "^3.4.1",
-    "@types/node": "^18.7.18",
+    "@types/node": "^18.7.21",
     "@types/validator": "^13.7.7",
     "dotenv": "^16.0.2",
     "framer-motion": "^7.3.6",
