@@ -62,7 +62,7 @@ export default function HomePage({
               A Verified Discord bot with media and entertainment commands.
               </motion.p>
               <motion.p className="mt-3 text-base text-white sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0" initial='hidden' animate='show' variants={animation}>
-              A Bento Box 🍱 is ready for {Math.floor(usersCount / 100) / 10.0 + "k"} Users on {serversCount - 2} Servers
+              A Bento Box 🍱 is ready for {Math.floor(usersCount / 100) / 10.0 + "k"} Users on {serversCount - 5} Servers
               </motion.p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow">
