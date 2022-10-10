@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.19.3",
-    "@headlessui/react": "^1.7.2",
+    "@headlessui/react": "^1.7.3",
     "@heroicons/react": "^1.0.1",
     "@prisma/client": "^4.4.0",
     "@skyra/discord-components-core": "^3.4.0",
@@ -34,7 +34,7 @@
     "@types/pg": "^8.6.1",
     "@types/react": "18.0.21",
     "autoprefixer": "^10.4.12",
-    "eslint": "8.24.0",
+    "eslint": "8.25.0",
     "eslint-config-next": "12.3.1",
     "noop2": "^2.0.0",
     "postcss": "^8.4.16",
