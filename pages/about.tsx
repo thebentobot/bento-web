@@ -51,7 +51,7 @@ const animation: Variants = shouldReduceMotion ? {
               About Bento 🍱
             </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto text-center mx-auto">
-              Bento 🍱 is a Discord bot that covers the standard features of most Discord bots, but with a few extra features and a focus on quality delivery.
+              Bento 🍱 is a Discord bot that provides various media and entertainment commands, with a focus on quality delivery.
             </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto text-center mx-auto">
               Bento 🍱 was started as a project to learn JavaScript and programming in general, and is a project of continuous learning and improvement.
@@ -125,7 +125,15 @@ const animation: Variants = shouldReduceMotion ? {
                         className='text-postgresql hover:underline'
                     >
                         PostgreSQL
-                    </a>{" "} database.
+                    </a>{" "} database with {" "}
+                    <a
+                        href="https://www.prisma.io/"
+                        target="_blank"
+                        rel="noreferrer"
+                        className='text-white hover:underline'
+                    >
+                        Prisma
+                    </a>.
             </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto text-center mx-auto">
             The Bento 🍱 website is powered by {" "}
@@ -172,6 +180,17 @@ const animation: Variants = shouldReduceMotion ? {
                     >
                         Bento 🍱 Support Server
                     </a>{" "} where ideas, discussion, feedback and bug reporting are happening, besides just chatting. Everyone is welcome to join!
+            </p>
+            <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto text-center mx-auto">
+            Logo drawn by {" "}
+                    <a
+                        href="https://twitter.com/dannalanart"
+                        target="_blank"
+                        rel="noreferrer"
+                        className=" text-blue-400 hover:underline"
+                    >
+                        Dan
+                    </a>.{" "}
             </p>
           </motion.div>
         </div>

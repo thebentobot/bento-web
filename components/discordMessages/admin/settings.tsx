@@ -4,7 +4,7 @@ import moment from 'moment'
 export default function Settings() {
     return (
         <DiscordMessages>
-            <DiscordMessage author="Fiji Spring Water" avatar="/fiji.png" roleColor='#00B2FF'>?settings</DiscordMessage>
+            <DiscordMessage author="Fiji Spring Water" avatar="/fiji.webp" roleColor='#00B2FF'>?settings</DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b' timestamp={moment().toDate()}>
                 <DiscordEmbed slot='embeds' color="#f9d61b" authorName='Bento' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' authorUrl='/' embedTitle='Server settings for Bento Bot' >
                     <DiscordEmbedFields slot='fields'>

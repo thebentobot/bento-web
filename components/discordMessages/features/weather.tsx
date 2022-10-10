@@ -5,7 +5,7 @@ import { bannerAvatar } from '../../../pages/_app'
 export default function Weather() {
     return (
         <DiscordMessages>
-            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa' timestamp='08/15/2021'>?weather</DiscordMessage>
+            <DiscordMessage author="Banner" avatar="/banner.webp" roleColor='#ff00fa' timestamp='08/15/2021'>?weather</DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b' timestamp='08/15/2021'>
                 <DiscordEmbed slot='embeds' color="#EB6E4B" thumbnail='http://openweathermap.org/img/w/03n.png' authorName='Banner#1017' authorImage={bannerAvatar} embedTitle='Clouds ☁️ ️in Copenhagen, Denmark 🇩🇰'>
                     <strong>Currently</strong>
@@ -45,7 +45,7 @@ Feels like 17°C (62°F)</DiscordEmbedField>
             </DiscordEmbedFooter>
                 </DiscordEmbed>
             </DiscordMessage>
-            <DiscordMessage author="Enter" avatar="/enter.png" roleColor='#03f611' timestamp='08/15/2021'>?weather seoul</DiscordMessage>
+            <DiscordMessage author="Enter" avatar="/enter.webp" roleColor='#03f611' timestamp='08/15/2021'>?weather seoul</DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b' timestamp='08/15/2021'>
                 <DiscordEmbed slot='embeds' color="#EB6E4B" thumbnail='http://openweathermap.org/img/w/01n.png' authorName='OpenWeather' authorImage='https://pbs.twimg.com/profile_images/1173919481082580992/f95OeyEW_400x400.jpg' embedTitle='Clear ☀️ in Seoul, Republic of Korea 🇰🇷'>
                     <strong>Currently</strong>

@@ -3,6 +3,7 @@ import { Disclosure} from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { motion, useReducedMotion, Variants } from "framer-motion"
 import Link from 'next/link'
+import Image from 'next/image'
 
 function classNames(...classes:any) {
   return classes.filter(Boolean).join(' ')
@@ -79,12 +80,21 @@ export default function Example() {
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                 <Link href="/" passHref>
-                    <motion.p className="text-yellow-300 cursor-pointer hover:bg-yellow-300 hover:text-black hover:animate-pulse px-3 py-2 rounded-md text-base lg:text-sm font-medium" whileHover={{ scale: 1.1 }}
-    whileTap={{ scale: 0.9 }}>Bento 🍱</motion.p>
+                    <Image className='px-3 py-2 rounded-md hover:bg-yellow-300' src="/bento_trans.png" alt="Bento logo" width={25} height={25} />
                 </Link>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
+                  <motion.a
+                        key="bento2.0"
+                        href="/bento-2.0"
+                        className='bg-yellow-300 text-black px-3 py-2 rounded-md text-sm font-medium'
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.9 }}
+                        variants={animationItem}
+                      >
+                        Bento 2.0
+                      </motion.a>
                     {navigation.map((item) => (
                       <motion.a
                         key={item.name}
@@ -109,6 +119,16 @@ export default function Example() {
 
           <Disclosure.Panel className="sm:hidden">
             <motion.div className="px-2 pt-2 pb-3 space-y-1" initial='hidden' animate='show' variants={animation}>
+            <motion.a
+                        key="bento2.0"
+                        href="/bento-2.0"
+                        className='bg-yellow-300 text-black block px-3 py-2 rounded-md text-base font-medium text-center'
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.9 }}
+                        variants={animationItem}
+                      >
+                        Bento 2.0
+                      </motion.a>
               {navigation.map((item) => (
                 <motion.a
                   key={item.name}

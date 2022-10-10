@@ -3,7 +3,7 @@ import { DiscordEmbedDescription, DiscordMention, DiscordMessage, DiscordMessage
 export default function RoleAdd() {
     return (
         <DiscordMessages>
-            <DiscordMessage author="Banner" avatar="/banner.png" roleColor='#ff00fa'>
+            <DiscordMessage author="Banner" avatar="/banner.webp" roleColor='#ff00fa'>
             ?role add sub news: News, News: News
             </DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
