@@ -1,6 +1,11 @@
 import React, { SVGProps } from "react"
 import { Popover } from '@headlessui/react'
-import { CogIcon, ChatIcon, FireIcon, UsersIcon, ArrowSmUpIcon } from '@heroicons/react/outline'
+import { 
+  CogIcon, 
+  ChatBubbleOvalLeftEllipsisIcon, 
+  FireIcon, 
+  UsersIcon 
+} from '@heroicons/react/24/outline'
 import Head from 'next/head'
 import { motion, Variants, useReducedMotion } from "framer-motion"
 import { NextSeo } from 'next-seo'
@@ -15,7 +20,7 @@ export default function HomePage({
 }: {animation: Variants, usersCount: number, serversCount: number, bottomAnimation: Variants, features: {
     name: string;
     description: string;
-    icon: typeof CogIcon | typeof ChatIcon | typeof FireIcon | typeof UsersIcon;
+    icon: typeof CogIcon | typeof ChatBubbleOvalLeftEllipsisIcon | typeof FireIcon | typeof UsersIcon;
 }[]}) {
   return <div>
       <Head>

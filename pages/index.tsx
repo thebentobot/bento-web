@@ -1,16 +1,11 @@
-import { Popover } from '@headlessui/react'
-import { CogIcon, ChatIcon, FireIcon, UsersIcon, ArrowSmUpIcon } from '@heroicons/react/outline'
-import { GetServerSideProps, GetStaticProps } from 'next'
-import Head from 'next/head'
+import { CogIcon, ChatBubbleOvalLeftEllipsisIcon, FireIcon, UsersIcon } from '@heroicons/react/24/outline'
+import { GetStaticProps } from 'next'
 import { getData as userDataFetch } from './api/stats/users'
 import { getData as serverDataFetch } from './api/stats/servers'
-import { motion, Variants, useReducedMotion } from "framer-motion"
-import { NextSeo } from 'next-seo'
-import Image from 'next/image'
-import dynamic from 'next/dynamic'
+import { Variants, useReducedMotion } from "framer-motion"
 import HomePage from '../components/HomePage'
 
-const features: {name: string, description: string, icon: typeof CogIcon | typeof ChatIcon | typeof FireIcon | typeof UsersIcon }[] = [
+const features: {name: string, description: string, icon: typeof CogIcon | typeof ChatBubbleOvalLeftEllipsisIcon | typeof FireIcon | typeof UsersIcon }[] = [
   /*
   {
     name: 'TODO',
