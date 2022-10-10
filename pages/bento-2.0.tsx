@@ -1,12 +1,12 @@
-import { CogIcon, ChatIcon, FireIcon, UsersIcon } from "@heroicons/react/outline"
+import { CogIcon, ChatBubbleOvalLeftEllipsisIcon, FireIcon, UsersIcon } from "@heroicons/react/24/outline"
 import { motion, useReducedMotion, Variants } from "framer-motion"
 
-const features: {name: string, description: string, icon: typeof CogIcon | typeof ChatIcon | typeof FireIcon | typeof UsersIcon }[] = [
+const features: {name: string, description: string, icon: typeof CogIcon | typeof ChatBubbleOvalLeftEllipsisIcon | typeof FireIcon | typeof UsersIcon }[] = [
   {
     name: 'Slash Commands, Select Menus, Buttons',
     description:
       'There is huge possibilities in the new Discord Bot features. Now it is way easier for users to use and remember various arguments + using them correctly, more intuition with the Select Menus and Buttons. A huge step for user experience.',
-    icon: ChatIcon,
+    icon: ChatBubbleOvalLeftEllipsisIcon,
   },
   {
     name: 'Amazing New Features',
