@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@babel/core": "^7.19.3",
-    "@headlessui/react": "^1.7.2",
+    "@headlessui/react": "^1.7.3",
     "@heroicons/react": "^1.0.1",
     "@prisma/client": "^4.4.0",
     "@skyra/discord-components-core": "^3.4.0",
