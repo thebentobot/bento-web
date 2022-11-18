@@ -33,7 +33,7 @@
     "@types/node-fetch": "^2.6.2",
     "@types/pg": "^8.6.1",
     "@types/react": "18.0.25",
-    "autoprefixer": "^10.4.12",
+    "autoprefixer": "^10.4.13",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.3",
     "noop2": "^2.0.0",
