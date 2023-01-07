@@ -34,7 +34,7 @@
     "@types/pg": "^8.6.6",
     "@types/react": "18.0.26",
     "autoprefixer": "^10.4.13",
-    "eslint": "8.28.0",
+    "eslint": "8.31.0",
     "eslint-config-next": "13.1.1",
     "noop2": "^2.0.0",
     "postcss": "^8.4.20",
