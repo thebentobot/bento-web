@@ -1,5 +1,6 @@
 import { DiscordEmbed, DiscordEmbedField, DiscordEmbedFields, DiscordEmbedFooter, DiscordMention, DiscordMessage, DiscordMessages, DiscordEmbedDescription, DiscordInlineCode } from '@skyra/discord-components-react'
 import moment from 'moment'
+import Link from 'next/link'
 import { bannerAvatar } from '../../pages/_app'
 
 export default function BentoGreeting() {
@@ -19,8 +20,8 @@ export default function BentoGreeting() {
                 Use <DiscordInlineCode>?commands</DiscordInlineCode> to see a list of all my commands and <DiscordInlineCode>{`?help <command name>`}</DiscordInlineCode> to get help or info about a command.
                 </DiscordEmbedDescription>
                     <DiscordEmbedFields slot='fields'>
-                        <DiscordEmbedField fieldTitle='Need help? Or do you have some ideas or feedback to Bento 🍱? Feel free to join the support server'><a href='https://discord.gg/dd68WwP'>https://discord.gg/dd68WwP</a></DiscordEmbedField>
-                        <DiscordEmbedField fieldTitle='Want to check out the code for Bento 🍱?'><a href='https://github.com/thebentobot/bentoTS'>https://github.com/thebentobot/bentoTS</a></DiscordEmbedField>
+                        <DiscordEmbedField fieldTitle='Need help? Or do you have some ideas or feedback to Bento 🍱? Feel free to join the support server'><Link href='https://discord.gg/dd68WwP'>https://discord.gg/dd68WwP</Link></DiscordEmbedField>
+                        <DiscordEmbedField fieldTitle='Want to check out the code for Bento 🍱?'><Link href='https://github.com/thebentobot/bento'>https://github.com/thebentobot/bento</Link></DiscordEmbedField>
                     </DiscordEmbedFields>
                     <DiscordEmbedFooter
               slot="footer"

@@ -1,5 +1,6 @@
 import { DiscordEmbed, DiscordEmbedDescription, DiscordEmbedField, DiscordEmbedFields, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
 import moment from 'moment'
+import Link from 'next/link'
 import { adamAvatar, tzuwyAvatar } from '../../../pages/_app'
 
 export default function Notification() {
@@ -34,12 +35,12 @@ export default function Notification() {
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 Link to message:
                 <br />
-                <a href='https://discord.com/channels/714496317522444352/714825604838719570/872462217587601508'>https://discord.com/channels/714496317522444352/714825604838719570/872462217587601508</a>
+                <Link href='https://discord.com/channels/714496317522444352/714825604838719570/872462217587601508'>https://discord.com/channels/714496317522444352/714825604838719570/872462217587601508</Link>
                 <DiscordEmbed slot='embeds' color="#ffd903" authorName='Bento Bot' authorImage='https://cdn.discordapp.com/avatars/787041583580184609/fb64cda098372e05fc6945b9d17386dc.png?size=1024' thumbnail={tzuwyAvatar}>
                 <DiscordEmbedDescription slot='description'>
                 🗨️ tzuwy#0001 mentioned <code>pizza</code> in <DiscordMention type='channel'>general</DiscordMention> on <strong>Bento Bot</strong>.
                 <br /> 
-                Link to the message <a href='https://discord.com/channels/714496317522444352/714825604838719570/872462217587601508'>here</a>
+                Link to the message <Link href='https://discord.com/channels/714496317522444352/714825604838719570/872462217587601508'>here</Link>
                 <br />
                 <strong>[12:42:47 +00:00] Banner#1017</strong>
                 <br />

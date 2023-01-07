@@ -1,5 +1,6 @@
 import { DiscordEmbed, DiscordEmbedDescription, DiscordEmbedField, DiscordEmbedFields, DiscordEmbedFooter, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
 import moment from 'moment'
+import Link from 'next/link'
 import { alonzoAvatar, bannerAvatar } from '../../../pages/_app'
 
 export default function MessageLog() {
@@ -8,7 +9,7 @@ export default function MessageLog() {
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b' timestamp={moment().toDate()}>
             <DiscordEmbed slot='embeds' color="#FFF000" authorName='alonzo#0011 (userID: 370695349167325196)' authorImage={alonzoAvatar}>
             <DiscordEmbedDescription slot='description'>
-            <a target="_blank" rel="noopener noreferrer" href="https://discord.com/channels/714496317522444352/714836721979621448/873246980267180032">Message</a> edited in <DiscordMention type='channel'>bot-channel</DiscordMention>
+            <Link target="_blank" rel="noopener noreferrer" href="https://discord.com/channels/714496317522444352/714836721979621448/873246980267180032">Message</Link> edited in <DiscordMention type='channel'>bot-channel</DiscordMention>
                 <br />
                 <strong>Before: </strong>
                 Banner I never said hi back

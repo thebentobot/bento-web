@@ -78,7 +78,7 @@ const bottomAnimation: Variants = shouldReduceMotion ? {
         <div className="py-12 bg-gray-800 border-b border-gray-500">
         <motion.div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" initial='hidden' animate='show' variants={bottomAnimation}>
         <motion.div className="lg:text-center" whileHover={{
-          scale: 1.05
+          scale: 1.02
         }}>
           <p className="mt-2 text-9xl leading-8 font-extrabold tracking-tight text-yellow-300 sm:text-4xl text-center">
             Bento 2.0
@@ -99,7 +99,7 @@ const bottomAnimation: Variants = shouldReduceMotion ? {
         <div className="mt-10">
           <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
             {features.map(feature => <motion.div key={feature.name} className="relative bg-gray-900 px-6 py-6 rounded shadow-lg" whileHover={{
-              scale: 1.05
+              scale: 1.02
             }} initial='hidden' animate='show' variants={animation}>
                 <dt>
                   <motion.div whileHover={{

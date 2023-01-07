@@ -1,4 +1,5 @@
 import { DiscordMention, DiscordMessage, DiscordMessages, DiscordAttachments, DiscordAttachment } from '@skyra/discord-components-react'
+import Link from 'next/link'
 
 export default function Sketch() {
     return (
@@ -32,7 +33,7 @@ export default function Sketch() {
                 <DiscordMention type='user' highlight>Banner</DiscordMention> your timezone has been set.
             </DiscordMessage>
             <DiscordMessage author="Banner" avatar="/banner.webp" roleColor='#ff00fa'>
-                ?sketch bgpic <a href='https://images.squarespace-cdn.com/content/v1/54faf78ce4b04da0abdfbde8/1570364008766-DFW0IM5N382E3UNAOZ36/Thaiboy-6.jpg'>https://images.squarespace-cdn.com/content/v1/54faf78ce4b04da0abdfbde8/1570364008766-DFW0IM5N382E3UNAOZ36/Thaiboy-6.jpg</a>
+                ?sketch bgpic <Link href='https://images.squarespace-cdn.com/content/v1/54faf78ce4b04da0abdfbde8/1570364008766-DFW0IM5N382E3UNAOZ36/Thaiboy-6.jpg'>https://images.squarespace-cdn.com/content/v1/54faf78ce4b04da0abdfbde8/1570364008766-DFW0IM5N382E3UNAOZ36/Thaiboy-6.jpg</Link>
             </DiscordMessage>
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordMention type='user' highlight>Banner</DiscordMention> your background URL has been set.

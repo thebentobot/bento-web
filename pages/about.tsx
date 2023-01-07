@@ -61,21 +61,21 @@ const animation: Variants = shouldReduceMotion ? {
             </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto text-center mx-auto">
               The goal for Bento 🍱 will <strong>never</strong> be to earn money. <br /> Bento 🍱 is treated as a <strong>non-profit project</strong>, with sponsorship options on {" "}
-                    <a
+                    <Link
                         href="https://www.patreon.com/bentobot"
                         target="_blank"
                         rel="noreferrer"
                         className='text-patreon hover:underline'
                     >
                         Patreon
-                    </a>{" "} and <a
+                    </Link>{" "} and <Link
                         href="https://ko-fi.com/bentobot"
                         target="_blank"
                         rel="noreferrer"
                         className='text-kofi hover:underline'
                     >
                         Ko-fi
-                    </a>{" "}, where the raised funding is spend solely on hosting and improving Bento 🍱. If you are interested in reading about supporting, then <a
+                    </Link>{" "}, where the raised funding is spend solely on hosting and improving Bento 🍱. If you are interested in reading about supporting, then <a
                         
                         
                         className='text-yellow-300 hover:underline'
@@ -94,76 +94,76 @@ const animation: Variants = shouldReduceMotion ? {
             </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto text-center mx-auto">
             Bento 🍱 is written in {" "}
-                    <a
+                    <Link
                         href="https://www.typescriptlang.org/"
                         target="_blank"
                         rel="noreferrer"
                         className='text-typescript hover:underline'
                     >
                         TypeScript
-                    </a>{" "} and uses the {" "}
-                    <a
+                    </Link>{" "} and uses the {" "}
+                    <Link
                         href="https://discord.js.org/#/"
                         target="_blank"
                         rel="noreferrer"
                         className='text-discordBlue hover:underline'
                     >
                         Discord.js
-                    </a>{" "} Node.js module that interacts with the {" "}
-                    <a
+                    </Link>{" "} Node.js module that interacts with the {" "}
+                    <Link
                         href="https://discord.com/developers/docs/reference"
                         target="_blank"
                         rel="noreferrer"
                         className='text-discordBlue hover:underline'
                     >
                         Discord API
-                    </a>.{" "} Bento 🍱 uses a {" "}
-                    <a
+                    </Link>.{" "} Bento 🍱 uses Link {" "}
+                    <Link
                         href="https://www.postgresql.org/"
                         target="_blank"
                         rel="noreferrer"
                         className='text-postgresql hover:underline'
                     >
                         PostgreSQL
-                    </a>{" "} database with {" "}
-                    <a
+                    </Link>{" "} database with {" "}
+                    <Link
                         href="https://www.prisma.io/"
                         target="_blank"
                         rel="noreferrer"
                         className='text-white hover:underline'
                     >
                         Prisma
-                    </a>.
+                    </Link>.
             </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto text-center mx-auto">
             The Bento 🍱 website is powered by {" "}
-                    <a
+                    <Link
                         href="https://nextjs.org/"
                         target="_blank"
                         rel="noreferrer"
                         className="text-white hover:underline"
                     >
                         Next.js
-                    </a> and {" "}
-                    <a
+                    </Link> and {" "}
+                    <Link
                         href="https://tailwindcss.com/"
                         target="_blank"
                         rel="noreferrer"
                         className='text-tailwindcss hover:underline'
                     >
                         Tailwind CSS
-                    </a>.
+                    </Link>.
             </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto text-center mx-auto">
             All the source code are open-source and available on {" "}
-                    <a
+                    <Link
                         href="https://github.com/thebentobot"
                         target="_blank"
                         rel="noreferrer"
                         className="text-white hover:underline"
                     >
                         GitHub
-                    </a>.{" "}
+                    </Link>.{" "}
             </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto text-center mx-auto">
             The development of Bento 🍱 is {" "}
@@ -172,25 +172,25 @@ const animation: Variants = shouldReduceMotion ? {
                     >
                         most importantly
                     </a>{" "} supported by a community of supporters and good friends on the {" "}
-                    <a
+                    <Link
                         href="https://discord.gg/dd68WwP"
                         target="_blank"
                         rel="noreferrer"
                         className="text-yellow-400 hover:underline"
                     >
                         Bento 🍱 Support Server
-                    </a>{" "} where ideas, discussion, feedback and bug reporting are happening, besides just chatting. Everyone is welcome to join!
+                    </Link>{" "} where ideas, discussion, feedback and bug reporting are happening, besides just chatting. Everyone is welcome to join!
             </p>
             <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto text-center mx-auto">
             Logo drawn by {" "}
-                    <a
+                    <Link
                         href="https://twitter.com/dannalanart"
                         target="_blank"
                         rel="noreferrer"
                         className=" text-blue-400 hover:underline"
                     >
                         Dan
-                    </a>.{" "}
+                    </Link>.{" "}
             </p>
           </motion.div>
         </div>

@@ -11,14 +11,14 @@ export default function Footer() {
                         </p>
                         <p className="text-gray-300">
             Logo drawn by {" "}
-                    <a
+                    <Link
                         href="https://twitter.com/dannalanart"
                         target="_blank"
                         rel="noreferrer"
                         className=" text-blue-400 hover:underline"
                     >
                         Dan
-                    </a>.{" "}
+                    </Link>.{" "}
             </p>
                         <p className="text-sm text-gray-400">
                             Source code licensed AGPLv3
@@ -30,55 +30,55 @@ export default function Footer() {
                         </p>
                         <p>
                         <Link href="/terms-of-service" passHref>
-                        <a
-                            className="text-gray-300 hover:text-yellow-300"
-                        >
-                            Terms of Service
-                        </a>
+                            <span
+                                className="text-gray-300 hover:text-yellow-300"
+                            >
+                                Terms of Service
+                            </span>
                         </Link>
                         <br/>
                         <Link href="/privacy-policy" passHref>
-                        <a
-                            className="text-gray-300 hover:text-yellow-300"
-                        >
-                            Privacy Policy
-                        </a>
+                            <span
+                                className="text-gray-300 hover:text-yellow-300"
+                            >
+                                Privacy Policy
+                            </span>
                         </Link>
                         <br/>
-                        <a
+                        <Link
                             href="https://github.com/thebentobot"
                             className="text-gray-300 hover:text-white"
                         >
                             GitHub
-                        </a>
+                        </Link>
                         <br/>
-                        <a
+                        <Link
                             href="https://discord.gg/dd68WwP"
                             className="text-gray-300 hover:text-discordBlue"
                         >
                             Discord Support Server
-                        </a>
+                        </Link>
                         <br/>
-                        <a
+                        <Link
                             href="https://www.patreon.com/bentobot"
                             className="text-gray-300 hover:text-patreon"
                         >
                             Patreon
-                        </a>
+                        </Link>
                         <br/>
-                        <a
+                        <Link
                             href="https://ko-fi.com/bentobot"
                             className="text-gray-300 hover:text-kofi"
                         >
                             Ko-fi
-                        </a>
+                        </Link>
                         <br/>
-                        <a
+                        <Link
                             href="https://top.gg/bot/787041583580184609"
                             className="text-gray-300 hover:text-black"
                         >
                             top.gg
-                        </a>
+                        </Link>
                         </p>
                     </div>
                 </div>

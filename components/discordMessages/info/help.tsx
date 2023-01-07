@@ -1,5 +1,6 @@
 import { DiscordEmbed, DiscordEmbedDescription, DiscordEmbedField, DiscordEmbedFields, DiscordEmbedFooter, DiscordMention, DiscordMessage, DiscordMessages } from '@skyra/discord-components-react'
 import moment from 'moment'
+import Link from 'next/link'
 
 export default function Help() {
     return (
@@ -20,7 +21,7 @@ export default function Help() {
                     <br />
                     <strong>Usage: </strong> ?weather [save] {`<city>`}, [country code]
                     <br />
-                    <strong>Website: </strong> <a href='https://www.bentobot.xyz/commands#weather'>https://www.bentobot.xyz/commands#weather</a>
+                    <strong>Website: </strong> <Link href='https://www.bentobot.xyz/commands#weather'>https://www.bentobot.xyz/commands#weather</Link>
                     </DiscordEmbedDescription>
                     <DiscordEmbedFooter
               slot="footer"
