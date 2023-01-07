@@ -12,6 +12,7 @@ import { NextSeo } from "next-seo"
 import dynamic from 'next/dynamic'
 import PrefixExample from "../components/discordMessages/prefixExample"
 import PrefixExample2 from "../components/discordMessages/prefixExample2"
+import Link from "next/link"
 
 const Admin = dynamic(() => import("../components/commands/admin"))
 const Features = dynamic(() => import("../components/commands/features"))
@@ -71,14 +72,15 @@ export default function Commands() {
             </p>
             <div className="mt-4 mb-8 sm:mt-8 sm:flex sm:justify-center lg:text-center">
             <div className="rounded-md shadow">
-                  <motion.a
-                    href={`/commands#${commandsList[Math.floor(Math.random() * commandsList.length)].name}`}
-                    className="w-full sm:text-center sm:mx-auto flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-400 hover:bg-yellow-300 hover:text-black md:py-4 md:text-lg md:px-10"
-                    whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.9 }}
-                  >
-                    Check a Random Command
-                  </motion.a>
+              <Link href={`/commands#${commandsList[Math.floor(Math.random() * commandsList.length)].name}`}>
+                <motion.span
+                      className="w-full sm:text-center sm:mx-auto flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-400 hover:bg-yellow-300 hover:text-black md:py-4 md:text-lg md:px-10"
+                      whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.9 }}
+                >
+                  Check a Random Command
+                </motion.span>
+              </Link>
           </div>
           </div>
           </div>
@@ -94,12 +96,12 @@ export default function Commands() {
             {commandsCategoryList.map((category, i) => (
               <div key={i}>
                 <motion.div className=' text-gray-300 py-2 group'>
-                <a
+                <Link
                   href={`#${category.category.toLowerCase()}`}
                   className="text-yellow-400 hover:underline"
                 >
                 {category.category}
-                </a>
+                </Link>
                 {" - "}
                 {category.description}
                 <div className='mt-2 text-center'>
@@ -138,12 +140,12 @@ export default function Commands() {
                       {adminCommands.map((command, i) => (
                         <div key={i}>
                         <motion.div className=' text-gray-300 group text-sm whitespace-pre-line max-w-xl mx-auto' >
-                        <a
+                        <Link
                           href={`#${command.name.toLowerCase()}`}
                           className="text-yellow-400 hover:underline"
                         >
                         {capitalize(command.name)}
-                        </a>
+                        </Link>
                         {command.aliases.length ? ` (${command.aliases.map(alias => alias).join(', ')})` : null}
                         </motion.div>
                       </div>
@@ -155,12 +157,12 @@ export default function Commands() {
                       {featureCommands.map((command, i) => (
                         <div key={i}>
                         <motion.div className=' text-gray-300 group text-sm whitespace-pre-line max-w-xl mx-auto' >
-                        <a
+                        <Link
                           href={`#${command.name.toLowerCase()}`}
                           className="text-yellow-400 hover:underline"
                         >
                         {capitalize(command.name)}
-                        </a>
+                        </Link>
                         {command.aliases.length ? ` (${command.aliases.map(alias => alias).join(', ')})` : null}
                         </motion.div>
                       </div>
@@ -172,12 +174,12 @@ export default function Commands() {
                       {infoCommands.map((command, i) => (
                         <div key={i}>
                         <motion.div className=' text-gray-300 group text-sm whitespace-pre-line max-w-xl mx-auto' >
-                        <a
+                        <Link
                           href={`#${command.name.toLowerCase()}`}
                           className="text-yellow-400 hover:underline"
                         >
                         {capitalize(command.name)}
-                        </a>
+                        </Link>
                         {command.aliases.length ? ` (${command.aliases.map(alias => alias).join(', ')})` : null}
                         </motion.div>
                       </div>
@@ -189,12 +191,12 @@ export default function Commands() {
                       {moderationCommands.map((command, i) => (
                         <div key={i}>
                         <motion.div className=' text-gray-300 group text-sm whitespace-pre-line max-w-xl mx-auto' >
-                        <a
+                        <Link
                           href={`#${command.name.toLowerCase()}`}
                           className="text-yellow-400 hover:underline"
                         >
                         {capitalize(command.name)}
-                        </a>
+                        </Link>
                         {command.aliases.length ? ` (${command.aliases.map(alias => alias).join(', ')})` : null}
                         </motion.div>
                       </div>
@@ -206,12 +208,12 @@ export default function Commands() {
                       {userCommands.map((command, i) => (
                         <div key={i}>
                         <motion.div className=' text-gray-300 group text-sm whitespace-pre-line max-w-xl mx-auto'>
-                        <a
+                        <Link
                           href={`#${command.name.toLowerCase()}`}
                           className="text-yellow-400 hover:underline"
                         >
                         {capitalize(command.name)}
-                        </a>
+                        </Link>
                         {command.aliases.length ? ` (${command.aliases.map(alias => alias).join(', ')})` : null}
                         </motion.div>
                       </div>
@@ -241,12 +243,12 @@ export default function Commands() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <h2 id='admin' className="mt-2 text-3xl text-center leading-8 font-extrabold tracking-tight text-yellow-400 sm:text-4xl">
-              <a
+              <Link
               href={`#admin`}
               className="text-yellow-400 hover:underline"
               >
               Admin
-              </a>
+              </Link>
             </h2>
           </div>
           <br></br>
@@ -258,12 +260,12 @@ export default function Commands() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <h2 id='features' className="mt-2 text-3xl text-center leading-8 font-extrabold tracking-tight text-yellow-400 sm:text-4xl">
-              <a
+              <Link
               href={`#features`}
               className="text-yellow-400 hover:underline"
               >
               Features
-              </a>
+              </Link>
             </h2>
           </div>
           <br></br>
@@ -275,12 +277,12 @@ export default function Commands() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <h2 id='info' className="mt-2 text-3xl text-center leading-8 font-extrabold tracking-tight text-yellow-400 sm:text-4xl">
-              <a
+              <Link
               href={`#info`}
               className="text-yellow-400 hover:underline"
               >
               Info
-              </a>
+              </Link>
             </h2>
           </div>
           <br></br>
@@ -292,12 +294,12 @@ export default function Commands() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <h2 id='moderation' className="mt-2 text-3xl text-center leading-8 font-extrabold tracking-tight text-yellow-400 sm:text-4xl">
-              <a
+              <Link
               href={`#moderation`}
               className="text-yellow-400 hover:underline"
               >
               Moderation
-              </a>
+              </Link>
             </h2>
           </div>
           <br></br>
@@ -309,12 +311,12 @@ export default function Commands() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center">
             <h2 id='user' className="mt-2 text-3xl text-center leading-8 font-extrabold tracking-tight text-yellow-400 sm:text-4xl">
-              <a
+              <Link
               href={`#user`}
               className="text-yellow-400 hover:underline"
               >
               User
-              </a>
+              </Link>
             </h2>
           </div>
           <br></br>

@@ -61,7 +61,7 @@ export default function Example() {
         { name: 'Leaderboard', href: '/leaderboard', current: asPath === '/leaderboard' ? true : false },
       ]
   return (
-    <Disclosure as="nav" className="bg-gray-900">
+    <Disclosure as="nav" className="bg-gray-900 sticky top-0 z-50">
       {({ open }) => (
         <>
           <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -79,38 +79,40 @@ export default function Example() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
-                <Link href="/" passHref>
-                    <Image className='px-3 py-2 rounded-md hover:bg-yellow-300' src="/bento_trans.png" alt="Bento logo" width={25} height={25} />
-                </Link>
                 </div>
                 <div className="hidden sm:block sm:ml-6">
                   <div className="flex space-x-4">
-                  <motion.a
-                        key="bento2.0"
-                        href="/bento-2.0"
-                        className='bg-yellow-300 text-black px-3 py-2 rounded-md text-sm font-medium'
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.9 }}
-                        variants={animationItem}
-                      >
-                        Bento 2.0
-                      </motion.a>
-                    {navigation.map((item) => (
-                      <motion.a
-                        key={item.name}
-                        href={item.href}
+                  <Link href="/" passHref className='inline '>
+                    <div className='hover:bg-yellow-300 rounded-md'>
+                      <Image src="/bento_trans.png" alt="Bento logo" width={25} height={25} />
+                    </div>
+                  </Link>
+                  <Link href="/bento-2.0" key="bento2.0" className='inline whitespace-nowrap'>
+                    <motion.span
+                          className='bg-yellow-300 text-black px-3 py-2 rounded-md text-sm font-medium'
+                          whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.9 }}
+                          variants={animationItem}
+                    >
+                      Bento 2.0
+                    </motion.span>
+                  </Link>
+                  {navigation.map((item) => (
+                    <Link href={item.href} key={item.name}>
+                      <motion.span
                         className={classNames(
                           item.current ? 'bg-yellow-300 text-black' : 'text-gray-300 hover:bg-yellow-300 hover:text-black',
                           'px-3 py-2 rounded-md text-sm font-medium'
                         )}
                         aria-current={item.current ? 'page' : undefined}
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.9 }}
                         variants={animationItem}
                       >
                         {item.name}
-                      </motion.a>
-                    ))}
+                      </motion.span>
+                    </Link>
+                  ))}
                   </div>
                 </div>
               </div>
@@ -123,7 +125,7 @@ export default function Example() {
                         key="bento2.0"
                         href="/bento-2.0"
                         className='bg-yellow-300 text-black block px-3 py-2 rounded-md text-base font-medium text-center'
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.9 }}
                         variants={animationItem}
                       >
@@ -138,7 +140,7 @@ export default function Example() {
                     'block px-3 py-2 rounded-md text-base font-medium text-center'
                   )}
                   aria-current={item.current ? 'page' : undefined}
-                  whileHover={{ scale: 1.05 }}
+                  whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.9 }}
                         variants={animationItem}
                 >

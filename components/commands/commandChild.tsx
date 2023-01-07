@@ -1,3 +1,4 @@
+import Link from "next/link"
 import React from "react"
 import { capitalize } from "../../util/capitalize"
 import AutoRole from "../discordMessages/admin/autoRole"
@@ -55,12 +56,12 @@ export default function CommandChild ({ name, aliases, category, description, us
     return (
         <li className='transition duration-300 ease-in-out bg-gray-800 items-center w-full my-4 px-0 lg:px-6 py-0 lg:py-6 p-4 rounded-lg group hover:bg-gray-700 shadow overflow-auto'>
         <h1 id={name} className='text-2xl font-extrabold text-yellow-400 sm:text-xl text-center'>
-            <a
+            <Link
               href={`#${name}`}
               className="text-yellow-400 hover:underline"
               >
               {capitalize(name)}
-            </a>
+            </Link>
         </h1>
         <p className='text-xl whitespace-pre-line text-gray-300 sm:text-xl text-center max-w-xl mx-auto'>
             {aliases.length ? `Aliases: ${aliases.map(alias => alias).join(', ')}` : null}
@@ -206,9 +207,9 @@ export default function CommandChild ({ name, aliases, category, description, us
                 Example of receiving a welcome
             </h1>
             <p className='text-xl py-2 whitespace-pre-line text-gray-300 text-opacity-50 sm:text-xl group-hover:text-opacity-100 text-center max-w-xl mx-auto'>
-            Arguments is identical with the <a href='#bye' className='hover:underline text-yellow-400 text-opacity-50 group-hover:text-opacity-100'>
+            Arguments is identical with the <Link href='#bye' className='hover:underline text-yellow-400 text-opacity-50 group-hover:text-opacity-100'>
             Bye
-            </a> command arguments
+            </Link> command arguments
             </p>
             <div className='mt-2 opacity-50 group-hover:opacity-100'>
                 <Welcome1 />
@@ -320,9 +321,9 @@ export default function CommandChild ({ name, aliases, category, description, us
             Get a list of all kinds of punishments for a user. <br /> If you add <code>global</code> as the last argument you get all cases for the user, if they are on multiple Bento 🍱 servers.
             </p>
             <p className='text-xl py-2 whitespace-pre-line text-gray-300 text-opacity-50 sm:text-xl group-hover:text-opacity-100 text-center max-w-xl mx-auto'>
-            If a server has enabled privacy settings with the <a href='#caseglobal' className='hover:underline text-yellow-400 text-opacity-50 group-hover:text-opacity-100'>
+            If a server has enabled privacy settings with the <Link href='#caseglobal' className='hover:underline text-yellow-400 text-opacity-50 group-hover:text-opacity-100'>
             Caseglobal
-            </a> command, both the server where the punishment happened and the reason why will be hidden.
+            </Link> command, both the server where the punishment happened and the reason why will be hidden.
             </p>
             <div className='mt-2 opacity-50 group-hover:opacity-100'>
                 <CaseUser />
@@ -370,13 +371,13 @@ export default function CommandChild ({ name, aliases, category, description, us
                 Example
             </h1>
             <p className='text-xl py-2 whitespace-pre-line text-gray-300 text-opacity-50 sm:text-xl group-hover:text-opacity-100 text-center max-w-xl mx-auto'>
-            You can both mute for an indefinite time by using the mute command just like how you would use <a href='#ban' className='hover:underline text-yellow-400 text-opacity-50 group-hover:text-opacity-100'>
+            You can both mute for an indefinite time by using the mute command just like how you would use <Link href='#ban' className='hover:underline text-yellow-400 text-opacity-50 group-hover:text-opacity-100'>
             Ban
-            </a>, <a href='#kick' className='hover:underline text-yellow-400 text-opacity-50 group-hover:text-opacity-100'>
+            </Link>, <Link href='#kick' className='hover:underline text-yellow-400 text-opacity-50 group-hover:text-opacity-100'>
             Kick
-            </a> and <a href='#warning' className='hover:underline text-yellow-400 text-opacity-50 group-hover:text-opacity-100'>
+            </Link> and <Link href='#warning' className='hover:underline text-yellow-400 text-opacity-50 group-hover:text-opacity-100'>
             Warning
-            </a>.
+            </Link>.
             <br /> But you can also specify a time where the user needs to be unmuted automatically, by writing a number and use the wished timeframe above.
             <br /> Mute someone for 30 minutes or 2 years?
             </p>

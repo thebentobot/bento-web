@@ -8,6 +8,7 @@ import { getData as getPatreonEnthusiastsData } from "./api/patreon/enthusiast"
 import { getData as getPatreonDisciplesData } from "./api/patreon/disciple"
 import { getData as getPatreonSponsorsData } from "./api/patreon/sponsor"
 import PatreonParent from "../components/patreon/patreonParent"
+import Link from "next/link"
 
 export interface patreon {
   id: number,
@@ -115,14 +116,14 @@ export default function Support({ supporters, followers, enthusiasts, disciples,
           <div className='max-w-screen-2xl mx-auto px-3 pt-2'>
           <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto text-center mx-auto">
             Other than the awesome users who supports by using Bento 🍱 <br /> no <strong>Patrons</strong> on {" "}
-                    <a
+                    <Link
                         href="https://www.patreon.com/bentobot"
                         target="_blank"
                         rel="noreferrer"
                         className='text-patreon hover:underline'
                     >
                         Patreon
-                    </a>{" "} at the moment.
+                    </Link>{" "} at the moment.
           </p>
           </div>
         }
@@ -195,7 +196,7 @@ export default function Support({ supporters, followers, enthusiasts, disciples,
                   <motion.a
                     href="https://www.patreon.com/bentobot"
                     className="w-48 lg:w-96 mx-auto flex items-center justify-center py-3 border border-transparent text-base font-medium rounded-md text-white bg-patreon hover:bg-patreon hover:text-white md:py-4 md:text-lg md:px-10 px-4 sm:px-6 lg:px-8"
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.9 }}
                   >
                     Patreon
@@ -208,7 +209,7 @@ export default function Support({ supporters, followers, enthusiasts, disciples,
                   <motion.a
                     href="https://ko-fi.com/bentobot"
                     className="w-48 lg:w-96 mx-auto flex items-center justify-center py-3 border border-transparent text-base font-medium rounded-md text-white bg-kofi hover:bg-kofi hover:text-white md:py-4 md:text-lg md:px-10 px-4 sm:px-6 lg:px-8"
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.9 }}
                   >
                     Ko-fi ❤️☕
@@ -221,7 +222,7 @@ export default function Support({ supporters, followers, enthusiasts, disciples,
                   <motion.a
                     href="https://top.gg/bot/787041583580184609/vote"
                     className="w-48 lg:w-96 mx-auto flex items-center justify-center py-3 border border-transparent text-base font-medium rounded-md text-white bg-black hover:bg-black hover:text-white md:py-4 md:text-lg md:px-10 px-4 sm:px-6 lg:px-8"
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.9 }}
                   >
                     Vote on top.gg

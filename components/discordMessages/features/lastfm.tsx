@@ -1,5 +1,6 @@
 import { DiscordAttachment, DiscordEmbed, DiscordEmbedDescription, DiscordEmbedField, DiscordEmbedFields, DiscordEmbedFooter, DiscordMention, DiscordMessage, DiscordMessages, DiscordReaction, DiscordReactions } from '@skyra/discord-components-react'
 import moment from 'moment'
+import Link from 'next/link'
 import { bannerAvatar, enterAvatar } from '../../../pages/_app'
 
 export default function Lastfm() {
@@ -15,13 +16,13 @@ export default function Lastfm() {
                 <DiscordEmbedDescription slot='description'>
                 <strong>13 hours ago</strong>
                 <br />
-                <strong>Kanye West</strong> - <a href='https://www.last.fm/music/Kanye+West/_/Stronger'>Stronger</a>
+                <strong>Kanye West</strong> - <Link href='https://www.last.fm/music/Kanye+West/_/Stronger'>Stronger</Link>
                 <br />
                 From the album <strong>Graduation</strong>
                 <br />
                 <strong>13 hours ago</strong>
                 <br />
-                <strong>Kanye West</strong> - <a href='https://www.last.fm/music/Kanye+West/_/Gold+Digger'>Gold Digger</a>
+                <strong>Kanye West</strong> - <Link href='https://www.last.fm/music/Kanye+West/_/Gold+Digger'>Gold Digger</Link>
                 <br />
                 From the album <strong>Late Registration</strong>
                 </DiscordEmbedDescription>
@@ -39,13 +40,13 @@ export default function Lastfm() {
                 <DiscordEmbedDescription slot='description'>
                 <strong>2 hours ago</strong>
                 <br />
-                <strong>Toro y Moi </strong> - <a href='https://www.last.fm/music/Toro+y+Moi/_/Who+I+Am'>Who I Am</a>
+                <strong>Toro y Moi </strong> - <Link href='https://www.last.fm/music/Toro+y+Moi/_/Who+I+Am'>Who I Am</Link>
                 <br />
                 From the album <strong>Outer Peace</strong>
                 <br />
                 <strong>3 hours ago</strong>
                 <br />
-                <strong>Kanye West</strong> - <a href='https://www.last.fm/music/Kanye+West/_/H%E2%80%A2A%E2%80%A2M'>H•A•M</a>
+                <strong>Kanye West</strong> - <Link href='https://www.last.fm/music/Kanye+West/_/H%E2%80%A2A%E2%80%A2M'>H•A•M</Link>
                 <br />
                 From the album <strong>Watch The Throne (Deluxe)</strong>
                 </DiscordEmbedDescription>
@@ -61,25 +62,25 @@ export default function Lastfm() {
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordEmbed slot='embeds' embedTitle='Top tracks for Banner#1017' url='https://www.last.fm/user/christiankn/library/tracks?date_preset=LAST_30_DAYS' color="#e4141e" authorName='Banner#1017' authorImage={bannerAvatar} authorUrl='https://www.last.fm/user/christiankn' thumbnail='https://i.scdn.co/image/ab6761610000e5eb3a8619d4545d138019f4f6d9'>
                 <DiscordEmbedDescription slot='description'>
-                <strong>1. c2.0</strong> by <a href='https://www.last.fm/music/Charli+XCX/_/c2.0'>Charli XCX</a> - 39 plays
+                <strong>1. c2.0</strong> by <Link href='https://www.last.fm/music/Charli+XCX/_/c2.0'>Charli XCX</Link> - 39 plays
                 <br />
-                <strong>2. Paradise (feat. Hannah Diamond)</strong> by <a href='https://www.last.fm/music/Charli+XCX/_/Paradise+(feat.+Hannah+Diamond)'>Charli XCX</a> - 34 plays
+                <strong>2. Paradise (feat. Hannah Diamond)</strong> by <Link href='https://www.last.fm/music/Charli+XCX/_/Paradise+(feat.+Hannah+Diamond)'>Charli XCX</Link> - 34 plays
                 <br />
-                <strong>3. party 4 u</strong> by <a href='https://www.last.fm/music/Charli+XCX/_/party+4+u'>Charli XCX</a> - 33 plays
+                <strong>3. party 4 u</strong> by <Link href='https://www.last.fm/music/Charli+XCX/_/party+4+u'>Charli XCX</Link> - 33 plays
                 <br />
-                <strong>4. forever</strong> by <a href='https://www.last.fm/music/Charli+XCX/_/forever'>Charli XCX</a> - 30 plays
+                <strong>4. forever</strong> by <Link href='https://www.last.fm/music/Charli+XCX/_/forever'>Charli XCX</Link> - 30 plays
                 <br />
-                <strong>5. Blowin’ Minds (Skateboard) (feat. A$AP Rocky, A$AP Nast, A$AP Ant, Chief Keef & Playboi Carti)</strong> by <a href='https://www.last.fm/music/A$AP+Mob/_/Blowin%27+Minds+(Skateboard)+(feat.+A$AP+Rocky,+A$AP+Nast,+A$AP+Ant,+Chief+Keef+&+Playboi+Carti)'>A$AP Mob</a> - 27 plays
+                <strong>5. Blowin’ Minds (Skateboard) (feat. A$AP Rocky, A$AP Nast, A$AP Ant, Chief Keef & Playboi Carti)</strong> by <Link href='https://www.last.fm/music/A$AP+Mob/_/Blowin%27+Minds+(Skateboard)+(feat.+A$AP+Rocky,+A$AP+Nast,+A$AP+Ant,+Chief+Keef+&+Playboi+Carti)'>A$AP Mob</Link> - 27 plays
                 <br />
-                <strong>6. anthems </strong> by <a href='https://www.last.fm/music/Charli+XCX/_/anthems'>Charli XCX</a> - 27 plays
+                <strong>6. anthems </strong> by <Link href='https://www.last.fm/music/Charli+XCX/_/anthems'>Charli XCX</Link> - 27 plays
                 <br />
-                <strong>7. claws </strong> by <a href='https://www.last.fm/music/Charli+XCX/_/claws'>Charli XCX</a> - 27 plays
+                <strong>7. claws </strong> by <Link href='https://www.last.fm/music/Charli+XCX/_/claws'>Charli XCX</Link> - 27 plays
                 <br />
-                <strong>8. hand crushed by a mallet</strong> by <a href='https://www.last.fm/music/100+gecs/_/hand+crushed+by+a+mallet'>100 gecs</a> - 25 plays
+                <strong>8. hand crushed by Link mallet</strong> by <Link href='https://www.last.fm/music/100+gecs/_/hand+crushed+by+a+mallet'>100 gecs</Link> - 25 plays
                 <br />
-                <strong>9. Roll with Me</strong> by <a href='https://www.last.fm/music/Charli+XCX/_/Roll+with+Me'>Charli XCX</a> - 23 plays
+                <strong>9. Roll with Me</strong> by <Link href='https://www.last.fm/music/Charli+XCX/_/Roll+with+Me'>Charli XCX</Link> - 23 plays
                 <br />
-                <strong>10. Take My Heart Away</strong> by <a href='https://www.last.fm/music/Danny+L+Harle/_/Take+My+Heart+Away'>Danny L Harle</a> - 23 plays
+                <strong>10. Take My Heart Away</strong> by <Link href='https://www.last.fm/music/Danny+L+Harle/_/Take+My+Heart+Away'>Danny L Harle</Link> - 23 plays
                 <br />
                 </DiscordEmbedDescription>
                 <DiscordEmbedFooter
@@ -100,25 +101,25 @@ export default function Lastfm() {
             <DiscordMessage author="Bento" avatar="/bento.png" bot verified roleColor='#f9d61b'>
                 <DiscordEmbed slot='embeds' embedTitle='Recent tracks for Banner#1017' url='https://www.last.fm/user/christiankn/library/' color="#e4141e" authorName='Banner#1017' authorImage={bannerAvatar} authorUrl='https://www.last.fm/user/christiankn' thumbnail='https://lastfm.freetls.fastly.net/i/u/300x300/38400dfa7dfc156b978678a61d82d809.jpg'>
                 <DiscordEmbedDescription slot='description'>
-                <strong>3 hours ago</strong> | Toro y Moi - <a href='https://www.last.fm/music/Toro+y+Moi/_/Who+I+Am'>Who I am</a>
+                <strong>3 hours ago</strong> | Toro y Moi - <Link href='https://www.last.fm/music/Toro+y+Moi/_/Who+I+Am'>Who I am</Link>
                 <br />
-                <strong>3 hours ago</strong> | Kanye West - <a href='https://www.last.fm/music/Kanye+West/_/H%E2%80%A2A%E2%80%A2M'>H•A•M</a>
+                <strong>3 hours ago</strong> | Kanye West - <Link href='https://www.last.fm/music/Kanye+West/_/H%E2%80%A2A%E2%80%A2M'>H•A•M</Link>
                 <br />
-                <strong>3 hours ago</strong> | The Internet - <a href='https://www.last.fm/music/The+Internet/_/Matt%27s+Apartment'>Matt’s Apartment</a>
+                <strong>3 hours ago</strong> | The Internet - <Link href='https://www.last.fm/music/The+Internet/_/Matt%27s+Apartment'>Matt’s Apartment</Link>
                 <br />
-                <strong>3 hours ago</strong> | Travis Scott - <a href='https://www.last.fm/music/Travis+Scott/_/sweet+sweet'>sweet sweet</a>
+                <strong>3 hours ago</strong> | Travis Scott - <Link href='https://www.last.fm/music/Travis+Scott/_/sweet+sweet'>sweet sweet</Link>
                 <br />
-                <strong>3 hours ago</strong> | A$AP Rocky - <a href='https://www.last.fm/music/A$AP+Rocky/_/Lord+Pretty+Flacko+Jodye+2+(LPFJ2)'>Lord Pretty Flacko Jodye 2 (LPFJ2)</a>
+                <strong>3 hours ago</strong> | A$AP Rocky - <Link href='https://www.last.fm/music/A$AP+Rocky/_/Lord+Pretty+Flacko+Jodye+2+(LPFJ2)'>Lord Pretty Flacko Jodye 2 (LPFJ2)</Link>
                 <br />
-                <strong>3 hours ago</strong> | A$AP Rocky - <a href='https://www.last.fm/music/A$AP+Rocky/_/Sundress'>Sundress</a>
+                <strong>3 hours ago</strong> | A$AP Rocky - <Link href='https://www.last.fm/music/A$AP+Rocky/_/Sundress'>Sundress</Link>
                 <br />
-                <strong>3 hours ago</strong> | Vince Staples - <a href='https://www.last.fm/music/Vince+Staples/_/Norf+Norf'>Norf Norf</a>
+                <strong>3 hours ago</strong> | Vince Staples - <Link href='https://www.last.fm/music/Vince+Staples/_/Norf+Norf'>Norf Norf</Link>
                 <br />
-                <strong>3 hours ago</strong> | Kero Kero Bonito - <a href='https://www.last.fm/music/Kero+Kero+Bonito/_/Dump'>Dump</a>
+                <strong>3 hours ago</strong> | Kero Kero Bonito - <Link href='https://www.last.fm/music/Kero+Kero+Bonito/_/Dump'>Dump</Link>
                 <br />
-                <strong>3 hours ago</strong> | Frank Ocean - <a href='https://www.last.fm/music/Frank+Ocean/_/Provider'>Provider</a>
+                <strong>3 hours ago</strong> | Frank Ocean - <Link href='https://www.last.fm/music/Frank+Ocean/_/Provider'>Provider</Link>
                 <br />
-                <strong>3 hours ago</strong> | Bladee - <a href='https://www.last.fm/music/Bladee/_/I+Want+It+That+Way'>I Want It That Way</a>
+                <strong>3 hours ago</strong> | Bladee - <Link href='https://www.last.fm/music/Bladee/_/I+Want+It+That+Way'>I Want It That Way</Link>
                 <br />
                 </DiscordEmbedDescription>
                 <DiscordEmbedFooter
