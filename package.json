@@ -16,7 +16,7 @@
     "@skyra/discord-components-core": "^3.6.0",
     "@skyra/discord-components-react": "^3.6.0",
     "@types/node": "^18.11.19",
-    "@types/validator": "^13.7.11",
+    "@types/validator": "^13.7.12",
     "dotenv": "^16.0.3",
     "framer-motion": "^9.0.1",
     "moment": "^2.29.4",
