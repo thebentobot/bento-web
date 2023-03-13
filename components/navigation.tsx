@@ -80,13 +80,13 @@ export default function Example() {
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex-shrink-0 flex items-center">
                 </div>
-                <div className="hidden sm:block sm:ml-6">
-                  <div className="flex space-x-4">
-                  <Link href="/" passHref className='inline '>
+                <Link href="/" passHref className='inline'>
                     <div className='hover:bg-yellow-300 rounded-md'>
                       <Image src="/bento_trans.png" alt="Bento logo" width={25} height={25} />
                     </div>
-                  </Link>
+                </Link>
+                <div className="hidden sm:block sm:ml-6">
+                  <div className="flex space-x-4">
                   <Link href="/bento-2.0" key="bento2.0" className='inline whitespace-nowrap'>
                     <motion.span
                           className='bg-yellow-300 text-black px-3 py-2 rounded-md text-sm font-medium'

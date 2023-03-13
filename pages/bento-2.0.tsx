@@ -80,7 +80,7 @@ const bottomAnimation: Variants = shouldReduceMotion ? {
         <motion.div className="lg:text-center" whileHover={{
           scale: 1.02
         }}>
-          <p className="mt-2 text-9xl leading-8 font-extrabold tracking-tight text-yellow-300 sm:text-4xl text-center">
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-yellow-300 sm:text-4xl text-center">
             Bento 2.0
           </p>
           <p className="mt-4 max-w-2xl text-xl text-gray-300 lg:mx-auto sm:text-center sm:max-w-xl mx-auto text-center">
@@ -93,7 +93,7 @@ const bottomAnimation: Variants = shouldReduceMotion ? {
             The focus for the future will be on <strong>media and entertainment commands</strong>, which means that moderation commands will be deprecated.
           </p>
         </motion.div>
-        <p className="mt-2 text-9xl leading-8 font-extrabold tracking-tight text-yellow-300 sm:text-4xl text-center">
+        <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-yellow-300 sm:text-4xl text-center">
             New features and disclaimers
         </p>
         <div className="mt-10">
