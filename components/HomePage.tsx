@@ -11,6 +11,7 @@ import { motion, Variants, useReducedMotion } from "framer-motion"
 import { NextSeo } from 'next-seo'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
+import Link from "next/link"
 export default function HomePage({
   animation,
   usersCount,
@@ -80,13 +81,15 @@ export default function HomePage({
                   </motion.a>
               </div>
               <div className="mt-3 sm:mt-0 sm:ml-3 shadow-lg">
-                <motion.a href="/commands" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-300 hover:bg-yellow-400 md:py-4 md:text-lg md:px-10" whileHover={{
-                    scale: 1.02
-                  }} whileTap={{
-                    scale: 0.9
-                  }} initial='hidden' animate='show' variants={animation}>
-                  View Commands
-                </motion.a>
+                <Link href="/commands">
+                  <motion.span className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-300 hover:bg-yellow-400 md:py-4 md:text-lg md:px-10" whileHover={{
+                      scale: 1.02
+                    }} whileTap={{
+                      scale: 0.9
+                    }} initial='hidden' animate='show' variants={animation}>
+                    View Commands
+                  </motion.span>
+                </Link>
               </div>
               </div>
             </motion.div>
@@ -140,13 +143,15 @@ export default function HomePage({
           <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:text-center">
 
             <div className="rounded-md shadow">
-                  <motion.a href="/commands" className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-300 hover:bg-yellow-400 hover:text-black md:py-4 md:text-lg md:px-10" whileHover={{
-                scale: 1.05
-              }} whileTap={{
-                scale: 0.9
-              }}>
-                    A list of All Commands
-                  </motion.a>
+                  <Link href="/commands">
+                    <motion.span className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-300 hover:bg-yellow-400 hover:text-black md:py-4 md:text-lg md:px-10" whileHover={{
+                      scale: 1.05
+                    }} whileTap={{
+                      scale: 0.9
+                    }}>
+                      A list of All Commands
+                    </motion.span>
+                  </Link>
                 </div>
               </div>
         </div>

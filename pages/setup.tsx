@@ -4,6 +4,7 @@ import Prefix from "../components/discordMessages/admin/prefix"
 import { motion, useReducedMotion, Variants } from "framer-motion"
 import { NextSeo } from "next-seo"
 import dynamic from 'next/dynamic'
+import Link from "next/link"
 
 const Settings = dynamic(() => import("../components/discordMessages/admin/settings"))
 
@@ -87,14 +88,15 @@ const animation: Variants = shouldReduceMotion ? {
           </div>
           <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:text-center">
           <div className="rounded-md shadow px-4 sm:px-6 lg:px-8">
-                  <motion.a
-                    href="/commands#admin"
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-400 hover:bg-yellow-400 hover:text-black md:py-4 md:text-lg md:px-10"
-                    whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.9 }}
-                  >
-                    Admin Commands
-                  </motion.a>
+            <Link href="/commands#admin">
+              <motion.span
+                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-black bg-yellow-400 hover:bg-yellow-400 hover:text-black md:py-4 md:text-lg md:px-10"
+                whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.9 }}
+              >
+                Admin Commands
+              </motion.span>
+            </Link>
           </div>
           </div>
         </motion.div>

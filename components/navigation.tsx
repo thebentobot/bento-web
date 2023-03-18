@@ -4,6 +4,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { motion, useReducedMotion, Variants } from "framer-motion"
 import Link from 'next/link'
 import Image from 'next/image'
+import { Fragment } from 'react'
 
 function classNames(...classes:any) {
   return classes.filter(Boolean).join(' ')
@@ -121,37 +122,37 @@ export default function Example() {
 
           <Disclosure.Panel className="sm:hidden">
             <motion.div className="px-2 pt-2 pb-3 space-y-1" initial='hidden' animate='show' variants={animation}>
-            <motion.a
-                        key="bento2.0"
-                        href="/bento-2.0"
-                        className='bg-yellow-300 text-black block px-3 py-2 rounded-md text-base font-medium text-center'
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.9 }}
-                        variants={animationItem}
-                      >
-                        Bento 2.0
-                      </motion.a>
-              {navigation.map((item) => (
-                <motion.a
-                  key={item.name}
-                  href={item.href}
-                  className={classNames(
-                    item.current ? 'bg-yellow-300 text-black' : 'text-gray-300 hover:bg-yellow-300 hover:text-black',
-                    'block px-3 py-2 rounded-md text-base font-medium text-center'
-                  )}
-                  aria-current={item.current ? 'page' : undefined}
+              <Link href="/bento-2.0">
+                <motion.span
+                  key="bento2.0"
+                  className='bg-yellow-300 text-black block px-3 py-2 rounded-md text-base font-medium text-center'
                   whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.9 }}
-                        variants={animationItem}
+                  whileTap={{ scale: 0.9 }}
+                  variants={animationItem}
                 >
+                  Bento 2.0
+                </motion.span>
+              </Link>
+              {navigation.map((item) => (
+                <Link href={item.href} key={item.name}>
+                  <motion.span
+                    className={classNames(
+                      item.current ? 'bg-yellow-300 text-black' : 'text-gray-300 hover:bg-yellow-300 hover:text-black',
+                      'block px-3 py-2 rounded-md text-base font-medium text-center'
+                    )}
+                    aria-current={item.current ? 'page' : undefined}
+                    whileHover={{ scale: 1.02 }}
+                          whileTap={{ scale: 0.9 }}
+                          variants={animationItem}
+                  >
                   {item.name}
-                </motion.a>
+                  </motion.span>
+                </Link>
               ))}
             </motion.div>
           </Disclosure.Panel>
         </>
       )}
     </Disclosure>
-    
   )
 }
