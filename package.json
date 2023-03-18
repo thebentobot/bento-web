@@ -6,7 +6,8 @@
     "dev": "next dev -p 3005",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prettier": "npx prettier --write ."
   },
   "dependencies": {
     "@babel/core": "^7.21.3",
@@ -33,11 +34,16 @@
     "@types/node-fetch": "^2.6.2",
     "@types/pg": "^8.6.6",
     "@types/react": "18.0.28",
+    "@typescript-eslint/eslint-plugin": "^5.55.0",
     "autoprefixer": "^10.4.14",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "noop2": "^2.0.0",
     "postcss": "^8.4.21",
+    "prettier": "^2.8.4",
     "prisma": "^4.11.0",
     "tailwindcss": "^3.2.7",
     "typescript": "5.0.2"

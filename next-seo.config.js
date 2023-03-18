@@ -25,4 +25,4 @@ export default {
     { name: 'application-name', content: 'Bento 🍱' },
     { name: 'msapplication-TileImage', content: './public/mstile-150x150.png' },
     { name: 'revisit-after', content: '7 days' }]
-  };
+  }
