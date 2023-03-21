@@ -1,4 +1,4 @@
-export const privacyPolicy: string = `
+export const privacyPolicy = `
 # Privacy
 
 *Last revised: August 30, 2022*
@@ -256,4 +256,4 @@ If you have any questions about this Privacy Policy, You can contact us:
 
 * Discord support server: https://discord.gg/dd68WwP
 * Banner on Discord, the maintainer of Bento: **Banner#1017**
-`
+`;

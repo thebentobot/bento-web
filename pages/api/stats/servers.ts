@@ -1,8 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
-import { prisma } from '../../../util/prisma'
+import { prisma } from "../../../util/prisma";
 
 export async function getData() {
-  const serverData = await prisma.guild.count()
-  return { count: serverData }
+	const serverData = await prisma.guild.count();
+	return { count: serverData };
 }

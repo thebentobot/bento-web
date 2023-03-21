@@ -1,4 +1,4 @@
-export const termsOfService: string = `
+export const termsOfService = `
 # Terms of Service for Bento
 
 *Last Revised: August 30, 2022*
@@ -252,4 +252,4 @@ and attorneys’ fees, of every kind and nature.
 
 In order to resolve a complaint regarding our Services, or to receive
 further information regarding use of our Services, please contact us at the support server at https://discord.gg/dd68WwP or the bot owner on Discord at **Banner#1017**
-`
+`;
