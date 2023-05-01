@@ -10,7 +10,7 @@
     "prettier": "npx prettier --write ."
   },
   "dependencies": {
-    "@babel/core": "^7.21.4",
+    "@babel/core": "^7.21.5",
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.17",
     "@prisma/client": "^4.13.0",
