@@ -19,7 +19,7 @@
     "@types/node": "^18.16.2",
     "@types/validator": "^13.7.15",
     "dotenv": "^16.0.3",
-    "framer-motion": "^10.12.6",
+    "framer-motion": "^10.12.10",
     "moment": "^2.29.4",
     "next": "^13.3.4",
     "next-seo": "^6.0.0",
