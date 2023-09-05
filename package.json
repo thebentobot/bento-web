@@ -15,7 +15,7 @@
     "@heroicons/react": "^2.0.18",
     "@prisma/client": "^5.2.0",
     "@skyra/discord-components-core": "^3.6.0",
-    "@skyra/discord-components-react": "^3.6.0",
+    "@skyra/discord-components-react": "^3.6.1",
     "@types/node": "^20.5.9",
     "@types/validator": "^13.11.1",
     "@typescript-eslint/parser": "^6.5.0",
