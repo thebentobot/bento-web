@@ -98,7 +98,7 @@ export default function HomePage({
 									animate="show"
 									variants={animation}
 								>
-									A Bento Box 🍱 is ready for {Math.floor(usersCount / 100) / 10.0 + "k"} Users on {serversCount - 5}{" "}
+									A Bento Box 🍱 is ready for {Math.floor(usersCount / 100) / 10.0 + "k"} Users on {serversCount - 6}{" "}
 									Servers
 								</motion.p>
 								<div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
