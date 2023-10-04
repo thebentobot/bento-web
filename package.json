@@ -18,7 +18,7 @@
     "@skyra/discord-components-react": "^3.6.1",
     "@types/node": "^20.7.1",
     "@types/validator": "^13.11.2",
-    "@typescript-eslint/parser": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.4",
     "dotenv": "^16.3.1",
     "framer-motion": "^10.16.4",
     "moment": "^2.29.4",
