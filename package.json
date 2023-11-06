@@ -34,7 +34,7 @@
     "@tailwindcss/typography": "^0.5.10",
     "@types/node-fetch": "^2.6.6",
     "@types/pg": "^8.10.7",
-    "@types/react": "18.2.33",
+    "@types/react": "18.2.35",
     "@typescript-eslint/eslint-plugin": "^6.9.1",
     "autoprefixer": "^10.4.16",
     "eslint": "8.52.0",
