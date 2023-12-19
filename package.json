@@ -13,7 +13,7 @@
     "@babel/core": "^7.23.6",
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.1.1",
-    "@prisma/client": "^5.7.0",
+    "@prisma/client": "^5.7.1",
     "@skyra/discord-components-core": "^3.6.0",
     "@skyra/discord-components-react": "^3.6.1",
     "@types/node": "^20.10.5",
