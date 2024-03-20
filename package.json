@@ -33,7 +33,7 @@
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10",
     "@types/node-fetch": "^2.6.11",
-    "@types/pg": "^8.11.2",
+    "@types/pg": "^8.11.3",
     "@types/react": "18.2.67",
     "@typescript-eslint/eslint-plugin": "^7.3.1",
     "autoprefixer": "^10.4.18",
