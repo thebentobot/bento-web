@@ -16,7 +16,7 @@
     "@prisma/client": "^5.13.0",
     "@skyra/discord-components-core": "^3.6.0",
     "@skyra/discord-components-react": "^3.6.1",
-    "@types/node": "^20.12.11",
+    "@types/node": "^20.12.12",
     "@types/validator": "^13.11.10",
     "@typescript-eslint/parser": "^7.9.0",
     "dotenv": "^16.4.5",
