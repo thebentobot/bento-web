@@ -1,3 +1,4 @@
+# This repository has been archived in favour for the [new Bento website repository](https://github.com/thebentobot/bento-the-website)
 # [Invite the Discord bot Bento 🍱 to your own server here!](https://discord.com/api/oauth2/authorize?client_id=787041583580184609&permissions=1644167687254&scope=bot%20applications.commands)
 
 # Website for Bento 🍱
