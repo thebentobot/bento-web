@@ -1,0 +1,89 @@
+---
+export const prerender = true;
+import AppLayout from "../layouts/app/AppLayout.astro";
+import Header from "../layouts/Header.astro";
+import SectionWrapper from "../layouts/SectionWrapper.astro";
+import Paragraph from "../layouts/Paragraph.astro";
+import Patreon from "../components/patreon/Patreon.astro";
+import PatreonSkeleton from "../components/patreon/PatreonSkeleton.astro";
+
+Astro.response.headers.set(
+    "Cache-Control",
+    // cache for 1 hour
+    "public, max-age=3600"
+);
+
+Astro.response.headers.set(
+    "CDN-Cache-Control",
+    // cache for 1 hour
+    "public, max-age=3600"
+);
+---
+
+<AppLayout
+    title="Support Bento Bot"
+    description="Learn how you can support Bento Bot, the Discord bot that provides media and entertainment commands."
+>
+    <SectionWrapper>
+        <Header>
+            Who supports <span class="text-yellow-400">Bento</span>?
+        </Header>
+        <Patreon server:defer>
+            <PatreonSkeleton slot="fallback" />
+        </Patreon>
+    </SectionWrapper>
+    <SectionWrapper border>
+        <Header>
+            What do I gain by supporting <span class="text-yellow-400">Bento</span>?
+        </Header>
+        <Paragraph>
+            By supporting Bento, you are an important part of ensuring that the performance of Bento
+            is always stellar, the experience is top quality and a joy for thousands of Discord
+            users, and available for free for everyone.{" "}
+            <strong>Everyone deserves free essential Discord Server features</strong>.
+        </Paragraph>
+        <Paragraph>
+            Besides the goodwill of helping your community by your appreciated generosity, you will
+            receive{" "}
+            <strong>benefits</strong> when using Bento. <br />
+        </Paragraph>
+        <Paragraph>
+            Do you want to be <strong>deeply involved</strong> in the future of Bento?
+            <br />
+            Do you want <strong>help and support</strong> with Bento <strong
+                >always at your disposal</strong
+            >?
+            <br /> Do you want access to <strong>new Bento features</strong> before anyone else?
+            <br /> Or do you simply want <strong>more Bento and XP per message</strong>?
+        </Paragraph>
+        <Paragraph>Read more about the benefits of supporting on</Paragraph>
+        <div class="mt-4 rounded-md">
+            <a
+                href="https://www.patreon.com/bentobot"
+                class="w-48 md:w-56 lg:w-96 mx-auto flex items-center justify-center py-3 border border-transparent text-base font-medium rounded-md text-white bg-patreon hover:bg-patreon hover:text-white md:py-4 md:text-lg md:px-10 px-4 sm:px-6 lg:px-8"
+            >
+                Patreon
+            </a>
+        </div>
+        <Paragraph>Want to rather give a small tip and receive a Bento for each tip?</Paragraph>
+        <div class="mt-4 rounded-md">
+            <a
+                href="https://ko-fi.com/bentobot"
+                class="w-48 md:w-56 lg:w-96 mx-auto flex items-center justify-center py-3 border border-transparent text-base font-medium rounded-md text-white bg-kofi hover:bg-kofi hover:text-white md:py-4 md:text-lg md:px-10 px-4 sm:px-6 lg:px-8"
+            >
+                Ko-fi ❤️☕
+            </a>
+        </div>
+        <Paragraph>
+            <strong>Want to support for free and receive 5 Bento? </strong>
+        </Paragraph>
+        <div class="mt-4 rounded-md">
+            <a
+                href="https://top.gg/bot/787041583580184609/vote"
+                class="w-48 md:w-56 lg:w-96 mx-auto flex items-center justify-center py-3 border border-transparent text-base font-medium rounded-md text-white bg-black dark:text-black dark:bg-white md:py-4 md:text-lg md:px-10 px-4 sm:px-6 lg:px-8"
+            >
+                Vote on top.gg
+            </a>
+        </div>
+    </SectionWrapper>
+</AppLayout>

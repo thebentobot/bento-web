@@ -1,0 +1,51 @@
+---
+import { getPatreonUsersWithRanks } from "../../library/server/patreon";
+import SubHeader from "../../layouts/SubHeader.astro";
+import PatreonUsers from "./PatreonUsers.astro";
+const patreons = await getPatreonUsersWithRanks();
+
+const categories = [
+    { data: patreons.sponsors, label: "Sponsor" },
+    { data: patreons.disciples, label: "Disciple" },
+    { data: patreons.enthusiasts, label: "Enthusiast" },
+    { data: patreons.followers, label: "Follower" },
+    { data: patreons.supporters, label: "Supporter" },
+];
+
+const areAllCategoriesEmpty = categories.every((category) => category.data.length === 0);
+---
+
+{
+    areAllCategoriesEmpty ? (
+        <div class="max-w-(--breakpoint-2xl) mx-auto px-3 pt-2">
+            <p class="mt-4 max-w-2xl text-xl text-zinc-300 lg:mx-auto text-center mx-auto">
+                Other than the awesome users who support by using Bento 🍱
+                <br />
+                no <strong>Patrons</strong> on{" "}
+                <a
+                    href="https://www.patreon.com/bentobot"
+                    target="_blank"
+                    rel="noreferrer"
+                    class="text-patreon hover:underline"
+                >
+                    Patreon
+                </a>{" "}
+                at the moment.
+            </p>
+        </div>
+    ) : (
+        categories.map(
+            (category) =>
+                category.data.length > 0 && (
+                    <div class="max-w-(--breakpoint-2xl) mx-auto px-3 pt-2">
+                        <SubHeader>
+                            {category.data.length > 1
+                                ? `Bento ${category.label}s`
+                                : `Bento ${category.label}`}
+                        </SubHeader>
+                        <PatreonUsers items={category.data} />
+                    </div>
+                )
+        )
+    )
+}

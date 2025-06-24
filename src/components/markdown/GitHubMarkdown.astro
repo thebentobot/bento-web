@@ -1,0 +1,37 @@
+---
+// Import the remark and rehype plugins for markdown processing
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import remarkGfm from "remark-gfm";
+import remarkRehype from "remark-rehype";
+import rehypeStringify from "rehype-stringify";
+
+interface Props {
+    url: string;
+}
+
+const { url } = Astro.props;
+
+// Fetch markdown content during build time
+const response = await fetch(url);
+if (!response.ok) {
+    throw new Error(`Failed to fetch data from ${url}`);
+}
+
+// Get the markdown content
+const markdownContent = await response.text();
+
+// Process markdown to HTML using unified with remark and rehype
+const htmlContent = await unified()
+    .use(remarkParse) // Parse markdown
+    .use(remarkGfm) // Support GitHub Flavored Markdown
+    .use(remarkRehype) // Convert to HTML AST
+    .use(rehypeStringify) // Convert to HTML string
+    .process(markdownContent);
+---
+
+<div
+    class="prose dark:prose-invert lg:prose-xl mx-auto dark:prose-h1:text-white prose-h1:text-black prose-h2:text-yellow-400 dark:prose-h3:text-white prose-h3:text-black dark:prose-p:text-white prose-p:text-black dark:prose-ul:text-white prose-ul:text-black prose-strong:text-yellow-400 prose-a:text-yellow-400"
+>
+    <Fragment set:html={String(htmlContent)} />
+</div>

@@ -1,0 +1,29 @@
+---
+export const prerender = true;
+import AppLayout from "../layouts/app/AppLayout.astro";
+import SectionWrapper from "../layouts/SectionWrapper.astro";
+import GitHubMarkdown from "../components/markdown/GitHubMarkdown.astro";
+
+Astro.response.headers.set(
+    "Cache-Control",
+    // cache for 6 hours
+    "public, max-age=21600"
+);
+
+Astro.response.headers.set(
+    "CDN-Cache-Control",
+    // cache for 6 hour
+    "public, max-age=21600"
+);
+---
+
+<AppLayout
+    title="Changelog"
+    description="View the changelog of Bento Bot, the Discord bot that provides media and entertainment commands."
+>
+    <SectionWrapper>
+        <GitHubMarkdown
+            url="https://raw.githubusercontent.com/thebentobot/dotBento/master/CHANGELOG.md"
+        />
+    </SectionWrapper>
+</AppLayout>

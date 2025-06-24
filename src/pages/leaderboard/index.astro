@@ -1,0 +1,40 @@
+---
+export const prerender = true;
+import Leaderboard from "../../components/leaderboard/Leaderboard.astro";
+import SectionWrapper from "../../layouts/SectionWrapper.astro";
+import AppLayout from "../../layouts/app/AppLayout.astro";
+import LeaderboardSkeleton from "../../components/leaderboard/LeaderboardSkeleton.astro";
+
+Astro.response.headers.set(
+    "Cache-Control",
+    // cache for 1 hour
+    "public, max-age=3600"
+);
+
+Astro.response.headers.set(
+    "CDN-Cache-Control",
+    // cache for 1 hour
+    "public, max-age=3600"
+);
+
+Astro.response.headers.set(
+    "CDN-Cache-Control",
+    // cache for 1 hour
+    "public, max-age=3600"
+);
+---
+
+<AppLayout
+    title="Leaderboard"
+    description="Check out the leaderboard to see how you rank against other users."
+>
+    <SectionWrapper>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:text-center text-center overflow-hidden">
+                <Leaderboard server:defer>
+                    <LeaderboardSkeleton slot="fallback" />
+                </Leaderboard>
+            </div>
+        </div>
+    </SectionWrapper>
+</AppLayout>

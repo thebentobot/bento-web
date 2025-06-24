@@ -1,0 +1,79 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+    /* Custom brand colors */
+    --color-discordBlue: #7289da;
+    --color-typescript: #007acc;
+    --color-postgresql: #008bb9;
+    --color-tailwindcss: #06b6d4;
+    --color-kofi: #29abe0;
+    --color-patreon: #ff424d;
+
+    /* Animations: you can use these with arbitrary values or add utility classes below */
+    --animation-pulse-bento: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    --animation-bounce200: bounce 1s infinite 200ms;
+    --animation-bounce400: bounce 1s infinite 400ms;
+
+    /* Other tokens (radius, fonts, etc.) as needed */
+    --font-sans: "Inter", "sans-serif";
+}
+
+:root {
+    --loading-indicator-color: #18181b;
+}
+.dark {
+    --loading-indicator-color: #fafafa;
+}
+
+@layer base {
+    html {
+        font-family: var(--font-sans), system-ui, sans-serif;
+    }
+}
+
+.sr-only {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.progress {
+    background-color: #d8d8d8;
+    border-radius: 20px;
+    position: relative;
+    margin: 15px 0;
+    height: 30px;
+    width: 300px;
+}
+
+.progress-done {
+    background: linear-gradient(to left, #fcd34d, #f59e0b, #ef4444);
+    box-shadow:
+        0 3px 3px -5px #ef4444,
+        0 2px 5px #ef4444;
+    border-radius: 20px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 0;
+    opacity: 75;
+    transition: 2s ease 0.3s;
+}
+
+.progress-done:hover {
+    opacity: 100;
+}
+
+/* Background styles are now inline in the index.astro file */

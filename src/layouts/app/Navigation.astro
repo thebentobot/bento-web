@@ -1,0 +1,135 @@
+---
+import AppearanceModeSwitch from "../../components/app/AppearanceModeSwitch.svelte";
+import MobileMenu from "../../components/app/MobileMenu.svelte";
+import { classNames } from "../../library/utils";
+import NavBlurHandler from "./NavBlurHandler.svelte";
+import { Icon } from "astro-icon/components";
+
+let currentPath = Astro.url.pathname;
+
+const navigationRoutes = [
+    { name: "About", route: "/about" },
+    { name: "Support", route: "/support" },
+    { name: "Leaderboard", route: "/leaderboard" },
+];
+
+const isCurrentRoute = (route: string): boolean => {
+    if (!currentPath) return false;
+    return route === "/"
+        ? currentPath === "/"
+        : currentPath === route || currentPath.startsWith(route + "/");
+};
+---
+
+<NavBlurHandler client:only="svelte" />
+<header
+    id="stickyNav"
+    class={classNames(
+        "flex flex-col items-center w-full sticky top-0 z-20 sm:bg-inherit/30",
+        typeof window !== "undefined" && document.body.classList.contains("mobile-menu-open")
+            ? ""
+            : "backdrop-blur-xs"
+    )}
+>
+    <nav class="flex items-center justify-between w-full max-w-7xl px-4 sm:px-8 py-4">
+        <div class="sm:hidden">
+            <MobileMenu
+                navigationRoutes={navigationRoutes}
+                currentPath={currentPath}
+                client:only="svelte"
+            >
+                <span
+                    slot="fallback"
+                    class="md:hidden flex items-center justify-center p-2 rounded-lg hover:bg-yellow-400 dark:hover:bg-yellow-500 transition-colors duration-300 opacity-50 cursor-not-allowed"
+                >
+                    <Icon name="hamburger" class="h-6 w-6 text-zinc-800 dark:text-zinc-200" />
+                </span>
+            </MobileMenu>
+        </div>
+
+        <div class="hidden sm:flex ml-0 items-center">
+            <a href="/" data-astro-prefetch class="rounded-full mr-6">
+                <span class="sr-only">Home</span>
+                <div
+                    class="h-14 w-14 rounded-full hover:bg-yellow-400 dark:hover:bg-yellow-500 transition-colors duration-300 flex items-center justify-center"
+                >
+                    <img src="/29.webp" alt="Bento Logo" class="h-12 w-12 rounded-full" />
+                </div>
+            </a>
+            <div class="gap-x-4 flex">
+                {
+                    navigationRoutes.map((route) => (
+                        <>
+                            <span class="sr-only">{route.name}</span>
+                            <a
+                                href={route.route}
+                                data-astro-prefetch
+                                class={`px-3 py-2 rounded-lg hover:bg-yellow-400 hover:text-black dark:hover:bg-yellow-500 dark:hover:text-black transition-colors duration-300 ${
+                                    isCurrentRoute(route.route)
+                                        ? "font-semibold bg-yellow-400 text-black dark:bg-yellow-500 dark:text-black"
+                                        : "font-semibold text-black dark:text-white"
+                                }`}
+                            >
+                                {route.name}
+                            </a>
+                        </>
+                    ))
+                }
+            </div>
+        </div>
+        <a href="/" data-astro-prefetch class="rounded-full sm:hidden">
+            <span class="sr-only">Home</span>
+            <div
+                class="gap-x-2 rounded-md p-2 hover:bg-yellow-400 dark:hover:bg-yellow-500 dark:hover:text-black transition-colors duration-300 flex items-center justify-center"
+            >
+                <span class="font-semibold">Bento</span>
+                <img src="/29.webp" alt="Logo" class="h-6 w-6 rounded-full" />
+            </div>
+        </a>
+        <AppearanceModeSwitch client:only="svelte">
+            <span
+                slot="fallback"
+                class="dark:bg-zinc-50 bg-zinc-900 relative inline-flex h-6 w-11 items-center rounded-full transition-all duration-300 ml-auto opacity-50 cursor-not-allowed"
+            >
+                <span
+                    class="inline-block h-4 w-4 transform rounded-full dark:translate-x-1 dark:bg-zinc-900 translate-x-6 bg-zinc-50 transition-all duration-300"
+                ></span>
+            </span>
+        </AppearanceModeSwitch>
+    </nav>
+</header>
+
+<script>
+    const nav = document.getElementById("stickyNav");
+
+    const updateBlur = () => {
+        if (document.body.classList.contains("mobile-menu-open")) {
+            nav?.classList.remove("backdrop-blur-xs");
+        } else {
+            nav?.classList.add("backdrop-blur-xs");
+        }
+    };
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 1) {
+            nav?.classList.add(
+                "border-b",
+                "dark:border-zinc-900/25",
+                "border-zinc-50/25",
+                "shadow-xs"
+            );
+        } else {
+            nav?.classList.remove(
+                "border-b",
+                "dark:border-zinc-900/25",
+                "border-zinc-50/25",
+                "shadow-xs"
+            );
+        }
+    });
+
+    const observer = new MutationObserver(updateBlur);
+    observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
+
+    updateBlur();
+</script>

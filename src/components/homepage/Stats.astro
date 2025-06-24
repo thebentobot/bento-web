@@ -1,0 +1,49 @@
+---
+import { fetchUsageStats } from "../../library/server/bentoApi";
+import { FormatThousands } from "../../library/utils";
+
+const usageStats = await fetchUsageStats();
+const users = FormatThousands(usageStats.userCount);
+const servers = Math.max(0, usageStats.serverCount - 7);
+---
+
+<div class="mt-10 pb-1">
+    <div class="relative">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto">
+                <dl class="sm:grid sm:grid-cols-3">
+                    <div class="flex flex-col p-6 text-center">
+                        <dt
+                            class="order-2 mt-2 text-lg leading-6 font-medium dark:text-white text-black"
+                        >
+                            Servers
+                        </dt>
+                        <dd class="order-1 text-5xl font-extrabold dark:text-white text-black">
+                            {servers}
+                        </dd>
+                    </div>
+                    <div class="flex flex-col p-6 text-center">
+                        <dt
+                            class="order-2 mt-2 text-lg leading-6 font-medium dark:text-white text-black"
+                        >
+                            Users
+                        </dt>
+                        <dd class="order-1 text-5xl font-extrabold dark:text-white text-black">
+                            {users}
+                        </dd>
+                    </div>
+                    <div class="flex flex-col p-6 text-center">
+                        <dt
+                            class="order-2 mt-2 text-lg leading-6 font-medium dark:text-white text-black"
+                        >
+                            Serving the first Bento
+                        </dt>
+                        <dd class="order-1 text-5xl font-extrabold dark:text-white text-black">
+                            Aug 2021
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </div>
+</div>

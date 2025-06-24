@@ -1,0 +1,74 @@
+---
+import DiscordFeaturePage from "./DiscordFeaturePage.svelte";
+import { Icon } from "astro-icon/components";
+
+export interface Feature {
+    name: string;
+    icon: string;
+    description: string;
+}
+
+export interface FeatureImagePreviewProps {
+    features: Feature[];
+    right?: boolean;
+    left?: boolean;
+    title: string;
+    subtitle?: string;
+    description?: string;
+}
+
+const { features, title, subtitle, description } = Astro.props as FeatureImagePreviewProps;
+---
+
+<div class="overflow-hidden dark:bg-black bg-white">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div
+            class="mx-auto grid max-w-2xl grid-cols-1 space-x-8 space-y-16 sm:space-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2"
+        >
+            <div class="lg:pr-8 lg:pt-4">
+                <div class="lg:max-w-lg">
+                    {
+                        subtitle && (
+                            <h2 class="text-base font-semibold leading-7 text-yellow-400">
+                                {subtitle}
+                            </h2>
+                        )
+                    }
+                    <h1
+                        id={title}
+                        class="mt-2 text-3xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-4xl"
+                    >
+                        {title}
+                    </h1>
+                    {
+                        description && (
+                            <p class="mt-4 text-lg leading-7 text-zinc-600 dark:text-gray-200">
+                                {description}
+                            </p>
+                        )
+                    }
+                    <dl
+                        class="mt-10 max-w-xl flex flex-col gap-y-8 text-base leading-7 text-zinc-600 dark:text-gray-300 lg:max-w-none"
+                    >
+                        {
+                            features.map((feature) => (
+                                <div class="relative pl-9">
+                                    <dt class="inline font-semibold text-zinc-900 dark:text-gray-50">
+                                        <Icon
+                                            name={feature.icon}
+                                            class="absolute left-1 top-1 h-5 w-5 text-yellow-600"
+                                            aria-hidden="true"
+                                        />
+                                        {feature.name}
+                                    </dt>{" "}
+                                    <dd class="inline">{feature.description}</dd>
+                                </div>
+                            ))
+                        }
+                    </dl>
+                </div>
+            </div>
+            <DiscordFeaturePage client:only="svelte" />
+        </div>
+    </div>
+</div>

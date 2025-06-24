@@ -1,0 +1,148 @@
+---
+import AppLayout from "../layouts/app/AppLayout.astro";
+export const prerender = true;
+import Header from "../layouts/Header.astro";
+import SectionWrapper from "../layouts/SectionWrapper.astro";
+import Paragraph from "../layouts/Paragraph.astro";
+---
+
+<AppLayout
+    title="About Bento"
+    description="Learn more about Bento, the Discord bot that provides media and entertainment commands."
+>
+    <SectionWrapper>
+        <Header>
+            About <span class="text-yellow-400">Bento</span>
+        </Header>
+        <Paragraph>
+            Bento is a Discord bot that provides various media and entertainment commands, with a
+            focus on quality delivery.
+        </Paragraph>
+        <Paragraph>
+            Bento was started as a project to learn JavaScript and programming in general, and is a
+            project of continuous learning and improvement.
+        </Paragraph>
+        <Paragraph>
+            <strong>The goal</strong> for Bento is to create <strong>joy</strong>. Joy for the users
+            by always being reliable and deliver commands as expected. Make their chatting
+            experience more fun and easier on Discord.
+        </Paragraph>
+        <Paragraph>
+            The goal for Bento will <strong>never</strong> be to earn money. <br /> Bento is treated
+            as a{" "}
+            <strong>non-profit project</strong>, with sponsorship options on{" "}
+            <a
+                href="https://www.patreon.com/bentobot"
+                target="_blank"
+                rel="noreferrer"
+                class="text-patreon hover:underline"
+            >
+                Patreon
+            </a> and{" "}
+            <a
+                href="https://ko-fi.com/bentobot"
+                target="_blank"
+                rel="noreferrer"
+                class="text-kofi hover:underline"
+            >
+                Ko-fi</a
+            >, where the raised funding is spend solely on hosting and improving Bento. If you are
+            interested in reading about supporting, then{" "}
+            <a class="text-yellow-400 hover:underline" href="/support"> Click here! </a>
+        </Paragraph>
+    </SectionWrapper>
+    <SectionWrapper border>
+        <Header>
+            What powers <span class="text-yellow-400">Bento</span>?
+        </Header>
+        <Paragraph>
+            Bento is written in{" "}
+            <a
+                href="https://www.typescriptlang.org/"
+                target="_blank"
+                rel="noreferrer"
+                class="text-typescript hover:underline"
+            >
+                TypeScript
+            </a> and uses the{" "}
+            <a
+                href="https://discord.js.org/#/"
+                target="_blank"
+                rel="noreferrer"
+                class="text-discordBlue hover:underline"
+            >
+                Discord.js
+            </a> Node.js module that interacts with the{" "}
+            <a
+                href="https://discord.com/developers/docs/reference"
+                target="_blank"
+                rel="noreferrer"
+                class="text-discordBlue hover:underline"
+            >
+                Discord API</a
+            >. Bento uses a{" "}
+            <a
+                href="https://www.postgresql.org/"
+                target="_blank"
+                rel="noreferrer"
+                class="text-postgresql hover:underline"
+            >
+                PostgreSQL
+            </a> database.
+        </Paragraph>
+        <Paragraph>
+            The Bento website is powered by{" "}
+            <a
+                href="https://nextjs.org/"
+                target="_blank"
+                rel="noreferrer"
+                class="dark:text-white text-black hover:underline"
+            >
+                Next.js
+            </a> and{" "}
+            <a
+                href="https://tailwindcss.com/"
+                target="_blank"
+                rel="noreferrer"
+                class="text-tailwindcss hover:underline"
+            >
+                Tailwind CSS</a
+            >.
+        </Paragraph>
+        <Paragraph>
+            All the source code are open-source and available on{" "}
+            <a
+                href="https://github.com/thebentobot"
+                target="_blank"
+                rel="noreferrer"
+                class="dark:text-white text-black hover:underline"
+            >
+                GitHub</a
+            >.
+        </Paragraph>
+        <Paragraph>
+            The development of Bento is <span class="font-bold">most importantly</span> supported by
+            a community of supporters and good friends on the{" "}
+            <a
+                href="https://discord.gg/dd68WwP"
+                target="_blank"
+                rel="noreferrer"
+                class="text-yellow-400 hover:underline"
+            >
+                Bento Support Server
+            </a> where ideas, discussion, feedback and bug reporting are happening, besides just chatting.
+            Everyone is welcome to join!
+        </Paragraph>
+        <Paragraph>
+            Logo drawn by{" "}
+            <a
+                href="https://twitter.com/dannalanart"
+                target="_blank"
+                rel="noreferrer"
+                class="text-blue-400 hover:underline"
+            >
+                Dan</a
+            >.
+        </Paragraph>
+    </SectionWrapper>
+</AppLayout>

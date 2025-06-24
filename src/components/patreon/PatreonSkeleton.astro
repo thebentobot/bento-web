@@ -1,0 +1,13 @@
+---
+import SubHeader from "../../layouts/SubHeader.astro";
+import PatreonUserSkeleton from "./PatreonUserSkeleton.astro";
+---
+
+<div class="max-w-(--breakpoint-2xl) mx-auto px-3 pt-2">
+    <SubHeader>Patreon Tier</SubHeader>
+    <ul class="block flex-wrap mx-auto text-center w-full">
+        <div class="mx-auto inline-block p-1 w-full sm:w-auto">
+            <PatreonUserSkeleton rank={1} />
+        </div>
+    </ul>
+</div>

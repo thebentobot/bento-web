@@ -1,11 +1,202 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import SectionWrapper from "../layouts/SectionWrapper.astro";
+export const prerender = true;
+import AppLayout from "../layouts/app/AppLayout.astro";
+import Stats from "../components/homepage/Stats.astro";
+import StatsSkeleton from "../components/homepage/StatsSkeleton.astro";
+import Waves from "../components/homepage/Waves.astro";
+import FeatureImagePreview, {
+    type FeatureImagePreviewProps,
+    type Feature,
+} from "../components/homepage/FeatureImagePreview.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+Astro.response.headers.set("Cache-Control", "public, max-age=3600");
+
+Astro.response.headers.set(
+    "CDN-Cache-Control",
+    // cache for 1 hour
+    "public, max-age=3600"
+);
+
+const features: Feature[] = [
+    {
+        name: "Custom Profiles",
+        description:
+            "Show off your personality with a custom profile. You can set your own background picture or colour, bio description, show what music you listen to, your birthday and time at your current location. Do small customisations via commands on Discord or use the Bento web dashboard for more advanced customisation (coming soon™️).",
+        icon: "user",
+    },
+    {
+        name: "Last.fm Integration",
+        description:
+            "Show off your music taste with Last.fm. You can show your top artists, albums and tracks for any given period, your recent tracks, and what you're currently listening to.",
+        icon: "musicalNote",
+    },
+    {
+        name: "Tags storage",
+        description:
+            "Store your favourite images, gifs, links, and videos in Bento. Access them again when needed, for sharing a funny moment that happened a month ago or to show useful information. Can't recall what a tag was called? You can search for it by name or author. If you are bored you can also get a random tag or a list of the most popular tags on the server.",
+        icon: "photo",
+    },
+];
+
+const featurePreview: FeatureImagePreviewProps = {
+    features: features,
+    subtitle: "Level up your chat experience",
+    title: "Main Features",
+    description:
+        "Bento is a Discord bot that offers a variety of features to enhance your server experience. It contains a lot of fun and useful commands that will make your server more enjoyable. Small features such as the ability to check the weather, set a reminder, or look up an Urban Dictionary definition, but also",
+    right: true,
+};
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<style>
+    body {
+        background-color: transparent !important;
+    }
+</style>
+
+<AppLayout title="Bento Bot" description="A Discord bot with media and entertainment commands">
+    <div class="flex flex-col min-h-screen overflow-hidden">
+        <div class="w-screen max-w-full min-h-dvh pb-48 flex flex-col relative">
+            <!-- Background with blurred elements -->
+            <div class="fixed inset-0 overflow-hidden -z-10 homepage-bg">
+                <!-- Base background -->
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-100 dark:from-black dark:via-zinc-950 dark:to-black"
+                >
+                </div>
+
+                <!-- Blurred background elements -->
+                <div class="absolute inset-0">
+                    <!-- Large blurred circle - top left -->
+                    <div
+                        class="absolute -top-40 -left-40 w-80 h-80 md:w-96 md:h-96 bg-gradient-to-br from-yellow-400/40 to-amber-500/30 dark:from-yellow-500/50 dark:to-amber-600/40 rounded-full blur-3xl"
+                    >
+                    </div>
+
+                    <!-- Medium blurred circle - top right -->
+                    <div
+                        class="absolute -top-20 -right-32 w-64 h-64 md:w-72 md:h-72 bg-gradient-to-bl from-amber-400/35 to-yellow-500/25 dark:from-amber-500/45 dark:to-yellow-600/35 rounded-full blur-2xl"
+                    >
+                    </div>
+
+                    <!-- Large blurred circle - bottom right -->
+                    <div
+                        class="absolute -bottom-32 -right-20 w-72 h-72 md:w-96 md:h-96 bg-gradient-to-tl from-yellow-500/30 to-orange-400/25 dark:from-yellow-300/40 dark:to-orange-500/30 rounded-full blur-3xl"
+                    >
+                    </div>
+
+                    <!-- Medium blurred circle - bottom left -->
+                    <div
+                        class="absolute -bottom-20 -left-20 w-60 h-60 md:w-72 md:h-72 bg-gradient-to-tr from-amber-500/35 to-yellow-400/30 dark:from-amber-600/45 dark:to-yellow-500/40 rounded-full blur-2xl"
+                    >
+                    </div>
+
+                    <!-- Small accent circles -->
+                    <div
+                        class="absolute top-1/3 left-1/4 w-24 h-24 md:w-32 md:h-32 bg-yellow-400/30 dark:bg-yellow-500/45 rounded-full blur-xl"
+                    >
+                    </div>
+                    <div
+                        class="absolute top-2/3 right-1/3 w-16 h-16 md:w-24 md:h-24 bg-amber-400/35 dark:bg-amber-500/50 rounded-full blur-lg"
+                    >
+                    </div>
+                </div>
+
+                <!-- Noise overlay for texture -->
+                <div
+                    class="absolute inset-0 opacity-[0.015] dark:opacity-[0.03]"
+                    style="background-image: url('data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E');"
+                >
+                </div>
+            </div>
+            <SectionWrapper>
+                <h1
+                    class="text-center transition-colors duration-1000 text-8xl font-extrabold text-transparent bg-clip-text bg-linear-to-r dark:from-yellow-300 dark:to-yellow-500 from-black to-amber-500"
+                >
+                    Bento
+                </h1>
+                <p class="text-center text-black dark:text-gray-50 text-lg">
+                    A Discord bot with media and entertainment commands, verified by{" "}
+                    <span class="text-discordBlue">Discord</span>
+                </p>
+                <div>
+                    <div
+                        class="hover:bg-yellow-500 bg-yellow-400 w-72 mx-auto rounded-xl flex justify-center transition-colors duration-300 ease-in-out"
+                    >
+                        <a
+                            class="w-full h-full text-center p-3 rounded-xl"
+                            href="https://discord.com/api/oauth2/authorize?client_id=787041583580184609&permissions=1644167687254&scope=bot%20applications.commands"
+                        >
+                            <span class="text-black font-bold">Add Bento to your server</span>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div
+                        class="bg-linear-to-r from-yellow-400 to-amber-400 w-72 mx-auto rounded-xl p-[2px] flex justify-center"
+                    >
+                        <div
+                            class="dark:bg-black bg-white dark:text-white text-black hover:text-black dark:hover:text-black dark:hover:bg-transparent hover:bg-transparent w-full mx-auto rounded-xl flex justify-center transition-colors duration-300 ease-in-out"
+                        >
+                            <a
+                                class="w-full h-full text-center p-3 rounded-xl"
+                                href="/#Main Features"
+                            >
+                                <span class="font-bold">Check out Bento&apos;s features</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </SectionWrapper>
+            <SectionWrapper>
+                <Stats server:defer>
+                    <StatsSkeleton slot="fallback" />
+                </Stats>
+            </SectionWrapper>
+            <Waves />
+        </div>
+        <div class="bg-white dark:bg-black">
+            <SectionWrapper className="px-0">
+                <FeatureImagePreview
+                    features={featurePreview.features}
+                    description={featurePreview.description}
+                    title={featurePreview.title}
+                    subtitle={featurePreview.subtitle}
+                    right
+                />
+            </SectionWrapper>
+        </div>
+    </div>
+</AppLayout>
+
+<script>
+    window.$discordMessage = {
+        profiles: {
+            fiji: {
+                author: "Fiji Spring Water",
+                avatar: "/fiji_discord.webp",
+                roleColor: "#e11d48",
+            },
+            lewis: {
+                author: "Lewis",
+                avatar: "/lewis_discord.webp",
+                roleColor: "#8FCF00",
+            },
+            adam: {
+                author: "Adam",
+                avatar: "/adam_discord.webp",
+                roleColor: "#0092ff",
+                bot: true,
+                verified: true,
+            },
+            bento: {
+                author: "Bento Bot",
+                avatar: "/bento_discord.webp",
+                roleColor: "#FACC15",
+                bot: true,
+                verified: true,
+            },
+        },
+    };
+</script>

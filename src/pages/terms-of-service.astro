@@ -1,0 +1,17 @@
+---
+export const prerender = true;
+import AppLayout from "../layouts/app/AppLayout.astro";
+import SectionWrapper from "../layouts/SectionWrapper.astro";
+import GitHubMarkdown from "../components/markdown/GitHubMarkdown.astro";
+---
+
+<AppLayout
+    title="Terms of Service"
+    description="Read the terms of service of Bento Bot, the Discord bot that provides media and entertainment commands."
+>
+    <SectionWrapper>
+        <GitHubMarkdown
+            url="https://raw.githubusercontent.com/thebentobot/dotBento/master/TOS.md"
+        />
+    </SectionWrapper>
+</AppLayout>

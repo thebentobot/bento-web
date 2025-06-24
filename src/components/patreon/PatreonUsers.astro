@@ -1,0 +1,19 @@
+---
+import { type PatreonWithRank } from "../../library/server/patreon";
+import PatreonUser from "./PatreonUser.astro";
+interface Props {
+    items: PatreonWithRank[];
+}
+
+const { items } = Astro.props;
+---
+
+<ul class="block flex-wrap mx-auto text-center w-full">
+    {
+        items.map((patreonUser) => (
+            <div class="mx-auto inline-block p-1 w-full sm:w-auto">
+                <PatreonUser user={patreonUser} />
+            </div>
+        ))
+    }
+</ul>
