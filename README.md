@@ -1,48 +1,39 @@
-# Astro Starter Kit: Basics
+# Bento Web
 
-```sh
-npm create astro@latest -- --template basics
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
+
+This website is for [Bento Bot](https://github.com/thebentobot/dotBento) a Discord bot with server moderation tools and various entertaining commands.
+
+The Bento Bot website is created with [Astro]([https://reactjs.org/](https://astro.build/)) and [Svelte](https://svelte.dev/), with CSS from [tailwindcss](https://tailwindcss.com/).
+
+## Getting Started
+
+### Dependencies
+
+* An external API with routes that provides the data as shown in the interfaces. Documentation on workarounds when contributing etc. will be added soon™️
+
+### Installing Bento web
+
+* ```git clone https://github.com/thebentobot/bento-web.git``` or download ZIP.
+* ```npm install``` assuming you have installed [node.js](https://nodejs.org/en/)
+* Create a [dotenv](https://www.npmjs.com/package/dotenv) file with the environment variables:
+```
+API_URL=
+API_KEY=
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+### Running Bento web
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+* ```npm run dev```
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Development
 
-## 🚀 Project Structure
+This website is mainly developed by [Christian](https://github.com/banner4422).
 
-Inside of your Astro project, you'll see the following folders and files:
+Pull requests are very welcome if the features/changes makes sense and are up to par in quality.
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## License
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+This project is licensed under the [AGPL-3.0 License](https://github.com/thebentobot/bento-web/blob/1.0/LICENSE)
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+The avatar illustration is done by [Dan](https://twitter.com/dannalanart).
