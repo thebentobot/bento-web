@@ -3,10 +3,9 @@ import {
     type PatreonUserDto,
     type UsageStatsDto,
 } from "../types/interfaces";
-import { getSecret } from 'astro:env/server';
 
-const API_URL = getSecret("API_URL") || import.meta.env.API_URL || "https://your-default-api-url.com"; // or localhost:8080 if local dev
-const API_KEY = getSecret("API_KEY") || import.meta.env.API_KEY || "your-default-api-key"; // Set in .env
+const API_URL = import.meta.env.API_URL || "https://your-default-api-url.com"; // or localhost:8080 if local dev
+const API_KEY = import.meta.env.API_KEY || "your-default-api-key"; // Set in .env
 
 /*global RequestInit*/
 /*eslint no-undef: "error"*/
