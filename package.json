@@ -47,7 +47,7 @@
         "wrangler": "^4.21.1"
     },
     "dependencies": {
-        "@skyra/discord-components-core": "4.0.0",
+        "@skyra/discord-components-core": "4.0.2",
         "astro-font": "^1.1.0",
         "astro-icon": "^1.1.5",
         "astro-loading-indicator": "^0.7.0",
