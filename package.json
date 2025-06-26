@@ -36,7 +36,7 @@
         "eslint-plugin-jsx-a11y": "^6.10.2",
         "eslint-plugin-svelte": "^3.9.3",
         "globals": "^16.2.0",
-        "prettier": "^3.5.3",
+        "prettier": "^3.6.1",
         "prettier-plugin-astro": "^0.14.1",
         "prettier-plugin-svelte": "^3.4.0",
         "rollup-plugin-visualizer": "^6.0.3",
