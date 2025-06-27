@@ -44,7 +44,7 @@
         "tailwindcss": "^4.1.11",
         "typescript": "^5.8.3",
         "typescript-eslint": "^8.35.0",
-        "wrangler": "^4.21.2"
+        "wrangler": "^4.22.0"
     },
     "dependencies": {
         "@skyra/discord-components-core": "4.0.2",
