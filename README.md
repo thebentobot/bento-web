@@ -4,19 +4,20 @@
 
 This website is for [Bento Bot](https://github.com/thebentobot/dotBento) a Discord bot with server moderation tools and various entertaining commands.
 
-The Bento Bot website is created with [Astro]([https://reactjs.org/](https://astro.build/)) and [Svelte](https://svelte.dev/), with CSS from [tailwindcss](https://tailwindcss.com/).
+The Bento Bot website is created with [Astro](<[https://reactjs.org/](https://astro.build/)>) and [Svelte](https://svelte.dev/), with CSS from [tailwindcss](https://tailwindcss.com/).
 
 ## Getting Started
 
 ### Dependencies
 
-* An external API with routes that provides the data as shown in the interfaces. Documentation on workarounds when contributing etc. will be added soon™️
+- An external API with routes that provides the data as shown in the interfaces. Documentation on workarounds when contributing etc. will be added soon™️
 
 ### Installing Bento web
 
-* ```git clone https://github.com/thebentobot/bento-web.git``` or download ZIP.
-* ```npm install``` assuming you have installed [node.js](https://nodejs.org/en/)
-* Create a [dotenv](https://www.npmjs.com/package/dotenv) file with the environment variables:
+- `git clone https://github.com/thebentobot/bento-web.git` or download ZIP.
+- `npm install` assuming you have installed [node.js](https://nodejs.org/en/)
+- Create a [dotenv](https://www.npmjs.com/package/dotenv) file with the environment variables:
+
 ```
 API_URL=
 API_KEY=
@@ -24,7 +25,7 @@ API_KEY=
 
 ### Running Bento web
 
-* ```npm run dev```
+- `npm run dev`
 
 ## Development
 

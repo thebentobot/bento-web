@@ -3,7 +3,6 @@ import AppearanceModeSwitch from "../../components/app/AppearanceModeSwitch.svel
 import MobileMenu from "../../components/app/MobileMenu.svelte";
 import { classNames } from "../../library/utils";
 import NavBlurHandler from "./NavBlurHandler.svelte";
-import { Icon } from "astro-icon/components";
 
 let currentPath = Astro.url.pathname;
 
@@ -31,8 +30,9 @@ const isCurrentRoute = (route: string): boolean => {
             : "backdrop-blur-xs"
     )}
 >
-    <nav class="flex items-center justify-between w-full max-w-7xl px-4 sm:px-8 py-4">
-        <div class="sm:hidden">
+    <nav class="grid grid-cols-3 items-center w-full max-w-7xl px-4 sm:px-8 py-4">
+        <!-- Left section - Mobile Menu -->
+        <div class="sm:hidden flex justify-start w-10">
             <MobileMenu
                 navigationRoutes={navigationRoutes}
                 currentPath={currentPath}
@@ -42,12 +42,25 @@ const isCurrentRoute = (route: string): boolean => {
                     slot="fallback"
                     class="md:hidden flex items-center justify-center p-2 rounded-lg hover:bg-yellow-400 dark:hover:bg-yellow-500 transition-colors duration-300 opacity-50 cursor-not-allowed"
                 >
-                    <Icon name="hamburger" class="h-6 w-6 text-zinc-800 dark:text-zinc-200" />
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        class="h-6 w-6 text-zinc-800 dark:text-zinc-200"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
                 </span>
             </MobileMenu>
         </div>
 
-        <div class="hidden sm:flex ml-0 items-center">
+        <!-- Left section - Desktop Navigation -->
+        <div class="hidden sm:flex ml-0 items-center col-span-2">
             <a href="/" data-astro-prefetch class="rounded-full mr-6">
                 <span class="sr-only">Home</span>
                 <div
@@ -77,25 +90,45 @@ const isCurrentRoute = (route: string): boolean => {
                 }
             </div>
         </div>
-        <a href="/" data-astro-prefetch class="rounded-full sm:hidden">
-            <span class="sr-only">Home</span>
-            <div
-                class="gap-x-2 rounded-md p-2 hover:bg-yellow-400 dark:hover:bg-yellow-500 dark:hover:text-black transition-colors duration-300 flex items-center justify-center"
-            >
-                <span class="font-semibold">Bento</span>
-                <img src="/29.webp" alt="Logo" class="h-6 w-6 rounded-full" />
-            </div>
-        </a>
-        <AppearanceModeSwitch client:only="svelte">
-            <span
-                slot="fallback"
-                class="dark:bg-zinc-50 bg-zinc-900 relative inline-flex h-6 w-11 items-center rounded-full transition-all duration-300 ml-auto opacity-50 cursor-not-allowed"
-            >
+
+        <!-- Center section - Mobile Logo -->
+        <div class="sm:hidden flex justify-center">
+            <a href="/" data-astro-prefetch class="rounded-full">
+                <span class="sr-only">Home</span>
+                <div
+                    class="gap-x-2 rounded-md p-2 hover:bg-yellow-400 dark:hover:bg-yellow-500 dark:hover:text-black transition-colors duration-300 flex items-center justify-center"
+                >
+                    <span class="font-semibold">Bento</span>
+                    <img src="/29.webp" alt="Logo" class="h-6 w-6 rounded-full" />
+                </div>
+            </a>
+        </div>
+
+        <!-- Right section - Appearance Mode Switch -->
+        <div class="flex justify-end">
+            <AppearanceModeSwitch client:only="svelte">
                 <span
-                    class="inline-block h-4 w-4 transform rounded-full dark:translate-x-1 dark:bg-zinc-900 translate-x-6 bg-zinc-50 transition-all duration-300"
-                ></span>
-            </span>
-        </AppearanceModeSwitch>
+                    slot="fallback"
+                    class="bg-inherit p-1 rounded-full dark:text-zinc-100 text-black opacity-50 cursor-not-allowed inline-flex items-center justify-center"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        class="h-6 w-6 text-zinc-800 dark:text-zinc-200"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        ><path d="M12 8a2.83 2.83 0 0 0 4 4 4 4 0 1 1-4-4"></path><path d="M12 2v2"
+                        ></path><path d="M12 20v2"></path><path d="m4.9 4.9 1.4 1.4"></path><path
+                            d="m17.7 17.7 1.4 1.4"></path><path d="M2 12h2"></path><path
+                            d="M20 12h2"></path><path d="m6.3 17.7-1.4 1.4"></path><path
+                            d="m19.1 4.9-1.4 1.4"></path></svg
+                    >
+                </span>
+            </AppearanceModeSwitch>
+        </div>
     </nav>
 </header>
 

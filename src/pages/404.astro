@@ -1,0 +1,35 @@
+---
+export const prerender = true;
+import AppLayout from "../layouts/app/AppLayout.astro";
+import SectionWrapper from "../layouts/SectionWrapper.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<AppLayout
+    title="Page Not Found"
+    description="The page you're looking for doesn't exist or has been moved."
+>
+    <SectionWrapper className="flex flex-col items-center justify-center text-center max-w-3xl">
+        <div class="flex flex-col items-center space-y-6 py-12">
+            <div class="bg-yellow-400 dark:bg-yellow-500 rounded-full p-6 mb-4">
+                <Icon name="warning" class="h-16 w-16 text-black" />
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-black dark:text-white">404</h1>
+            <h2 class="text-2xl md:text-3xl font-semibold text-black dark:text-white">
+                Page Not Found
+            </h2>
+            <p class="text-lg text-zinc-700 dark:text-zinc-300 max-w-md">
+                The page you're looking for <code
+                    class="prose-code:text-zinc-800 dark:prose-code:text-zinc-200 font-mono px-2 py-1 rounded bg-zinc-100 dark:bg-zinc-800"
+                    >{Astro.url}</code
+                > does not exist or has been moved.
+            </p>
+            <a
+                href="/"
+                class="mt-6 px-6 py-3 bg-yellow-400 hover:bg-yellow-500 dark:bg-yellow-500 dark:hover:bg-yellow-600 text-black font-semibold rounded-lg transition-colors duration-300"
+            >
+                Return Home
+            </a>
+        </div>
+    </SectionWrapper>
+</AppLayout>

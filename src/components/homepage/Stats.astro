@@ -3,7 +3,7 @@ import { fetchUsageStats } from "../../library/server/bentoApi";
 import { FormatThousands } from "../../library/utils";
 
 const usageStats = await fetchUsageStats();
-const users = FormatThousands(usageStats.userCount);
+const users = FormatThousands(usageStats.userCount - 835);
 const servers = Math.max(0, usageStats.serverCount - 7);
 ---
 

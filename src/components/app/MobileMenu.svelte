@@ -80,32 +80,40 @@
         tabindex="0"
         aria-label="Mobile navigation menu"
     >
-        <div class="flex flex-row justify-between items-center w-full p-4 sm:py-8 py-4">
-            <button
-                aria-label="Close menu"
-                class="group flex items-center justify-center w-10 h-10 rounded-lg hover:bg-yellow-400 dark:hover:bg-yellow-500 transition-colors duration-300 cursor-pointer"
-                on:click={closeMenu}
-            >
-                <Icon
-                    name="closeX"
-                    className="h-6 w-6 text-zinc-800 dark:text-zinc-200 group-hover:dark:text-zinc-800"
-                />
-            </button>
+        <div class="grid grid-cols-3 items-center w-full p-4 sm:py-8 py-4">
+            <!-- Left section - Close button -->
+            <div class="flex justify-start w-10">
+                <button
+                    aria-label="Close menu"
+                    class="group flex items-center justify-center w-10 h-10 rounded-lg hover:bg-yellow-400 dark:hover:bg-yellow-500 transition-colors duration-300 cursor-pointer"
+                    on:click={closeMenu}
+                >
+                    <Icon
+                        name="closeX"
+                        className="h-6 w-6 text-zinc-800 dark:text-zinc-200 group-hover:dark:text-zinc-800"
+                    />
+                </button>
+            </div>
 
-            <!-- Home/Index button -->
-            <a
-                href="/"
-                on:click={closeMenu}
-                class="p-2 rounded-lg transition-colors duration-300 hover:bg-yellow-400 hover:text-black dark:hover:bg-yellow-500 dark:hover:text-black font-semibold text-black dark:text-white"
-            >
-                <span class="sr-only">Home</span>
-                <div class="flex items-center gap-x-2">
-                    <span class="font-semibold">Bento</span>
-                    <img src="/29.webp" alt="Logo" class="h-6 w-6 rounded-full" />
-                </div>
-            </a>
+            <!-- Center section - Home/Index button -->
+            <div class="flex justify-center">
+                <a
+                    href="/"
+                    on:click={closeMenu}
+                    class="p-2 rounded-lg transition-colors duration-300 hover:bg-yellow-400 hover:text-black dark:hover:bg-yellow-500 dark:hover:text-black font-semibold text-black dark:text-white"
+                >
+                    <span class="sr-only">Home</span>
+                    <div class="flex items-center gap-x-2">
+                        <span class="font-semibold">Bento</span>
+                        <img src="/29.webp" alt="Logo" class="h-6 w-6 rounded-full" />
+                    </div>
+                </a>
+            </div>
 
-            <AppearanceModeSwitch />
+            <!-- Right section - Appearance Mode Switch -->
+            <div class="flex justify-end">
+                <AppearanceModeSwitch />
+            </div>
         </div>
 
         <div class="flex flex-col items-start space-y-6 w-full px-8 mt-8">
