@@ -1,49 +1,55 @@
 ---
 export interface Props {
-  label: string;
-  description?: string;
-  href?: string;
-  disabled?: boolean;
-  title?: string;
-  class?: string;
+    label: string;
+    description?: string;
+    href?: string;
+    disabled?: boolean;
+    title?: string;
+    class?: string;
 }
 const {
-  label,
-  description = "",
-  href,
-  disabled = false,
-  title,
-  class: className = ""
+    label,
+    description = "",
+    href,
+    disabled = false,
+    title,
+    class: className = "",
 } = Astro.props as Props;
 
 const baseClasses = "w-full flex items-start gap-3 p-4 rounded-lg border lg:h-";
-const enabledClasses = "border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 cursor-pointer";
-const disabledClasses = "border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950/30 text-zinc-500 dark:text-zinc-400 opacity-70 cursor-not-allowed";
+const enabledClasses =
+    "border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 hover:bg-zinc-100/70 dark:hover:bg-zinc-800/60 cursor-pointer";
+const disabledClasses =
+    "border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-950/30 text-zinc-500 dark:text-zinc-400 opacity-70 cursor-not-allowed";
 const innerTitleCls = "font-semibold text-zinc-700 dark:text-zinc-200";
 const innerDescCls = "text-sm text-zinc-500 dark:text-zinc-400";
 ---
-{href && !disabled ? (
-  <a href={href}
-     class={`${baseClasses} ${enabledClasses} ${className}`}
-     role="button"
-     aria-label={label}
-     title={title}
-  >
-    <div class="text-left">
-      <div class={innerTitleCls}>{label}</div>
-      {description && <div class={innerDescCls}>{description}</div>}
-    </div>
-  </a>
-) : (
-  <div
-    class={`${baseClasses} ${disabledClasses} ${className}`}
-    aria-disabled="true"
-    title={title}
-    role="button"
-  >
-    <div class="text-left">
-      <div class={innerTitleCls}>{label}</div>
-      {description && <div class={innerDescCls}>{description}</div>}
-    </div>
-  </div>
-)}
+
+{
+    href && !disabled ? (
+        <a
+            href={href}
+            class={`${baseClasses} ${enabledClasses} ${className}`}
+            role="button"
+            aria-label={label}
+            title={title}
+        >
+            <div class="text-left">
+                <div class={innerTitleCls}>{label}</div>
+                {description && <div class={innerDescCls}>{description}</div>}
+            </div>
+        </a>
+    ) : (
+        <div
+            class={`${baseClasses} ${disabledClasses} ${className}`}
+            aria-disabled="true"
+            title={title}
+            role="button"
+        >
+            <div class="text-left">
+                <div class={innerTitleCls}>{label}</div>
+                {description && <div class={innerDescCls}>{description}</div>}
+            </div>
+        </div>
+    )
+}

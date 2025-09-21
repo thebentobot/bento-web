@@ -32,6 +32,7 @@ API_KEY=
 This repo uses Drizzle Kit to generate SQL and Wrangler to apply it to Cloudflare D1. See docs/database.md for full details.
 
 Quick reference:
+
 - Generate SQL from schema: `npm run db:generate`
 - Apply locally: `npm run db:execute:local -- --file ./drizzle/<migration>.sql`
 - Apply remotely: `npm run db:execute -- --file ./drizzle/<migration>.sql`

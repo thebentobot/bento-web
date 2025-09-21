@@ -114,7 +114,7 @@
 
             <!-- Right section - User Menu (Avatar + Theme/Profile/Login/Logout) -->
             <div class="flex justify-end">
-                <UserMenu user={user}></UserMenu>
+                <UserMenu {user}></UserMenu>
             </div>
         </div>
 

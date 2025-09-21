@@ -4,7 +4,7 @@ import { classNames } from "../../library/utils";
 import NavBlurHandler from "./NavBlurHandler.svelte";
 import UserMenu from "../../components/app/UserMenu.svelte";
 import { Icon } from "astro-icon/components";
-import type {BentoBetterAuthUser} from "../../library/auth";
+import type { BentoBetterAuthUser } from "../../library/auth";
 
 let currentPath = Astro.url.pathname;
 const user = Astro.locals.user as BentoBetterAuthUser;
@@ -32,10 +32,7 @@ const stickyNavHeaderClass = classNames(
 ---
 
 <NavBlurHandler client:only="svelte" />
-<header
-    id="stickyNav"
-    class={stickyNavHeaderClass}
->
+<header id="stickyNav" class={stickyNavHeaderClass}>
     <nav class="grid grid-cols-3 items-center w-full max-w-7xl px-4 sm:px-8 py-4">
         <!-- Left section - Mobile Menu -->
         <div class="sm:hidden flex justify-start w-10">
@@ -117,11 +114,16 @@ const stickyNavHeaderClass = classNames(
                     slot="fallback"
                     class="flex items-center justify-center p-2 rounded-lg hover:bg-yellow-400 dark:hover:bg-yellow-500 transition-colors duration-300 opacity-50 cursor-not-allowed"
                 >
-                    {user ? (
-                        <span class="h-8 w-8 rounded-full bg-zinc-200 dark:bg-zinc-700 animate-pulse" aria-hidden="true"></span>
-                    ) : (
-                        <Icon name="user" class="h-6 w-6 text-zinc-800 dark:text-zinc-200" />
-                    )}
+                    {
+                        user ? (
+                            <span
+                                class="h-8 w-8 rounded-full bg-zinc-200 dark:bg-zinc-700 animate-pulse"
+                                aria-hidden="true"
+                            />
+                        ) : (
+                            <Icon name="user" class="h-6 w-6 text-zinc-800 dark:text-zinc-200" />
+                        )
+                    }
                 </span>
             </UserMenu>
         </div>

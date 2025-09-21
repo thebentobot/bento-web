@@ -9,7 +9,7 @@
         description = "Are you sure you want to sign out?",
         confirmText = "Confirm",
         cancelText = "Cancel",
-        loadingText = "Signing out…"
+        loadingText = "Signing out…",
     } = $props<{
         open?: boolean;
         onConfirm?: (() => Promise<void>) | null;
@@ -36,12 +36,11 @@
             return {
                 destroy() {
                     if (node.parentNode) node.parentNode.removeChild(node);
-                }
+                },
             };
         }
         return {
-            destroy() {
-            }
+            destroy() {},
         };
     }
 
@@ -85,18 +84,19 @@
             class="absolute inset-0 z-[10000] bg-black/60 backdrop-blur-[2px]"
             onclick={Close}
             onkeydown={(e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              Close();
-            }
-        }}></div>
+                if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    Close();
+                }
+            }}
+        ></div>
         <div
             role="dialog"
             aria-modal="true"
             class="relative z-[10001] w-11/12 max-w-sm rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-lg p-4"
         >
             <div class="flex items-start gap-3">
-                <Icon name="logout" className="h-6 w-6 text-yellow-500"/>
+                <Icon name="logout" className="h-6 w-6 text-yellow-500" />
                 <div class="min-w-0">
                     <div class="font-semibold text-zinc-900 dark:text-zinc-100">{title}</div>
                     <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400">{description}</p>

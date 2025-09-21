@@ -1,10 +1,12 @@
-import { defineMiddleware } from 'astro:middleware'
-import { createAuth } from './library/auth'
+import { defineMiddleware } from "astro:middleware";
+import { createAuth } from "./library/auth";
 
 export const onRequest = defineMiddleware(async (context, next) => {
     const env = context.locals.runtime.env;
     if (!env?.DB) {
-        console.error("Cloudflare D1 binding (env.DB) is not available. Run with wrangler (preview/dev) or ensure platformProxy is enabled.");
+        console.error(
+            "Cloudflare D1 binding (env.DB) is not available. Run with wrangler (preview/dev) or ensure platformProxy is enabled."
+        );
         context.locals.user = null;
         context.locals.session = null;
         return next();
@@ -22,5 +24,5 @@ export const onRequest = defineMiddleware(async (context, next) => {
         context.locals.session = null;
     }
 
-    return next()
+    return next();
 });

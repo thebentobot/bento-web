@@ -13,19 +13,19 @@ import edit from "../../icons/edit.svg?raw";
 import users from "../../icons/users.svg?raw";
 
 export const icons = {
-  closeX,
-  hamburger,
-  warning,
-  moon,
-  sun,
-  sunMoon,
-  user,
-  login,
-  logout,
-  settings,
-  system,
-  edit,
-  users,
+    closeX,
+    hamburger,
+    warning,
+    moon,
+    sun,
+    sunMoon,
+    user,
+    login,
+    logout,
+    settings,
+    system,
+    edit,
+    users,
 } as const;
 
 export type IconName = keyof typeof icons;
