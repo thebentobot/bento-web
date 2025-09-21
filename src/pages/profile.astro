@@ -1,0 +1,99 @@
+---
+import AppLayout from "../layouts/app/AppLayout.astro";
+import SignOutButton from "../components/auth/SignOutButton.svelte";
+import SignInButton from "../components/auth/SignInButton.svelte";
+import ProfileMenuItem from "../components/app/ProfileMenuItem.astro";
+import type {BentoBetterAuthUser} from "../library/auth";
+
+const user = Astro.locals.user as BentoBetterAuthUser | null;
+
+const title = `Bento User Profile ${user?.name ? `- ${user.name}` : ""}`;
+const description = "View your Bento user profile";
+
+const username = user?.discordUsername || user?.name || "User";
+const discriminator = user?.discordDiscriminator;
+const discordTag = discriminator && discriminator !== "0" ? `${username}#${discriminator}` : username;
+const bannerColor = user?.discordBannerColor || undefined;
+const headerStyle = bannerColor
+    ? `background: linear-gradient(135deg, ${bannerColor} 0%, ${bannerColor}CC 60%, transparent 100%);`
+    : "";
+const initials = (() => {
+    const base = String(username ?? "U").trim();
+    if (!base) return "U";
+    const parts = base.split(/\s+/).filter(Boolean);
+    const chars = (parts[0]?.[0] ?? "U") + (parts[1]?.[0] ?? "");
+    return chars.toUpperCase().slice(0, 2);
+})();
+---
+
+<AppLayout title={title} description={description}>
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold mb-6">User Profile</h1>
+
+        {/** Not signed in state **/}
+        {!user && (
+                <div class="text-center py-10 bg-zinc-100 dark:bg-zinc-900 rounded-lg shadow">
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">You are not signed in.</p>
+                    <SignInButton client:idle/>
+                </div>
+        )}
+
+        {/** Signed in state **/}
+        {user && (
+                <section
+                        class="overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900 shadow">
+                    <div class="relative">
+                        <div title={bannerColor ? "Discord Profile Theme" : undefined}
+                             class={`h-24 sm:h-32 w-full ${bannerColor ? "" : "bg-gradient-to-r from-yellow-300 to-yellow-400"}`}
+                             style={headerStyle}></div>
+                        <div class="px-6 sm:px-8 mt-4 flex items-end gap-4">
+                            {user?.image ? (
+                                    <img src={user.image} alt={user?.name ?? "User"} referrerpolicy="no-referrer"
+                                         class="h-20 w-20 rounded-full border-4 border-white dark:border-zinc-900 object-cover"/>
+                            ) : (
+                                    <div class="h-20 w-20 rounded-full border-4 border-white dark:border-zinc-900 bg-zinc-200 dark:bg-zinc-800 flex items-center justify-center">
+                                        <span title="User has no Discord Pfp"
+                                              class="text-lg font-semibold text-zinc-600 dark:text-zinc-300">{initials}</span>
+                                    </div>
+                            )}
+                            <div class="pb-2 min-w-0">
+                                <h2 title="Discord Username"
+                                    class="text-2xl font-bold leading-tight truncate">{discordTag}</h2>
+                                {user?.discordGlobalName && user.discordGlobalName !== user.discordUsername && (
+                                        <p title="Discord Display Name"
+                                           class="text-sm text-zinc-600 dark:text-zinc-400 truncate">Also known
+                                            as <strong>{user.discordGlobalName}</strong></p>
+                                )}
+                            </div>
+                            <div class="ml-auto pb-2">
+                                <SignOutButton client:idle/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="px-6 sm:px-8 py-6 grid gap-4">
+                        <div class="grid sm:grid-cols-3 gap-3 items-stretch">
+                            <ProfileMenuItem
+                                    label="Edit Bento profile"
+                                    description="Customize your Bento profile with colours and bio etc."
+                                    disabled={true}
+                                    title="Coming Soon™️"
+                            />
+                            <ProfileMenuItem
+                                    label="Servers"
+                                    description="Check your servers with Bento. If admin, access server settings."
+                                    disabled={true}
+                                    title="Coming Soon™️"
+                            />
+                            <ProfileMenuItem
+                                    label="User settings"
+                                    description="Configure Bento user preferences, privacy etc."
+                                    disabled={true}
+                                    title="Coming Soon™️"
+                            />
+                        </div>
+                    </div>
+                </section>
+        )}
+    </div>
+</AppLayout>
