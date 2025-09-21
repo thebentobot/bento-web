@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1756655495685,
+      "tag": "0000_slimy_purifiers",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1756672320000,
+      "tag": "0001_add_discord_fields",
+      "breakpoints": false
+    }
+  ]
+}
