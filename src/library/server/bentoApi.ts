@@ -23,6 +23,7 @@ export async function fetchFromApi<T>(endpoint: string, options: FetchOptions = 
         );
     }
 
+    // eslint-disable-next-line no-undef
     const res = await fetch(url.toString(), {
         ...options,
         headers: {
