@@ -1,21 +1,7 @@
 <script lang="ts">
-    import closeX from "../../icons/closeX.svg?raw";
-    import hamburger from "../../icons/hamburger.svg?raw";
-    import warning from "../../icons/warning.svg?raw";
-    import moon from "../../icons/moon.svg?raw";
-    import sun from "../../icons/sun.svg?raw";
-    import sunMoon from "../../icons/sunMoon.svg?raw";
+    import { icons, type IconName } from "./icons";
 
-    const icons = {
-        closeX,
-        hamburger,
-        warning,
-        moon,
-        sun,
-        sunMoon,
-    };
-
-    export let name: keyof typeof icons;
+    export let name: IconName;
     export let className: string = "";
 </script>
 
