@@ -1,10 +1,13 @@
 ---
-import AppearanceModeSwitch from "../../components/app/AppearanceModeSwitch.svelte";
 import MobileMenu from "../../components/app/MobileMenu.svelte";
 import { classNames } from "../../library/utils";
 import NavBlurHandler from "./NavBlurHandler.svelte";
+import UserMenu from "../../components/app/UserMenu.svelte";
+import { Icon } from "astro-icon/components";
+import type { BentoBetterAuthUser } from "../../library/auth";
 
 let currentPath = Astro.url.pathname;
+const user = Astro.locals.user as BentoBetterAuthUser;
 
 const navigationRoutes = [
     { name: "About", route: "/about" },
@@ -18,24 +21,25 @@ const isCurrentRoute = (route: string): boolean => {
         ? currentPath === "/"
         : currentPath === route || currentPath.startsWith(route + "/");
 };
+
+const stickyNavHeaderClass = classNames(
+    "flex flex-col items-center w-full sticky top-0 z-20 sm:bg-inherit/30",
+    // eslint-disable-next-line no-undef
+    typeof window !== "undefined" && document.body.classList.contains("mobile-menu-open")
+        ? ""
+        : "backdrop-blur-xs"
+);
 ---
 
 <NavBlurHandler client:only="svelte" />
-<header
-    id="stickyNav"
-    class={classNames(
-        "flex flex-col items-center w-full sticky top-0 z-20 sm:bg-inherit/30",
-        typeof window !== "undefined" && document.body.classList.contains("mobile-menu-open")
-            ? ""
-            : "backdrop-blur-xs"
-    )}
->
+<header id="stickyNav" class={stickyNavHeaderClass}>
     <nav class="grid grid-cols-3 items-center w-full max-w-7xl px-4 sm:px-8 py-4">
         <!-- Left section - Mobile Menu -->
         <div class="sm:hidden flex justify-start w-10">
             <MobileMenu
                 navigationRoutes={navigationRoutes}
                 currentPath={currentPath}
+                user={user}
                 client:only="svelte"
             >
                 <span
@@ -44,7 +48,6 @@ const isCurrentRoute = (route: string): boolean => {
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
                         class="h-6 w-6 text-zinc-800 dark:text-zinc-200"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -104,30 +107,25 @@ const isCurrentRoute = (route: string): boolean => {
             </a>
         </div>
 
-        <!-- Right section - Appearance Mode Switch -->
-        <div class="flex justify-end">
-            <AppearanceModeSwitch client:only="svelte">
+        <!-- Right section - User Menu (Avatar + Theme/Profile/Login/Logout) -->
+        <div class="flex justify-end items-center">
+            <UserMenu user={user} client:only="svelte">
                 <span
                     slot="fallback"
-                    class="bg-inherit p-1 rounded-full dark:text-zinc-100 text-black opacity-50 cursor-not-allowed inline-flex items-center justify-center"
+                    class="flex items-center justify-center p-2 rounded-lg hover:bg-yellow-400 dark:hover:bg-yellow-500 transition-colors duration-300 opacity-50 cursor-not-allowed"
                 >
-                    <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        class="h-6 w-6 text-zinc-800 dark:text-zinc-200"
-                        stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        ><path d="M12 8a2.83 2.83 0 0 0 4 4 4 4 0 1 1-4-4"></path><path d="M12 2v2"
-                        ></path><path d="M12 20v2"></path><path d="m4.9 4.9 1.4 1.4"></path><path
-                            d="m17.7 17.7 1.4 1.4"></path><path d="M2 12h2"></path><path
-                            d="M20 12h2"></path><path d="m6.3 17.7-1.4 1.4"></path><path
-                            d="m19.1 4.9-1.4 1.4"></path></svg
-                    >
+                    {
+                        user ? (
+                            <span
+                                class="h-8 w-8 rounded-full bg-zinc-200 dark:bg-zinc-700 animate-pulse"
+                                aria-hidden="true"
+                            />
+                        ) : (
+                            <Icon name="user" class="h-6 w-6 text-zinc-800 dark:text-zinc-200" />
+                        )
+                    }
                 </span>
-            </AppearanceModeSwitch>
+            </UserMenu>
         </div>
     </nav>
 </header>

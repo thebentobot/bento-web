@@ -1,15 +1,17 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import { fade } from "svelte/transition";
-    import AppearanceModeSwitch from "./AppearanceModeSwitch.svelte";
     import Icon from "./Icon.svelte";
+    import UserMenu from "./UserMenu.svelte";
+    import type { BentoBetterAuthUser } from "../../library/auth.ts";
 
     export let navigationRoutes: { name: string; route: string }[];
     export let currentPath: string;
+    export let user: BentoBetterAuthUser | null = null;
 
     let isOpen = false;
 
-    const toggleMenu = () => {
+    const ToggleMenu = () => {
         isOpen = !isOpen;
 
         // Prevent scrolling when menu is open
@@ -22,13 +24,13 @@
         }
     };
 
-    const closeMenu = () => {
+    const CloseMenu = () => {
         isOpen = false;
         document.body.style.overflow = "";
         document.body.classList.remove("mobile-menu-open");
     };
 
-    const isCurrentRoute = (route: string): boolean => {
+    const IsCurrentRoute = (route: string): boolean => {
         if (!currentPath) return false;
         return route === "/"
             ? currentPath === "/"
@@ -36,17 +38,17 @@
     };
 
     // Handle clicks on the overlay background
-    const handleOverlayClick = (event: MouseEvent) => {
+    const HandleOverlayClick = (event: MouseEvent) => {
         // Check if the click is directly on the overlay (not its children)
         if (event.target === event.currentTarget) {
-            closeMenu();
+            CloseMenu();
         }
     };
 
     // Handle keyboard events for the overlay
-    const handleKeydown = (event: KeyboardEvent) => {
+    const HandleKeydown = (event: KeyboardEvent) => {
         if (event.key === "Escape") {
-            closeMenu();
+            CloseMenu();
         }
     };
 
@@ -62,7 +64,7 @@
 <button
     aria-label={isOpen ? "Close menu" : "Open menu"}
     class="group md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-yellow-400 dark:hover:bg-yellow-500 transition-colors duration-300 cursor-pointer"
-    on:click={toggleMenu}
+    on:click={ToggleMenu}
 >
     <Icon
         name="hamburger"
@@ -74,8 +76,8 @@
     <div
         class="fixed inset-0 z-50 bg-white/20 dark:bg-zinc-900/80 backdrop-blur-lg backdrop-saturate-150"
         transition:fade={{ duration: 200 }}
-        on:click={handleOverlayClick}
-        on:keydown={handleKeydown}
+        on:click={HandleOverlayClick}
+        on:keydown={HandleKeydown}
         role="dialog"
         tabindex="0"
         aria-label="Mobile navigation menu"
@@ -86,7 +88,7 @@
                 <button
                     aria-label="Close menu"
                     class="group flex items-center justify-center w-10 h-10 rounded-lg hover:bg-yellow-400 dark:hover:bg-yellow-500 transition-colors duration-300 cursor-pointer"
-                    on:click={closeMenu}
+                    on:click={CloseMenu}
                 >
                     <Icon
                         name="closeX"
@@ -99,7 +101,7 @@
             <div class="flex justify-center">
                 <a
                     href="/"
-                    on:click={closeMenu}
+                    on:click={CloseMenu}
                     class="p-2 rounded-lg transition-colors duration-300 hover:bg-yellow-400 hover:text-black dark:hover:bg-yellow-500 dark:hover:text-black font-semibold text-black dark:text-white"
                 >
                     <span class="sr-only">Home</span>
@@ -110,9 +112,9 @@
                 </a>
             </div>
 
-            <!-- Right section - Appearance Mode Switch -->
+            <!-- Right section - User Menu (Avatar + Theme/Profile/Login/Logout) -->
             <div class="flex justify-end">
-                <AppearanceModeSwitch />
+                <UserMenu {user}></UserMenu>
             </div>
         </div>
 
@@ -121,11 +123,11 @@
                 <span class="sr-only">{route.name}</span>
                 <a
                     href={route.route}
-                    on:click={closeMenu}
+                    on:click={CloseMenu}
                     class={`text-xl p-4 w-full text-left rounded-lg transition-all duration-300 
                         hover:bg-yellow-400 hover:text-black hover:scale-105 dark:hover:bg-yellow-500 dark:hover:text-black
                         ${
-                            isCurrentRoute(route.route)
+                            IsCurrentRoute(route.route)
                                 ? "font-semibold bg-yellow-400 text-black dark:bg-yellow-500 dark:text-black"
                                 : "font-semibold text-black dark:text-white"
                         }`}

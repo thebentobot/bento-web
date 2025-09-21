@@ -16,6 +16,18 @@
     "observability": {
         "enabled": true,
     },
+    "d1_databases": [
+        {
+            "binding": "DB",
+            "database_name": "bento-web-db",
+            "database_id": "ea4bb36c-7a3d-41a4-8d46-e2bb7ede1a06",
+            "migrations_dir": "drizzle",
+        },
+    ],
+    "vars": {
+        "BETTER_AUTH_URL": "http://localhost:8787",
+        "BETTER_AUTH_TRUSTED_ORIGINS": "http://localhost:8787,http://127.0.0.1:8787",
+    },
     /**
      * Smart Placement
      * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
