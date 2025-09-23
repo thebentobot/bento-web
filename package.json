@@ -34,7 +34,7 @@
         "@tailwindcss/typography": "^0.5.16",
         "@tailwindcss/vite": "^4.1.12",
         "@types/node": "^24.3.0",
-        "@typescript-eslint/eslint-plugin": "^8.44.0",
+        "@typescript-eslint/eslint-plugin": "^8.44.1",
         "@typescript-eslint/parser": "^8.44.0",
         "astro": "^5.13.5",
         "drizzle-kit": "^0.31.4",
