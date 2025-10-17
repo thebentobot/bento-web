@@ -11,15 +11,12 @@ const title = `Edit Bento Profile ${user?.name ? `- ${user.name}` : ""}`;
 const description = "Customize your Bento profile";
 
 const username = user?.discordUsername || user?.name || "User";
-const discriminator = user?.discordDiscriminator;
-const discordTag = discriminator && discriminator !== "0" ? `${username}#${discriminator}` : username;
 
 let initialProfile: ProfileDto | null = null;
 if (user) {
   try {
     initialProfile = await fetchUserProfile(user.discordId);
-  } catch (e) {
-    // swallow error; component will fall back to defaults
+  } catch {
     initialProfile = null;
   }
 }
@@ -29,8 +26,9 @@ if (user) {
   <div class="container mx-auto px-4 py-8">
     <div class="mb-6 flex items-center gap-4">
       <a href="/profile" class="text-sm text-zinc-600 dark:text-zinc-400 hover:underline">← Back to Profile</a>
-      <h1 class="text-2xl font-bold">Edit Bento profile</h1>
     </div>
+
+      <h1 class="text-2xl font-bold text-center mb-6 md:mb-8">Edit your Bento profile</h1>
 
     {/** Not signed in **/}
     {!user && (

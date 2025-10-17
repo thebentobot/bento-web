@@ -128,8 +128,8 @@
                 <MenuItem
                     icon="edit"
                     label="Edit Bento profile"
-                    disabled={true}
-                    title="Coming Soon™️"
+                    title="Customise your Bento profile with colours and bio etc."
+                    href="/profile/edit"
                 />
                 <MenuItem icon="users" label="Servers" disabled={true} title="Coming Soon™️" />
                 <MenuItem
