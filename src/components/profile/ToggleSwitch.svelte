@@ -1,7 +1,5 @@
 <script lang="ts">
-  export let label: string = "";
-  export let checked: boolean = false; // bind:checked
-  export let disabled: boolean = false;
+  let { label = "", checked = $bindable(false), disabled = false } = $props();
 
   function onKey(e: KeyboardEvent) {
     if (disabled) return;
@@ -19,13 +17,13 @@
   <button
     type="button"
     role="switch"
-    class="relative inline-flex h-6 w-11 items-center rounded-full transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-500/60 hover:ring-2 hover:ring-yellow-500/40"
+    class="relative inline-flex h-6 w-11 items-center rounded-full transition-colors cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-yellow-500/60 hover:ring-2 hover:ring-yellow-500/40"
     class:bg-yellow-500={checked}
     class:bg-zinc-300={!checked}
     aria-checked={checked}
     aria-label={label}
-    on:click={() => (checked = !checked)}
-    on:keydown={onKey}
+    onclick={() => (checked = !checked)}
+    onkeydown={onKey}
     {disabled}
   >
     <span

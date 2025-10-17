@@ -3,7 +3,7 @@
     import { svelteAuthClient } from "../../library/auth-client";
     import SignOutConfirmModal from "./SignOutConfirmModal.svelte";
 
-    export let size: "sm" | "md" = "sm";
+    const { size = "sm" } = $props<{ size?: "sm" | "md" }>();
     let loading = false;
     let confirmOpen = false;
 

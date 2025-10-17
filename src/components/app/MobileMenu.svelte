@@ -5,9 +5,7 @@
     import UserMenu from "./UserMenu.svelte";
     import type { BentoBetterAuthUser } from "../../library/auth.ts";
 
-    export let navigationRoutes: { name: string; route: string }[];
-    export let currentPath: string;
-    export let user: BentoBetterAuthUser | null = null;
+    const { navigationRoutes, currentPath, user = null } = $props<{ navigationRoutes: { name: string; route: string }[]; currentPath: string; user: BentoBetterAuthUser | null }>();
 
     let isOpen = false;
 

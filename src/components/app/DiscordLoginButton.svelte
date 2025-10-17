@@ -3,7 +3,7 @@
     import { svelteAuthClient } from "../../library/auth-client.ts";
 
     const session = svelteAuthClient.useSession();
-    $: user = $session.data?.user ?? null;
+    const user = $derived($session.data?.user ?? null);
 
     const login = async () => {
         await svelteAuthClient.signIn.social({ provider: "discord" });

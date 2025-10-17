@@ -3,6 +3,9 @@
     import { mode } from "mode-watcher";
     import { onMount } from "svelte";
     import { writable } from "svelte/store";
+    import type { Snippet } from "svelte";
+
+    const { children } = $props<{ children?: Snippet }>();
 
     const lightMode = writable(mode.current === "light");
 
@@ -26,10 +29,10 @@
 
 {#if $lightMode}
     <discord-messages light-theme>
-        <slot />
+        {@render children?.()}
     </discord-messages>
 {:else}
     <discord-messages>
-        <slot />
+        {@render children?.()}
     </discord-messages>
 {/if}

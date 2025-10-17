@@ -8,10 +8,10 @@
     import IconToggleButton from "./Menu/IconToggleButton.svelte";
     import type { BentoBetterAuthUser } from "../../library/auth.ts";
 
-    export let user: BentoBetterAuthUser | null = null;
+    const { user = null } = $props<{ user: BentoBetterAuthUser | null }>();
 
     const session = svelteAuthClient.useSession();
-    $: currentUser = user ?? $session.data?.user ?? null;
+    const currentUser = $derived(user ?? $session.data?.user ?? null);
 
     let open = false;
     let menuElement: HTMLDivElement | null = null;

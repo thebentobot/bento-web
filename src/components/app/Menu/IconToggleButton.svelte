@@ -1,10 +1,8 @@
 <script lang="ts">
     import Icon from "../Icon.svelte";
     import type { IconName } from "../icons";
-    export let name: IconName;
-    export let active: boolean = false;
-    export let title: string = "";
-    export let ariaLabel: string = title;
+    import type { Snippet } from "svelte";
+    const { name, active = false, title = "", ariaLabel = title, children } = $props<{ name: IconName; active?: boolean; title?: string; ariaLabel?: string; children?: Snippet }>();
 </script>
 
 <button
@@ -16,5 +14,5 @@
     type="button"
 >
     <Icon {name} className="h-4 w-4" />
-    <slot />
+    {@render children?.()}
 </button>
