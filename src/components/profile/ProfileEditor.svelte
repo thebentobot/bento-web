@@ -22,7 +22,6 @@
         initialProfile: ProfileDto | null;
     }>();
 
-
     let loading = $state(false);
     let error = $state<string | null>(null);
     let saving = $state(false);
@@ -31,7 +30,6 @@
     const initialProfileWithDefaults: ProfileDto = mergeWithDefaults(defaultProfile(userId), initialProfile);
     let originalProfile = $state<ProfileDto>(initialProfileWithDefaults);
     let profile = $state<ProfileDto>({ ...initialProfileWithDefaults });
-
 
     // Click-to-edit modal state and editor fold state
     type Target = "background" | "description" | "sidebar" | "lastfm" | "xp";
@@ -50,39 +48,33 @@
         if (el?.open) showModal = false;
     }
 
-
     function mergeWithDefaults(defaults: ProfileDto, incoming?: Partial<ProfileDto> | null): ProfileDto {
         // Start from defaults and only apply incoming fields that are not null/undefined
         const result: ProfileDto = { ...defaults };
         if (!incoming) return result;
 
-        for (const [k, v] of Object.entries(incoming) as [keyof ProfileDto, ProfileDto[keyof ProfileDto]][]) {
+        for (const k of Object.keys(incoming) as (keyof ProfileDto)[]) {
             if (k === "UserId") continue; // always trust the accurate string from props
+            const v = incoming[k];
             if (v !== null && v !== undefined) {
-                // Satisfy TS for indexed assignment across heterogeneous keys
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                (result as any)[k] = v as any;
+                // Assign with key-aware type to avoid unsafe 'any'
+                result[k] = v as ProfileDto[typeof k];
             }
         }
         return result;
     }
 
-
     function computeProfilePatch(original: ProfileDto, current: ProfileDto): ProfilePatch {
-        const patch: ProfilePatch = { UserId: current.UserId };
+        const body: Partial<ProfileDto> = {};
         for (const k of Object.keys(current) as (keyof ProfileDto)[]) {
             if (k === "UserId") continue;
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            const ov = (original as any)[k];
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            const cv = (current as any)[k];
-            const changed = ov !== cv;
-            if (changed) {
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                (patch as any)[k] = cv as any;
+            const ov = original[k];
+            const cv = current[k];
+            if (ov !== cv) {
+                body[k] = cv as ProfileDto[typeof k];
             }
         }
-        return patch;
+        return { UserId: current.UserId, ...body } as ProfilePatch;
     }
 
     const changeCount = $derived(Object.keys(computeProfilePatch(originalProfile, profile)).length - 1);
@@ -112,15 +104,6 @@
     function resetChanges() {
         profile = { ...originalProfile };
     }
-
-
-
-
-
-
-
-
-
 </script>
 
 <div class={editorExpanded ? "grid grid-cols-1 lg:grid-cols-2 gap-6" : "flex flex-col"}>
@@ -224,17 +207,17 @@
 {#if editorExpanded}
     <div class="lg:sticky lg:top-0 lg:h-screen overflow-y-auto pr-3 md:pr-4">
         <details open ontoggle={onDetailsToggle}>
-            <summary class="sticky top-0 z-20 bg-white dark:bg-black py-3 mb-4 border-b border-zinc-200 dark:border-zinc-800 flex items-center justify-between cursor-default select-none"
+            <summary class="sticky top-0 z-10 bg-white dark:bg-black py-3 mb-4 border-b border-zinc-200 dark:border-zinc-800 flex flex-col md:flex-row items-start md:items-center justify-start md:justify-between gap-2 md:gap-0 cursor-default select-none"
                      tabindex="-1"
                      aria-disabled="true"
-                     onclick={(e) => { e.preventDefault(); e.stopPropagation(); }}
-                     onkeydown={(e) => { e.preventDefault(); }}>
+                    onclick={(e) => { e.preventDefault(); e.stopPropagation(); }}
+                    onkeydown={(e) => { e.preventDefault(); }}>
                 <span class="flex items-center gap-2">
                     <span class="text-xl font-semibold">Editor</span>
                 </span>
-                <span class="flex items-center gap-3">
-                    <SaveResetButtons {saving} {hasChanges} onSave={saveProfile} onReset={resetChanges} resetLabel="Reset Changes" />
-                    <button class="btn-secondary" onclick={() => (editorExpanded = false)}>
+                <span class="flex items-center gap-2 md:gap-3 flex-wrap md:flex-nowrap w-full md:w-auto justify-start md:justify-end">
+                    <SaveResetButtons responsive {saving} {hasChanges} onSave={saveProfile} onReset={resetChanges} resetLabel="Reset Changes" />
+                    <button class="btn-secondary w-full md:w-auto text-sm md:text-base" onclick={() => (editorExpanded = false)}>
                         Close Editor
                     </button>
                 </span>
@@ -281,6 +264,7 @@
                 />
             </section>
 
+            {#if profile.LastfmBoard}
             <section>
                 <h3 class="font-semibold mb-2">Last.fm Board</h3>
                 <LastfmSection
@@ -292,7 +276,9 @@
                     bind:fmArtistTextOpacity={() => profile.FmArtistTextOpacity ?? 100, (v) => (profile.FmArtistTextOpacity = v)}
                 />
             </section>
+            {/if}
 
+            {#if profile.XpBoard}
             <section>
                 <h3 class="font-semibold mb-2">XP Board</h3>
                 <XpSection
@@ -320,6 +306,7 @@
                     bind:xpDoneGlobalColour3Opacity={() => profile.XpDoneGlobalColour3Opacity ?? 100, (v) => (profile.XpDoneGlobalColour3Opacity = v)}
                 />
             </section>
+            {/if}
         </div>
         </details>
     </div>
@@ -366,7 +353,7 @@
     }
 
     /* Only highlight the background area when hovering it directly, not when hovering its children */
-    .editable-bg:hover:has(.editable:hover) {
+    .editable-bg:hover:has(:global(.editable:hover)) {
         /* A descendant is hovered; suppress parent hover indication */
         filter: none;
         box-shadow: none;

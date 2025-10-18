@@ -19,7 +19,7 @@
     onkeydown={(e) => onKeyActivate(e, onClose)}
     onclick={onClose}
   ></div>
-  <div class="relative z-10 w-full max-w-xl max-h-[85vh] overflow-y-auto rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-4 shadow-lg">
+  <div class="relative z-10 w-full max-w-xl max-h-[85vh] overflow-y-auto rounded-lg border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 p-4 shadow-lg mx-4 sm:mx-6">
     <div class="flex items-center justify-between mb-3">
       <h3 class="font-semibold text-lg">{title}</h3>
       <button class="btn-secondary" onclick={onClose}>Close</button>

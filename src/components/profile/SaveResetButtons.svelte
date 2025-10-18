@@ -1,13 +1,13 @@
 <script lang="ts">
-  const { saving = false, hasChanges = false, onSave = null, onReset = null, saveLabel = "Save Changes", resetLabel = "Reset changes" } = $props<{ saving?: boolean; hasChanges?: boolean; onSave?: (() => void) | null; onReset?: (() => void) | null; saveLabel?: string; resetLabel?: string }>();
+  const { saving = false, hasChanges = false, onSave = null, onReset = null, saveLabel = "Save Changes", resetLabel = "Reset changes", responsive = false } = $props<{ saving?: boolean; hasChanges?: boolean; onSave?: (() => void) | null; onReset?: (() => void) | null; saveLabel?: string; resetLabel?: string; responsive?: boolean }>();
 </script>
 
-<div class="flex items-center gap-3">
-  <button class="btn" on:click={() => onSave?.()} disabled={saving || !hasChanges}>
+<div class={responsive ? "flex items-center gap-2 md:gap-3 flex-wrap md:flex-nowrap w-full md:w-auto" : "flex items-center gap-3"}>
+  <button class={responsive ? "btn w-full md:w-auto text-sm md:text-base" : "btn"} onclick={() => onSave?.()} disabled={saving || !hasChanges}>
     {saving ? "Saving…" : saveLabel}
   </button>
   {#if hasChanges && onReset}
-    <button class="btn-secondary" on:click={() => onReset?.()}>{resetLabel}</button>
+    <button class={responsive ? "btn-secondary w-full md:w-auto text-sm md:text-base" : "btn-secondary"} onclick={() => onReset?.()}>{resetLabel}</button>
   {/if}
 </div>
 

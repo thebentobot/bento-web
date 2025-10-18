@@ -280,7 +280,7 @@
   }
 
   /* Only highlight the background area when hovering it directly, not when hovering its children */
-  .editable-bg:hover:has(.editable:hover) {
+  .editable-bg:hover:has(:global(.editable:hover)) {
     /* A descendant is hovered; suppress parent hover indication */
     filter: none;
     box-shadow: none;

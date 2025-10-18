@@ -1,17 +1,15 @@
 <script lang="ts">
     import "@skyra/discord-components-core";
     import { mode } from "mode-watcher";
-    import { onMount } from "svelte";
-    import { writable } from "svelte/store";
     import type { Snippet } from "svelte";
 
-    const { children } = $props<{ children?: Snippet }>();
+    const { children, class: className = "" } = $props<{ children?: Snippet; class?: string }>();
 
-    const lightMode = writable(mode.current === "light");
+    let lightMode = $state(mode.current === "light");
 
-    onMount(() => {
+    $effect(() => {
         const observer = new MutationObserver(() => {
-            lightMode.set(mode.current === "light");
+            lightMode = mode.current === "light";
         });
 
         // Observe <html class="dark"> or not
@@ -21,18 +19,18 @@
         });
 
         // Set once initially
-        lightMode.set(mode.current === "light");
+        lightMode = mode.current === "light";
 
         return () => observer.disconnect();
     });
 </script>
 
-{#if $lightMode}
-    <discord-messages light-theme>
+{#if lightMode}
+    <discord-messages class={className} light-theme>
         {@render children?.()}
     </discord-messages>
 {:else}
-    <discord-messages>
+    <discord-messages class={className}>
         {@render children?.()}
     </discord-messages>
 {/if}

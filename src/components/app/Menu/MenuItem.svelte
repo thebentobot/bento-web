@@ -1,7 +1,22 @@
 <script lang="ts">
     import Icon from "../Icon.svelte";
     import type { IconName } from "../icons";
-    const { icon, label, href = undefined, disabled = false, title = undefined, role = "menuitem" } = $props<{ icon: IconName; label: string; href?: string; disabled?: boolean; title?: string; role?: string }>();
+
+    const {
+        icon,
+        label,
+        href = undefined,
+        disabled = false,
+        title = undefined,
+        role = "menuitem"
+    } = $props<{
+        icon: IconName;
+        label: string;
+        href?: string;
+        disabled?: boolean;
+        title?: string;
+        role?: string
+    }>();
 </script>
 
 {#if href && !disabled}

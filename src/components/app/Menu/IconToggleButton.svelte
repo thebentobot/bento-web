@@ -2,7 +2,22 @@
     import Icon from "../Icon.svelte";
     import type { IconName } from "../icons";
     import type { Snippet } from "svelte";
-    const { name, active = false, title = "", ariaLabel = title, children } = $props<{ name: IconName; active?: boolean; title?: string; ariaLabel?: string; children?: Snippet }>();
+
+    const {
+        name,
+        active = false,
+        title = "",
+        ariaLabel = title,
+        children,
+        onclick
+    } = $props<{
+        name: IconName;
+        active?: boolean;
+        title?: string;
+        ariaLabel?: string;
+        children?: Snippet;
+        onclick?: (e: MouseEvent) => void;
+    }>();
 </script>
 
 <button
@@ -10,9 +25,11 @@
     {title}
     aria-label={ariaLabel}
     role="menuitem"
-    on:click
+    onclick={onclick}
     type="button"
 >
     <Icon {name} className="h-4 w-4" />
-    {@render children?.()}
+    {#if children}
+        {@render children()}
+    {/if}
 </button>
