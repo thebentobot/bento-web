@@ -659,25 +659,20 @@
         /* No positioning change to avoid overriding absolute/static layout */
         transition:
             filter 120ms ease,
-            box-shadow 120ms ease;
+            outline-offset 120ms ease;
     }
     .editable:hover {
         /* Stronger, clearer but still tasteful indication */
         filter: brightness(1.08) saturate(1.15) contrast(1.05);
-        /* Inner outline for high contrast even when outer is clipped */
-        box-shadow:
-            inset 0 0 0 2px rgba(255, 255, 255, 0.55),
-            inset 0 0 0 9999px rgba(255, 255, 255, 0.045),
-            0 0 0 2px rgba(0, 0, 0, 0.35);
+        /* Dashed outline to avoid layout shift while indicating editability */
+        outline: 2px dashed rgba(255, 255, 255, 0.75);
+        outline-offset: -2px;
     }
     /* Keyboard focus parity with hover */
     .editable:focus-visible {
-        outline: 2px solid rgba(255, 255, 255, 0.7);
+        outline: 2px dashed rgba(255, 255, 255, 0.75);
         outline-offset: -2px;
         filter: brightness(1.08) saturate(1.15) contrast(1.05);
-        box-shadow:
-            inset 0 0 0 2px rgba(255, 255, 255, 0.55),
-            inset 0 0 0 9999px rgba(255, 255, 255, 0.045);
     }
 
     /* Only highlight the background area when hovering it directly, not when hovering its children */

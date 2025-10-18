@@ -30,13 +30,14 @@
     >
         {saving ? "Saving…" : saveLabel}
     </button>
-    {#if hasChanges && onReset}
+    {#if onReset}
         <button
             class={responsive
                 ? "btn-secondary w-full md:w-auto text-sm md:text-base"
                 : "btn-secondary"}
-            onclick={() => onReset?.()}>{resetLabel}</button
-        >
+            onclick={() => onReset?.()}
+            disabled={!hasChanges}
+        >{resetLabel}</button>
     {/if}
 </div>
 
