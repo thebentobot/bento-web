@@ -160,21 +160,9 @@ function buildProfilePayload(profile: ProfilePatch | ProfileDto): string {
 }
 
 export async function saveUserProfile(profile: ProfilePatch): Promise<void> {
-    // In the browser, post via same-origin API to avoid CORS
+    // Must be called server-side. Client code should use Astro Server Actions.
     if (typeof window !== "undefined") {
-        // eslint-disable-next-line no-undef
-        const res = await fetch("/api/profile", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(profile),
-        });
-        if (!res.ok) {
-            const text = await res.text();
-            throw new Error(
-                `Save failed: ${res.status} ${res.statusText}${text ? ` - ${text}` : ""}`
-            );
-        }
-        return;
+        throw new Error("saveUserProfile must be called on the server. Use astro:actions from client code.");
     }
 
     // On the server, call upstream API directly with corrected numeric literal for UserId
