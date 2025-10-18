@@ -6,7 +6,10 @@ import {
     type UsageStatsDto,
 } from "../types/interfaces";
 
-const API_URL = import.meta.env.API_URL || "dummy"; // default to production API
+if (!import.meta.env.API_URL) {
+    throw new Error("API_URL environment variable is not set. Please configure API_URL.");
+}
+const API_URL = import.meta.env.API_URL;
 const API_KEY = import.meta.env.API_KEY; // Only set if provided
 
 /*global RequestInit*/
