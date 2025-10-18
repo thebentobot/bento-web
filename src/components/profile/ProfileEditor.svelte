@@ -2,7 +2,7 @@
 <!--suppress CommaExpressionJS -->
 <script lang="ts">
     import type { ProfileDto, ProfilePatch } from "../../library/types/interfaces";
-    import { saveUserProfile as apiSaveUserProfile } from "../../library/server/bentoApi";
+    import { actions } from "astro:actions";
     import ProfilePreview from "./ProfilePreview.svelte";
     import ModalShell from "./ModalShell.svelte";
     import { defaultProfile } from "../../library/profile/defaultProfile";
@@ -104,7 +104,11 @@
                 savedAt = new Date();
                 return;
             }
-            await apiSaveUserProfile(patch);
+            const { error: actionError } = await actions.saveProfile(patch);
+            if (actionError) {
+                const m = (actionError as { message?: unknown })?.message;
+                throw new Error(typeof m === "string" ? m : "Save failed");
+            }
             originalProfile = { ...profile };
             savedAt = new Date();
         } catch (e: unknown) {
