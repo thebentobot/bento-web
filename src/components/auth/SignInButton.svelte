@@ -1,9 +1,11 @@
 <script lang="ts">
     import { svelteAuthClient } from "../../library/auth-client";
 
-    export let label: string = "Sign in with Discord";
-    export let redirectTo: string | null = null;
-    let loading = false;
+    const { label = "Sign in with Discord", redirectTo = null } = $props<{
+        label?: string;
+        redirectTo?: string | null;
+    }>();
+    let loading = $state(false);
 
     const SignIn = async () => {
         if (loading) return;
@@ -29,7 +31,7 @@
 <button
     type="button"
     class="inline-block bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 px-4 rounded disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
-    on:click={SignIn}
+    onclick={SignIn}
     disabled={loading}
 >
     {loading ? "Redirecting…" : label}

@@ -1,34 +1,24 @@
 <script lang="ts">
-    import { onMount } from "svelte";
     import { fade } from "svelte/transition";
     import Icon from "./Icon.svelte";
     import UserMenu from "./UserMenu.svelte";
     import type { BentoBetterAuthUser } from "../../library/auth.ts";
 
-    export let navigationRoutes: { name: string; route: string }[];
-    export let currentPath: string;
-    export let user: BentoBetterAuthUser | null = null;
+    const {
+        navigationRoutes,
+        currentPath,
+        user = null,
+    } = $props<{
+        navigationRoutes: { name: string; route: string }[];
+        currentPath: string;
+        user: BentoBetterAuthUser | null;
+    }>();
 
-    let isOpen = false;
+    let isOpen = $state(false);
 
-    const ToggleMenu = () => {
-        isOpen = !isOpen;
+    const ToggleMenu = () => (isOpen = !isOpen);
 
-        // Prevent scrolling when menu is open
-        if (isOpen) {
-            document.body.style.overflow = "hidden";
-            document.body.classList.add("mobile-menu-open");
-        } else {
-            document.body.style.overflow = "";
-            document.body.classList.remove("mobile-menu-open");
-        }
-    };
-
-    const CloseMenu = () => {
-        isOpen = false;
-        document.body.style.overflow = "";
-        document.body.classList.remove("mobile-menu-open");
-    };
+    const CloseMenu = () => (isOpen = false);
 
     const IsCurrentRoute = (route: string): boolean => {
         if (!currentPath) return false;
@@ -40,20 +30,23 @@
     // Handle clicks on the overlay background
     const HandleOverlayClick = (event: MouseEvent) => {
         // Check if the click is directly on the overlay (not its children)
-        if (event.target === event.currentTarget) {
-            CloseMenu();
-        }
+        if (event.target === event.currentTarget) CloseMenu();
     };
 
     // Handle keyboard events for the overlay
     const HandleKeydown = (event: KeyboardEvent) => {
-        if (event.key === "Escape") {
-            CloseMenu();
-        }
+        if (event.key === "Escape") CloseMenu();
     };
 
-    // Close menu when route changes
-    onMount(() => {
+    $effect(() => {
+        if (isOpen) {
+            document.body.style.overflow = "hidden";
+            document.body.classList.add("mobile-menu-open");
+        } else {
+            document.body.style.overflow = "";
+            document.body.classList.remove("mobile-menu-open");
+        }
+        // Cleanup on unmount just in case
         return () => {
             document.body.style.overflow = "";
             document.body.classList.remove("mobile-menu-open");
@@ -64,7 +57,7 @@
 <button
     aria-label={isOpen ? "Close menu" : "Open menu"}
     class="group md:hidden flex items-center justify-center w-10 h-10 rounded-lg hover:bg-yellow-400 dark:hover:bg-yellow-500 transition-colors duration-300 cursor-pointer"
-    on:click={ToggleMenu}
+    onclick={ToggleMenu}
 >
     <Icon
         name="hamburger"
@@ -76,8 +69,8 @@
     <div
         class="fixed inset-0 z-50 bg-white/20 dark:bg-zinc-900/80 backdrop-blur-lg backdrop-saturate-150"
         transition:fade={{ duration: 200 }}
-        on:click={HandleOverlayClick}
-        on:keydown={HandleKeydown}
+        onclick={HandleOverlayClick}
+        onkeydown={HandleKeydown}
         role="dialog"
         tabindex="0"
         aria-label="Mobile navigation menu"
@@ -88,7 +81,7 @@
                 <button
                     aria-label="Close menu"
                     class="group flex items-center justify-center w-10 h-10 rounded-lg hover:bg-yellow-400 dark:hover:bg-yellow-500 transition-colors duration-300 cursor-pointer"
-                    on:click={CloseMenu}
+                    onclick={CloseMenu}
                 >
                     <Icon
                         name="closeX"
@@ -101,7 +94,7 @@
             <div class="flex justify-center">
                 <a
                     href="/"
-                    on:click={CloseMenu}
+                    onclick={CloseMenu}
                     class="p-2 rounded-lg transition-colors duration-300 hover:bg-yellow-400 hover:text-black dark:hover:bg-yellow-500 dark:hover:text-black font-semibold text-black dark:text-white"
                 >
                     <span class="sr-only">Home</span>
@@ -123,7 +116,7 @@
                 <span class="sr-only">{route.name}</span>
                 <a
                     href={route.route}
-                    on:click={CloseMenu}
+                    onclick={CloseMenu}
                     class={`text-xl p-4 w-full text-left rounded-lg transition-all duration-300 
                         hover:bg-yellow-400 hover:text-black hover:scale-105 dark:hover:bg-yellow-500 dark:hover:text-black
                         ${

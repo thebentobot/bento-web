@@ -8,38 +8,43 @@
     import IconToggleButton from "./Menu/IconToggleButton.svelte";
     import type { BentoBetterAuthUser } from "../../library/auth.ts";
 
-    export let user: BentoBetterAuthUser | null = null;
+    const { user = null } = $props<{ user: BentoBetterAuthUser | null }>();
 
-    const session = svelteAuthClient.useSession();
-    $: currentUser = user ?? $session.data?.user ?? null;
+    const sessionStore = svelteAuthClient.useSession();
+    let session = $state(sessionStore);
+    const currentUser = $derived.by(() => user ?? session?.value?.data?.user ?? null);
 
-    let open = false;
-    let menuElement: HTMLDivElement | null = null;
-    let buttonElement: HTMLButtonElement | null = null;
+    let open = $state(false);
+    let menuElement: HTMLDivElement | null = $state(null);
+    let buttonElement: HTMLButtonElement | null = $state(null);
 
     const Toggle = () => (open = !open);
     const Close = () => (open = false);
 
-    const onKeydown = (e: KeyboardEvent) => {
-        if (e.key === "Escape") Close();
-    };
-
-    const onClickOutside = (e: MouseEvent) => {
+    // Attach Escape + click-outside listeners only while open
+    $effect(() => {
         if (!open) return;
-        const target = e.target as Node;
-        if (
-            menuElement &&
-            !menuElement.contains(target) &&
-            buttonElement &&
-            !buttonElement.contains(target)
-        ) {
-            Close();
-        }
-    };
 
-    onMount(() => {
+        const onKeydown = (e: KeyboardEvent) => {
+            if (e.key === "Escape") Close();
+        };
+        const onClickOutside = (e: MouseEvent) => {
+            if (!open) return;
+            const target = e.target as Node;
+            if (
+                menuElement &&
+                !menuElement.contains(target) &&
+                buttonElement &&
+                !buttonElement.contains(target)
+            ) {
+                Close();
+            }
+        };
+
+        // capture phase for reliable outside detection
         window.addEventListener("keydown", onKeydown);
         window.addEventListener("click", onClickOutside, true);
+
         return () => {
             window.removeEventListener("keydown", onKeydown);
             window.removeEventListener("click", onClickOutside, true);
@@ -47,7 +52,7 @@
     });
 
     // Theme handling
-    let currentMode: "light" | "dark" | "system" = userPrefersMode.current;
+    let currentMode: "light" | "dark" | "system" = $state(userPrefersMode.current);
     function UpdateCurrentMode() {
         currentMode = userPrefersMode.current;
     }
@@ -68,10 +73,9 @@
     };
     const LogOut = async () => {
         await svelteAuthClient.signOut();
-        window.location.reload();
     };
 
-    let confirmOpen = false;
+    let confirmOpen = $state(false);
 </script>
 
 <div class="relative">
@@ -80,7 +84,10 @@
         class="p-1 rounded-full hover:bg-yellow-400 dark:hover:bg-yellow-500 transition-colors duration-300 flex items-center justify-center focus:outline-none cursor-pointer"
         aria-haspopup="menu"
         aria-expanded={open}
-        on:click|stopPropagation={Toggle}
+        onclick={(e) => {
+            e.stopPropagation();
+            Toggle();
+        }}
         title={currentUser ? "Open menu" : "Open settings"}
     >
         {#if currentUser?.image}
@@ -128,8 +135,8 @@
                 <MenuItem
                     icon="edit"
                     label="Edit Bento profile"
-                    disabled={true}
-                    title="Coming Soon™️"
+                    title="Customise your Bento profile with colours and bio etc."
+                    href="/profile/edit"
                 />
                 <MenuItem icon="users" label="Servers" disabled={true} title="Coming Soon™️" />
                 <MenuItem
@@ -141,7 +148,7 @@
                 <button
                     role="menuitem"
                     class="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800 cursor-pointer"
-                    on:click={() => {
+                    onclick={() => {
                         confirmOpen = true;
                         Close();
                     }}
@@ -153,7 +160,7 @@
                 <button
                     role="menuitem"
                     class="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800 cursor-pointer"
-                    on:click={Login}
+                    onclick={Login}
                 >
                     <Icon name="login" className="h-5 w-5" />
                     <span class="text-sm font-medium">Sign in with Discord</span>
@@ -174,21 +181,21 @@
                     title="Light mode"
                     ariaLabel="Light mode"
                     active={currentMode === "light"}
-                    on:click={() => setTheme("light")}
+                    onclick={() => setTheme("light")}
                 />
                 <IconToggleButton
                     name="moon"
                     title="Dark mode"
                     ariaLabel="Dark mode"
                     active={currentMode === "dark"}
-                    on:click={() => setTheme("dark")}
+                    onclick={() => setTheme("dark")}
                 />
                 <IconToggleButton
                     name="system"
                     title="System mode"
                     ariaLabel="System mode"
                     active={currentMode === "system"}
-                    on:click={() => setTheme("system")}
+                    onclick={() => setTheme("system")}
                 />
             </div>
         </div>

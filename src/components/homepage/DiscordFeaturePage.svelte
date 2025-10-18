@@ -2,7 +2,6 @@
     import "@skyra/discord-components-core";
     import { classNames } from "../../library/utils.ts";
     import DiscordMessagesModeAdjusted from "./DiscordMessagesModeAdjusted.svelte";
-    import { onMount } from "svelte";
 
     const discordMessages = "block custom-textSize-messages";
     const discordMessage =
@@ -10,14 +9,18 @@
     const discordCommand =
         "ml-14 mb-1 items-center relative flex pt-[2px] whitespace-pre custom-lineHeight-command";
 
-    let isMobile = false;
+    let isMobile = $state(false);
 
-    const checkMobile = () => (isMobile = window.innerWidth <= 640); // 40rem = 640px
+    $effect(() => {
+        if (typeof window === "undefined") return; // SSR guard
 
-    onMount(() => {
-        checkMobile();
-        window.addEventListener("resize", checkMobile);
-        return () => window.removeEventListener("resize", checkMobile);
+        // 40rem = 640px
+        const mq = window.matchMedia("(max-width: 40rem)");
+        const update = () => (isMobile = mq.matches);
+
+        update();
+        mq.addEventListener("change", update);
+        return () => mq.removeEventListener("change", update);
     });
 </script>
 
@@ -27,7 +30,7 @@
             <discord-command
                 author={isMobile ? "Fiji" : "Fiji Spring Water"}
                 avatar="/fiji_discord.webp"
-                roleColor="#e11d48"
+                role-color="#e11d48"
                 class={discordCommand}
                 slot="reply"
                 command="profile"
@@ -65,9 +68,9 @@
                 <discord-embed
                     slot="embeds"
                     color="#e4141e"
-                    authorName="Lewis"
-                    authorImage="/lewis_discord.webp"
-                    authorUrl="https://www.last.fm/user/LewLu"
+                    author-name="Lewis"
+                    author-image="/lewis_discord.webp"
+                    author-url="https://www.last.fm/user/LewLu"
                     thumbnail="/brat_fm.webp"
                 >
                     <discord-embed-description slot="description">
@@ -92,7 +95,7 @@
                     </discord-embed-description>
                     <discord-embed-footer
                         slot="footer"
-                        footerImage="/lastfm_avatar_twitter.52a5d69a85ac.webp"
+                        footer-image="/lastfm_avatar_twitter.52a5d69a85ac.webp"
                     >
                         Total Tracks: 211430 | Powered by last.fm
                     </discord-embed-footer>

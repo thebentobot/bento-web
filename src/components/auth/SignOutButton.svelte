@@ -3,9 +3,9 @@
     import { svelteAuthClient } from "../../library/auth-client";
     import SignOutConfirmModal from "./SignOutConfirmModal.svelte";
 
-    export let size: "sm" | "md" = "sm";
-    let loading = false;
-    let confirmOpen = false;
+    const { size = "sm" } = $props<{ size?: "sm" | "md" }>();
+    let loading = $state(false);
+    let confirmOpen = $state(false);
 
     const SignOut = async () => {
         if (loading) return;
@@ -31,7 +31,7 @@
     type="button"
     class="inline-flex items-center gap-2 px-3 bg-white dark:bg-black py-1.5 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800 text-sm font-medium cursor-pointer border border-zinc-200 dark:border-zinc-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
     aria-label="Sign out"
-    on:click={() => (confirmOpen = true)}
+    onclick={() => (confirmOpen = true)}
     disabled={loading}
 >
     <Icon name="logout" className={size === "sm" ? "h-5 w-5" : "h-6 w-6"} />
