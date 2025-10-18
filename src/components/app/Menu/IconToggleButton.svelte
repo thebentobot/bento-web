@@ -9,7 +9,7 @@
         title = "",
         ariaLabel = title,
         children,
-        onclick
+        onclick,
     } = $props<{
         name: IconName;
         active?: boolean;
@@ -25,7 +25,7 @@
     {title}
     aria-label={ariaLabel}
     role="menuitem"
-    onclick={onclick}
+    {onclick}
     type="button"
 >
     <Icon {name} className="h-4 w-4" />

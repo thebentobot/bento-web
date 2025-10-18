@@ -167,7 +167,9 @@ export async function saveUserProfile(profile: ProfilePatch): Promise<void> {
         });
         if (!res.ok) {
             const text = await res.text();
-            throw new Error(`Save failed: ${res.status} ${res.statusText}${text ? ` - ${text}` : ""}`);
+            throw new Error(
+                `Save failed: ${res.status} ${res.statusText}${text ? ` - ${text}` : ""}`
+            );
         }
         return;
     }

@@ -1,8 +1,10 @@
 <script lang="ts">
     import { svelteAuthClient } from "../../library/auth-client";
 
-    const { label = "Sign in with Discord", redirectTo = null } =
-        $props<{ label?: string; redirectTo?: string | null }>();
+    const { label = "Sign in with Discord", redirectTo = null } = $props<{
+        label?: string;
+        redirectTo?: string | null;
+    }>();
     let loading = $state(false);
 
     const SignIn = async () => {

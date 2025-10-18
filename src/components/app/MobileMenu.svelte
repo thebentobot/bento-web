@@ -7,18 +7,18 @@
     const {
         navigationRoutes,
         currentPath,
-        user = null
+        user = null,
     } = $props<{
         navigationRoutes: { name: string; route: string }[];
         currentPath: string;
-        user: BentoBetterAuthUser | null
+        user: BentoBetterAuthUser | null;
     }>();
 
     let isOpen = $state(false);
 
-    const ToggleMenu = () => isOpen = !isOpen;
+    const ToggleMenu = () => (isOpen = !isOpen);
 
-    const CloseMenu = () => isOpen = false;
+    const CloseMenu = () => (isOpen = false);
 
     const IsCurrentRoute = (route: string): boolean => {
         if (!currentPath) return false;

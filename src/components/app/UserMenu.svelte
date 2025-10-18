@@ -84,7 +84,10 @@
         class="p-1 rounded-full hover:bg-yellow-400 dark:hover:bg-yellow-500 transition-colors duration-300 flex items-center justify-center focus:outline-none cursor-pointer"
         aria-haspopup="menu"
         aria-expanded={open}
-        onclick={((e) => { e.stopPropagation(); Toggle();})}
+        onclick={(e) => {
+            e.stopPropagation();
+            Toggle();
+        }}
         title={currentUser ? "Open menu" : "Open settings"}
     >
         {#if currentUser?.image}

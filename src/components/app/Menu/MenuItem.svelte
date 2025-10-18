@@ -8,14 +8,14 @@
         href = undefined,
         disabled = false,
         title = undefined,
-        role = "menuitem"
+        role = "menuitem",
     } = $props<{
         icon: IconName;
         label: string;
         href?: string;
         disabled?: boolean;
         title?: string;
-        role?: string
+        role?: string;
     }>();
 </script>
 
