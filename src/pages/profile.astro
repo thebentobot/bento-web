@@ -51,7 +51,7 @@ const initials = (() => {
                             class={`h-24 sm:h-32 w-full ${bannerColor ? "" : "bg-gradient-to-r from-yellow-300 to-yellow-400"}`}
                             style={headerStyle}
                         />
-                        <div class="px-6 sm:px-8 mt-4 flex items-end gap-4">
+                        <div class="px-6 sm:px-8 mt-4 flex flex-col sm:flex-row items-start sm:items-end gap-3 sm:gap-4">
                             {user?.image ? (
                                 <img
                                     src={user.image}
@@ -69,10 +69,10 @@ const initials = (() => {
                                     </span>
                                 </div>
                             )}
-                            <div class="pb-2 min-w-0">
+                            <div class="pb-2 min-w-0 -ml-1 sm:ml-0">
                                 <h2
                                     title="Discord Username"
-                                    class="text-2xl font-bold leading-tight truncate"
+                                    class="text-2xl font-bold leading-tight sm:truncate"
                                 >
                                     {discordTag}
                                 </h2>
@@ -80,13 +80,13 @@ const initials = (() => {
                                     user.discordGlobalName !== user.discordUsername && (
                                         <p
                                             title="Discord Display Name"
-                                            class="text-sm text-zinc-600 dark:text-zinc-400 truncate"
+                                            class="text-sm text-zinc-600 dark:text-zinc-400 sm:truncate"
                                         >
                                             Also known as <strong>{user.discordGlobalName}</strong>
                                         </p>
                                     )}
                             </div>
-                            <div class="ml-auto pb-2">
+                            <div class="-ml-1 sm:ml-auto mt-2 sm:mt-0 pb-2">
                                 <SignOutButton client:idle />
                             </div>
                         </div>
