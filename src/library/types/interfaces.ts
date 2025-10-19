@@ -86,4 +86,6 @@ export interface ProfileDto {
     XpBar2Colour: string | null;
 }
 
-export type ProfilePatch = Partial<ProfileDto> & { UserId: string };
+type PartialWithUndefined<T> = { [K in keyof T]?: T[K] | undefined };
+
+export type ProfilePatch = PartialWithUndefined<ProfileDto> & { UserId: string };
