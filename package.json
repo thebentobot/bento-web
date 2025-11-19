@@ -26,7 +26,7 @@
         "db:setup:local": "npm run db:generate && npm run db:migrate:local"
     },
     "devDependencies": {
-        "@astrojs/cloudflare": "^12.6.10",
+        "@astrojs/cloudflare": "^12.6.11",
         "@astrojs/sitemap": "^3.5.1",
         "@astrojs/svelte": "^7.2.2",
         "@eslint/compat": "^2.0.0",
