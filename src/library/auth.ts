@@ -15,6 +15,7 @@ export interface BentoBetterAuthUser extends User {
 export type AuthEnv = {
     BETTER_AUTH_URL?: string;
     BETTER_AUTH_TRUSTED_ORIGINS?: string;
+    BETTER_AUTH_SECRET?: string;
     DISCORD_CLIENT_ID?: string;
     DISCORD_CLIENT_SECRET?: string;
 };
@@ -76,6 +77,10 @@ export const createAuth = (d1: D1Database, request?: Request, env?: AuthEnv) => 
     const discordConfigured = Boolean(DISCORD_CLIENT_ID && DISCORD_CLIENT_SECRET);
 
     return betterAuth({
+        secret:
+            (typeof import.meta !== "undefined"
+                ? import.meta.env?.BETTER_AUTH_SECRET
+                : undefined) ?? env?.BETTER_AUTH_SECRET,
         baseURL: baseURL!,
         trustedOrigins,
         database: drizzleAdapter(getDb(d1), {
