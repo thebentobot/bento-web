@@ -36,8 +36,8 @@
                 ? "btn-secondary w-full md:w-auto text-sm md:text-base"
                 : "btn-secondary"}
             onclick={() => onReset?.()}
-            disabled={!hasChanges}
-        >{resetLabel}</button>
+            disabled={!hasChanges}>{resetLabel}</button
+        >
     {/if}
 </div>
 

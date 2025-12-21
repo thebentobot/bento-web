@@ -162,7 +162,9 @@ function buildProfilePayload(profile: ProfilePatch | ProfileDto): string {
 export async function saveUserProfile(profile: ProfilePatch): Promise<void> {
     // Must be called server-side. Client code should use Astro Server Actions.
     if (typeof window !== "undefined") {
-        throw new Error("saveUserProfile must be called on the server. Use astro:actions from client code.");
+        throw new Error(
+            "saveUserProfile must be called on the server. Use astro:actions from client code."
+        );
     }
 
     // On the server, call upstream API directly with corrected numeric literal for UserId
