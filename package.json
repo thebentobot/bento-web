@@ -56,7 +56,7 @@
         "wrangler": "^4.51.0"
     },
     "dependencies": {
-        "@libsql/client": "^0.15.14",
+        "@libsql/client": "^0.17.0",
         "@skyra/discord-components-core": "4.0.2",
         "astro-font": "^1.1.0",
         "astro-icon": "^1.1.5",
