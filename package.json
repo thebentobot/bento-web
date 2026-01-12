@@ -34,7 +34,7 @@
         "@tailwindcss/typography": "^0.5.19",
         "@tailwindcss/vite": "^4.1.17",
         "@types/luxon": "^3.7.1",
-        "@types/node": "^25.0.3",
+        "@types/node": "^25.0.6",
         "@typescript-eslint/eslint-plugin": "^8.44.1",
         "@typescript-eslint/parser": "^8.51.0",
         "astro": "^5.16.7",
