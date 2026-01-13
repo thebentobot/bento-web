@@ -37,7 +37,7 @@
         "@types/node": "^25.0.6",
         "@typescript-eslint/eslint-plugin": "^8.44.1",
         "@typescript-eslint/parser": "^8.51.0",
-        "astro": "^5.16.8",
+        "astro": "^5.16.9",
         "drizzle-kit": "^0.31.7",
         "eslint": "^9.39.1",
         "eslint-config-prettier": "^10.1.8",
