@@ -48,7 +48,7 @@
             Patreon Tier
         </div>
         <ul class="block flex-wrap mx-auto text-center w-full">
-            <div class="mx-auto inline-block p-1 w-full sm:w-auto">
+            <li class="mx-auto inline-block p-1 w-full sm:w-auto">
                 <div
                     class="transition duration-300 ease-in-out dark:bg-zinc-900 bg-zinc-100 flex flex-wrap items-center w-full sm:w-96 my-4 px-4 rounded-lg shadow-xs overflow-hidden animate-pulse"
                 >
@@ -60,7 +60,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </li>
         </ul>
     </div>
 {:else if error}
@@ -85,7 +85,7 @@
         </p>
     </div>
 {:else}
-    {#each categories as category}
+    {#each categories as category (category.label)}
         {#if category.data.length > 0}
             <div class="max-w-(--breakpoint-2xl) mx-auto px-3 pt-2">
                 <h2
@@ -96,10 +96,10 @@
                         : `Bento ${category.label}`}
                 </h2>
                 <ul class="block flex-wrap mx-auto text-center w-full">
-                    {#each category.data as patreonUser}
-                        <div class="mx-auto inline-block p-1 w-full sm:w-auto">
+                    {#each category.data as patreonUser (patreonUser.userId)}
+                        <li class="mx-auto inline-block p-1 w-full sm:w-auto">
                             <PatreonUser user={patreonUser} />
-                        </div>
+                        </li>
                     {/each}
                 </ul>
             </div>
