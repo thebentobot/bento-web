@@ -88,13 +88,13 @@
     {#each categories as category}
         {#if category.data.length > 0}
             <div class="max-w-(--breakpoint-2xl) mx-auto px-3 pt-2">
-                <div
-                    class="text-xs uppercase tracking-wide text-zinc-500 dark:text-zinc-400 text-center mb-4"
+                <h2
+                    class="mt-2 text-2xl leading-7 font-semibold text-yellow-400 dark:text-yellow-300 text-center"
                 >
                     {category.data.length > 1
                         ? `Bento ${category.label}s`
                         : `Bento ${category.label}`}
-                </div>
+                </h2>
                 <ul class="block flex-wrap mx-auto text-center w-full">
                     {#each category.data as patreonUser}
                         <div class="mx-auto inline-block p-1 w-full sm:w-auto">
