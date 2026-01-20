@@ -12,7 +12,7 @@
         loading = true;
         try {
             await svelteAuthClient.signOut();
-            window.location.reload();
+            window.location.href = "/";
         } catch (e) {
             console.error("Sign out failed", e);
             try {

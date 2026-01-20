@@ -72,6 +72,7 @@
     };
     const LogOut = async () => {
         await svelteAuthClient.signOut();
+        window.location.href = "/";
     };
 
     let confirmOpen = $state(false);
