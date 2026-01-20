@@ -3,20 +3,7 @@ import AppLayout from "../layouts/app/AppLayout.astro";
 import Header from "../layouts/Header.astro";
 import SectionWrapper from "../layouts/SectionWrapper.astro";
 import Paragraph from "../layouts/Paragraph.astro";
-import Patreon from "../components/patreon/Patreon.astro";
-import PatreonSkeleton from "../components/patreon/PatreonSkeleton.astro";
-
-Astro.response.headers.set(
-    "Cache-Control",
-    // cache for 1 hour
-    "public, max-age=3600"
-);
-
-Astro.response.headers.set(
-    "CDN-Cache-Control",
-    // cache for 1 hour
-    "public, max-age=3600"
-);
+import Patreon from "../components/patreon/Patreon.svelte";
 ---
 
 <AppLayout
@@ -27,9 +14,7 @@ Astro.response.headers.set(
         <Header>
             Who supports <span class="text-yellow-400">Bento</span>?
         </Header>
-        <Patreon server:defer>
-            <PatreonSkeleton slot="fallback" />
-        </Patreon>
+        <Patreon client:load />
     </SectionWrapper>
     <SectionWrapper border>
         <Header>

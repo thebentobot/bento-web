@@ -1,21 +1,13 @@
 ---
 import SectionWrapper from "../layouts/SectionWrapper.astro";
 import AppLayout from "../layouts/app/AppLayout.astro";
-import Stats from "../components/homepage/Stats.astro";
-import StatsSkeleton from "../components/homepage/StatsSkeleton.astro";
+import Stats from "../components/homepage/Stats.svelte";
 import Waves from "../components/homepage/Waves.astro";
 import FeatureImagePreview, {
     type FeatureImagePreviewProps,
     type Feature,
 } from "../components/homepage/FeatureImagePreview.astro";
 
-Astro.response.headers.set("Cache-Control", "public, max-age=3600");
-
-Astro.response.headers.set(
-    "CDN-Cache-Control",
-    // cache for 1 hour
-    "public, max-age=3600"
-);
 
 const features: Feature[] = [
     {
@@ -149,9 +141,7 @@ const featurePreview: FeatureImagePreviewProps = {
                 </div>
             </SectionWrapper>
             <SectionWrapper>
-                <Stats server:defer>
-                    <StatsSkeleton slot="fallback" />
-                </Stats>
+                <Stats client:load />
             </SectionWrapper>
             <Waves />
         </div>

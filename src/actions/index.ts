@@ -1,7 +1,13 @@
 import { defineAction, ActionError } from "astro:actions";
 import { z } from "astro:schema";
 import type { ProfilePatch } from "../library/types/interfaces";
-import { saveUserProfile as saveUserProfileServer } from "../library/server/bentoApi";
+import {
+    saveUserProfile as saveUserProfileServer,
+    fetchUsageStats,
+    fetchLeaderboardUsers,
+    fetchLeaderboardUsersForServer,
+} from "../library/server/bentoApi";
+import { getPatreonUsersWithRanks } from "../library/server/patreon";
 import type { BentoBetterAuthUser } from "../library/auth";
 
 // Build a strict Zod schema that mirrors ProfileDto, then derive a Patch schema
@@ -67,6 +73,33 @@ const ProfilePatchSchema: z.ZodType<ProfilePatch> = ProfileDtoSchema.partial().m
     z.object({ UserId: z.string().regex(/^\d+$/, "UserId must be a string of digits") })
 );
 
+// Server-side cache for data responses (1 hour TTL)
+interface CacheEntry<T> {
+    data: T;
+    expires: number;
+}
+
+const cache = {
+    stats: null as CacheEntry<Awaited<ReturnType<typeof fetchUsageStats>>> | null,
+    patreon: null as CacheEntry<Awaited<ReturnType<typeof getPatreonUsersWithRanks>>> | null,
+    leaderboard: new Map<
+        string,
+        CacheEntry<Awaited<ReturnType<typeof fetchLeaderboardUsers>>>
+    >(),
+};
+
+const CACHE_TTL = 60 * 60 * 1000; // 1 hour in milliseconds
+
+function getCached<T>(entry: CacheEntry<T> | null): T | null {
+    if (!entry) return null;
+    if (entry.expires < Date.now()) return null;
+    return entry.data;
+}
+
+function setCached<T>(data: T): CacheEntry<T> {
+    return { data, expires: Date.now() + CACHE_TTL };
+}
+
 export const server = {
     saveProfile: defineAction({
         input: ProfilePatchSchema,
@@ -97,6 +130,46 @@ export const server = {
 
             await saveUserProfileServer(input);
             return null;
+        },
+    }),
+
+    getUsageStats: defineAction({
+        handler: async () => {
+            const cached = getCached(cache.stats);
+            if (cached) return cached;
+
+            const data = await fetchUsageStats();
+            cache.stats = setCached(data);
+            return data;
+        },
+    }),
+
+    getPatreonUsers: defineAction({
+        handler: async () => {
+            const cached = getCached(cache.patreon);
+            if (cached) return cached;
+
+            const data = await getPatreonUsersWithRanks();
+            cache.patreon = setCached(data);
+            return data;
+        },
+    }),
+
+    getLeaderboard: defineAction({
+        input: z.object({
+            serverId: z.string().optional(),
+        }),
+        handler: async (input) => {
+            const cacheKey = input.serverId || "global";
+            const cached = getCached(cache.leaderboard.get(cacheKey) || null);
+            if (cached) return cached;
+
+            const data = input.serverId
+                ? await fetchLeaderboardUsersForServer(input.serverId)
+                : await fetchLeaderboardUsers();
+
+            cache.leaderboard.set(cacheKey, setCached(data));
+            return data;
         },
     }),
 };
