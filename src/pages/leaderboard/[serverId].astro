@@ -14,7 +14,7 @@ const { serverId } = Astro.params;
     <SectionWrapper>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="lg:text-center text-center overflow-hidden">
-                <Leaderboard {...(serverId ? { serverId } : {})} client:load />
+                <Leaderboard {serverId} client:load />
             </div>
         </div>
     </SectionWrapper>

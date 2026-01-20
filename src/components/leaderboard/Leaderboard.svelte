@@ -4,7 +4,7 @@
     import type { LeaderboardResponseDto } from "../../library/types/interfaces";
     import LeaderboardUser from "./LeaderboardUser.svelte";
 
-    const { serverId } = $props<{ serverId?: string }>();
+    const { serverId } = $props<{ serverId: string | undefined }>();
 
     let rankings = $state<LeaderboardResponseDto | null>(null);
     let loading = $state(true);
@@ -30,7 +30,7 @@
     <div class="max-w-(--breakpoint-2xl) mx-auto px-3 pt-2">
         <div class="h-8 bg-zinc-300 dark:bg-zinc-700 rounded w-64 mx-auto mb-8 animate-pulse"></div>
         <ul class="relative">
-            {#each [1, 2, 3] as _}
+            {#each [1, 2, 3] as _, i (i)}
                 <li
                     class="transition duration-300 ease-in-out dark:bg-zinc-900 bg-zinc-100 flex items-center w-full my-4 p-2 px-4 rounded-lg shadow-xs overflow-hidden animate-pulse"
                 >
@@ -116,7 +116,7 @@
     {/if}
     <div class="max-w-(--breakpoint-2xl) mx-auto px-3 pt-2">
         <ul class="relative">
-            {#each rankings.users || [] as discordUser}
+            {#each rankings.users || [] as discordUser (discordUser.userId)}
                 <div class="shadow-lg">
                     <LeaderboardUser {...discordUser} />
                 </div>
