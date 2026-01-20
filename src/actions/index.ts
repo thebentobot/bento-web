@@ -88,7 +88,7 @@ const cache = {
     >(),
 };
 
-const CACHE_TTL = 3600000; // 1 hour in milliseconds
+const CACHE_TTL = 60 * 60 * 1000; // 1 hour in milliseconds
 
 function getCached<T>(entry: CacheEntry<T> | null): T | null {
     if (!entry) return null;
