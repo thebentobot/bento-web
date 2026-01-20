@@ -72,6 +72,8 @@
     };
     const LogOut = async () => {
         await svelteAuthClient.signOut();
+        // Redirect to home page after successful sign-out
+        window.location.href = "/";
     };
 
     let confirmOpen = $state(false);
