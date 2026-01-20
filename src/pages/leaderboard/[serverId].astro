@@ -1,22 +1,10 @@
 ---
-import Leaderboard from "../../components/leaderboard/Leaderboard.astro";
+import Leaderboard from "../../components/leaderboard/Leaderboard.svelte";
 import AppLayout from "../../layouts/app/AppLayout.astro";
-import LeaderboardSkeleton from "../../components/leaderboard/LeaderboardSkeleton.astro";
 import SectionWrapper from "../../layouts/SectionWrapper.astro";
 
 const { serverId } = Astro.params;
 
-Astro.response.headers.set(
-    "Cache-Control",
-    // cache for 1 hour
-    "public, max-age=3600"
-);
-
-Astro.response.headers.set(
-    "CDN-Cache-Control",
-    // cache for 1 hour
-    "public, max-age=3600"
-);
 ---
 
 <AppLayout
@@ -26,9 +14,7 @@ Astro.response.headers.set(
     <SectionWrapper>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="lg:text-center text-center overflow-hidden">
-                <Leaderboard serverId={serverId} server:defer>
-                    <LeaderboardSkeleton slot="fallback" serverId={serverId} />
-                </Leaderboard>
+                <Leaderboard {...(serverId ? { serverId } : {})} client:load />
             </div>
         </div>
     </SectionWrapper>

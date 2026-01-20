@@ -11,7 +11,7 @@
     const { user = null } = $props<{ user: BentoBetterAuthUser | null }>();
 
     const sessionStore = svelteAuthClient.useSession();
-    const currentUser = $derived.by(() => user ?? sessionStore?.value?.data?.user ?? null);
+    const currentUser = $derived.by(() => sessionStore?.value?.data?.user ?? user ?? null);
 
     let open = $state(false);
     let menuElement: HTMLDivElement | null = $state(null);
