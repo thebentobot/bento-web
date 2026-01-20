@@ -12,19 +12,15 @@
         loading = true;
         try {
             await svelteAuthClient.signOut();
-            // Redirect to home page after successful sign-out
-            window.location.href = "/";
         } catch (e) {
             console.error("Sign out failed", e);
-            try {
-                window.location.href = "/";
-            } catch (err) {
-                console.debug("Fallback navigation to / failed", err);
-            }
-        } finally {
             loading = false;
             confirmOpen = false;
+            return;
         }
+
+        // Redirect to home page after successful sign-out
+        window.location.href = "/";
     };
 </script>
 

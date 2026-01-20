@@ -71,7 +71,13 @@
         await svelteAuthClient.signIn.social({ provider: "discord" });
     };
     const LogOut = async () => {
-        await svelteAuthClient.signOut();
+        try {
+            await svelteAuthClient.signOut();
+        } catch (error) {
+            console.error("Failed to sign out:", error);
+            return;
+        }
+
         // Redirect to home page after successful sign-out
         window.location.href = "/";
     };
