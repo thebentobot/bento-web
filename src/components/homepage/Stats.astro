@@ -3,8 +3,8 @@ import { actions } from "astro:actions";
 import { FormatThousands } from "../../library/utils";
 
 const { data: usageStats } = await actions.getUsageStats();
-const users = FormatThousands(usageStats.userCount - 763);
-const servers = Math.max(0, usageStats.serverCount - 7);
+const users = FormatThousands(usageStats.userCount);
+const servers = Math.max(0, usageStats.serverCount + 1);
 ---
 
 <div class="mt-10 pb-1">
