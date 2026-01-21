@@ -42,11 +42,11 @@
 {#if loading}
     <!-- Skeleton loader -->
     <div class="max-w-(--breakpoint-2xl) mx-auto px-3 pt-2">
-        <div
+        <h2
             class="text-xs uppercase tracking-wide text-zinc-500 dark:text-zinc-400 text-center mb-4"
         >
             Patreon Tier
-        </div>
+        </h2>
         <ul class="block flex-wrap mx-auto text-center w-full">
             <li class="mx-auto inline-block p-1 w-full sm:w-auto">
                 <div
