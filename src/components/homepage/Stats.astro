@@ -2,7 +2,7 @@
 import { actions } from "astro:actions";
 import { FormatThousands } from "../../library/utils";
 
-const { data: usageStats } = await actions.getUsageStats();
+const { data: usageStats } = await Astro.callAction(actions.getUsageStats, {});
 const users = FormatThousands(usageStats.userCount);
 const servers = Math.max(0, usageStats.serverCount + 1);
 ---

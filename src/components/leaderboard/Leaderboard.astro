@@ -28,7 +28,7 @@ let rankings: LeaderboardResponseDto | undefined;
 let errorMessage: string | undefined;
 
 try {
-    const { data } = await actions.getLeaderboard({ serverId });
+    const { data } = await Astro.callAction(actions.getLeaderboard, { serverId });
     rankings = data;
 } catch (error) {
     console.error("Error fetching leaderboard data:", error);

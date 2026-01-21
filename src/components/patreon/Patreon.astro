@@ -2,7 +2,7 @@
 import { actions } from "astro:actions";
 import SubHeader from "../../layouts/SubHeader.astro";
 import PatreonUsers from "./PatreonUsers.astro";
-const { data: patreons } = await actions.getPatreonUsers();
+const { data: patreons } = await Astro.callAction(actions.getPatreonUsers, {});
 
 const categories = [
     { data: patreons.sponsors, label: "Sponsor" },
