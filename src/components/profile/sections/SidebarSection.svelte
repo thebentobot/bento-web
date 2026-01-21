@@ -193,13 +193,3 @@
         </label>
     </div>
 </div>
-
-<style>
-    @reference "../../../styles/global.css";
-    .input {
-        @apply px-3 py-2 rounded border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900;
-    }
-    .btn-secondary {
-        @apply px-4 py-2 rounded bg-zinc-200 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-300 dark:hover:bg-zinc-700 disabled:opacity-60 cursor-pointer transition-colors;
-    }
-</style>

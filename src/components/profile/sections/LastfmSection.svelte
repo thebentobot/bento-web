@@ -28,7 +28,3 @@
         bind:opacity={fmArtistTextOpacity}
     />
 </div>
-
-<style>
-    @reference "../../../styles/global.css";
-</style>

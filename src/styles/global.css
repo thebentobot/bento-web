@@ -77,3 +77,39 @@
 }
 
 /* Background styles are now inline in the index.astro file */
+
+/* Common utility classes for forms and buttons */
+@layer components {
+	.input {
+		@apply px-3 py-2 rounded border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900;
+	}
+
+	.btn {
+		@apply px-4 py-2 rounded bg-yellow-500 text-black hover:bg-yellow-600 disabled:opacity-60 cursor-pointer transition-colors;
+	}
+
+	.btn-secondary {
+		@apply px-4 py-2 rounded bg-zinc-200 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 hover:bg-zinc-300 dark:hover:bg-zinc-700 disabled:opacity-60 cursor-pointer transition-colors;
+	}
+
+	/* Click-to-edit affordance for profile editor */
+	.editable {
+		transition:
+			filter 120ms ease,
+			outline-offset 120ms ease;
+	}
+	.editable:hover {
+		filter: brightness(1.08) saturate(1.15) contrast(1.05);
+		outline: 2px dashed rgba(255, 255, 255, 0.75);
+		outline-offset: -2px;
+	}
+	.editable:focus-visible {
+		outline: 2px dashed rgba(255, 255, 255, 0.75);
+		outline-offset: -2px;
+		filter: brightness(1.08) saturate(1.15) contrast(1.05);
+	}
+	.editable-bg:hover:has(:global(.editable:hover)) {
+		filter: none;
+		box-shadow: none;
+	}
+}

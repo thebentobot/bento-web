@@ -33,10 +33,3 @@
         <ToggleSwitch label="XP Board" bind:checked={xpBoard} />
     </div>
 </div>
-
-<style>
-    @reference "../../../styles/global.css";
-    .input {
-        @apply px-3 py-2 rounded border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-900;
-    }
-</style>

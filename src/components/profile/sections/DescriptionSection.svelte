@@ -22,7 +22,3 @@
         bind:opacity={descriptionColourOpacity}
     />
 </div>
-
-<style>
-    @reference "../../../styles/global.css";
-</style>

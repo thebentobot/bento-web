@@ -80,7 +80,3 @@
         bind:opacity={xpDoneGlobalColour3Opacity}
     />
 </div>
-
-<style>
-    @reference "../../../styles/global.css";
-</style>
