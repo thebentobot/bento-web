@@ -1,8 +1,5 @@
 ---
-import {
-    fetchLeaderboardUsers,
-    fetchLeaderboardUsersForServer,
-} from "../../library/server/bentoApi";
+import { actions } from "astro:actions";
 import LeaderboardUser from "./LeaderboardUser.astro";
 import { type LeaderboardResponseDto } from "../../library/types/interfaces";
 import { Icon } from "astro-icon/components";
@@ -31,11 +28,8 @@ let rankings: LeaderboardResponseDto | undefined;
 let errorMessage: string | undefined;
 
 try {
-    if (serverId) {
-        rankings = await fetchLeaderboardUsersForServer(serverId);
-    } else {
-        rankings = await fetchLeaderboardUsers();
-    }
+    const { data } = await actions.getLeaderboard({ serverId });
+    rankings = data;
 } catch (error) {
     console.error("Error fetching leaderboard data:", error);
     errorMessage = error instanceof Error ? error.message : "An unknown error occurred";
