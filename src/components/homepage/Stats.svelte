@@ -21,8 +21,8 @@
         }
     });
 
-    const users = $derived(stats ? FormatThousands(stats.userCount - 763) : "0");
-    const servers = $derived(stats ? Math.max(0, stats.serverCount - 7) : 0);
+    const users = $derived(stats ? FormatThousands(stats.userCount) : "0");
+    const servers = $derived(stats ? stats.serverCount.toString() : "0");
 </script>
 
 {#if loading}
