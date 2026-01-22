@@ -1,8 +1,8 @@
 ---
-import { actions } from "astro:actions";
+import { fetchUsageStats } from "../../library/server/bentoApi";
 import { FormatThousands } from "../../library/utils";
 
-const { data: usageStats } = await Astro.callAction(actions.getUsageStats, {});
+const usageStats = await fetchUsageStats();
 const users = FormatThousands(usageStats.userCount);
 const servers = Math.max(0, usageStats.serverCount + 1);
 ---
