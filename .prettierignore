@@ -1,3 +1,2 @@
-**/*.js
-**/*.jsonc
-**/*.json
+*.jsonc
+worker-configuration.d.ts

@@ -24,7 +24,36 @@
             "database_id": "ea4bb36c-7a3d-41a4-8d46-e2bb7ede1a06",
             "migrations_dir": "drizzle"
         }
-    ]
+    ],
+
+    /**
+     * Environments
+     * https://developers.cloudflare.com/workers/wrangler/environments/
+     */
+    "env": {
+        "staging": {
+            "name": "bento-web-staging",
+            "d1_databases": [
+                {
+                    "binding": "DB",
+                    "database_name": "bento-web-db-staging",
+                    "database_id": "12a557e1-74bc-4429-b5d3-25a25b0df70a",
+                    "migrations_dir": "drizzle"
+                }
+            ]
+        },
+        "production": {
+            "name": "bento-web",
+            "d1_databases": [
+                {
+                    "binding": "DB",
+                    "database_name": "bento-web-db",
+                    "database_id": "ea4bb36c-7a3d-41a4-8d46-e2bb7ede1a06",
+                    "migrations_dir": "drizzle"
+                }
+            ]
+        }
+    }
     /**
      * Smart Placement
      * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement

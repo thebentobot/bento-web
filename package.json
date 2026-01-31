@@ -23,12 +23,15 @@
         "db:setup": "npm run db:generate && npm run db:migrate",
         "db:migrate:local": "wrangler d1 migrations apply bento-web-db --local",
         "db:execute:local": "wrangler d1 execute bento-web-db --local",
-        "db:setup:local": "npm run db:generate && npm run db:migrate:local"
+        "db:setup:local": "npm run db:generate && npm run db:migrate:local",
+        "prepare": "husky"
     },
     "devDependencies": {
         "@astrojs/cloudflare": "^12.6.12",
         "@astrojs/sitemap": "^3.7.0",
         "@astrojs/svelte": "^7.2.5",
+        "@commitlint/cli": "^20.4.0",
+        "@commitlint/config-conventional": "^20.4.0",
         "@eslint/compat": "^2.0.1",
         "@eslint/js": "^9.39.0",
         "@tailwindcss/typography": "^0.5.19",
@@ -45,6 +48,8 @@
         "eslint-plugin-jsx-a11y": "^6.10.2",
         "eslint-plugin-svelte": "^3.14.0",
         "globals": "^17.2.0",
+        "husky": "^9.1.7",
+        "lint-staged": "^16.2.7",
         "prettier": "^3.8.1",
         "prettier-plugin-astro": "^0.14.1",
         "prettier-plugin-svelte": "^3.4.0",
@@ -66,5 +71,29 @@
         "drizzle-orm": "^0.41.0",
         "luxon": "^3.5.0",
         "mode-watcher": "^1.1.0"
+    },
+    "lint-staged": {
+        "*.{ts,tsx}": [
+            "eslint --fix",
+            "prettier --write"
+        ],
+        "*.astro": [
+            "eslint --fix",
+            "prettier --write --parser astro"
+        ],
+        "*.svelte": [
+            "eslint --fix",
+            "prettier --write --parser svelte"
+        ],
+        "*.{js,cjs,mjs}": [
+            "eslint --fix",
+            "prettier --write"
+        ],
+        "*.{json,md,yml,yaml}": [
+            "prettier --write"
+        ],
+        "*.css": [
+            "prettier --write"
+        ]
     }
 }
