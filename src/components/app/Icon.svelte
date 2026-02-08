@@ -1,7 +1,12 @@
 <script lang="ts">
     import { icons, type IconName } from "./icons";
 
-    const { name, className = "" } = $props<{ name: IconName; className?: string }>();
+    interface Props {
+        name: IconName;
+        className?: string;
+    }
+
+    const { name, className = "" }: Props = $props();
 </script>
 
 <!-- Because it is local svgs, it should be safe to use {@html} -->
