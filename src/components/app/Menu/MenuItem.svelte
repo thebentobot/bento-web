@@ -2,6 +2,15 @@
     import Icon from "../Icon.svelte";
     import type { IconName } from "../icons";
 
+    interface Props {
+        icon: IconName;
+        label: string;
+        href?: string;
+        disabled?: boolean;
+        title?: string;
+        role?: string;
+    }
+
     const {
         icon,
         label,
@@ -9,14 +18,7 @@
         disabled = false,
         title = undefined,
         role = "menuitem",
-    } = $props<{
-        icon: IconName;
-        label: string;
-        href?: string;
-        disabled?: boolean;
-        title?: string;
-        role?: string;
-    }>();
+    }: Props = $props();
 </script>
 
 {#if href && !disabled}
@@ -26,7 +28,7 @@
         class="flex items-center gap-2 px-3 py-2 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800 cursor-pointer"
         {title}
     >
-        <Icon name={icon} className="h-5 w-5" />
+        <Icon name={icon} class="h-5 w-5" />
         <span class="text-sm font-medium">{label}</span>
     </a>
 {:else}
@@ -36,7 +38,7 @@
         aria-disabled={disabled}
         {title}
     >
-        <Icon name={icon} className={disabled ? "h-4 w-4" : "h-5 w-5"} />
+        <Icon name={icon} class={disabled ? "h-4 w-4" : "h-5 w-5"} />
         <span class={disabled ? "" : "text-sm font-medium"}>{label}</span>
     </div>
 {/if}

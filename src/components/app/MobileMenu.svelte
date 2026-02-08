@@ -4,15 +4,13 @@
     import UserMenu from "./UserMenu.svelte";
     import type { BentoBetterAuthUser } from "../../library/auth.ts";
 
-    const {
-        navigationRoutes,
-        currentPath,
-        user = null,
-    } = $props<{
+    interface Props {
         navigationRoutes: { name: string; route: string }[];
         currentPath: string;
         user: BentoBetterAuthUser | null;
-    }>();
+    }
+
+    const { navigationRoutes, currentPath, user = null }: Props = $props();
 
     let isOpen = $state(false);
 
@@ -61,7 +59,7 @@
 >
     <Icon
         name="hamburger"
-        className="h-6 w-6 text-zinc-800 dark:text-zinc-200 group-hover:dark:text-zinc-800"
+        class="h-6 w-6 text-zinc-800 dark:text-zinc-200 group-hover:dark:text-zinc-800"
     />
 </button>
 
@@ -85,7 +83,7 @@
                 >
                     <Icon
                         name="closeX"
-                        className="h-6 w-6 text-zinc-800 dark:text-zinc-200 group-hover:dark:text-zinc-800"
+                        class="h-6 w-6 text-zinc-800 dark:text-zinc-200 group-hover:dark:text-zinc-800"
                     />
                 </button>
             </div>

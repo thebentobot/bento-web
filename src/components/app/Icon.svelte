@@ -3,10 +3,10 @@
 
     interface Props {
         name: IconName;
-        className?: string;
+        class?: string;
     }
 
-    const { name, className = "" }: Props = $props();
+    const { name, class: className = "" }: Props = $props();
 </script>
 
 <!-- Because it is local svgs, it should be safe to use {@html} -->

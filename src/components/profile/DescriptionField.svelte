@@ -1,13 +1,19 @@
 <script lang="ts">
-    import { onMount } from "svelte";
+    interface Props {
+        label?: string;
+        value?: string;
+        maxLength?: number;
+        placeholder?: string;
+    }
+
     let {
         label = "Description",
         value = $bindable(""),
         maxLength = 500,
         placeholder = "Profile bio",
-    } = $props();
+    }: Props = $props();
 
-    let textareaEl: HTMLTextAreaElement | null = null;
+    let textareaEl = $state<HTMLTextAreaElement | null>(null);
 
     function resize() {
         if (!textareaEl) return;
@@ -18,10 +24,6 @@
         const min = 3 * 20; // approximate line height 20px
         textareaEl.style.height = Math.max(next, min) + "px";
     }
-
-    onMount(() => {
-        resize();
-    });
 
     $effect(() => {
         if (typeof value === "string") resize();

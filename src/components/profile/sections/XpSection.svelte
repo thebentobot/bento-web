@@ -1,6 +1,31 @@
 <script lang="ts">
     import ColorOpacityPicker from "../ColorOpacityPicker.svelte";
 
+    interface Props {
+        xpDivBgcolour?: string;
+        xpDivBgopacity?: number;
+        xpTextColour?: string;
+        xpTextOpacity?: number;
+        xpText2Colour?: string;
+        xpText2Opacity?: number;
+        xpBarColour?: string;
+        xpBarOpacity?: number;
+        xpBar2Colour?: string;
+        xpBar2Opacity?: number;
+        xpDoneServerColour1?: string;
+        xpDoneServerColour1Opacity?: number;
+        xpDoneServerColour2?: string;
+        xpDoneServerColour2Opacity?: number;
+        xpDoneServerColour3?: string;
+        xpDoneServerColour3Opacity?: number;
+        xpDoneGlobalColour1?: string;
+        xpDoneGlobalColour1Opacity?: number;
+        xpDoneGlobalColour2?: string;
+        xpDoneGlobalColour2Opacity?: number;
+        xpDoneGlobalColour3?: string;
+        xpDoneGlobalColour3Opacity?: number;
+    }
+
     let {
         xpDivBgcolour = $bindable("#111827"),
         xpDivBgopacity = $bindable(100),
@@ -28,7 +53,7 @@
         xpDoneGlobalColour2Opacity = $bindable(100),
         xpDoneGlobalColour3 = $bindable("#EF4444"),
         xpDoneGlobalColour3Opacity = $bindable(100),
-    } = $props();
+    }: Props = $props();
 </script>
 
 <div class="grid gap-3">

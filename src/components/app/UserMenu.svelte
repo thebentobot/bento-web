@@ -8,7 +8,11 @@
     import IconToggleButton from "./Menu/IconToggleButton.svelte";
     import type { BentoBetterAuthUser } from "../../library/auth.ts";
 
-    const { user = null } = $props<{ user: BentoBetterAuthUser | null }>();
+    interface Props {
+        user: BentoBetterAuthUser | null;
+    }
+
+    const { user = null }: Props = $props();
 
     const sessionStore = svelteAuthClient.useSession();
     const currentUser = $derived.by(() => sessionStore?.value?.data?.user ?? user ?? null);
@@ -98,7 +102,7 @@
                 referrerpolicy="no-referrer"
             />
         {:else}
-            <Icon name="user" className="h-7 w-7 text-zinc-800 dark:text-zinc-200" />
+            <Icon name="user" class="h-7 w-7 text-zinc-800 dark:text-zinc-200" />
         {/if}
     </button>
 
@@ -123,7 +127,7 @@
                             referrerpolicy="no-referrer"
                         />
                     {:else}
-                        <Icon name="user" className="h-5 w-5" />
+                        <Icon name="user" class="h-5 w-5" />
                     {/if}
                     <div class="min-w-0">
                         <div class="text-sm font-semibold truncate">
@@ -153,7 +157,7 @@
                         Close();
                     }}
                 >
-                    <Icon name="logout" className="h-5 w-5" />
+                    <Icon name="logout" class="h-5 w-5" />
                     <span class="text-sm font-medium">Sign out</span>
                 </button>
             {:else}
@@ -162,7 +166,7 @@
                     class="w-full text-left flex items-center gap-2 px-3 py-2 rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800 cursor-pointer"
                     onclick={Login}
                 >
-                    <Icon name="login" className="h-5 w-5" />
+                    <Icon name="login" class="h-5 w-5" />
                     <span class="text-sm font-medium">Sign in with Discord</span>
                 </button>
             {/if}

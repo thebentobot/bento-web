@@ -14,19 +14,21 @@
     import LastfmSection from "./sections/LastfmSection.svelte";
     import XpSection from "./sections/XpSection.svelte";
 
+    interface Props {
+        userId: string;
+        username?: string;
+        discriminator?: string;
+        avatarUrl?: string;
+        initialProfile: ProfileDto | null;
+    }
+
     const {
         userId,
         username = "User",
         discriminator,
         avatarUrl,
         initialProfile = null,
-    } = $props<{
-        userId: string;
-        username?: string;
-        discriminator?: string;
-        avatarUrl?: string;
-        initialProfile: ProfileDto | null;
-    }>();
+    }: Props = $props();
 
     let loading = $state(false);
     let error = $state<string | null>(null);

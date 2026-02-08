@@ -2,6 +2,16 @@
     import ToggleSwitch from "../ToggleSwitch.svelte";
     import ColorOpacityPicker from "../ColorOpacityPicker.svelte";
 
+    interface Props {
+        backgroundUrl?: string;
+        backgroundColour?: string;
+        backgroundColourOpacity?: number;
+        overlayColour?: string;
+        overlayOpacity?: number;
+        lastfmBoard?: boolean;
+        xpBoard?: boolean;
+    }
+
     let {
         backgroundUrl = $bindable(""),
         backgroundColour = $bindable("#1F2937"),
@@ -10,7 +20,7 @@
         overlayOpacity = $bindable(20),
         lastfmBoard = $bindable(false),
         xpBoard = $bindable(false),
-    } = $props();
+    }: Props = $props();
 </script>
 
 <div class="grid gap-3">

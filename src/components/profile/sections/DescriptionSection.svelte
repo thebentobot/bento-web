@@ -2,11 +2,17 @@
     import DescriptionField from "../DescriptionField.svelte";
     import ColorOpacityPicker from "../ColorOpacityPicker.svelte";
 
+    interface Props {
+        description?: string;
+        descriptionColour?: string;
+        descriptionColourOpacity?: number;
+    }
+
     let {
         description = $bindable(""),
         descriptionColour = $bindable("#ffffff"),
         descriptionColourOpacity = $bindable(100),
-    } = $props();
+    }: Props = $props();
 </script>
 
 <div class="grid gap-3">

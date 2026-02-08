@@ -3,6 +3,15 @@
     import type { IconName } from "../icons";
     import type { Snippet } from "svelte";
 
+    interface Props {
+        name: IconName;
+        active?: boolean;
+        title?: string;
+        ariaLabel?: string;
+        children?: Snippet;
+        onclick?: (e: MouseEvent) => void;
+    }
+
     const {
         name,
         active = false,
@@ -10,14 +19,7 @@
         ariaLabel = title,
         children,
         onclick,
-    } = $props<{
-        name: IconName;
-        active?: boolean;
-        title?: string;
-        ariaLabel?: string;
-        children?: Snippet;
-        onclick?: (e: MouseEvent) => void;
-    }>();
+    }: Props = $props();
 </script>
 
 <button
@@ -28,7 +30,7 @@
     {onclick}
     type="button"
 >
-    <Icon {name} className="h-4 w-4" />
+    <Icon {name} class="h-4 w-4" />
     {#if children}
         {@render children()}
     {/if}

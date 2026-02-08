@@ -12,7 +12,7 @@
         }
     };
 
-    const { rank, level, xp, avatarUrl, username, discriminator } = $props<{
+    interface Props {
         rank: number;
         level: number;
         xp: number;
@@ -20,7 +20,9 @@
         avatarUrl: string;
         username: string;
         discriminator: string;
-    }>();
+    }
+
+    const { rank, level, xp, avatarUrl, username, discriminator }: Props = $props();
 
     const rankNumber = $derived(Number(rank));
     const topUsersStyle = $derived(rankToStyle(rankNumber));
@@ -84,9 +86,7 @@
         </div>
     </div>
 
-    <div
-        class="dark:text-white text-black p-4 h-20 flex md:w-auto items-center justify-between"
-    >
+    <div class="dark:text-white text-black p-4 h-20 flex md:w-auto items-center justify-between">
         <div>
             Level
             <br />

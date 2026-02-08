@@ -1,7 +1,13 @@
 <script lang="ts">
-    let { label = "", color = $bindable("#ffffff"), showHex = true } = $props();
+    interface Props {
+        label?: string;
+        color?: string;
+        showHex?: boolean;
+    }
 
-    let inputEl: HTMLInputElement | null = null;
+    let { label = "", color = $bindable("#ffffff"), showHex = true }: Props = $props();
+
+    let inputEl = $state<HTMLInputElement | null>(null);
 
     function openPicker() {
         inputEl?.click();

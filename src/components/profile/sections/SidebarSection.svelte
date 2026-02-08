@@ -4,6 +4,23 @@
     import ValueSlider from "../ValueSlider.svelte";
     import ColorSwatch from "../ColorSwatch.svelte";
 
+    interface Props {
+        sidebarColour?: string;
+        sidebarOpacity?: number;
+        sidebarBlur?: number;
+        usernameColour?: string;
+        discriminatorColour?: string;
+        sidebarItemServerColour?: string;
+        sidebarValueServerColour?: string;
+        sidebarItemGlobalColour?: string;
+        sidebarValueGlobalColour?: string;
+        sidebarItemBentoColour?: string;
+        sidebarValueBentoColour?: string;
+        sidebarItemTimezoneColour?: string;
+        timezone?: string;
+        birthday?: string | null;
+    }
+
     let {
         sidebarColour = $bindable("#000000"),
         sidebarOpacity = $bindable(30),
@@ -22,13 +39,13 @@
 
         timezone = $bindable(""),
         birthday = $bindable<string | null>(null),
-    } = $props();
+    }: Props = $props();
 
     // Timezone and birthday UX localized inside this section
-    let supportedTimezones: string[] = [];
+    let supportedTimezones = $state<string[]>([]);
     // Debounce timezone validation
     let tzDebounceHandle: number | undefined;
-    let debouncedTimezoneTrimmed: string = "";
+    let debouncedTimezoneTrimmed = $state("");
     function scheduleTimezoneDebounce() {
         if (typeof window === "undefined") {
             debouncedTimezoneTrimmed = timezone?.trim() ?? "";
