@@ -1,4 +1,14 @@
 <script lang="ts">
+    interface Props {
+        saving?: boolean;
+        hasChanges?: boolean;
+        onSave?: (() => void) | null;
+        onReset?: (() => void) | null;
+        saveLabel?: string;
+        resetLabel?: string;
+        responsive?: boolean;
+    }
+
     const {
         saving = false,
         hasChanges = false,
@@ -7,15 +17,7 @@
         saveLabel = "Save Changes",
         resetLabel = "Reset changes",
         responsive = false,
-    } = $props<{
-        saving?: boolean;
-        hasChanges?: boolean;
-        onSave?: (() => void) | null;
-        onReset?: (() => void) | null;
-        saveLabel?: string;
-        resetLabel?: string;
-        responsive?: boolean;
-    }>();
+    }: Props = $props();
 </script>
 
 <div

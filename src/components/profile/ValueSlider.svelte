@@ -1,13 +1,23 @@
 <script lang="ts">
+    interface Props {
+        label?: string;
+        value?: number;
+        min?: number;
+        max?: number;
+        step?: number;
+        unit?: string;
+        accentColor?: string;
+    }
+
     let {
         label = "",
         value = $bindable(0),
         min = 0,
         max = 100,
         step = 1,
-        unit = "%", // e.g., "%" or "px"
-        accentColor = "#F59E0B", // amber-500 default
-    } = $props();
+        unit = "%",
+        accentColor = "#F59E0B",
+    }: Props = $props();
 
     // Svelte two-way bind:value supported
     const clamped = $derived(Math.max(min, Math.min(max, value ?? 0)));

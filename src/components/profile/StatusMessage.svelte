@@ -1,15 +1,12 @@
 <script lang="ts">
-    const {
-        error = null,
-        saving = false,
-        loading = false,
-        savedAt = null,
-    } = $props<{
+    interface Props {
         error: string | null;
         saving?: boolean;
         loading?: boolean;
         savedAt: Date | null;
-    }>();
+    }
+
+    const { error = null, saving = false, loading = false, savedAt = null }: Props = $props();
 </script>
 
 <div class="min-h-[1.25rem] text-center">

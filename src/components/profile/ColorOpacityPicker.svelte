@@ -1,4 +1,14 @@
 <script lang="ts">
+    interface Props {
+        label?: string;
+        color?: string;
+        opacity?: number;
+        showOpacity?: boolean;
+        min?: number;
+        max?: number;
+        step?: number;
+    }
+
     let {
         label = "",
         color = $bindable("#ffffff"),
@@ -7,9 +17,9 @@
         min = 0,
         max = 100,
         step = 1,
-    } = $props();
+    }: Props = $props();
 
-    let inputEl: HTMLInputElement | null = null;
+    let inputEl = $state<HTMLInputElement | null>(null);
     function openPicker() {
         inputEl?.click();
     }

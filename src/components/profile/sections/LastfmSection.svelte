@@ -1,6 +1,15 @@
 <script lang="ts">
     import ColorOpacityPicker from "../ColorOpacityPicker.svelte";
 
+    interface Props {
+        fmDivBgcolour?: string;
+        fmDivBgopacity?: number;
+        fmSongTextColour?: string;
+        fmSongTextOpacity?: number;
+        fmArtistTextColour?: string;
+        fmArtistTextOpacity?: number;
+    }
+
     let {
         fmDivBgcolour = $bindable("#111827"),
         fmDivBgopacity = $bindable(100),
@@ -8,7 +17,7 @@
         fmSongTextOpacity = $bindable(100),
         fmArtistTextColour = $bindable("#ffffff"),
         fmArtistTextOpacity = $bindable(100),
-    } = $props();
+    }: Props = $props();
 </script>
 
 <div class="grid gap-3">

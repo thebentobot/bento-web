@@ -3,7 +3,11 @@
     import { svelteAuthClient } from "../../library/auth-client";
     import SignOutConfirmModal from "./SignOutConfirmModal.svelte";
 
-    const { size = "sm" } = $props<{ size?: "sm" | "md" }>();
+    interface Props {
+        size?: "sm" | "md";
+    }
+
+    const { size = "sm" }: Props = $props();
     let loading = $state(false);
     let confirmOpen = $state(false);
 
@@ -34,7 +38,7 @@
     onclick={() => (confirmOpen = true)}
     disabled={loading}
 >
-    <Icon name="logout" className={size === "sm" ? "h-5 w-5" : "h-6 w-6"} />
+    <Icon name="logout" class={size === "sm" ? "h-5 w-5" : "h-6 w-6"} />
     <span>{loading ? "Signing out…" : "Sign out"}</span>
 </button>
 

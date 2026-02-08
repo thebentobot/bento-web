@@ -1,10 +1,12 @@
 <script lang="ts">
     import type { Snippet } from "svelte";
-    const {
-        title = "",
-        onClose,
-        children,
-    } = $props<{ title?: string; onClose: () => void; children?: Snippet }>();
+    interface Props {
+        title?: string;
+        onClose: () => void;
+        children?: Snippet;
+    }
+
+    const { title = "", onClose, children }: Props = $props();
 
     function onKeyActivate(e: KeyboardEvent, cb: () => void) {
         if (e.key === "Enter" || e.key === " ") {

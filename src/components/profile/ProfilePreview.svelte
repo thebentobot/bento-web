@@ -4,6 +4,15 @@
 
     type Target = "background" | "description" | "sidebar" | "lastfm" | "xp";
 
+    interface Props {
+        profile: ProfileDto;
+        username?: string;
+        discriminator?: string | undefined;
+        avatarUrl?: string | undefined;
+        editorExpanded?: boolean;
+        onOpen: (t: Target) => void;
+    }
+
     const {
         profile,
         username = "User",
@@ -11,17 +20,10 @@
         avatarUrl,
         editorExpanded = false,
         onOpen,
-    } = $props<{
-        profile: ProfileDto;
-        username?: string;
-        discriminator?: string;
-        avatarUrl?: string;
-        editorExpanded?: boolean;
-        onOpen: (t: Target) => void;
-    }>();
+    }: Props = $props();
 
     // responsive scaling to fit 600x400 canvas
-    let previewWrapper: HTMLDivElement;
+    let previewWrapper = $state<HTMLDivElement | undefined>(undefined);
     let scale = $state(1);
     $effect(() => {
         if (!previewWrapper) return;

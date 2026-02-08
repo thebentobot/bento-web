@@ -1,5 +1,11 @@
 <script lang="ts">
-    let { label = "", checked = $bindable(false), disabled = false } = $props();
+    interface Props {
+        label?: string;
+        checked?: boolean;
+        disabled?: boolean;
+    }
+
+    let { label = "", checked = $bindable(false), disabled = false }: Props = $props();
 
     function onKey(e: KeyboardEvent) {
         if (disabled) return;

@@ -41,7 +41,11 @@
         },
     };
 
-    const { user } = $props<{ user: PatreonWithRank }>();
+    interface Props {
+        user: PatreonWithRank;
+    }
+
+    const { user }: Props = $props();
 
     const style = $derived(rankStyles[user.rank] || rankStyles[5]!);
 

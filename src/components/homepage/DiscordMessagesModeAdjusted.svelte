@@ -3,7 +3,12 @@
     import { mode } from "mode-watcher";
     import type { Snippet } from "svelte";
 
-    const { children, class: className = "" } = $props<{ children?: Snippet; class?: string }>();
+    interface Props {
+        children?: Snippet;
+        class?: string;
+    }
+
+    const { children, class: className = "" }: Props = $props();
 
     let lightMode = $state(mode.current === "light");
 

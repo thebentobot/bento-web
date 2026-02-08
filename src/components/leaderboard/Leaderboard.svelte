@@ -4,7 +4,11 @@
     import type { LeaderboardResponseDto } from "../../library/types/interfaces";
     import LeaderboardUser from "./LeaderboardUser.svelte";
 
-    const { serverId } = $props<{ serverId: string | undefined }>();
+    interface Props {
+        serverId: string | undefined;
+    }
+
+    const { serverId }: Props = $props();
 
     let rankings = $state<LeaderboardResponseDto | null>(null);
     let loading = $state(true);
