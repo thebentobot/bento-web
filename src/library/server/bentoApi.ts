@@ -6,11 +6,24 @@ import {
     type UsageStatsDto,
 } from "../types/interfaces";
 
-if (!import.meta.env.API_URL) {
-    throw new Error("API_URL environment variable is not set. Please configure API_URL.");
+// Cloudflare runtime env, set per-request from middleware
+let _runtimeEnv: { API_URL?: string; API_KEY?: string } | undefined;
+
+export function setRuntimeEnv(env: { API_URL?: string; API_KEY?: string }) {
+    _runtimeEnv = env;
 }
-const API_URL = import.meta.env.API_URL;
-const API_KEY = import.meta.env.API_KEY; // Only set if provided
+
+function getApiUrl(): string {
+    const url = _runtimeEnv?.API_URL ?? import.meta.env.API_URL;
+    if (!url) {
+        throw new Error("API_URL environment variable is not set. Please configure API_URL.");
+    }
+    return url;
+}
+
+function getApiKey(): string | undefined {
+    return _runtimeEnv?.API_KEY ?? import.meta.env.API_KEY;
+}
 
 /*global RequestInit*/
 /*eslint no-undef: "error"*/
@@ -20,7 +33,7 @@ interface FetchOptions extends RequestInit {
 }
 
 export async function fetchFromApi<T>(endpoint: string, options: FetchOptions = {}): Promise<T> {
-    const url = new URL(`${API_URL}${endpoint}`);
+    const url = new URL(`${getApiUrl()}${endpoint}`);
 
     if (options.params) {
         Object.entries(options.params).forEach(([key, value]) =>
@@ -33,7 +46,7 @@ export async function fetchFromApi<T>(endpoint: string, options: FetchOptions = 
         ...options,
         headers: {
             "Content-Type": "application/json",
-            ...(API_KEY ? { "X-Api-Key": API_KEY } : {}),
+            ...(getApiKey() ? { "X-Api-Key": getApiKey()! } : {}),
             ...options.headers,
         },
     });
