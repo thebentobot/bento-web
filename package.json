@@ -24,6 +24,10 @@
         "db:migrate:local": "wrangler d1 migrations apply bento-web-db --local",
         "db:execute:local": "wrangler d1 execute bento-web-db --local",
         "db:setup:local": "npm run db:generate && npm run db:migrate:local",
+        "deploy:staging": "astro build && wrangler deploy --env staging",
+        "deploy:production": "astro build && wrangler deploy --env production",
+        "db:migrate:staging": "wrangler d1 migrations apply bento-web-db-staging --remote --env staging",
+        "db:execute:staging": "wrangler d1 execute bento-web-db-staging --remote --env staging",
         "prepare": "husky"
     },
     "devDependencies": {
