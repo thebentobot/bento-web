@@ -10,7 +10,7 @@ The Bento Bot website is created with [Astro](<[https://reactjs.org/](https://as
 
 ### Dependencies
 
-- An external API with routes that provides the data as shown in the interfaces. Documentation on workarounds when contributing etc. will be added soon™️
+- An external API with routes that provides the data as shown in the interfaces. Documentation on workarounds when contributing etc. will be added very soon™️
 
 ### Installing Bento web
 
