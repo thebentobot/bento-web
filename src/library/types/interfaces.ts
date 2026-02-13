@@ -86,6 +86,20 @@ export interface ProfileDto {
     XpBar2Colour: string | null;
 }
 
+export type LeaderboardDenialReason = "not_bot_user" | "not_member";
+
+export interface AuthorizedLeaderboardResult {
+    authorized: true;
+    data: LeaderboardResponseDto;
+}
+
+export interface DeniedLeaderboardResult {
+    authorized: false;
+    reason: LeaderboardDenialReason;
+}
+
+export type LeaderboardAccessResult = AuthorizedLeaderboardResult | DeniedLeaderboardResult;
+
 type PartialWithUndefined<T> = { [K in keyof T]?: T[K] | undefined };
 
 export type ProfilePatch = PartialWithUndefined<ProfileDto> & { UserId: string };
