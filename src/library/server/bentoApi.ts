@@ -1,4 +1,6 @@
 import {
+    type LeaderboardAccessResult,
+    type LeaderboardDenialReason,
     type LeaderboardResponseDto,
     type PatreonUserDto,
     type ProfileDto,
@@ -83,6 +85,37 @@ export async function fetchLeaderboardUsersForServer(
         throw new Error("Invalid response from server");
     }
     return response;
+}
+
+export async function fetchAuthorizedLeaderboard(
+    serverId: string,
+    userId: string
+): Promise<LeaderboardAccessResult> {
+    const url = new URL(`${getApiUrl()}/Information/Leaderboard/${serverId}/${userId}`);
+
+    // eslint-disable-next-line no-undef
+    const res = await fetch(url.toString(), {
+        headers: {
+            "Content-Type": "application/json",
+            ...(getApiKey() ? { "X-Api-Key": getApiKey()! } : {}),
+        },
+    });
+
+    if (res.status === 403) {
+        const body = await res.json().catch(() => ({ reason: "not_member" }));
+        return {
+            authorized: false,
+            reason:
+                ((body as { reason?: string }).reason as LeaderboardDenialReason) ?? "not_member",
+        };
+    }
+
+    if (!res.ok) {
+        throw new Error(`API error: ${res.status} ${res.statusText}`);
+    }
+
+    const data = (await res.json()) as LeaderboardResponseDto;
+    return { authorized: true, data };
 }
 
 export async function fetchLeaderboardUsers(): Promise<LeaderboardResponseDto> {
