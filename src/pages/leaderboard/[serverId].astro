@@ -40,6 +40,7 @@ if (serverId) {
                 Astro.response.headers.set("Vary", "Cookie");
             } else {
                 denialReason = result.reason;
+                Astro.response.headers.set("Cache-Control", "no-store");
             }
         } else {
             // Not logged in: use public endpoint
@@ -54,8 +55,10 @@ if (serverId) {
                 );
             } else if (result.status === "not_public") {
                 isPrivateLeaderboard = true;
+                Astro.response.headers.set("Cache-Control", "no-store");
             } else {
                 isNotFound = true;
+                Astro.response.headers.set("Cache-Control", "no-store");
             }
         }
     } catch (error) {
