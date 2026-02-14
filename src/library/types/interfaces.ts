@@ -22,6 +22,7 @@ export interface LeaderboardUserDto {
     username: string;
     discriminator: string;
     avatarUrl: string;
+    private?: boolean;
 }
 
 export interface LeaderboardResponseDto {
@@ -85,6 +86,31 @@ export interface ProfileDto {
     XpBar2Opacity: number | null;
     XpBar2Colour: string | null;
 }
+
+export interface UserSettingsDto {
+    hideSlashCommandCalls: boolean;
+    showOnGlobalLeaderboard: boolean;
+}
+
+export type UserSettingsPatch = Partial<UserSettingsDto>;
+
+export interface GuildLeaderboardAccessible {
+    status: "accessible";
+    data: LeaderboardResponseDto;
+}
+
+export interface GuildLeaderboardNotPublic {
+    status: "not_public";
+}
+
+export interface GuildLeaderboardNotFound {
+    status: "not_found";
+}
+
+export type GuildLeaderboardAccessResult =
+    | GuildLeaderboardAccessible
+    | GuildLeaderboardNotPublic
+    | GuildLeaderboardNotFound;
 
 export type LeaderboardDenialReason = "not_bot_user" | "not_member";
 

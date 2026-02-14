@@ -20,9 +20,18 @@
         avatarUrl: string;
         username: string;
         discriminator: string;
+        private?: boolean;
     }
 
-    const { rank, level, xp, avatarUrl, username, discriminator }: Props = $props();
+    const {
+        rank,
+        level,
+        xp,
+        avatarUrl,
+        username,
+        discriminator,
+        private: isPrivate,
+    }: Props = $props();
 
     const rankNumber = $derived(Number(rank));
     const topUsersStyle = $derived(rankToStyle(rankNumber));
@@ -51,25 +60,36 @@
                 {rankNumber}
             </span>
         </div>
-        <img
-            class="w-16 dark:bg-zinc-800 bg-zinc-200 rounded-full inline-block mx-4 whitespace-nowrap overflow-hidden"
-            src={avatarUrl}
-            alt="{username}'s Avatar"
-            style="text-indent: 100%;"
-            width={64}
-            height={64}
-        />
-        <span
-            title="{username}#{truncatedDiscriminator}"
-            class="transition duration-300 ease-in-out text-zinc-400 group-hover:text-zinc-400"
-        >
-            <span
-                class="transition duration-300 ease-in-out dark:text-zinc-200 dark:group-hover:text-white text-zinc-800 group-hover:text-black"
+        {#if isPrivate}
+            <div
+                class="w-16 h-16 dark:bg-zinc-700 bg-zinc-300 rounded-full inline-flex items-center justify-center mx-4"
             >
-                {username}
+                <span class="text-2xl text-zinc-500 dark:text-zinc-400 select-none">?</span>
+            </div>
+            <span class="transition duration-300 ease-in-out text-zinc-400 italic">
+                Private User
             </span>
-            <span>#{truncatedDiscriminator}</span>
-        </span>
+        {:else}
+            <img
+                class="w-16 dark:bg-zinc-800 bg-zinc-200 rounded-full inline-block mx-4 whitespace-nowrap overflow-hidden"
+                src={avatarUrl}
+                alt="{username}'s Avatar"
+                style="text-indent: 100%;"
+                width={64}
+                height={64}
+            />
+            <span
+                title="{username}#{truncatedDiscriminator}"
+                class="transition duration-300 ease-in-out text-zinc-400 group-hover:text-zinc-400"
+            >
+                <span
+                    class="transition duration-300 ease-in-out dark:text-zinc-200 dark:group-hover:text-white text-zinc-800 group-hover:text-black"
+                >
+                    {username}
+                </span>
+                <span>#{truncatedDiscriminator}</span>
+            </span>
+        {/if}
     </div>
 
     <div class="grow p-4 w-full md:w-auto overflow-hidden">
