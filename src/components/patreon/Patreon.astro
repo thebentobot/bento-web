@@ -2,6 +2,7 @@
 import { getPatreonUsersWithRanks } from "../../library/server/patreon";
 import SubHeader from "../../layouts/SubHeader.astro";
 import PatreonUsers from "./PatreonUsers.astro";
+import Paragraph from "../../layouts/Paragraph.astro";
 const patreons = await getPatreonUsersWithRanks();
 
 const categories = [
@@ -18,8 +19,8 @@ const areAllCategoriesEmpty = categories.every((category) => category.data.lengt
 {
     areAllCategoriesEmpty ? (
         <div class="max-w-(--breakpoint-2xl) mx-auto px-3 pt-2">
-            <p class="mt-4 max-w-2xl text-xl text-zinc-300 lg:mx-auto text-center mx-auto">
-                Other than the awesome users who support by using Bento 🍱
+            <Paragraph>
+                Other ½than the awesome users who support by using Bento 🍱
                 <br />
                 no <strong>Patrons</strong> on{" "}
                 <a
@@ -31,7 +32,7 @@ const areAllCategoriesEmpty = categories.every((category) => category.data.lengt
                     Patreon
                 </a>{" "}
                 at the moment.
-            </p>
+            </Paragraph>
         </div>
     ) : (
         categories.map(
