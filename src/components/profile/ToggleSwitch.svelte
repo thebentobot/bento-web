@@ -3,15 +3,21 @@
         label?: string;
         checked?: boolean;
         disabled?: boolean;
+        onchange?: () => void;
     }
 
-    let { label = "", checked = $bindable(false), disabled = false }: Props = $props();
+    let { label = "", checked = $bindable(false), disabled = false, onchange }: Props = $props();
+
+    function toggle() {
+        checked = !checked;
+        onchange?.();
+    }
 
     function onKey(e: KeyboardEvent) {
         if (disabled) return;
         if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
-            checked = !checked;
+            toggle();
         }
     }
 </script>
@@ -28,7 +34,7 @@
         class:bg-zinc-300={!checked}
         aria-checked={checked}
         aria-label={label}
-        onclick={() => (checked = !checked)}
+        onclick={toggle}
         onkeydown={onKey}
         {disabled}
     >
