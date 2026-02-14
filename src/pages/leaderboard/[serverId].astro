@@ -4,29 +4,67 @@ import AppLayout from "../../layouts/app/AppLayout.astro";
 import SectionWrapper from "../../layouts/SectionWrapper.astro";
 import SignInButton from "../../components/auth/SignInButton.svelte";
 import type { BentoBetterAuthUser } from "../../library/auth";
-import { fetchAuthorizedLeaderboard } from "../../library/server/bentoApi";
-import type { LeaderboardAccessResult } from "../../library/types/interfaces";
+import {
+    fetchAuthorizedLeaderboard,
+    fetchPublicGuildLeaderboard,
+} from "../../library/server/bentoApi";
+import type {
+    LeaderboardAccessResult,
+    LeaderboardResponseDto,
+    GuildLeaderboardAccessResult,
+} from "../../library/types/interfaces";
 import { Icon } from "astro-icon/components";
 
 const { serverId } = Astro.params;
 const user = Astro.locals.user as BentoBetterAuthUser | null;
 
-let result: LeaderboardAccessResult | null = null;
+// State variables for template rendering
+let leaderboardData: LeaderboardResponseDto | null = null;
+let denialReason: "not_bot_user" | "not_member" | null = null;
+let isPrivateLeaderboard = false;
+let isNotFound = false;
 let errorMessage: string | undefined;
 
-if (user && serverId) {
+if (serverId) {
     try {
-        result = await fetchAuthorizedLeaderboard(serverId, user.discordId);
-        if (result.authorized) {
-            Astro.response.headers.set("Cache-Control", "private, max-age=3600");
-            Astro.response.headers.set("CDN-Cache-Control", "private, max-age=3600");
-            Astro.response.headers.set("Vary", "Cookie");
+        if (user) {
+            // Logged in: use authorized endpoint (works for both public and private guilds)
+            const result: LeaderboardAccessResult = await fetchAuthorizedLeaderboard(
+                serverId,
+                user.discordId
+            );
+            if (result.authorized) {
+                leaderboardData = result.data;
+                Astro.response.headers.set("Cache-Control", "private, max-age=3600");
+                Astro.response.headers.set("CDN-Cache-Control", "private, max-age=3600");
+                Astro.response.headers.set("Vary", "Cookie");
+            } else {
+                denialReason = result.reason;
+            }
+        } else {
+            // Not logged in: use public endpoint
+            const result: GuildLeaderboardAccessResult =
+                await fetchPublicGuildLeaderboard(serverId);
+            if (result.status === "accessible") {
+                leaderboardData = result.data;
+                Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=3600");
+                Astro.response.headers.set(
+                    "CDN-Cache-Control",
+                    "public, max-age=3600, s-maxage=3600"
+                );
+            } else if (result.status === "not_public") {
+                isPrivateLeaderboard = true;
+            } else {
+                isNotFound = true;
+            }
         }
     } catch (error) {
         console.error("Error fetching leaderboard data:", error);
         errorMessage = error instanceof Error ? error.message : "An unknown error occurred";
     }
 }
+
+const botCommandTip = "You can also use the /leaderboard server command in Discord.";
 ---
 
 <AppLayout
@@ -36,21 +74,9 @@ if (user && serverId) {
     <SectionWrapper>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="lg:text-center text-center overflow-hidden">
-                {/** Not signed in **/}
-                {
-                    !user && (
-                        <div class="text-center py-10 bg-zinc-100 dark:bg-zinc-900 rounded-lg shadow">
-                            <p class="text-gray-700 dark:text-gray-300 mb-4">
-                                You need to sign in to view this server's leaderboard.
-                            </p>
-                            <SignInButton client:idle redirectTo={`/leaderboard/${serverId}`} />
-                        </div>
-                    )
-                }
-
                 {/** API error **/}
                 {
-                    user && errorMessage && (
+                    errorMessage && (
                         <div class="max-w-(--breakpoint-2xl) mx-auto px-3 pt-2">
                             <div
                                 class="transition duration-300 ease-in-out dark:bg-zinc-900 bg-zinc-100 flex items-center w-full my-4 p-4 px-6 rounded-lg hover:bg-zinc-200 dark:hover:bg-zinc-800 shadow-lg overflow-hidden group"
@@ -80,9 +106,41 @@ if (user && serverId) {
                     )
                 }
 
+                {/** Not logged in + private leaderboard **/}
+                {
+                    !user && isPrivateLeaderboard && (
+                        <div class="text-center py-10 bg-zinc-100 dark:bg-zinc-900 rounded-lg shadow">
+                            <p class="text-gray-700 dark:text-gray-300 mb-2">
+                                This leaderboard is private
+                            </p>
+                            <p class="text-sm text-zinc-500 dark:text-zinc-400 mb-4">
+                                Sign in with Discord to view this server's leaderboard if you are a
+                                member.
+                            </p>
+                            <SignInButton client:idle redirectTo={`/leaderboard/${serverId}`} />
+                            <p class="text-xs text-zinc-400 dark:text-zinc-500 mt-4">
+                                {botCommandTip}
+                            </p>
+                        </div>
+                    )
+                }
+
+                {/** Not found **/}
+                {
+                    isNotFound && (
+                        <div class="text-center py-10 bg-zinc-100 dark:bg-zinc-900 rounded-lg shadow">
+                            <p class="text-gray-700 dark:text-gray-300 mb-2">Server not found</p>
+                            <p class="text-sm text-zinc-500 dark:text-zinc-400">
+                                The server could not be found. Please check the server ID and try
+                                again.
+                            </p>
+                        </div>
+                    )
+                }
+
                 {/** Denied: not a bot user **/}
                 {
-                    user && result && !result.authorized && result.reason === "not_bot_user" && (
+                    user && denialReason === "not_bot_user" && (
                         <div class="text-center py-10 bg-zinc-100 dark:bg-zinc-900 rounded-lg shadow">
                             <p class="text-gray-700 dark:text-gray-300 mb-2">
                                 Bento Bot doesn't recognise you yet
@@ -90,44 +148,50 @@ if (user && serverId) {
                             <p class="text-sm text-zinc-500 dark:text-zinc-400">
                                 Be active on a server with Bento Bot to access server leaderboards.
                             </p>
+                            <p class="text-xs text-zinc-400 dark:text-zinc-500 mt-4">
+                                {botCommandTip}
+                            </p>
                         </div>
                     )
                 }
 
                 {/** Denied: not a member **/}
                 {
-                    user && result && !result.authorized && result.reason === "not_member" && (
+                    user && denialReason === "not_member" && (
                         <div class="text-center py-10 bg-zinc-100 dark:bg-zinc-900 rounded-lg shadow">
                             <p class="text-gray-700 dark:text-gray-300 mb-2">Access Denied</p>
                             <p class="text-sm text-zinc-500 dark:text-zinc-400">
                                 You are not a member of this server, or Bento Bot is not present in
                                 it.
                             </p>
+                            <p class="text-xs text-zinc-400 dark:text-zinc-500 mt-4">
+                                {botCommandTip}
+                            </p>
                         </div>
                     )
                 }
 
-                {/** Authorized: show leaderboard **/}
+                {/** Leaderboard data **/}
                 {
-                    result && result.authorized && (
+                    leaderboardData && (
                         <>
                             <h1 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight dark:text-white text-black sm:text-4xl text-center">
-                                Leaderboard for {result.data.guildName ?? "Bento"}
+                                Leaderboard for {leaderboardData.guildName ?? "Bento"}
                             </h1>
-                            {serverId && result.data.icon && (
+                            {serverId && leaderboardData.icon && (
                                 <div class="dark:bg-zinc-900/50 bg-zinc-100/50 mx-auto my-auto p-1 mt-8 w-64 rounded-sm shadow-lg">
                                     <img
                                         width={256}
                                         height={256}
                                         class="mx-auto shadow-lg dark:bg-zinc-800 bg-zinc-200"
-                                        src={result.data.icon}
+                                        src={leaderboardData.icon}
                                         alt="Server Icon"
                                     />
                                 </div>
                             )}
                             <div class="max-w-(--breakpoint-2xl) mx-auto px-3 pt-2">
                                 <ul class="relative">
-                                    {result.data.users?.map((DiscordUser) => (
+                                    {leaderboardData.users?.map((DiscordUser) => (
                                         <div class="shadow-lg">
                                             <LeaderboardUser {...DiscordUser} />
                                         </div>
