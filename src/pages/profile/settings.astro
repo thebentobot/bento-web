@@ -1,0 +1,48 @@
+---
+import AppLayout from "../../layouts/app/AppLayout.astro";
+import type { BentoBetterAuthUser } from "../../library/auth";
+import UserSettings from "../../components/settings/UserSettings.svelte";
+import { fetchUserSettings } from "../../library/server/bentoApi";
+import type { UserSettingsDto } from "../../library/types/interfaces";
+
+const user = Astro.locals.user as BentoBetterAuthUser | null;
+
+const title = `User Settings ${user?.name ? `- ${user.name}` : ""}`;
+const description = "Configure your Bento user preferences";
+
+let initialSettings: UserSettingsDto | null = null;
+if (user) {
+    try {
+        initialSettings = await fetchUserSettings(user.discordId);
+    } catch {
+        initialSettings = null;
+    }
+}
+---
+
+<AppLayout title={title} description={description}>
+    <div class="container mx-auto px-4 py-8">
+        <div class="mb-6 flex items-center gap-4">
+            <a href="/profile" class="text-sm text-zinc-600 dark:text-zinc-400 hover:underline"
+                >← Back to Profile</a
+            >
+        </div>
+
+        <h1 class="text-2xl font-bold text-center mb-6 md:mb-8">User Settings</h1>
+
+        {/** Not signed in **/}
+        {
+            !user && (
+                <div class="text-center py-10 bg-zinc-100 dark:bg-zinc-900 rounded-lg shadow">
+                    <p class="text-gray-700 dark:text-gray-300 mb-4">You are not signed in.</p>
+                    <a href="/profile" class="underline">
+                        Go to Profile
+                    </a>
+                </div>
+            )
+        }
+
+        {/** Signed in **/}
+        {user && <UserSettings client:only="svelte" initialSettings={initialSettings} />}
+    </div>
+</AppLayout>

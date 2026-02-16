@@ -1,9 +1,14 @@
 import {
+    type GuildLeaderboardAccessResult,
+    type LeaderboardAccessResult,
+    type LeaderboardDenialReason,
     type LeaderboardResponseDto,
     type PatreonUserDto,
     type ProfileDto,
     type ProfilePatch,
     type UsageStatsDto,
+    type UserSettingsDto,
+    type UserSettingsPatch,
 } from "../types/interfaces";
 
 // Cloudflare runtime env, set per-request from middleware
@@ -83,6 +88,37 @@ export async function fetchLeaderboardUsersForServer(
         throw new Error("Invalid response from server");
     }
     return response;
+}
+
+export async function fetchAuthorizedLeaderboard(
+    serverId: string,
+    userId: string
+): Promise<LeaderboardAccessResult> {
+    const url = new URL(`${getApiUrl()}/Information/Leaderboard/${serverId}/${userId}`);
+
+    // eslint-disable-next-line no-undef
+    const res = await fetch(url.toString(), {
+        headers: {
+            "Content-Type": "application/json",
+            ...(getApiKey() ? { "X-Api-Key": getApiKey()! } : {}),
+        },
+    });
+
+    if (res.status === 403) {
+        const body = await res.json().catch(() => ({ reason: "not_member" }));
+        return {
+            authorized: false,
+            reason:
+                ((body as { reason?: string }).reason as LeaderboardDenialReason) ?? "not_member",
+        };
+    }
+
+    if (!res.ok) {
+        throw new Error(`API error: ${res.status} ${res.statusText}`);
+    }
+
+    const data = (await res.json()) as LeaderboardResponseDto;
+    return { authorized: true, data };
 }
 
 export async function fetchLeaderboardUsers(): Promise<LeaderboardResponseDto> {
@@ -170,6 +206,52 @@ function buildProfilePayload(profile: ProfilePatch | ProfileDto): string {
     // Serialize and ensure UserId (string of digits) is sent as an unquoted numeric literal
     const json = JSON.stringify(profile);
     return json.replace(/"UserId":"(\d+)"/, '"UserId":$1');
+}
+
+export async function fetchUserSettings(userId: string): Promise<UserSettingsDto> {
+    return fetchFromApi<UserSettingsDto>(`/UserSettings/${userId}`);
+}
+
+export async function saveUserSettings(userId: string, patch: UserSettingsPatch): Promise<void> {
+    if (typeof window !== "undefined") {
+        throw new Error(
+            "saveUserSettings must be called on the server. Use astro:actions from client code."
+        );
+    }
+
+    await fetchFromApi<void>(`/UserSettings/${userId}`, {
+        method: "PUT",
+        body: JSON.stringify(patch),
+    });
+}
+
+export async function fetchPublicGuildLeaderboard(
+    guildId: string
+): Promise<GuildLeaderboardAccessResult> {
+    const url = new URL(`${getApiUrl()}/Information/Leaderboard/${guildId}`);
+
+    // eslint-disable-next-line no-undef
+    const res = await fetch(url.toString(), {
+        headers: {
+            "Content-Type": "application/json",
+            ...(getApiKey() ? { "X-Api-Key": getApiKey()! } : {}),
+        },
+    });
+
+    if (res.status === 403) {
+        return { status: "not_public" };
+    }
+
+    if (res.status === 404) {
+        return { status: "not_found" };
+    }
+
+    if (!res.ok) {
+        throw new Error(`API error: ${res.status} ${res.statusText}`);
+    }
+
+    const data = (await res.json()) as LeaderboardResponseDto;
+    return { status: "accessible", data };
 }
 
 export async function saveUserProfile(profile: ProfilePatch): Promise<void> {

@@ -146,8 +146,8 @@
                 <MenuItem
                     icon="settings"
                     label="User settings"
-                    disabled={true}
-                    title="Coming Soon™️"
+                    href="/profile/settings"
+                    title="Configure Bento user preferences"
                 />
                 <button
                     role="menuitem"

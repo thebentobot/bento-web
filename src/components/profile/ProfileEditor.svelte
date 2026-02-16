@@ -6,8 +6,8 @@
     import ProfilePreview from "./ProfilePreview.svelte";
     import ModalShell from "./ModalShell.svelte";
     import { defaultProfile } from "../../library/profile/defaultProfile";
-    import StatusMessage from "./StatusMessage.svelte";
     import SaveResetButtons from "./SaveResetButtons.svelte";
+    import { addToast } from "../../library/stores/toast.svelte";
     import BackgroundSection from "./sections/BackgroundSection.svelte";
     import DescriptionSection from "./sections/DescriptionSection.svelte";
     import SidebarSection from "./sections/SidebarSection.svelte";
@@ -30,10 +30,8 @@
         initialProfile = null,
     }: Props = $props();
 
-    let loading = $state(false);
     let error = $state<string | null>(null);
     let saving = $state(false);
-    let savedAt = $state<Date | null>(null);
 
     const initialProfileWithDefaults: ProfileDto = mergeWithDefaults(
         defaultProfile(userId),
@@ -103,7 +101,7 @@
             const patch = computeProfilePatch(originalProfile, profile);
             const changedCount = Object.keys(patch).length - 1; // exclude UserId
             if (changedCount <= 0) {
-                savedAt = new Date();
+                addToast("Profile saved", "success");
                 return;
             }
             const { error: actionError } = await actions.saveProfile(patch);
@@ -112,10 +110,11 @@
                 throw new Error(typeof m === "string" ? m : "Save failed");
             }
             originalProfile = { ...profile };
-            savedAt = new Date();
+            addToast("Profile saved", "success");
         } catch (e: unknown) {
             console.error(e);
             error = (e as Error)?.message ?? "Unknown error";
+            addToast(error, "error");
         } finally {
             saving = false;
         }
@@ -143,23 +142,20 @@
         </div>
 
         {#if !editorExpanded}
-            <div class="mt-4 flex flex-col items-center gap-3">
-                <div class="flex items-center gap-3">
-                    <SaveResetButtons
-                        {saving}
-                        {hasChanges}
-                        onSave={saveProfile}
-                        onReset={resetChanges}
-                    />
-                    <button
-                        class="btn-secondary"
-                        onclick={() => {
-                            showModal = false;
-                            editorExpanded = true;
-                        }}>Open Editor</button
-                    >
-                </div>
-                <StatusMessage {error} {saving} {loading} {savedAt} />
+            <div class="mt-4 flex items-center justify-center gap-3">
+                <SaveResetButtons
+                    {saving}
+                    {hasChanges}
+                    onSave={saveProfile}
+                    onReset={resetChanges}
+                />
+                <button
+                    class="btn-secondary"
+                    onclick={() => {
+                        showModal = false;
+                        editorExpanded = true;
+                    }}>Open Editor</button
+                >
             </div>
         {/if}
     </div>
@@ -404,9 +400,6 @@
                 </summary>
 
                 <div class="space-y-6">
-                    <div class="mb-2">
-                        <StatusMessage {error} {saving} {loading} {savedAt} />
-                    </div>
                     <section class="grid gap-3">
                         <BackgroundSection
                             bind:backgroundUrl={

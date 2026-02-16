@@ -1,11 +1,13 @@
 import { defineAction, ActionError } from "astro:actions";
 import { z } from "astro:schema";
-import type { ProfilePatch } from "../library/types/interfaces";
+import type { ProfilePatch, UserSettingsPatch } from "../library/types/interfaces";
 import {
     saveUserProfile as saveUserProfileServer,
     fetchUsageStats,
     fetchLeaderboardUsers,
     fetchLeaderboardUsersForServer,
+    fetchUserSettings as fetchUserSettingsServer,
+    saveUserSettings as saveUserSettingsServer,
 } from "../library/server/bentoApi";
 import { getPatreonUsersWithRanks } from "../library/server/patreon";
 import type { BentoBetterAuthUser } from "../library/auth";
@@ -82,10 +84,7 @@ interface CacheEntry<T> {
 const cache = {
     stats: null as CacheEntry<Awaited<ReturnType<typeof fetchUsageStats>>> | null,
     patreon: null as CacheEntry<Awaited<ReturnType<typeof getPatreonUsersWithRanks>>> | null,
-    leaderboard: new Map<
-        string,
-        CacheEntry<Awaited<ReturnType<typeof fetchLeaderboardUsers>>>
-    >(),
+    leaderboard: new Map<string, CacheEntry<Awaited<ReturnType<typeof fetchLeaderboardUsers>>>>(),
 };
 
 const CACHE_TTL = 60 * 60 * 1000; // 1 hour in milliseconds
@@ -170,6 +169,57 @@ export const server = {
 
             cache.leaderboard.set(cacheKey, setCached(data));
             return data;
+        },
+    }),
+
+    getUserSettings: defineAction({
+        handler: async (_input, context) => {
+            const user = context.locals.user as BentoBetterAuthUser | null;
+            if (!user) {
+                throw new ActionError({
+                    code: "UNAUTHORIZED",
+                    message: "You must be signed in to view settings.",
+                });
+            }
+
+            const discordId =
+                user.discordId || (user as unknown as { discordId?: string }).discordId;
+            if (!discordId) {
+                throw new ActionError({
+                    code: "UNAUTHORIZED",
+                    message: "Missing authenticated user id.",
+                });
+            }
+
+            return await fetchUserSettingsServer(discordId);
+        },
+    }),
+
+    saveUserSettings: defineAction({
+        input: z.object({
+            hideSlashCommandCalls: z.boolean().optional(),
+            showOnGlobalLeaderboard: z.boolean().optional(),
+        }),
+        handler: async (input: UserSettingsPatch, context) => {
+            const user = context.locals.user as BentoBetterAuthUser | null;
+            if (!user) {
+                throw new ActionError({
+                    code: "UNAUTHORIZED",
+                    message: "You must be signed in to update settings.",
+                });
+            }
+
+            const discordId =
+                user.discordId || (user as unknown as { discordId?: string }).discordId;
+            if (!discordId) {
+                throw new ActionError({
+                    code: "UNAUTHORIZED",
+                    message: "Missing authenticated user id.",
+                });
+            }
+
+            await saveUserSettingsServer(discordId, input);
+            return null;
         },
     }),
 };
