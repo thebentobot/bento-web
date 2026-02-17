@@ -46,6 +46,7 @@ export default defineConfig({
                 "node:os",
                 "node:buffer",
                 "node:fs/promises",
+                "node:async_hooks",
                 "path",
             ],
         },
