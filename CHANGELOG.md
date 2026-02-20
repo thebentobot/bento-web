@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.1](https://github.com/thebentobot/bento-web/compare/v0.0.1...v0.0.1) (2026-02-20)
+
+
+### Miscellaneous Chores
+
+* release 0.0.1 ([8c403a8](https://github.com/thebentobot/bento-web/commit/8c403a8ca6ad07062f2e9fc975f0768377e4ea0c))
+
 ## 0.0.1 (2026-02-14)
 
 ### Features
