@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.0.1](https://github.com/thebentobot/bento-web/compare/v0.0.1...v0.0.1) (2026-02-28)
+
+
+### Bug Fixes
+
+* **leaderboard:** remove discriminator display, lazy load images, drop dead Svelte components ([242b2e3](https://github.com/thebentobot/bento-web/commit/242b2e34d4b390db678c4de2812ce96db7d64774))
+* **leaderboard:** remove discriminator, lazy load images, drop dead Svelte components ([b1f0161](https://github.com/thebentobot/bento-web/commit/b1f0161275a0aca2c500d25e02cc77880ff05039))
+* re-apply theme after View Transitions page swap to prevent FOUC ([4968565](https://github.com/thebentobot/bento-web/commit/4968565606ad1e181952cf6aac7e5425eb59331b))
+* re-apply theme after View Transitions page swap to prevent FOUC ([aa1a1bf](https://github.com/thebentobot/bento-web/commit/aa1a1bf772b612c0f5fcf50abb22cee6c246089d))
+* stamp theme class onto incoming document before View Transitions swap ([3aae2d6](https://github.com/thebentobot/bento-web/commit/3aae2d60729f531a3203f819d2883b6f5cc2d306))
+* **ui:** improve leaderboard skeleton, Patreon button colour, Astro/Svelte brand colours ([d8afdd4](https://github.com/thebentobot/bento-web/commit/d8afdd4161f875ac46c433da16bfb0524fd1c4d6))
+
+
+### Miscellaneous Chores
+
+* release 0.0.1 ([8c403a8](https://github.com/thebentobot/bento-web/commit/8c403a8ca6ad07062f2e9fc975f0768377e4ea0c))
+
 ## 0.0.1 (2026-02-14)
 
 ### Features
