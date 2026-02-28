@@ -132,6 +132,10 @@ const { title, description = SITE_DESCRIPTION, image = "/29.webp" } = Astro.prop
     };
 
     applyTheme();
+    document.addEventListener("astro:before-swap", (e) => {
+        const isDark = getThemePreference() === "dark";
+        e.newDocument.documentElement.classList[isDark ? "add" : "remove"]("dark");
+    });
     document.addEventListener("astro:after-swap", applyTheme);
 
     if (typeof localStorage !== "undefined") {
