@@ -11,6 +11,8 @@
     --color-tailwindcss: #06b6d4;
     --color-kofi: #29abe0;
     --color-patreon: #ff424d;
+    --color-astro: #ff5d01;
+    --color-svelte: #ff3e00;
 
     /* Animations: you can use these with arbitrary values or add utility classes below */
     --animation-pulse-bento: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
