@@ -3,6 +3,65 @@
 ## [0.0.1](https://github.com/thebentobot/bento-web/compare/v0.0.1...v0.0.1) (2026-02-28)
 
 
+### Features
+
+* add authentication and membership check to server leaderboards ([0156a01](https://github.com/thebentobot/bento-web/commit/0156a0150fb1979298bb1aebaacb56c18244d621)), closes [#430](https://github.com/thebentobot/bento-web/issues/430)
+* add claude ([ab68b50](https://github.com/thebentobot/bento-web/commit/ab68b50ed5e571748ea3d62550199edcec858e6b))
+* add global toast notifications and auto-save user settings ([0a34fb8](https://github.com/thebentobot/bento-web/commit/0a34fb852ba7edde2f0fefdb82b6d4dc71b51f9b))
+* add release-please, husky, and staging/production deploys ([1027cfb](https://github.com/thebentobot/bento-web/commit/1027cfb867083c10c7654c21eedfd3cdcb8ebe7f))
+* add release-please, husky, and staging/production deploys ([61df8f8](https://github.com/thebentobot/bento-web/commit/61df8f863142e920dc95c8e5b78fedb90e92de5d))
+* add staging ([02faaa4](https://github.com/thebentobot/bento-web/commit/02faaa43c104bb1fb52746c614136548548756fc))
+* add user settings page, private leaderboard users, and public guild leaderboards ([4a1053e](https://github.com/thebentobot/bento-web/commit/4a1053e83c783b5eb2dbb44277bf902422a2dace))
+* global toast notifications and auto-save user settings ([210c9cf](https://github.com/thebentobot/bento-web/commit/210c9cf84c82f88b69b233a616407fc730dcae44))
+* migrate leaderboard and Patreon components to Svelte ([a21a242](https://github.com/thebentobot/bento-web/commit/a21a242813219b5998ec032362bfede7a3f39acd))
+* migrate leaderboard and Patreon components to Svelte ([8b23390](https://github.com/thebentobot/bento-web/commit/8b233905cb2bc903689e430d8afc4c52da24de9c))
+* server leaderboard access control ([8980a75](https://github.com/thebentobot/bento-web/commit/8980a75dac2214d5aa7278411a5195689eb7c0ef))
+* user settings, private leaderboard users, public guild leaderboards ([e216452](https://github.com/thebentobot/bento-web/commit/e21645273d0efbba3c38aea33244ccab39ff6089))
+
+
+### Bug Fixes
+
+* **actions:** magic number ([d0abaa8](https://github.com/thebentobot/bento-web/commit/d0abaa8347483e7ebd76fd182b589dea666121f1))
+* better-auth drizzle dependency issue ([3220de6](https://github.com/thebentobot/bento-web/commit/3220de654bb6adbd63de25ec72c986c3eec84903))
+* **components/Patreon:** correct typo in message about patrons ([6a90aa0](https://github.com/thebentobot/bento-web/commit/6a90aa0db99b5cccd882d0c994eff322202fc565))
+* **components/Patreon:** replace paragraph tag with Paragraph component ([efd9164](https://github.com/thebentobot/bento-web/commit/efd916478be8aa69e55684e79d0abc01e4d55254))
+* correct usageStats calculations for users and servers ([c543427](https://github.com/thebentobot/bento-web/commit/c543427cf8d33910690e384b953ec54f531c684f))
+* display small user counts without "k" suffix ([8ebd73f](https://github.com/thebentobot/bento-web/commit/8ebd73f018ae3164afcf603004337194f4932219))
+* format prettier ([9bde6c0](https://github.com/thebentobot/bento-web/commit/9bde6c040dd368822004d86785f68fb3f316c57f))
+* **leaderboard:** remove discriminator display, lazy load images, drop dead Svelte components ([242b2e3](https://github.com/thebentobot/bento-web/commit/242b2e34d4b390db678c4de2812ce96db7d64774))
+* **leaderboard:** remove discriminator, lazy load images, drop dead Svelte components ([b1f0161](https://github.com/thebentobot/bento-web/commit/b1f0161275a0aca2c500d25e02cc77880ff05039))
+* make better-auth work again and bump ([9beab40](https://github.com/thebentobot/bento-web/commit/9beab40ea6f12a907f7901b95219812c5c36e756))
+* migrate data fetching in Stats, Leaderboard, and Patreon components to API functions ([3b41374](https://github.com/thebentobot/bento-web/commit/3b41374aaf41df2661fe392f48ef8015a1cd0232))
+* **patreon:** replace non-semantic `div` with `h2` for category header ([861acb1](https://github.com/thebentobot/bento-web/commit/861acb10142f2bd692e34c31cf5d72347019d6bf))
+* **patreon:** replace non-semantic `div` with `li` and add keys to `#each` blocks ([31cd344](https://github.com/thebentobot/bento-web/commit/31cd344058a43ec48bcd2068335a2eb037665419))
+* **patreon:** update category header to use semantic `h2` tag ([4db14d1](https://github.com/thebentobot/bento-web/commit/4db14d135bed4645f21aa9c14963f779006ec8f6))
+* re-apply theme after View Transitions page swap to prevent FOUC ([4968565](https://github.com/thebentobot/bento-web/commit/4968565606ad1e181952cf6aac7e5425eb59331b))
+* re-apply theme after View Transitions page swap to prevent FOUC ([aa1a1bf](https://github.com/thebentobot/bento-web/commit/aa1a1bf772b612c0f5fcf50abb22cee6c246089d))
+* redirect to home page after sign-out to properly clear user state ([2323fd7](https://github.com/thebentobot/bento-web/commit/2323fd7b77d78f9010c6e82129d3344e9ebf8082))
+* replace fetch functions with actions for data retrieval and improve caching headers ([099380c](https://github.com/thebentobot/bento-web/commit/099380cec75693cec1a7a9bcc8d1461f5d535632))
+* resolve API_URL from Cloudflare runtime env for staging support ([75d48c7](https://github.com/thebentobot/bento-web/commit/75d48c7e9b044d4f07fc896f8d8933c38fc5ffe3))
+* resolve sign-in state persistence across page navigation ([26de513](https://github.com/thebentobot/bento-web/commit/26de51378e5f4055ac1da45b1e6380e1c2a3d960))
+* revert better auth once again ([91b0d6f](https://github.com/thebentobot/bento-web/commit/91b0d6f3e5c3638fc8900b24a8d9055de4dd5260))
+* revert packages to last working version ([e9c82ff](https://github.com/thebentobot/bento-web/commit/e9c82ff75a4d7e7dd951f39bd63f582a1bff6791))
+* set no-store cache headers on leaderboard denial/error paths ([442585b](https://github.com/thebentobot/bento-web/commit/442585bfd5b438c108c482704b0c5f411fc8d95c))
+* **signOut:** revert changes ([20f619b](https://github.com/thebentobot/bento-web/commit/20f619b4b23347d828beefcd87d460c971f8ff67))
+* stamp theme class onto incoming document before View Transitions swap ([3aae2d6](https://github.com/thebentobot/bento-web/commit/3aae2d60729f531a3203f819d2883b6f5cc2d306))
+* **Stats:** remove minus ([83c082b](https://github.com/thebentobot/bento-web/commit/83c082b3ccb2285d89cde981d94791ae505d27e5))
+* strengthen typings and introduce keyed #each blocks in Leaderboard component ([2516b61](https://github.com/thebentobot/bento-web/commit/2516b61b21ec54d2605955081f37eadc0e23fc8a))
+* try to revert better-auth ([a61f22a](https://github.com/thebentobot/bento-web/commit/a61f22a8a99bd2311652dee904d8148059cf9e7c))
+* **types:** use interface Props pattern for Icon.svelte $props typing ([bba2fc7](https://github.com/thebentobot/bento-web/commit/bba2fc7c862a470c532393366db649d3c5a2bb46)), closes [#190](https://github.com/thebentobot/bento-web/issues/190)
+* **ui:** improve leaderboard skeleton, Patreon button colour, Astro/Svelte brand colours ([d8afdd4](https://github.com/thebentobot/bento-web/commit/d8afdd4161f875ac46c433da16bfb0524fd1c4d6))
+* update data retrieval to use Astro.callAction for consistency ([6551a69](https://github.com/thebentobot/bento-web/commit/6551a69ddb0d280b8d824dd620bbc92b272891ac))
+
+
+### Miscellaneous Chores
+
+* release 0.0.1 ([8c403a8](https://github.com/thebentobot/bento-web/commit/8c403a8ca6ad07062f2e9fc975f0768377e4ea0c))
+* release 0.0.1 ([1a945e2](https://github.com/thebentobot/bento-web/commit/1a945e22c1c8f6954e2feb00b75bf16aeeaaaa0d))
+
+## [0.0.1](https://github.com/thebentobot/bento-web/compare/v0.0.1...v0.0.1) (2026-02-28)
+
+
 ### Bug Fixes
 
 * **leaderboard:** remove discriminator display, lazy load images, drop dead Svelte components ([242b2e3](https://github.com/thebentobot/bento-web/commit/242b2e34d4b390db678c4de2812ce96db7d64774))
