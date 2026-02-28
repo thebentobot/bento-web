@@ -29,14 +29,12 @@ const {
     xp,
     avatarUrl,
     username,
-    discriminator,
     private: isPrivate,
 } = Astro.props as LeaderboardRankingsInterface & { private?: boolean };
 
 const rankNumber = Number(rank);
 const topUsersStyle = rankToNumber(rankNumber);
 const percent = (xp / (level * level * 100)) * 100;
-const truncatedDiscriminator = ("0000" + discriminator).slice(-4);
 const messagesToNextLevel = Math.round((level * level * 100 - xp) / 46);
 ---
 
@@ -73,15 +71,15 @@ const messagesToNextLevel = Math.round((level * level * 100 - xp) / 46);
                         style={{ textIndent: "100%" }}
                         width={64}
                         height={64}
+                        loading="lazy"
+                        decoding="async"
+                        onerror="this.style.opacity='0'"
                     />
                     <span
-                        title={username + `#${truncatedDiscriminator}`}
-                        class="transition duration-300 ease-in-out text-zinc-400 group-hover:text-zinc-400"
+                        title={username}
+                        class="transition duration-300 ease-in-out dark:text-zinc-200 dark:group-hover:text-white text-zinc-800 group-hover:text-black"
                     >
-                        <span class="transition duration-300 ease-in-out dark:text-zinc-200 dark:group-hover:text-white text-zinc-800 group-hover:text-black">
-                            {username}
-                        </span>
-                        <span>#{truncatedDiscriminator}</span>
+                        {username}
                     </span>
                 </>
             )

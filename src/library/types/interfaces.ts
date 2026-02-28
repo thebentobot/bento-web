@@ -20,6 +20,7 @@ export interface LeaderboardUserDto {
     level: number;
     xp: number;
     username: string;
+    // TODO: remove discriminator when Discord removes it from the API
     discriminator: string;
     avatarUrl: string;
     private?: boolean;
