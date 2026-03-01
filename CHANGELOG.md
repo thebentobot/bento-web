@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.1.0](https://github.com/thebentobot/bento-web/compare/v0.0.1...v0.1.0) (2026-03-01)
+
+
+### Features
+
+* add features page, nav reorder, footer theme toggle, leaderboard fixes ([c5bdd62](https://github.com/thebentobot/bento-web/commit/c5bdd62dea91ebe61b51e01b38f91e7c74b07b57))
+* features page with Discord mock-ups, nav reorder, and footer improvements ([d8dd3b0](https://github.com/thebentobot/bento-web/commit/d8dd3b0b8073c7c5c79a154f53a2071c14d050c1))
+* redesign homepage hero with polished visuals and responsive stats ([a6aa9ac](https://github.com/thebentobot/bento-web/commit/a6aa9ace73695098f02c565fb5c6b969a45516c6))
+* redesign homepage hero with polished visuals and responsive stats ([4238e54](https://github.com/thebentobot/bento-web/commit/4238e54bef90cbd154c7c3ceae02cff068bb2438))
+
+
+### Bug Fixes
+
+* **DiscordFeaturesPage:** correct typo ([a01e6d0](https://github.com/thebentobot/bento-web/commit/a01e6d0344b503ab37415a54be6ae9e081ddc253))
+* **DiscordFeaturesPage:** correct typo ([fcc2a13](https://github.com/thebentobot/bento-web/commit/fcc2a1333f72b94790e37e15b0927cfff7e87eda))
+* move footer logo left of text and align stats Est. label ([ba195a8](https://github.com/thebentobot/bento-web/commit/ba195a8666f91db530c6074afd5b941628589922))
+* npm install to fix the lock ([ac7c95f](https://github.com/thebentobot/bento-web/commit/ac7c95f5497ab7ffc50ebb70f7344bbbbaa36cbd))
+* regenerate lock file with npm@10 to match Cloudflare build environment ([eaeec23](https://github.com/thebentobot/bento-web/commit/eaeec2370ba4403c089448ee3a0d08ee7b95492b))
+
 ## [0.0.1](https://github.com/thebentobot/bento-web/compare/v0.0.1...v0.0.1) (2026-02-28)
 
 
