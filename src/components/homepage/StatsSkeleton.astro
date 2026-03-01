@@ -2,63 +2,65 @@
 
 ---
 
-<div class="mt-10 pb-1">
-    <div class="relative">
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-4xl mx-auto">
-                <dl class="sm:grid sm:grid-cols-3">
-                    <div class="flex flex-col p-6 text-center">
-                        <dt
-                            class="order-2 mt-2 text-lg leading-6 font-medium dark:text-white text-black"
-                        >
-                            Servers
-                        </dt>
-                        <div class="flex gap-x-2 justify-center items-center h-12">
-                            <span class="sr-only">Loading...</span>
-                            <div
-                                class="h-6 w-6 dark:bg-white bg-black rounded-full animate-bounce [animation-delay:-0.3s]"
-                            >
-                            </div>
-                            <div
-                                class="h-6 w-6 dark:bg-white bg-black rounded-full animate-bounce [animation-delay:-0.15s]"
-                            >
-                            </div>
-                            <div class="h-6 w-6 dark:bg-white bg-black rounded-full animate-bounce">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col p-6 text-center">
-                        <dt
-                            class="order-2 mt-2 text-lg leading-6 font-medium dark:text-white text-black"
-                        >
-                            Users
-                        </dt>
-                        <div class="flex gap-x-2 justify-center items-center h-12">
-                            <span class="sr-only">Loading...</span>
-                            <div
-                                class="h-6 w-6 dark:bg-white bg-black rounded-full animate-bounce [animation-delay:-0.3s]"
-                            >
-                            </div>
-                            <div
-                                class="h-6 w-6 dark:bg-white bg-black rounded-full animate-bounce [animation-delay:-0.15s]"
-                            >
-                            </div>
-                            <div class="h-6 w-6 dark:bg-white bg-black rounded-full animate-bounce">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col p-6 text-center">
-                        <dt
-                            class="order-2 mt-2 text-lg leading-6 font-medium dark:text-white text-black"
-                        >
-                            Serving the first Bento
-                        </dt>
-                        <dd class="order-1 text-5xl font-extrabold dark:text-white text-black">
-                            Aug 2021
-                        </dd>
-                    </div>
-                </dl>
+<div class="max-w-2xl mx-auto mt-6 pb-1">
+    <dl
+        class="grid grid-cols-3 divide-x divide-zinc-200/40 dark:divide-zinc-800/40 overflow-hidden rounded-2xl border border-zinc-200/40 dark:border-zinc-800/40 bg-white/20 dark:bg-zinc-900/20 backdrop-blur-md shadow-sm"
+    >
+        <div class="flex flex-col items-center py-6 px-3 sm:px-6">
+            <div class="flex gap-x-1.5 items-center h-10 sm:h-12">
+                <span class="sr-only">Loading...</span>
+                <div
+                    class="h-2 w-2 sm:h-2.5 sm:w-2.5 bg-zinc-400 dark:bg-zinc-500 rounded-full animate-bounce [animation-delay:-0.3s]"
+                >
+                </div>
+                <div
+                    class="h-2 w-2 sm:h-2.5 sm:w-2.5 bg-zinc-400 dark:bg-zinc-500 rounded-full animate-bounce [animation-delay:-0.15s]"
+                >
+                </div>
+                <div
+                    class="h-2 w-2 sm:h-2.5 sm:w-2.5 bg-zinc-400 dark:bg-zinc-500 rounded-full animate-bounce"
+                >
+                </div>
             </div>
+            <dt
+                class="text-xs sm:text-sm font-medium text-zinc-500 dark:text-zinc-400 mt-1.5 tracking-wide"
+            >
+                Servers
+            </dt>
         </div>
-    </div>
+        <div class="flex flex-col items-center py-6 px-3 sm:px-6">
+            <div class="flex gap-x-1.5 items-center h-10 sm:h-12">
+                <span class="sr-only">Loading...</span>
+                <div
+                    class="h-2 w-2 sm:h-2.5 sm:w-2.5 bg-zinc-400 dark:bg-zinc-500 rounded-full animate-bounce [animation-delay:-0.3s]"
+                >
+                </div>
+                <div
+                    class="h-2 w-2 sm:h-2.5 sm:w-2.5 bg-zinc-400 dark:bg-zinc-500 rounded-full animate-bounce [animation-delay:-0.15s]"
+                >
+                </div>
+                <div
+                    class="h-2 w-2 sm:h-2.5 sm:w-2.5 bg-zinc-400 dark:bg-zinc-500 rounded-full animate-bounce"
+                >
+                </div>
+            </div>
+            <dt
+                class="text-xs sm:text-sm font-medium text-zinc-500 dark:text-zinc-400 mt-1.5 tracking-wide"
+            >
+                Users
+            </dt>
+        </div>
+        <div class="flex flex-col items-center py-6 px-3 sm:px-6">
+            <dd
+                class="order-2 sm:order-1 text-xs sm:text-3xl font-medium sm:font-black text-zinc-500 dark:text-zinc-400 sm:text-zinc-900 sm:dark:text-white text-center whitespace-nowrap mt-1.5 sm:mt-0 tracking-wide"
+            >
+                Aug 2021
+            </dd>
+            <dt
+                class="order-1 sm:order-2 text-3xl sm:text-sm font-black sm:font-medium text-zinc-900 dark:text-white sm:text-zinc-500 sm:dark:text-zinc-400 sm:mt-1.5 sm:tracking-wide text-center"
+            >
+                Est.
+            </dt>
+        </div>
+    </dl>
 </div>
