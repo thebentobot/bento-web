@@ -136,8 +136,11 @@
     position: absolute;
     inset: 0;
     z-index: -1;
-    backdrop-filter: blur(var(--blur-xs, 4px));
-    -webkit-backdrop-filter: blur(var(--blur-xs, 4px));
+    /* Use @apply so Tailwind generates backdrop-filter through its own pipeline.
+     * Writing backdrop-filter manually causes Lightning CSS (Tailwind v4's CSS
+     * processor) to strip the unprefixed property in production builds, leaving
+     * only -webkit-backdrop-filter and breaking Firefox. */
+    @apply backdrop-blur-xs;
     pointer-events: none;
 }
 
