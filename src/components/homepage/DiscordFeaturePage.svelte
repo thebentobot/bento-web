@@ -5,7 +5,7 @@
 
     const discordMessages = "block custom-textSize-messages";
     const discordMessage =
-        "first:mt[0.5rem] pt-[0.125rem] pb-[0.125rem] flex flex-col custom-textSize-message relative wrap-break-word min-h-[1.375rem] pl-[1em] pr-12 mb-[inherit] custom-lineHeight-message";
+        "first:mt-[0.5rem] pt-[0.125rem] pb-[0.125rem] flex flex-col custom-textSize-message relative wrap-break-word min-h-[1.375rem] pl-[1em] pr-12 mb-[inherit] custom-lineHeight-message";
     const discordCommand =
         "ml-14 mb-1 items-center relative flex pt-[2px] whitespace-pre custom-lineHeight-command";
 

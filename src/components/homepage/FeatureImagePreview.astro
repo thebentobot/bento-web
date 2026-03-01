@@ -1,5 +1,4 @@
 ---
-import DiscordFeaturePage from "./DiscordFeaturePage.svelte";
 import { Icon } from "astro-icon/components";
 
 export interface Feature {
@@ -15,18 +14,25 @@ export interface FeatureImagePreviewProps {
     title: string;
     subtitle?: string;
     description?: string;
+    reversed?: boolean;
 }
 
-const { features, title, subtitle, description } = Astro.props as FeatureImagePreviewProps;
+const {
+    features,
+    title,
+    subtitle,
+    description,
+    reversed = false,
+} = Astro.props as FeatureImagePreviewProps;
 ---
 
 <div class="overflow-hidden dark:bg-black bg-white">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div
-            class="mx-auto grid max-w-2xl grid-cols-1 space-x-8 space-y-16 sm:space-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2"
+            class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2"
         >
-            <div class="lg:pr-8 lg:pt-4">
-                <div class="lg:max-w-lg">
+            <div class={`lg:pt-4 ${reversed ? "lg:order-2 lg:pl-8" : "lg:pr-8"}`}>
+                <div class="lg:max-w-lg feature-description">
                     {
                         subtitle && (
                             <h2 class="text-base font-semibold leading-7 text-yellow-400">
@@ -42,9 +48,10 @@ const { features, title, subtitle, description } = Astro.props as FeatureImagePr
                     </h1>
                     {
                         description && (
-                            <p class="mt-4 text-lg leading-7 text-zinc-600 dark:text-gray-200">
-                                {description}
-                            </p>
+                            <p
+                                class="mt-4 text-lg leading-7 text-zinc-600 dark:text-gray-200"
+                                set:html={description}
+                            />
                         )
                     }
                     <dl
@@ -61,7 +68,7 @@ const { features, title, subtitle, description } = Astro.props as FeatureImagePr
                                         />
                                         {feature.name}
                                     </dt>{" "}
-                                    <dd class="inline">{feature.description}</dd>
+                                    <dd class="inline" set:html={feature.description} />
                                 </div>
                             ))
                         }
@@ -69,7 +76,9 @@ const { features, title, subtitle, description } = Astro.props as FeatureImagePr
                     <slot name="cta" />
                 </div>
             </div>
-            <DiscordFeaturePage client:only="svelte" />
+            <div class={`flex items-center ${reversed ? "lg:order-1 lg:pr-8" : ""}`}>
+                <slot name="discord" />
+            </div>
         </div>
     </div>
 </div>

@@ -1,0 +1,35 @@
+---
+// Registers the shared Discord profile data used by @skyra/discord-components-core.
+// Include this component on any page that renders Discord message simulations.
+---
+
+<script is:inline>
+    window.$discordMessage = {
+        profiles: {
+            fiji: {
+                author: "Fiji Spring Water",
+                avatar: "/fiji_discord.webp",
+                roleColor: "#e11d48",
+            },
+            lewis: {
+                author: "Lewis",
+                avatar: "/lewis_discord.webp",
+                roleColor: "#8FCF00",
+            },
+            adam: {
+                author: "Adam",
+                avatar: "/adam_discord.webp",
+                roleColor: "#0092ff",
+                bot: true,
+                verified: true,
+            },
+            bento: {
+                author: "Bento Bot",
+                avatar: "/bento_discord.webp",
+                roleColor: "#FACC15",
+                bot: true,
+                verified: true,
+            },
+        },
+    };
+</script>

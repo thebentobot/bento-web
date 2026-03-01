@@ -87,6 +87,34 @@
     background-image: radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
 
+/* Inline code in feature descriptions */
+.feature-description code {
+    font-family: ui-monospace, monospace;
+    font-size: 0.875em;
+    background-color: var(--color-zinc-100);
+    color: var(--color-yellow-700);
+    padding: 0.1em 0.35em;
+    border-radius: 3px;
+}
+.dark .feature-description code {
+    background-color: var(--color-zinc-800);
+    color: var(--color-yellow-400);
+}
+
+/* Discord component sizing utilities (used by DiscordFeaturePage and DiscordFeaturesPage) */
+.discord-messages-size {
+    font-size: 16px;
+}
+.discord-message-size {
+    font-size: 0.9em;
+}
+.discord-message-line-height {
+    line-height: 16px;
+}
+.discord-command-line-height {
+    line-height: 1.125rem;
+}
+
 /* Hero entrance animation */
 @keyframes heroFadeUp {
     from {
