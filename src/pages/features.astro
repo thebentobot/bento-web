@@ -1,0 +1,164 @@
+---
+import AppLayout from "../layouts/app/AppLayout.astro";
+import SectionWrapper from "../layouts/SectionWrapper.astro";
+import Header from "../layouts/Header.astro";
+import Paragraph from "../layouts/Paragraph.astro";
+import FeatureImagePreview, {
+    type Feature,
+} from "../components/homepage/FeatureImagePreview.astro";
+import DiscordFeaturesPage from "../components/features/DiscordFeaturesPage.svelte";
+import DiscordProfilesSetup from "../components/discord/DiscordProfilesSetup.astro";
+
+const profileFeatures: Feature[] = [
+    {
+        name: "A profile card that's yours",
+        description:
+            "Bento generates a personalized 600x400 profile card image for every user. View any profile instantly with <code>/profile user</code>.",
+        icon: "users",
+    },
+    {
+        name: "Customize everything",
+        description:
+            "Set a custom bio, timezone, birthday, and background image or colour. Toggle an optional Last.fm now-playing board and XP progression bar.",
+        icon: "photo",
+    },
+    {
+        name: "Server and global ranks",
+        description:
+            "Your bento count and XP rank are always visible. See where you stand on your server and across all Bento servers.",
+        icon: "trophy",
+    },
+];
+
+const lastfmFeatures: Feature[] = [
+    {
+        name: "Now playing",
+        description:
+            "Show exactly what you or any user is listening to right now, with artist, track, album, and cover art in a clean embed.",
+        icon: "musicalNote",
+    },
+    {
+        name: "Top charts",
+        description:
+            "See your top artists, albums, and tracks for any time period: 7 days, 1 month, 3 months, 6 months, 1 year, or all time.",
+        icon: "users",
+    },
+    {
+        name: "Grid collages",
+        description:
+            "Generate up to a 6x6 image collage of your top artists, albums, or tracks. Each cell shows cover art, title, and play count.",
+        icon: "photo",
+    },
+];
+
+const tagsFeatures: Feature[] = [
+    {
+        name: "Save anything",
+        description:
+            "Store text, images, GIFs, links, and files. Up to 2000 characters of content and three file attachments per tag.",
+        icon: "photo",
+    },
+    {
+        name: "Create, find, and share",
+        description:
+            "Recall tags instantly by name with autocomplete. Search by name or content, or grab a random one from your server.",
+        icon: "edit",
+    },
+    {
+        name: "Server-scoped and tracked",
+        description:
+            "Tags belong to your server, track usage counts, and can only be edited or deleted by the creator or moderators.",
+        icon: "settings",
+    },
+];
+
+const leaderboardFeatures: Feature[] = [
+    {
+        name: "Activity at a glance",
+        description:
+            "XP levels reflect how active a user has been on your server. The more they chat, the more they level up.",
+        icon: "trophy",
+    },
+    {
+        name: "Check any user's history",
+        description:
+            "Use <code>/leaderboard user</code> to see a full snapshot of any user's XP, bento count, and Rock Paper Scissors record, for yourself or anyone else.",
+        icon: "users",
+    },
+    {
+        name: "Privacy-first",
+        description:
+            "Users can opt out of global leaderboards. Their position is shown as Private to everyone else.",
+        icon: "settings",
+    },
+];
+---
+
+<AppLayout
+    title="Features"
+    description="Discover what Bento Bot can do for your Discord server: custom profiles, Last.fm integration, tags, and leaderboards."
+>
+    <SectionWrapper className="!mb-0">
+        <Header>Bento <span class="text-yellow-400">Features</span></Header>
+        <Paragraph>
+            Bento brings a carefully crafted set of features to your Discord server. Each one is
+            designed to be useful, fun, and easy to use.
+        </Paragraph>
+    </SectionWrapper>
+
+    <div class="bg-white dark:bg-black">
+        <SectionWrapper className="px-0">
+            <FeatureImagePreview
+                features={profileFeatures}
+                subtitle="Custom Profiles"
+                title="Your identity, on every server"
+                description="Bento generates a personalized 600x400 profile card for every user. View any profile with <code>/profile user</code> and customize everything it shows directly from Discord or the Bento website."
+            >
+                <DiscordFeaturesPage client:only="svelte" feature="profile" slot="discord" />
+            </FeatureImagePreview>
+        </SectionWrapper>
+    </div>
+
+    <div class="bg-white dark:bg-black">
+        <SectionWrapper className="px-0">
+            <FeatureImagePreview
+                features={lastfmFeatures}
+                subtitle="Last.fm Integration"
+                title="Share your music taste"
+                description="Link your Last.fm account to track your listening history and share your music taste with your server. All commands support viewing other users' data too."
+                reversed
+            >
+                <DiscordFeaturesPage client:only="svelte" feature="lastfm" slot="discord" />
+            </FeatureImagePreview>
+        </SectionWrapper>
+    </div>
+
+    <div class="bg-white dark:bg-black">
+        <SectionWrapper className="px-0">
+            <FeatureImagePreview
+                features={tagsFeatures}
+                subtitle="Tags"
+                title="Your server's shared memory"
+                description="Tags are server-specific custom commands your community creates. Save and share frequently referenced content, recalled instantly by name, any time."
+            >
+                <DiscordFeaturesPage client:only="svelte" feature="tags" slot="discord" />
+            </FeatureImagePreview>
+        </SectionWrapper>
+    </div>
+
+    <div class="bg-white dark:bg-black">
+        <SectionWrapper className="px-0">
+            <FeatureImagePreview
+                features={leaderboardFeatures}
+                subtitle="Leaderboards"
+                title="See how active your server is"
+                description="Bento tracks XP, bento count, and Rock Paper Scissors stats for every user, on your server and globally. A quick way to see who's been around and how active people are."
+                reversed
+            >
+                <DiscordFeaturesPage client:only="svelte" feature="leaderboard" slot="discord" />
+            </FeatureImagePreview>
+        </SectionWrapper>
+    </div>
+</AppLayout>
+
+<DiscordProfilesSetup />

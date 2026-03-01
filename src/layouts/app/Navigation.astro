@@ -10,9 +10,10 @@ let currentPath = Astro.url.pathname;
 const user = Astro.locals.user as BentoBetterAuthUser;
 
 const navigationRoutes = [
-    { name: "About", route: "/about" },
-    { name: "Support", route: "/support" },
+    { name: "Features", route: "/features" },
     { name: "Leaderboard", route: "/leaderboard" },
+    { name: "Support", route: "/support" },
+    { name: "About", route: "/about" },
 ];
 
 const isCurrentRoute = (route: string): boolean => {

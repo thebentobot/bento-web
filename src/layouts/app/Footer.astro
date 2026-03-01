@@ -1,47 +1,55 @@
 ---
-
+import FooterThemeToggle from "../../components/app/FooterThemeToggle.svelte";
 ---
 
 <footer class="dark:bg-zinc-900 bg-zinc-100 dark:border-t-slate-800 border-t-slate-200 border-t">
     <div class="dark:bg-zinc-900 bg-zinc-100 max-w-(--breakpoint-2xl) mx-auto p-4 py-6">
         <div class="flex flex-row">
-            <div class="w-full md:max-w-1/2 mb-4">
-                <p class="dark:text-yellow-400 text-amber-400 font-medium">Bento</p>
-                <p class="dark:dark:text-zinc-300 text-zinc-500">
-                    Logo drawn by{" "}
-                    <a
-                        href="https://twitter.com/dannalanart"
-                        target="_blank"
-                        rel="noreferrer"
-                        class="text-blue-400 hover:underline"
-                    >
-                        Dan</a
-                    >
-                </p>
-                <p class="text-sm dark:text-zinc-400 text-zinc-600">
-                    Source code for the bot licensed{" "}
-                    <a
-                        href="https://github.com/thebentobot/dotBento/blob/master/LICENSE"
-                        target="_blank"
-                        rel="noreferrer"
-                        class="hover:underline dark:text-zinc-300 text-zinc-500"
-                    >
-                        AGPLv3</a
-                    >.
-                </p>
-                <p class="text-sm dark:text-zinc-400 text-zinc-600">
-                    Source code for the website licensed{" "}
-                    <a
-                        href="https://github.com/thebentobot/bento-web/blob/master/LICENSE"
-                        target="_blank"
-                        rel="noreferrer"
-                        class="hover:underline dark:text-zinc-300 text-zinc-500"
-                    >
-                        AGPLv3</a
-                    >.
-                </p>
+            <div class="w-full md:max-w-1/2 mb-4 flex flex-col">
+                <div>
+                    <div class="flex items-center gap-2 mb-1">
+                        <p class="dark:text-yellow-400 text-amber-400 font-medium">Bento</p>
+                        <img src="/29.webp" alt="Bento Logo" class="h-5 w-5 rounded-full" />
+                    </div>
+                    <p class="dark:text-zinc-300 text-zinc-500">
+                        Logo drawn by{" "}
+                        <a
+                            href="https://twitter.com/dannalanart"
+                            target="_blank"
+                            rel="noreferrer"
+                            class="text-blue-400 hover:underline"
+                        >
+                            Dan</a
+                        >
+                    </p>
+                    <p class="text-sm dark:text-zinc-400 text-zinc-600">
+                        Source code for the bot licensed{" "}
+                        <a
+                            href="https://github.com/thebentobot/dotBento/blob/master/LICENSE"
+                            target="_blank"
+                            rel="noreferrer"
+                            class="hover:underline dark:text-zinc-300 text-zinc-500"
+                        >
+                            AGPLv3</a
+                        >.
+                    </p>
+                    <p class="text-sm dark:text-zinc-400 text-zinc-600">
+                        Source code for the website licensed{" "}
+                        <a
+                            href="https://github.com/thebentobot/bento-web/blob/master/LICENSE"
+                            target="_blank"
+                            rel="noreferrer"
+                            class="hover:underline dark:text-zinc-300 text-zinc-500"
+                        >
+                            AGPLv3</a
+                        >.
+                    </p>
+                </div>
+                <div class="mt-auto pt-4">
+                    <FooterThemeToggle client:load />
+                </div>
             </div>
-            <div class="w-full md-max-w-1/2">
+            <div class="w-full md:max-w-1/2">
                 <p class="text-md uppercase tracking-widest mb1 dark:text-zinc-400 text-zinc-600">
                     Links
                 </p>

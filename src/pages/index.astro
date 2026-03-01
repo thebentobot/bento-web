@@ -8,6 +8,8 @@ import FeatureImagePreview, {
     type FeatureImagePreviewProps,
     type Feature,
 } from "../components/homepage/FeatureImagePreview.astro";
+import DiscordFeaturePage from "../components/homepage/DiscordFeaturePage.svelte";
+import DiscordProfilesSetup from "../components/discord/DiscordProfilesSetup.astro";
 
 Astro.response.headers.set("Cache-Control", "public, max-age=3600");
 Astro.response.headers.set("CDN-Cache-Control", "public, max-age=3600");
@@ -177,9 +179,10 @@ const featurePreview: FeatureImagePreviewProps = {
                     subtitle={featurePreview.subtitle}
                     right
                 >
+                    <DiscordFeaturePage client:only="svelte" slot="discord" />
                     <div slot="cta" class="mt-8">
                         <a
-                            href="/#Main Features"
+                            href="/features"
                             class="inline-flex items-center justify-center px-7 py-3.5 rounded-xl font-bold text-zinc-800 dark:text-zinc-200 bg-white/60 dark:bg-zinc-900/60 border border-zinc-300 dark:border-zinc-700 hover:border-amber-400 dark:hover:border-amber-400 hover:text-amber-700 dark:hover:text-amber-400 transition-all duration-200 backdrop-blur-sm text-sm sm:text-base"
                         >
                             Check out Bento&apos;s features
@@ -191,33 +194,4 @@ const featurePreview: FeatureImagePreviewProps = {
     </div>
 </AppLayout>
 
-<script>
-    window.$discordMessage = {
-        profiles: {
-            fiji: {
-                author: "Fiji Spring Water",
-                avatar: "/fiji_discord.webp",
-                roleColor: "#e11d48",
-            },
-            lewis: {
-                author: "Lewis",
-                avatar: "/lewis_discord.webp",
-                roleColor: "#8FCF00",
-            },
-            adam: {
-                author: "Adam",
-                avatar: "/adam_discord.webp",
-                roleColor: "#0092ff",
-                bot: true,
-                verified: true,
-            },
-            bento: {
-                author: "Bento Bot",
-                avatar: "/bento_discord.webp",
-                roleColor: "#FACC15",
-                bot: true,
-                verified: true,
-            },
-        },
-    };
-</script>
+<DiscordProfilesSetup />
