@@ -94,17 +94,19 @@ const stickyNavHeaderClass = classNames(
             </div>
         </div>
 
-        <!-- Center section - Mobile Logo -->
+        <!-- Center section - Mobile Logo (hidden on homepage, hero has the logo) -->
         <div class="sm:hidden flex justify-center">
-            <a href="/" data-astro-prefetch class="rounded-full">
-                <span class="sr-only">Home</span>
-                <div
-                    class="gap-x-2 rounded-md p-2 hover:bg-yellow-400 dark:hover:bg-yellow-500 dark:hover:text-black transition-colors duration-300 flex items-center justify-center"
-                >
-                    <span class="font-semibold">Bento</span>
-                    <img src="/29.webp" alt="Logo" class="h-6 w-6 rounded-full" />
-                </div>
-            </a>
+            {
+                currentPath !== "/" && (
+                    <a href="/" data-astro-prefetch class="rounded-full">
+                        <span class="sr-only">Home</span>
+                        <div class="gap-x-2 rounded-md p-2 hover:bg-yellow-400 dark:hover:bg-yellow-500 dark:hover:text-black transition-colors duration-300 flex items-center justify-center">
+                            <span class="font-semibold">Bento</span>
+                            <img src="/29.webp" alt="Logo" class="h-6 w-6 rounded-full" />
+                        </div>
+                    </a>
+                )
+            }
         </div>
 
         <!-- Right section - User Menu (Avatar + Theme/Profile/Login/Logout) -->

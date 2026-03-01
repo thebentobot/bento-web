@@ -66,6 +66,7 @@ const { features, title, subtitle, description } = Astro.props as FeatureImagePr
                             ))
                         }
                     </dl>
+                    <slot name="cta" />
                 </div>
             </div>
             <DiscordFeaturePage client:only="svelte" />
