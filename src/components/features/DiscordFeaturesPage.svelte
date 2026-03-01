@@ -231,7 +231,7 @@
                     <discord-embed-description slot="description">
                         <strong>Bento Bot Server Rank:</strong> #12 — Level 42 (12,340 XP)<br />
                         <strong>Global Rank:</strong> #847 — Level 57 (98,420 XP)<br />
-                        <strong>Bento Bot Bento Rank:</strong> #5<br />
+                        <strong>Bento Bot Server Bento Rank:</strong> #5<br />
                         <strong>Global Bento Rank:</strong> #223 — 156 Bento
                     </discord-embed-description>
                 </discord-embed>
