@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.1](https://github.com/thebentobot/bento-web/compare/v0.1.0...v0.1.1) (2026-03-01)
+
+
+### Bug Fixes
+
+* **Navigation:** restore blur-on-scroll behaviour for navbar ([9d87c40](https://github.com/thebentobot/bento-web/commit/9d87c408b77ec349607814aeb030207a154fead5))
+* **Navigation:** restore blur-on-scroll behaviour for navbar ([6a5ea57](https://github.com/thebentobot/bento-web/commit/6a5ea57054991b188edeb2ce12a8e541bab15711))
+
 ## [0.1.0](https://github.com/thebentobot/bento-web/compare/v0.0.1...v0.1.0) (2026-03-01)
 
 
