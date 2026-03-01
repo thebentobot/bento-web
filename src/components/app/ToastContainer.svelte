@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { fly } from "svelte/transition";
     import { toasts, removeToast } from "../../library/stores/toast.svelte";
 </script>
 
@@ -8,12 +7,11 @@
         {#each toasts as toast (toast.id)}
             <div
                 role="alert"
-                class="flex items-center gap-2 px-4 py-3 rounded-lg shadow-lg text-sm font-medium"
+                class="flex items-center gap-2 px-4 py-3 rounded-lg shadow-lg text-sm font-medium animate-[toast-slide-in_300ms_ease-out]"
                 class:bg-green-600={toast.type === "success"}
                 class:text-white={toast.type === "success"}
                 class:bg-red-600={toast.type === "error"}
                 class:text-red-50={toast.type === "error"}
-                transition:fly={{ x: 300, duration: 300 }}
             >
                 <span class="flex-1">{toast.message}</span>
                 <button
@@ -25,7 +23,3 @@
         {/each}
     </div>
 {/if}
-
-<style>
-    @reference "../../styles/global.css";
-</style>

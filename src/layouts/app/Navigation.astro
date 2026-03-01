@@ -130,16 +130,9 @@ const stickyNavHeaderClass = classNames(
 </header>
 
 <script>
+    // Blur is handled by NavBlurHandler.svelte (client:only) so it re-runs on every
+    // ClientRouter navigation. This inline script only manages the border and shadow.
     const nav = document.getElementById("stickyNav");
-
-    const updateBlur = () => {
-        if (!nav) return;
-        if (document.body.classList.contains("mobile-menu-open") || window.scrollY <= 1) {
-            nav.classList.remove("backdrop-blur-xs");
-        } else {
-            nav.classList.add("backdrop-blur-xs");
-        }
-    };
 
     window.addEventListener("scroll", () => {
         if (window.scrollY > 1) {
@@ -157,11 +150,5 @@ const stickyNavHeaderClass = classNames(
                 "shadow-xs"
             );
         }
-        updateBlur();
     });
-
-    const observer = new MutationObserver(updateBlur);
-    observer.observe(document.body, { attributes: true, attributeFilter: ["class"] });
-
-    updateBlur();
 </script>
