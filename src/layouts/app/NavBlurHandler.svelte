@@ -6,7 +6,7 @@
 
         const updateBlur = () => {
             if (!nav) return;
-            if (document.body.classList.contains("mobile-menu-open")) {
+            if (document.body.classList.contains("mobile-menu-open") || window.scrollY <= 1) {
                 nav.classList.remove("backdrop-blur-xs");
             } else {
                 nav.classList.add("backdrop-blur-xs");

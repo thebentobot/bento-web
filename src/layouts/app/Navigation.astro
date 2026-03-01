@@ -24,11 +24,7 @@ const isCurrentRoute = (route: string): boolean => {
 };
 
 const stickyNavHeaderClass = classNames(
-    "flex flex-col items-center w-full sticky top-0 z-20 sm:bg-inherit/30",
-    // eslint-disable-next-line no-undef
-    typeof window !== "undefined" && document.body.classList.contains("mobile-menu-open")
-        ? ""
-        : "backdrop-blur-xs"
+    "flex flex-col items-center w-full sticky top-0 z-20 sm:bg-inherit/30"
 );
 ---
 
@@ -137,10 +133,11 @@ const stickyNavHeaderClass = classNames(
     const nav = document.getElementById("stickyNav");
 
     const updateBlur = () => {
-        if (document.body.classList.contains("mobile-menu-open")) {
-            nav?.classList.remove("backdrop-blur-xs");
+        if (!nav) return;
+        if (document.body.classList.contains("mobile-menu-open") || window.scrollY <= 1) {
+            nav.classList.remove("backdrop-blur-xs");
         } else {
-            nav?.classList.add("backdrop-blur-xs");
+            nav.classList.add("backdrop-blur-xs");
         }
     };
 
@@ -160,6 +157,7 @@ const stickyNavHeaderClass = classNames(
                 "shadow-xs"
             );
         }
+        updateBlur();
     });
 
     const observer = new MutationObserver(updateBlur);
