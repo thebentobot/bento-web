@@ -115,6 +115,49 @@
     line-height: 1.125rem;
 }
 
+/* Nav blur backdrop.
+ *
+ * backdrop-filter is applied via ::before rather than directly on #stickyNav for two reasons:
+ *
+ * 1. Containing-block trap: any element with backdrop-filter becomes the containing block for
+ *    position:fixed descendants. The mobile menu overlay is `fixed inset-0` and is a DOM child
+ *    of #stickyNav, so if the nav itself had backdrop-filter the overlay would be sized relative
+ *    to the nav (a thin bar) instead of the viewport, and the overlay's own backdrop-blur-lg
+ *    would stop working. Pseudo-elements with backdrop-filter do NOT make their parent element
+ *    a containing block, so the fixed overlay remains viewport-sized.
+ *
+ * 2. z-index: -1 puts the pseudo-element behind the nav's child elements so only the page
+ *    content behind the nav is blurred, not the nav links/icons themselves. This works because
+ *    #stickyNav has z-index:20 which creates a stacking context — z-index:-1 is below siblings
+ *    but still renders within the nav's own area.
+ */
+.nav-blurred::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    backdrop-filter: blur(var(--blur-xs, 4px));
+    -webkit-backdrop-filter: blur(var(--blur-xs, 4px));
+    pointer-events: none;
+}
+
+/* Toast slide-in animation.
+ * Defined here rather than using Svelte's transition:fly because transition:fly causes Svelte to
+ * emit a virtual CSS module (ToastContainer.svelte?svelte&type=style&lang.css) containing a `fly`
+ * declaration. Tailwind v4's Vite plugin processes all CSS in the pipeline including that virtual
+ * file and throws on the unknown declaration, breaking the dev server.
+ */
+@keyframes toast-slide-in {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
 /* Hero entrance animation */
 @keyframes heroFadeUp {
     from {
