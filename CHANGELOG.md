@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.2](https://github.com/thebentobot/bento-web/compare/v0.1.1...v0.1.2) (2026-03-01)
+
+
+### Bug Fixes
+
+* **Navigation:** blur navbar only after first scroll on all pages ([89a29c9](https://github.com/thebentobot/bento-web/commit/89a29c998b52cfc4e5581465dce46f6cccac1744))
+* **Navigation:** blur navbar only after first scroll on all pages ([48ffeb6](https://github.com/thebentobot/bento-web/commit/48ffeb621d9fe9b3a340bb74040cea6fa4ada06a))
+* **Navigation:** remove orphaned updateBlur() call from scroll listener ([3d37a2c](https://github.com/thebentobot/bento-web/commit/3d37a2c09ae6b614bc18d797d192b3d10c709a3a))
+* **Navigation:** use [@apply](https://github.com/apply) for nav blur to survive Lightning CSS production build ([9eb5076](https://github.com/thebentobot/bento-web/commit/9eb5076685e613f791997c6ed34c63ed0c41578d))
+
 ## [0.1.1](https://github.com/thebentobot/bento-web/compare/v0.1.0...v0.1.1) (2026-03-01)
 
 
