@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.5](https://github.com/thebentobot/bento-web/compare/v0.1.4...v0.1.5) (2026-03-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency drizzle-orm to ^0.45.0 ([1e04ee7](https://github.com/thebentobot/bento-web/commit/1e04ee723d934ddb028afc240b1c37a86c651595))
+* **deps:** update dependency drizzle-orm to ^0.45.0 ([b852ae7](https://github.com/thebentobot/bento-web/commit/b852ae72bc540cdd75a4cef72092b36697a5735f))
+
 ## [0.1.4](https://github.com/thebentobot/bento-web/compare/v0.1.3...v0.1.4) (2026-03-05)
 
 
