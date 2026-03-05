@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.1.3](https://github.com/thebentobot/bento-web/compare/v0.1.2...v0.1.3) (2026-03-05)
+
+
+### Bug Fixes
+
+* add @better-auth/drizzle-adapter and .npmrc for npm 10 compat ([0650b39](https://github.com/thebentobot/bento-web/commit/0650b39a8662e956e7c3239b0ee9848f81194b93))
+* **features:** reverse header colours, text switch and corrections ([931e606](https://github.com/thebentobot/bento-web/commit/931e606d079484493db56a42f57f596863020fe2))
+* **features:** reverse header colours, text switch and corrections ([215de84](https://github.com/thebentobot/bento-web/commit/215de849a35e3b3a2471ec81a2555da50699a539))
+* fix package-lock.json ([1f5fec5](https://github.com/thebentobot/bento-web/commit/1f5fec533b76485c076cc4a516b408cb016318aa))
+
 ## [0.1.2](https://github.com/thebentobot/bento-web/compare/v0.1.1...v0.1.2) (2026-03-01)
 
 
