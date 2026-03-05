@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/thebentobot/bento-web/compare/v0.1.3...v0.1.4) (2026-03-05)
+
+
+### Bug Fixes
+
+* **leaderboard:** add colour to bento ([c6c8e3c](https://github.com/thebentobot/bento-web/commit/c6c8e3cc9e45075c1e692e399784a8009a05a260))
+
 ## [0.1.3](https://github.com/thebentobot/bento-web/compare/v0.1.2...v0.1.3) (2026-03-05)
 
 
