@@ -1,6 +1,7 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ]
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["config:recommended"],
+    "schedule": ["after 6:00am and before 7:00am"],
+    "timezone": "Europe/Copenhagen",
+    "assignees": ["banner4422"]
 }
