@@ -24,8 +24,7 @@ const profileFeatures: Feature[] = [
     },
     {
         name: "Server and global ranks",
-        description:
-            "Your bento count and XP rank are always visible. See where you stand on your server and across all Bento servers.",
+        description: "See where you stand on your server and across all Bento servers.",
         icon: "trophy",
     },
 ];
@@ -99,7 +98,7 @@ const leaderboardFeatures: Feature[] = [
     description="Discover what Bento Bot can do for your Discord server: custom profiles, Last.fm integration, tags, and leaderboards."
 >
     <SectionWrapper className="!mb-0">
-        <Header>Bento <span class="text-yellow-400">Features</span></Header>
+        <Header><span class="text-yellow-400">Bento </span>Features</Header>
         <Paragraph>
             Bento brings a carefully crafted set of features to your Discord server. Each one is
             designed to be useful, fun, and easy to use.
@@ -110,8 +109,8 @@ const leaderboardFeatures: Feature[] = [
         <SectionWrapper className="px-0">
             <FeatureImagePreview
                 features={profileFeatures}
-                subtitle="Custom Profiles"
-                title="Your identity, on every server"
+                subtitle="Your identity, on every server"
+                title="Custom Profiles"
                 description="Bento generates a personalized 600x400 profile card for every user. View any profile with <code>/profile user</code> and customize everything it shows directly from Discord or the Bento website."
             >
                 <DiscordFeaturesPage client:only="svelte" feature="profile" slot="discord" />
@@ -123,8 +122,8 @@ const leaderboardFeatures: Feature[] = [
         <SectionWrapper className="px-0">
             <FeatureImagePreview
                 features={lastfmFeatures}
-                subtitle="Last.fm Integration"
-                title="Share your music taste"
+                subtitle="Share your music taste"
+                title="Last.fm"
                 description="Link your Last.fm account to track your listening history and share your music taste with your server. All commands support viewing other users' data too."
                 reversed
             >
@@ -137,8 +136,8 @@ const leaderboardFeatures: Feature[] = [
         <SectionWrapper className="px-0">
             <FeatureImagePreview
                 features={tagsFeatures}
-                subtitle="Tags"
-                title="Your server's shared memory"
+                subtitle="Your server's shared memory"
+                title="Tags"
                 description="Tags are server-specific custom commands your community creates. Save and share frequently referenced content, recalled instantly by name, any time."
             >
                 <DiscordFeaturesPage client:only="svelte" feature="tags" slot="discord" />
@@ -150,8 +149,8 @@ const leaderboardFeatures: Feature[] = [
         <SectionWrapper className="px-0">
             <FeatureImagePreview
                 features={leaderboardFeatures}
-                subtitle="Leaderboards"
-                title="See how active your server is"
+                subtitle="Server activity"
+                title="Leaderboards"
                 description="Bento tracks XP, bento count, and Rock Paper Scissors stats for every user, on your server and globally. A quick way to see who's been around and how active people are."
                 reversed
             >
