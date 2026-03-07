@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.1.6](https://github.com/thebentobot/bento-web/compare/v0.1.5...v0.1.6) (2026-03-07)
+
+
+### Bug Fixes
+
+* **better-auth:** fix package.json ([0fd1778](https://github.com/thebentobot/bento-web/commit/0fd1778a108de8c6420693da5edb4c98186f05e0))
+* **deps:** update dependency @better-auth/drizzle-adapter to ^1.5.4 ([309e5db](https://github.com/thebentobot/bento-web/commit/309e5db51b754b045f58bf22e30790a7d19a884b))
+* **deps:** update dependency @better-auth/drizzle-adapter to ^1.5.4 ([1d14b4b](https://github.com/thebentobot/bento-web/commit/1d14b4b46c62fb8415f35461597e7312753b9c47))
+* **deps:** update dependency better-auth to ^1.5.4 ([0950187](https://github.com/thebentobot/bento-web/commit/0950187530e3fc4db636d13f7590e95f2024b874))
+* **deps:** update dependency better-auth to ~1.5.4 ([a5aa703](https://github.com/thebentobot/bento-web/commit/a5aa703d19108c8c59dde13ec6a0bef24da9cd31))
+* **deps:** update dependency drizzle-orm to ^0.45.1 ([2301e8e](https://github.com/thebentobot/bento-web/commit/2301e8e5b71067f40363324142d16d5c487ef204))
+* **deps:** update dependency drizzle-orm to ^0.45.1 ([6cfa2a7](https://github.com/thebentobot/bento-web/commit/6cfa2a747f6be01b6a5c260b71ec533314e76369))
+* **deps:** update dependency luxon to ^3.7.2 ([089d7fb](https://github.com/thebentobot/bento-web/commit/089d7fbf838931070bc913c94e8cc33808262092))
+* **deps:** update dependency luxon to ^3.7.2 ([4b7aa08](https://github.com/thebentobot/bento-web/commit/4b7aa08efff797f37992db8385629c959255e51f))
+
 ## [0.1.5](https://github.com/thebentobot/bento-web/compare/v0.1.4...v0.1.5) (2026-03-05)
 
 
