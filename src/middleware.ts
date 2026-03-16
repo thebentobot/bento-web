@@ -1,15 +1,15 @@
 import { defineMiddleware } from "astro:middleware";
+import { env } from "cloudflare:workers";
 import { createAuth } from "./library/auth";
 import { setRuntimeEnv } from "./library/server/bentoApi";
 
 export const onRequest = defineMiddleware(async (context, next) => {
-    const env = context.locals.runtime.env;
     if (env) {
         setRuntimeEnv(env);
     }
     if (!env?.DB) {
         console.error(
-            "Cloudflare D1 binding (env.DB) is not available. Run with wrangler (preview/dev) or ensure platformProxy is enabled."
+            "Cloudflare D1 binding (env.DB) is not available. Ensure wrangler bindings are configured."
         );
         context.locals.user = null;
         context.locals.session = null;

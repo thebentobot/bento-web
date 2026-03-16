@@ -8,12 +8,8 @@ declare interface CloudflareEnv {
     API_KEY?: string;
 }
 
-type Runtime = import("@astrojs/cloudflare").Runtime<CloudflareEnv> & { env?: CloudflareEnv };
-
 declare namespace App {
     interface Locals {
-        runtime: Runtime;
-        env?: CloudflareEnv;
         user: import("better-auth").User | null;
         session: import("better-auth").Session | null;
     }

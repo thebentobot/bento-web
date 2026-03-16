@@ -1,11 +1,11 @@
 import type { APIRoute } from "astro";
+import { env } from "cloudflare:workers";
 import { createAuth } from "../../../library/auth";
 
 export const ALL: APIRoute = async (ctx) => {
-    const env = ctx.locals.runtime.env ?? ctx.locals.env;
     if (!env?.DB) {
         throw new Error(
-            "Cloudflare D1 binding (env.DB) is not available. Run with wrangler (preview/dev) or ensure platformProxy is enabled."
+            "Cloudflare D1 binding (env.DB) is not available. Ensure wrangler bindings are configured."
         );
     }
     const auth = createAuth(env.DB, ctx.request, env);
