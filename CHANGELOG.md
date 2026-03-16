@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.8](https://github.com/thebentobot/bento-web/compare/v0.1.7...v0.1.8) (2026-03-16)
+
+
+### Bug Fixes
+
+* **deps:** update astro monorepo (major) ([bdf9920](https://github.com/thebentobot/bento-web/commit/bdf9920dceb6fd03d8be0c3cf7ae1b1b6e7b4546))
+* update wrangler entrypoint and adapter config for Astro 6 ([b3e2077](https://github.com/thebentobot/bento-web/commit/b3e20775c6f7af017837b6c06f6ae2cceff65d4b))
+
 ## [0.1.7](https://github.com/thebentobot/bento-web/compare/v0.1.6...v0.1.7) (2026-03-16)
 
 
