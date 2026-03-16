@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.7](https://github.com/thebentobot/bento-web/compare/v0.1.6...v0.1.7) (2026-03-16)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @better-auth/drizzle-adapter to ^1.5.5 ([aa5cd33](https://github.com/thebentobot/bento-web/commit/aa5cd3335c1802e7a6dc5c7ccbc6f3f75ea00b80))
+* **deps:** update dependency @better-auth/drizzle-adapter to ^1.5.5 ([9e5df63](https://github.com/thebentobot/bento-web/commit/9e5df63b7b78a0e1ef33c89527e7727d21781e50))
+* **deps:** update dependency astro-loading-indicator to ^0.8.0 ([6a91c62](https://github.com/thebentobot/bento-web/commit/6a91c62f2caf68c215dd88e9804a7def7feac48a))
+* **deps:** update dependency astro-loading-indicator to ^0.8.0 ([43843fa](https://github.com/thebentobot/bento-web/commit/43843fa8b25eaae64514e61cb06430169e192174))
+* **deps:** update dependency better-auth to ^1.5.5 ([4e7502c](https://github.com/thebentobot/bento-web/commit/4e7502ce56a916f8355660532d1cf6cb17e5b1b4))
+* **deps:** update dependency better-auth to ^1.5.5 ([3b74332](https://github.com/thebentobot/bento-web/commit/3b74332f2056b66ee8226063c5017d143f6801ff))
+
 ## [0.1.6](https://github.com/thebentobot/bento-web/compare/v0.1.5...v0.1.6) (2026-03-07)
 
 
