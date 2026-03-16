@@ -20,11 +20,7 @@ export default defineConfig({
         remotePatterns: [{ protocol: "https" }],
     },
     adapter: cloudflare({
-        platformProxy: {
-            enabled: true,
-        },
-
-        imageService: "cloudflare", // TODO: Change to "compile" if this does not work
+        imageService: "cloudflare",
     }),
 
     prefetch: true,
@@ -36,6 +32,45 @@ export default defineConfig({
                 emitFile: true,
                 filename: "stats.html",
             }),
+            {
+                name: "optimize-svelte-deps",
+                configEnvironment(environment) {
+                    if (environment === "client") {
+                        return {
+                            optimizeDeps: {
+                                include: [
+                                    "astro/virtual-modules/transitions-router.js",
+                                    "astro/virtual-modules/transitions-types.js",
+                                    "astro/virtual-modules/transitions-events.js",
+                                    "astro/virtual-modules/transitions-swap-functions.js",
+                                ],
+                            },
+                        };
+                    }
+                    return {
+                        optimizeDeps: {
+                            include: [
+                                "astro-font",
+                                "astro/virtual-modules/transitions.js",
+                                "astro-icon/components",
+                                "astro/compiler-runtime",
+                                "svelte/internal/flags/async",
+                                "debug",
+                                "better-auth",
+                                "better-auth/adapters/drizzle",
+                                "drizzle-orm/d1",
+                                "drizzle-orm/sqlite-core",
+                                "astro/zod",
+                                "astro/actions/runtime/entrypoints/server.js",
+                            ],
+                            exclude: ["mode-watcher", "svelte-toolbelt"],
+                        },
+                        resolve: {
+                            noExternal: ["mode-watcher", "svelte-toolbelt"],
+                        },
+                    };
+                },
+            },
         ],
         ssr: {
             external: [
