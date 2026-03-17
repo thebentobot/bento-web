@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.1.9](https://github.com/thebentobot/bento-web/compare/v0.1.8...v0.1.9) (2026-03-17)
+
+
+### Bug Fixes
+
+* npm audit fix security vulnerabilities ([bc7d1a4](https://github.com/thebentobot/bento-web/commit/bc7d1a471efad6f2c22a4432cbd8f65991736b01))
+* npm audit fix security vulnerabilities ([dc17cad](https://github.com/thebentobot/bento-web/commit/dc17cad356c5b952282875c8a83f0463341d5b88))
+
 ## [0.1.8](https://github.com/thebentobot/bento-web/compare/v0.1.7...v0.1.8) (2026-03-16)
 
 
