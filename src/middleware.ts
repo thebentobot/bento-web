@@ -2,6 +2,7 @@ import { defineMiddleware } from "astro:middleware";
 import { env } from "cloudflare:workers";
 import { createAuth } from "./library/auth";
 import { setRuntimeEnv } from "./library/server/bentoApi";
+import { addSecurityHeaders } from "./library/server/securityHeaders";
 
 export const onRequest = defineMiddleware(async (context, next) => {
     if (env) {
@@ -13,7 +14,9 @@ export const onRequest = defineMiddleware(async (context, next) => {
         );
         context.locals.user = null;
         context.locals.session = null;
-        return next();
+        const response = await next();
+        addSecurityHeaders(response.headers);
+        return response;
     }
     const auth = createAuth(env.DB, context.request, env);
     const isAuthed = await auth.api.getSession({
@@ -28,5 +31,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
         context.locals.session = null;
     }
 
-    return next();
+    const response = await next();
+    addSecurityHeaders(response.headers);
+    return response;
 });
