@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.1.10](https://github.com/thebentobot/bento-web/compare/v0.1.9...v0.1.10) (2026-03-21)
+
+
+### Bug Fixes
+
+* **app:** Add security headers ([#565](https://github.com/thebentobot/bento-web/issues/565)) ([98d1128](https://github.com/thebentobot/bento-web/commit/98d1128c1873acd89ede5d905e1dfd688e70239d))
+* **deps:** update dependency @libsql/client to ^0.17.2 ([c8df2fc](https://github.com/thebentobot/bento-web/commit/c8df2fc9df59a529328f52b5c11a15801fdf6256))
+* **deps:** update dependency @libsql/client to ^0.17.2 ([da1aea8](https://github.com/thebentobot/bento-web/commit/da1aea8b0a29d9f1311414b7ab606cca0c9d003a))
+
 ## [0.1.9](https://github.com/thebentobot/bento-web/compare/v0.1.8...v0.1.9) (2026-03-17)
 
 
