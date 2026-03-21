@@ -63,7 +63,7 @@
     },
     "dependencies": {
         "@better-auth/drizzle-adapter": "^1.5.5",
-        "@libsql/client": "^0.17.0",
+        "@libsql/client": "^0.17.2",
         "@skyra/discord-components-core": "4.0.2",
         "astro-font": "^1.1.0",
         "astro-icon": "^1.1.5",
