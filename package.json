@@ -62,7 +62,7 @@
         "wrangler": "^4.75.0"
     },
     "dependencies": {
-        "@better-auth/drizzle-adapter": "^1.5.5",
+        "@better-auth/drizzle-adapter": "^1.5.6",
         "@libsql/client": "^0.17.2",
         "@skyra/discord-components-core": "4.0.2",
         "astro-font": "^1.1.0",
