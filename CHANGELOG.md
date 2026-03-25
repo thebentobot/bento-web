@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.11](https://github.com/thebentobot/bento-web/compare/v0.1.10...v0.1.11) (2026-03-25)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @better-auth/drizzle-adapter to ^1.5.6 ([fe3b0af](https://github.com/thebentobot/bento-web/commit/fe3b0afbc86d7745bd5d922ec26697ca13fb6a0d))
+
 ## [0.1.10](https://github.com/thebentobot/bento-web/compare/v0.1.9...v0.1.10) (2026-03-21)
 
 
