@@ -3,8 +3,7 @@ const cspDirectives: Record<string, string> = {
     // data: required at runtime — Astro's ClientRouter loads data:application/javascript, URIs during view transitions
     "script-src": "'self' 'unsafe-inline' data:",
     "style-src": "'self' 'unsafe-inline' https://fonts.googleapis.com",
-    "img-src":
-        "'self' data: https://cdn.discordapp.com https://api.bentobot.xyz https:",
+    "img-src": "'self' data: https://cdn.discordapp.com https://api.bentobot.xyz https:",
     "font-src": "'self' https://fonts.gstatic.com",
     "connect-src": "'self'",
     "frame-src": "'none'",
@@ -27,6 +26,6 @@ export function addSecurityHeaders(headers: Headers): void {
     headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
     headers.set(
         "Permissions-Policy",
-        "camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()",
+        "camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
     );
 }
