@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.0](https://github.com/thebentobot/bento-web/compare/v0.1.14...v0.2.0) (2026-03-26)
+
+
+### Features
+
+* add C# brand colour to about page ([16f1f79](https://github.com/thebentobot/bento-web/commit/16f1f79256d225fd106f5c02bb9eeed49973538c))
+* add C# brand colour to about page ([bc2f70e](https://github.com/thebentobot/bento-web/commit/bc2f70eca6d22a96ba573d5a63c7411367500f5a))
+
 ## [0.1.14](https://github.com/thebentobot/bento-web/compare/v0.1.13...v0.1.14) (2026-03-26)
 
 
