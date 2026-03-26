@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.14](https://github.com/thebentobot/bento-web/compare/v0.1.13...v0.1.14) (2026-03-26)
+
+
+### Bug Fixes
+
+* **ci:** use --name flag to deploy to correct production worker ([2fe4fb8](https://github.com/thebentobot/bento-web/commit/2fe4fb8bb28548e8bb85fd5d35d74ee876fcdcf6))
+
 ## [0.1.13](https://github.com/thebentobot/bento-web/compare/v0.1.12...v0.1.13) (2026-03-26)
 
 
