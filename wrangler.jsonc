@@ -4,7 +4,7 @@
  */
 {
     "$schema": "node_modules/wrangler/config-schema.json",
-    "name": "bento-web-staging",
+    "name": "bento-web",
     "main": "@astrojs/cloudflare/entrypoints/server",
     "compatibility_date": "2025-06-14",
     "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
