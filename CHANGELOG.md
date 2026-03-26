@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.12](https://github.com/thebentobot/bento-web/compare/v0.1.11...v0.1.12) (2026-03-26)
+
+
+### Bug Fixes
+
+* **production workflow:** make it deploy properly ([ccdfe25](https://github.com/thebentobot/bento-web/commit/ccdfe25792b36f1506861453818e6869158ef6c5))
+
 ## [0.1.11](https://github.com/thebentobot/bento-web/compare/v0.1.10...v0.1.11) (2026-03-25)
 
 
