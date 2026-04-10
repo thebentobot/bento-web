@@ -75,6 +75,11 @@ export default defineConfig({
                 },
             },
         ],
+        build: {
+            rollupOptions: {
+                external: ["@opentelemetry/api"],
+            },
+        },
         ssr: {
             external: [
                 "node:url",
@@ -86,7 +91,6 @@ export default defineConfig({
                 "node:fs/promises",
                 "node:async_hooks",
                 "path",
-                "@opentelemetry/api",
             ],
         },
     },
