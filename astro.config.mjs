@@ -65,7 +65,7 @@ export default defineConfig({
                             ],
                             exclude: ["mode-watcher", "svelte-toolbelt"],
                             esbuildOptions: {
-                                external: ["@opentelemetry/api"],
+                                external: ["@opentelemetry/api", "virtual:*", "astro:*"],
                             },
                         },
                         resolve: {
