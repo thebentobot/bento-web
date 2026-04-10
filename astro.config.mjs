@@ -64,9 +64,6 @@ export default defineConfig({
                                 "astro/actions/runtime/entrypoints/server.js",
                             ],
                             exclude: ["mode-watcher", "svelte-toolbelt"],
-                            esbuildOptions: {
-                                external: ["@opentelemetry/api", "virtual:*", "astro:*"],
-                            },
                         },
                         resolve: {
                             noExternal: ["mode-watcher", "svelte-toolbelt"],
@@ -75,11 +72,6 @@ export default defineConfig({
                 },
             },
         ],
-        build: {
-            rollupOptions: {
-                external: ["@opentelemetry/api"],
-            },
-        },
         ssr: {
             external: [
                 "node:url",
