@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.4](https://github.com/thebentobot/bento-web/compare/v0.2.3...v0.2.4) (2026-04-24)
+
+
+### Bug Fixes
+
+* Merge pull request [#621](https://github.com/thebentobot/bento-web/issues/621) from thebentobot/renovate/npm-astrojs-cloudflare-vulnerability ([ff12c87](https://github.com/thebentobot/bento-web/commit/ff12c876f06b9495885596a5b97eaa7eb5c48a8d))
+
 ## [0.2.3](https://github.com/thebentobot/bento-web/compare/v0.2.2...v0.2.3) (2026-04-10)
 
 
