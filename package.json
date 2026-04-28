@@ -31,9 +31,9 @@
         "prepare": "husky"
     },
     "devDependencies": {
-        "@astrojs/cloudflare": "^13.1.8",
+        "@astrojs/cloudflare": "^13.2.1",
         "@astrojs/sitemap": "^3.7.2",
-        "@astrojs/svelte": "^8.0.4",
+        "@astrojs/svelte": "^8.0.5",
         "@commitlint/cli": "^20.5.0",
         "@commitlint/config-conventional": "^20.5.0",
         "@eslint/js": "^10.0.1",
@@ -42,7 +42,7 @@
         "@types/luxon": "^3.7.1",
         "@types/node": "^25.5.2",
         "@typescript-eslint/parser": "^8.58.1",
-        "astro": "^6.1.5",
+        "astro": "^6.1.9",
         "drizzle-kit": "^0.31.10",
         "eslint": "^10.2.1",
         "eslint-config-prettier": "^10.1.8",
