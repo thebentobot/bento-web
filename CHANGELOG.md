@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.6](https://github.com/thebentobot/bento-web/compare/v0.2.5...v0.2.6) (2026-05-03)
+
+
+### Bug Fixes
+
+* Merge pull request [#631](https://github.com/thebentobot/bento-web/issues/631) from thebentobot/dependabot/npm_and_yarn/postcss-8.5.13 ([57c4e04](https://github.com/thebentobot/bento-web/commit/57c4e0486d942c2059fad92919eb4150def819e1))
+
 ## [0.2.5](https://github.com/thebentobot/bento-web/compare/v0.2.4...v0.2.5) (2026-04-28)
 
 
