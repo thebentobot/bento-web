@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.2.7](https://github.com/thebentobot/bento-web/compare/v0.2.6...v0.2.7) (2026-05-15)
+
+
+### Bug Fixes
+
+* **deps:** update dependency @better-auth/drizzle-adapter to ^1.6.9 ([df86f96](https://github.com/thebentobot/bento-web/commit/df86f9689fc05306810e763d7deb41b56427d9a0))
+* **deps:** update dependency @better-auth/drizzle-adapter to ^1.6.9 ([5eacb0e](https://github.com/thebentobot/bento-web/commit/5eacb0e63e049c20fdbee6943652a5e6ed51340e))
+* **deps:** update dependency @libsql/client to ^0.17.3 ([544f3f5](https://github.com/thebentobot/bento-web/commit/544f3f58b1e2e065c89027e424a7a0a2d5c09c48))
+* **deps:** update dependency @libsql/client to ^0.17.3 ([d51c375](https://github.com/thebentobot/bento-web/commit/d51c375b13a7ecbd4e6d3efaf21e36a5ba606529))
+* **deps:** update dependency better-auth to ^1.6.9 ([0484c41](https://github.com/thebentobot/bento-web/commit/0484c412412d4c1e62e30c181cb48616b8400e92))
+* **deps:** update dependency better-auth to ^1.6.9 ([3599669](https://github.com/thebentobot/bento-web/commit/35996696a5bcf6b37d441c515d9aa9651965a991))
+* **deps:** update dependency dotenv to ^17.4.2 ([e320d58](https://github.com/thebentobot/bento-web/commit/e320d58c0256bca9ee1ab9c9a5568f4ff5c99cf5))
+* **deps:** update dependency dotenv to ^17.4.2 ([36cbf35](https://github.com/thebentobot/bento-web/commit/36cbf3555013aab88b285f7c0a6d78d0209b014f))
+* try to downgrade @better-auth/drizzle-adapter ([931516b](https://github.com/thebentobot/bento-web/commit/931516b14a9870c383de42f0f00dc1dfd5f0956f))
+
 ## [0.2.6](https://github.com/thebentobot/bento-web/compare/v0.2.5...v0.2.6) (2026-05-03)
 
 
