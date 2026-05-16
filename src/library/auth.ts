@@ -1,14 +1,15 @@
 import { betterAuth, type BetterAuthOptions, type User } from "better-auth";
 import { drizzleAdapter } from "better-auth/adapters/drizzle";
+import type { DiscordProfile } from "better-auth/social-providers";
 import { getDb } from "../db";
 
 export interface BentoBetterAuthUser extends User {
     discordId: string;
     discordUsername: string;
-    discordGlobalName?: string;
-    discordAvatar: string;
+    discordGlobalName: string | null;
+    discordAvatar: string | null;
     discordDiscriminator: string;
-    discordBannerColor?: string;
+    discordBannerColor: string | null;
     discordLocale: string;
 }
 
@@ -96,35 +97,22 @@ export const createAuth = (d1: D1Database, request?: Request, env?: AuthEnv) => 
                 enabled: discordConfigured,
                 clientId: DISCORD_CLIENT_ID || "",
                 clientSecret: DISCORD_CLIENT_SECRET || "",
-                mapProfileToUser: (
-                    profile
-                ): {
-                    id?: string;
-                    name?: string;
-                    email?: string | null;
-                    image?: string;
-                    emailVerified?: boolean;
-                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-                    [key: string]: any;
-                } => {
-                    // To satisfy better-auth, as the schema requires email, we fabricate a fake email to not bother with that.
-                    const fakeEmail = `${profile?.id || crypto.randomUUID()}@fake-discord-email.com`;
+                mapProfileToUser: (profile: DiscordProfile) => {
+                    // better-auth requires a non-null unique email on the user row; Discord doesn't
+                    // return one without the email scope (we only request identify), so we synthesize one.
+                    const fakeEmail = `${profile.id}@fake-discord-email.com`;
                     return {
-                        // core user fields
                         id: profile.id,
-                        name: profile?.global_name || profile.username,
+                        name: profile.global_name ?? profile.username,
                         email: fakeEmail,
-                        image:
-                            profile.image_url ??
-                            `https://cdn.discordapp.com/avatars/${profile.id}/${profile.avatar}.png`,
+                        image: profile.image_url,
                         emailVerified: profile.verified,
-                        // custom fields persisted in user table via additionalFields config
                         discordId: profile.id,
                         discordUsername: profile.username,
                         discordGlobalName: profile.global_name,
-                        discordAvatar: profile?.avatar,
+                        discordAvatar: profile.avatar,
                         discordDiscriminator: profile.discriminator,
-                        discordBannerColor: profile?.banner_color,
+                        discordBannerColor: profile.banner_color,
                         discordLocale: profile.locale,
                     };
                 },
