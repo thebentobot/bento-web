@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.9](https://github.com/thebentobot/bento-web/compare/v0.2.8...v0.2.9) (2026-05-16)
+
+
+### Bug Fixes
+
+* tighten Discord profile types for better-auth 1.6.8 ([5cec648](https://github.com/thebentobot/bento-web/commit/5cec6481a9a37f81681c2c199d3c43cde5cd2c42))
+* tighten Discord profile types for better-auth 1.6.8 ([3ceb5f7](https://github.com/thebentobot/bento-web/commit/3ceb5f784d5ac810d3b5ecaaebd8bfb3fa5cc8ea)), closes [#638](https://github.com/thebentobot/bento-web/issues/638)
+
 ## [0.2.8](https://github.com/thebentobot/bento-web/compare/v0.2.7...v0.2.8) (2026-05-16)
 
 
