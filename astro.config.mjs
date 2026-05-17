@@ -26,6 +26,16 @@ export default defineConfig({
     prefetch: true,
 
     vite: {
+        server: {
+            warmup: {
+                // Islands must be in serverIslandsState before workerd caches virtual:astro:server-island-manifest.
+                ssrFiles: [
+                    "./src/pages/index.astro",
+                    "./src/pages/leaderboard/index.astro",
+                    "./src/pages/support.astro",
+                ],
+            },
+        },
         plugins: [
             tailwindcss(),
             visualizer({
@@ -33,12 +43,15 @@ export default defineConfig({
                 filename: "stats.html",
             }),
             {
-                name: "optimize-svelte-deps",
+                name: "configure-environments",
                 configEnvironment(environment) {
                     if (environment === "client") {
                         return {
                             optimizeDeps: {
+                                // Pre-bundle these so Vite doesn't discover them lazily and
+                                // trigger program reloads that invalidate server-island tokens.
                                 include: [
+                                    "astro/virtual-modules/transitions.js",
                                     "astro/virtual-modules/transitions-router.js",
                                     "astro/virtual-modules/transitions-types.js",
                                     "astro/virtual-modules/transitions-events.js",
@@ -47,28 +60,28 @@ export default defineConfig({
                             },
                         };
                     }
-                    return {
-                        optimizeDeps: {
-                            include: [
-                                "astro-font",
-                                "astro/virtual-modules/transitions.js",
-                                "astro-icon/components",
-                                "astro/compiler-runtime",
-                                "svelte/internal/flags/async",
-                                "debug",
-                                "better-auth",
-                                "better-auth/adapters/drizzle",
-                                "drizzle-orm/d1",
-                                "drizzle-orm/sqlite-core",
-                                "astro/zod",
-                                "astro/actions/runtime/entrypoints/server.js",
-                            ],
-                            exclude: ["mode-watcher", "svelte-toolbelt"],
-                        },
-                        resolve: {
-                            noExternal: ["mode-watcher", "svelte-toolbelt"],
-                        },
-                    };
+                    if (environment !== "client") {
+                        return {
+                            optimizeDeps: {
+                                include: [
+                                    "astro-font",
+                                    "astro-icon/components",
+                                    "astro/compiler-runtime",
+                                    "debug",
+                                    "better-auth",
+                                    "better-auth/adapters/drizzle",
+                                    "drizzle-orm/d1",
+                                    "drizzle-orm/sqlite-core",
+                                    "astro/zod",
+                                    "astro/actions/runtime/entrypoints/server.js",
+                                ],
+                                exclude: ["mode-watcher", "svelte-toolbelt"],
+                            },
+                            resolve: {
+                                noExternal: ["mode-watcher", "svelte-toolbelt"],
+                            },
+                        };
+                    }
                 },
             },
         ],
@@ -82,7 +95,6 @@ export default defineConfig({
                 "node:buffer",
                 "node:fs/promises",
                 "node:async_hooks",
-                "path",
             ],
         },
     },

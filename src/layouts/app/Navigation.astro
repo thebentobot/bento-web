@@ -128,27 +128,3 @@ const stickyNavHeaderClass = classNames(
         </div>
     </nav>
 </header>
-
-<script>
-    // Blur is handled by NavBlurHandler.svelte (client:only) so it re-runs on every
-    // ClientRouter navigation. This inline script only manages the border and shadow.
-    const nav = document.getElementById("stickyNav");
-
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 1) {
-            nav?.classList.add(
-                "border-b",
-                "dark:border-zinc-900/25",
-                "border-zinc-50/25",
-                "shadow-xs"
-            );
-        } else {
-            nav?.classList.remove(
-                "border-b",
-                "dark:border-zinc-900/25",
-                "border-zinc-50/25",
-                "shadow-xs"
-            );
-        }
-    });
-</script>

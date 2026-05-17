@@ -1,7 +1,13 @@
 <script lang="ts">
-    import "@skyra/discord-components-core";
+    import { onMount } from "svelte";
     import { classNames } from "../../library/utils.ts";
     import DiscordMessagesModeAdjusted from "../homepage/DiscordMessagesModeAdjusted.svelte";
+
+    // Dynamic import keeps this out of Vite's SSR module graph and ensures the cached
+    // module is returned on repeat ClientRouter navigations (no double-registration).
+    onMount(() => {
+        import("@skyra/discord-components-core");
+    });
 
     interface Props {
         feature: "profile" | "lastfm" | "tags" | "leaderboard";
