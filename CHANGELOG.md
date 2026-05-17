@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.10](https://github.com/thebentobot/bento-web/compare/v0.2.9...v0.2.10) (2026-05-17)
+
+
+### Bug Fixes
+
+* restore working dev setup after Astro v6 upgrade ([e92c9de](https://github.com/thebentobot/bento-web/commit/e92c9de4b3baa38223db5add6d97d23c1742e59e))
+* restore working dev setup after Astro v6 upgrade ([32f3d0f](https://github.com/thebentobot/bento-web/commit/32f3d0f2764a1b2257edca8c34093711df7de014))
+
 ## [0.2.9](https://github.com/thebentobot/bento-web/compare/v0.2.8...v0.2.9) (2026-05-16)
 
 
