@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.11](https://github.com/thebentobot/bento-web/compare/v0.2.10...v0.2.11) (2026-05-18)
+
+
+### Bug Fixes
+
+* Merge pull request [#666](https://github.com/thebentobot/bento-web/issues/666) from thebentobot/renovate/astro-monorepo ([9f53739](https://github.com/thebentobot/bento-web/commit/9f53739d46418d37849df0a70c7a17a88404a45e))
+
 ## [0.2.10](https://github.com/thebentobot/bento-web/compare/v0.2.9...v0.2.10) (2026-05-17)
 
 
