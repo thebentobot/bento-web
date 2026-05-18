@@ -42,7 +42,7 @@
         "@types/luxon": "^3.7.1",
         "@types/node": "^25.7.0",
         "@typescript-eslint/parser": "^8.59.3",
-        "astro": "^6.3.2",
+        "astro": "^6.3.3",
         "drizzle-kit": "^0.31.10",
         "eslint": "^10.3.0",
         "eslint-config-prettier": "^10.1.8",
