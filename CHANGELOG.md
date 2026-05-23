@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.2.12](https://github.com/thebentobot/bento-web/compare/v0.2.11...v0.2.12) (2026-05-23)
+
+
+### Bug Fixes
+
+* Merge pull request [#675](https://github.com/thebentobot/bento-web/issues/675) from thebentobot/dependabot/npm_and_yarn/multi-dcc1dcafb7 ([429099d](https://github.com/thebentobot/bento-web/commit/429099dc4ff71d2de75fff5c6e4b1fd63dafd43d))
+* whoops ([81ad99a](https://github.com/thebentobot/bento-web/commit/81ad99a8ff185a7310ff5466d6a219d687663bd7))
+
 ## [0.2.11](https://github.com/thebentobot/bento-web/compare/v0.2.10...v0.2.11) (2026-05-18)
 
 
