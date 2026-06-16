@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.2.15](https://github.com/thebentobot/bento-web/compare/v0.2.14...v0.2.15) (2026-06-16)
+
+
+### Bug Fixes
+
+* **build:** extract rankStyles to standalone module ([b11096d](https://github.com/thebentobot/bento-web/commit/b11096db791940eda2ff0fd4859419b1d4ee15fe))
+* **deps:** update better-auth monorepo to ^1.6.17 ([6ffdc11](https://github.com/thebentobot/bento-web/commit/6ffdc11482778773852785ab1221e5463f21236a))
+* **deps:** update better-auth monorepo to ^1.6.17 ([a57e1ff](https://github.com/thebentobot/bento-web/commit/a57e1ff4e36463502b1cb34dbc78a647a11b5aa5))
+* **deps:** update better-auth monorepo to ^1.6.18 ([6c73407](https://github.com/thebentobot/bento-web/commit/6c73407fd7238faa99ef31b79b0febf41a208ee6))
+* **deps:** update better-auth monorepo to ^1.6.18 ([8c81c46](https://github.com/thebentobot/bento-web/commit/8c81c46f5442c136e287b10fe8e01685606a34b7))
+
 ## [0.2.14](https://github.com/thebentobot/bento-web/compare/v0.2.13...v0.2.14) (2026-06-14)
 
 
