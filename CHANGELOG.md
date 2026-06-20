@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.16](https://github.com/thebentobot/bento-web/compare/v0.2.15...v0.2.16) (2026-06-20)
+
+
+### Bug Fixes
+
+* **deps:** address dependency vulnerabilities ([4b06156](https://github.com/thebentobot/bento-web/commit/4b06156bfb44121dfb8521328e2ee56ed632ed8d))
+
 ## [0.2.15](https://github.com/thebentobot/bento-web/compare/v0.2.14...v0.2.15) (2026-06-16)
 
 
