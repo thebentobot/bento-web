@@ -5,6 +5,7 @@ export interface Feature {
     name: string;
     icon: string;
     description: string;
+    href?: string;
 }
 
 export interface FeatureImagePreviewProps {
@@ -66,7 +67,16 @@ const {
                                             class="absolute left-1 top-1 h-5 w-5 text-yellow-600"
                                             aria-hidden="true"
                                         />
-                                        {feature.name}
+                                        {feature.href ? (
+                                            <a
+                                                href={feature.href}
+                                                class="underline-offset-4 transition-colors hover:text-yellow-700 hover:underline dark:hover:text-yellow-400"
+                                            >
+                                                {feature.name}
+                                            </a>
+                                        ) : (
+                                            feature.name
+                                        )}
                                     </dt>{" "}
                                     <dd class="inline" set:html={feature.description} />
                                 </div>

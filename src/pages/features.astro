@@ -8,6 +8,7 @@ import FeatureImagePreview, {
 } from "../components/homepage/FeatureImagePreview.astro";
 import DiscordFeaturesPage from "../components/features/DiscordFeaturesPage.svelte";
 import DiscordProfilesSetup from "../components/discord/DiscordProfilesSetup.astro";
+import { DISCORD_INVITE_URL } from "../consts";
 
 const profileFeatures: Feature[] = [
     {
@@ -101,8 +102,17 @@ const leaderboardFeatures: Feature[] = [
         <Header><span class="text-yellow-400">Bento </span>Features</Header>
         <Paragraph>
             Bento brings a carefully crafted set of features to your Discord server. Each one is
-            designed to be useful, fun, and easy to use.
+            designed to be useful, fun, and easy to use. Explore some of Bento&apos;s feature
+            highlights below. Add Bento to your server to discover the rest of the commands.
         </Paragraph>
+        <div class="flex justify-center">
+            <a
+                href={DISCORD_INVITE_URL}
+                class="inline-flex items-center justify-center px-7 py-3.5 rounded-xl font-bold text-zinc-900 bg-amber-400 hover:bg-amber-500 dark:bg-yellow-400 dark:hover:bg-yellow-500 transition-all duration-200 shadow-lg shadow-amber-400/25 dark:shadow-yellow-400/15 text-sm sm:text-base"
+            >
+                Add Bento to your server
+            </a>
+        </div>
     </SectionWrapper>
 
     <div class="bg-white dark:bg-black">

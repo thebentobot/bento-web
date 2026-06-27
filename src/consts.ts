@@ -4,6 +4,8 @@ export const SITE_TITLE = "Bento";
 export const SITE_DESCRIPTION =
     "Bento is a Discord bot that offers a variety of features to enhance your server experience. It contains a lot of fun and useful commands that will make your server more enjoyable. Small features such as the ability to check the weather, set a reminder, or look up an Urban Dictionary definition, but also";
 export const SITE_URL = "https://bentobot.xyz";
+export const DISCORD_INVITE_URL =
+    "https://discord.com/api/oauth2/authorize?client_id=787041583580184609&permissions=1644167687254&scope=bot%20applications.commands";
 
 // Author information
 export const AUTHOR = {
