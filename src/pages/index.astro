@@ -2,7 +2,6 @@
 import SectionWrapper from "../layouts/SectionWrapper.astro";
 import AppLayout from "../layouts/app/AppLayout.astro";
 import Stats from "../components/homepage/Stats.astro";
-import StatsSkeleton from "../components/homepage/StatsSkeleton.astro";
 import Waves from "../components/homepage/Waves.astro";
 import FeatureImagePreview, {
     type FeatureImagePreviewProps,
@@ -10,6 +9,7 @@ import FeatureImagePreview, {
 } from "../components/homepage/FeatureImagePreview.astro";
 import DiscordFeaturePage from "../components/homepage/DiscordFeaturePage.svelte";
 import DiscordProfilesSetup from "../components/discord/DiscordProfilesSetup.astro";
+import { DISCORD_INVITE_URL } from "../consts";
 
 Astro.response.headers.set("Cache-Control", "public, max-age=3600");
 Astro.response.headers.set("CDN-Cache-Control", "public, max-age=3600");
@@ -18,30 +18,34 @@ Astro.response.headers.set("Vary", "Cookie");
 const features: Feature[] = [
     {
         name: "Custom Profiles",
-        description:
-            "Show off your personality with a custom profile. You can set your own background picture or colour, bio description, show what music you listen to, your birthday and time at your current location. Do small customisations via commands on Discord or use the Bento website profile dashboard for more advanced profile customisation.",
+        description: "Personal profile cards with backgrounds, bios, music, birthdays, and ranks.",
         icon: "users",
+        href: "/features#Custom%20Profiles",
     },
     {
         name: "Last.fm Integration",
-        description:
-            "Show off your music taste with Last.fm. You can show your top artists, albums and tracks for any given period, your recent tracks, and what you're currently listening to.",
+        description: "Now-playing embeds, top charts, and collage commands for music sharing.",
         icon: "musicalNote",
+        href: "/features#Last.fm",
     },
     {
         name: "Tags storage",
-        description:
-            "Store your favourite images, gifs, links, and videos in Bento. Access them again when needed, for sharing a funny moment that happened a month ago or to show useful information. Can't recall what a tag was called? You can search for it by name or author. If you are bored you can also get a random tag or a list of the most popular tags on the server.",
+        description: "Save useful links, images, GIFs, files, and server references by name.",
         icon: "photo",
+        href: "/features#Tags",
+    },
+    {
+        name: "Leaderboards",
+        description: "Track server activity, XP, bento count, and global rankings at a glance.",
+        icon: "trophy",
+        href: "/features#Leaderboards",
     },
 ];
 
 const featurePreview: FeatureImagePreviewProps = {
     features: features,
     subtitle: "Level up your chat experience",
-    title: "Main Features",
-    description:
-        "Bento is a Discord bot that offers a variety of features to enhance your server experience. It contains a lot of fun and useful commands that will make your server more enjoyable. Small features such as the ability to check the weather, set a reminder, or look up an Urban Dictionary definition, but also",
+    title: "Features",
     right: true,
 };
 ---
@@ -156,7 +160,7 @@ const featurePreview: FeatureImagePreviewProps = {
                     class="hero-enter hero-enter-4 flex flex-col sm:flex-row gap-3 w-full max-w-xs sm:max-w-none sm:w-auto items-center"
                 >
                     <a
-                        href="https://discord.com/api/oauth2/authorize?client_id=787041583580184609&permissions=1644167687254&scope=bot%20applications.commands"
+                        href={DISCORD_INVITE_URL}
                         class="inline-flex items-center justify-center px-7 py-3.5 rounded-xl font-bold text-zinc-900 bg-amber-400 hover:bg-amber-500 dark:bg-yellow-400 dark:hover:bg-yellow-500 transition-all duration-200 shadow-lg shadow-amber-400/25 dark:shadow-yellow-400/15 w-full sm:w-auto text-sm sm:text-base"
                     >
                         Add Bento to your server
@@ -164,9 +168,7 @@ const featurePreview: FeatureImagePreviewProps = {
                 </div>
             </section>
             <div class="relative z-10 px-4 sm:px-6">
-                <Stats server:defer>
-                    <StatsSkeleton slot="fallback" />
-                </Stats>
+                <Stats />
             </div>
             <Waves />
         </div>
@@ -185,7 +187,7 @@ const featurePreview: FeatureImagePreviewProps = {
                             href="/features"
                             class="inline-flex items-center justify-center px-7 py-3.5 rounded-xl font-bold text-zinc-800 dark:text-zinc-200 bg-white/60 dark:bg-zinc-900/60 border border-zinc-300 dark:border-zinc-700 hover:border-amber-400 dark:hover:border-amber-400 hover:text-amber-700 dark:hover:text-amber-400 transition-all duration-200 backdrop-blur-sm text-sm sm:text-base"
                         >
-                            Check out Bento&apos;s features
+                            Explore more of Bento&apos;s features
                         </a>
                     </div>
                 </FeatureImagePreview>
