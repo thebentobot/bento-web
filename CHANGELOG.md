@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.3.0](https://github.com/thebentobot/bento-web/compare/v0.2.16...v0.3.0) (2026-06-27)
+
+
+### Features
+
+* **docs:** add environment variables section to README and create .env_example ([6b7723b](https://github.com/thebentobot/bento-web/commit/6b7723b358258f7e8c7830b6b112122e09918a3c))
+
+
+### Bug Fixes
+
+* **home:** simplify feature section ([63b12f1](https://github.com/thebentobot/bento-web/commit/63b12f1e88cdf2904c29c8f52336b95a46520207))
+* **home:** simplify feature section ([c29a059](https://github.com/thebentobot/bento-web/commit/c29a059adad7456b1d68e7c88f02084d6ef2add0))
+
 ## [0.2.16](https://github.com/thebentobot/bento-web/compare/v0.2.15...v0.2.16) (2026-06-20)
 
 
