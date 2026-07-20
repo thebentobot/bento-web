@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.3.1](https://github.com/thebentobot/bento-web/compare/v0.3.0...v0.3.1) (2026-07-20)
+
+
+### Bug Fixes
+
+* **deps:** update better-auth monorepo to ^1.6.23 ([e3e626f](https://github.com/thebentobot/bento-web/commit/e3e626fbacc87b3954e4153b6b5fff3ef314a37d))
+* **deps:** update better-auth monorepo to ^1.6.23 ([e23f6f8](https://github.com/thebentobot/bento-web/commit/e23f6f87504bcf44b31c46349ff20ab8a99c05e3))
+* **deps:** update dependency @libsql/client to ^0.17.4 ([c470281](https://github.com/thebentobot/bento-web/commit/c470281eb0151d43be65463f4445f232165a3306))
+* **deps:** update dependency @libsql/client to ^0.17.4 ([2774462](https://github.com/thebentobot/bento-web/commit/27744629504c0b9bea8ce17477b4dcb614ec5abd))
+
 ## [0.3.0](https://github.com/thebentobot/bento-web/compare/v0.2.16...v0.3.0) (2026-06-27)
 
 
