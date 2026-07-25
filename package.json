@@ -41,7 +41,7 @@
         "@commitlint/config-conventional": "^21.2.0",
         "@eslint/js": "^10.0.1",
         "@tailwindcss/typography": "^0.5.20",
-        "@tailwindcss/vite": "^4.3.2",
+        "@tailwindcss/vite": "^4.3.3",
         "@types/luxon": "^3.7.2",
         "@types/node": "^25.9.5",
         "@typescript-eslint/parser": "^8.65.0",
@@ -59,7 +59,7 @@
         "prettier-plugin-svelte": "^4.1.1",
         "rollup-plugin-visualizer": "^7.0.1",
         "svelte": "^5.56.7",
-        "tailwindcss": "^4.3.2",
+        "tailwindcss": "^4.3.3",
         "typescript": "^6.0.3",
         "typescript-eslint": "^8.65.0",
         "wrangler": "^4.114.0"
