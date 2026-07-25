@@ -7,6 +7,9 @@
     },
     "type": "module",
     "version": "0.3.1",
+    "engines": {
+        "node": ">=22.12.0"
+    },
     "scripts": {
         "dev": "astro dev",
         "build": "astro build",
@@ -72,7 +75,12 @@
         "dotenv": "^17.4.2",
         "drizzle-orm": "^0.45.2",
         "luxon": "^3.7.2",
-        "mode-watcher": "^1.1.0"
+        "mode-watcher": "^1.1.0",
+        "rehype-stringify": "^10.0.1",
+        "remark-gfm": "^4.0.1",
+        "remark-parse": "^11.0.0",
+        "remark-rehype": "^11.1.2",
+        "unified": "^11.0.5"
     },
     "lint-staged": {
         "*.{ts,tsx}": [
