@@ -10,13 +10,14 @@ The Bento Bot website is created with [Astro](<[https://reactjs.org/](https://as
 
 ### Dependencies
 
+- [Node.js](https://nodejs.org/en/) 22.12.0 or newer.
 - An external API with routes that provides the data as shown in the interfaces, in this case it's the API defined in [Bento Bot's WebApi](https://github.com/thebentobot/dotBento/tree/master/src/dotBento.WebApi). Documentation on workarounds when contributing etc. will be added very soon™️.
 - For auth, the code is quite entangled with [Better Auth](https://better-auth.com/), where the database is provided by [Cloudflare D1](https://www.cloudflare.com/products/d1/). As this is a Discord bot website, the auth provider is Discord.
 
 ### Installing Bento web
 
 - `git clone https://github.com/thebentobot/bento-web.git`.
-- `npm install` assuming you have installed [node.js](https://nodejs.org/en/)
+- `npm install`
 - Create a [dotenv](https://www.npmjs.com/package/dotenv) file with the environment variables:
 
 ```
