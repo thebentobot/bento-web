@@ -1,5 +1,4 @@
-import assert from "node:assert/strict";
-import test from "node:test";
+import { describe, expect, it } from "vitest";
 import { groupChangelogReleases, loadChangelogPages, splitChangelogReleases } from "./changelog.ts";
 
 const changelog = `# Changelog
@@ -21,50 +20,55 @@ const changelog = `# Changelog
 * A preserved duplicate
 `;
 
-test("splits releases at level-two headings and preserves duplicates", () => {
-    const releases = splitChangelogReleases(changelog);
+describe("splitChangelogReleases", () => {
+    it("splits releases at level-two headings and preserves duplicates", () => {
+        const releases = splitChangelogReleases(changelog);
 
-    assert.equal(releases.length, 3);
-    assert.match(releases[0]!, /^## \[2\.0\.0]/);
-    assert.match(releases[0]!, /### Features/);
-    assert.match(releases[1]!, /^## 1\.0\.0/);
-    assert.match(releases[2]!, /A preserved duplicate/);
+        expect(releases).toHaveLength(3);
+        expect(releases[0]).toMatch(/^## \[2\.0\.0]/);
+        expect(releases[0]).toMatch(/### Features/);
+        expect(releases[1]).toMatch(/^## 1\.0\.0/);
+        expect(releases[2]).toMatch(/A preserved duplicate/);
+    });
+
+    it("returns an empty array when the changelog has no releases", () => {
+        expect(splitChangelogReleases("# Changelog\n\nNothing released yet.")).toEqual([]);
+        expect(splitChangelogReleases("")).toEqual([]);
+    });
+
+    it("rejects release headings without a changelog title", () => {
+        expect(() => splitChangelogReleases("## 1.0.0")).toThrow(/must contain a title/);
+    });
 });
 
-test("groups releases and keeps a partial final chunk", () => {
-    const releases = ["one", "two", "three", "four", "five"];
+describe("groupChangelogReleases", () => {
+    it("groups releases and keeps a partial final chunk", () => {
+        const releases = ["one", "two", "three", "four", "five"];
 
-    assert.deepEqual(groupChangelogReleases(releases, 2), [
-        ["one", "two"],
-        ["three", "four"],
-        ["five"],
-    ]);
+        expect(groupChangelogReleases(releases, 2)).toEqual([
+            ["one", "two"],
+            ["three", "four"],
+            ["five"],
+        ]);
+    });
+
+    it("rejects invalid page sizes", () => {
+        expect(() => groupChangelogReleases(["one"], 0)).toThrow(/positive integer/);
+    });
 });
 
-test("returns an empty array when the changelog has no releases", () => {
-    assert.deepEqual(splitChangelogReleases("# Changelog\n\nNothing released yet."), []);
-    assert.deepEqual(splitChangelogReleases(""), []);
-});
+describe("loadChangelogPages", () => {
+    it("fails when the upstream changelog request fails", async () => {
+        await expect(
+            loadChangelogPages(async () => new Response("", { status: 503 }))
+        ).rejects.toThrow(/Failed to fetch changelog: 503/);
+    });
 
-test("rejects release headings without a changelog title", () => {
-    assert.throws(() => splitChangelogReleases("## 1.0.0"), /must contain a title/);
-});
+    it("returns no pages when the upstream changelog has no releases", async () => {
+        const pages = await loadChangelogPages(
+            async () => new Response("# Changelog\n\nNothing released yet.")
+        );
 
-test("rejects invalid page sizes", () => {
-    assert.throws(() => groupChangelogReleases(["one"], 0), /positive integer/);
-});
-
-test("fails when the upstream changelog request fails", async () => {
-    await assert.rejects(
-        loadChangelogPages(async () => new Response("", { status: 503 })),
-        /Failed to fetch changelog: 503/
-    );
-});
-
-test("returns no pages when the upstream changelog has no releases", async () => {
-    const pages = await loadChangelogPages(
-        async () => new Response("# Changelog\n\nNothing released yet.")
-    );
-
-    assert.deepEqual(pages, []);
+        expect(pages).toEqual([]);
+    });
 });
