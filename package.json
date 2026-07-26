@@ -13,6 +13,7 @@
     "scripts": {
         "dev": "astro dev",
         "build": "astro build",
+        "test": "vitest run",
         "preview": "astro build && wrangler dev --remote",
         "astro": "astro",
         "deploy": "astro build && wrangler deploy",
@@ -62,6 +63,7 @@
         "tailwindcss": "^4.3.3",
         "typescript": "^7.0.2",
         "typescript-eslint": "^8.65.0",
+        "vitest": "^4.1.10",
         "wrangler": "^4.114.0"
     },
     "dependencies": {

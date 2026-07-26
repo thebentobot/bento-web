@@ -1,19 +1,17 @@
 ---
+export const prerender = true;
+
+import MarkdownContent from "../components/markdown/MarkdownContent.astro";
+import ChangelogFeed from "../components/markdown/ChangelogFeed.svelte";
+import { CHANGELOG_URL, loadChangelogPages } from "../library/server/changelog.ts";
 import AppLayout from "../layouts/app/AppLayout.astro";
 import SectionWrapper from "../layouts/SectionWrapper.astro";
-import GitHubMarkdown from "../components/markdown/GitHubMarkdown.astro";
 
-Astro.response.headers.set(
-    "Cache-Control",
-    // cache for 6 hours
-    "public, max-age=21600"
-);
-
-Astro.response.headers.set(
-    "CDN-Cache-Control",
-    // cache for 6 hour
-    "public, max-age=21600"
-);
+const changelogPages = await loadChangelogPages();
+const firstPage = changelogPages[0];
+const initialHtml = firstPage
+    ? `<h1>Changelog</h1>${firstPage.html}`
+    : "<h1>Changelog</h1><p>No releases yet.</p>";
 ---
 
 <AppLayout
@@ -21,8 +19,26 @@ Astro.response.headers.set(
     description="View the changelog of Bento Bot, the Discord bot that provides media and entertainment commands."
 >
     <SectionWrapper>
-        <GitHubMarkdown
-            url="https://raw.githubusercontent.com/thebentobot/dotBento/master/CHANGELOG.md"
-        />
+        <div>
+            <MarkdownContent html={initialHtml} />
+
+            {
+                firstPage && firstPage.totalPages > 1 && (
+                    <ChangelogFeed client:load totalPages={firstPage.totalPages} />
+                )
+            }
+
+            <noscript>
+                <p class="mx-auto mt-8 max-w-prose text-center text-zinc-700 dark:text-zinc-300">
+                    JavaScript is required to load older releases.{" "}
+                    <a
+                        href={CHANGELOG_URL}
+                        class="text-amber-500 hover:underline dark:text-yellow-400"
+                    >
+                        View the complete changelog on GitHub
+                    </a>.
+                </p>
+            </noscript>
+        </div>
     </SectionWrapper>
 </AppLayout>
