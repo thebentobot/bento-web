@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.4.0](https://github.com/thebentobot/bento-web/compare/v0.3.1...v0.4.0) (2026-07-26)
+
+
+### Features
+
+* prerender changelog with incremental loading ([a5bb253](https://github.com/thebentobot/bento-web/commit/a5bb253c04b1f38c558e8f7179c9420942516be6))
+* prerender changelog with incremental loading ([153e742](https://github.com/thebentobot/bento-web/commit/153e7428a4eca869f56a15e4de60927d4d372ca4))
+
+
+### Bug Fixes
+
+* **deps:** declare Astro 7 markdown dependencies ([2781163](https://github.com/thebentobot/bento-web/commit/278116375deab5fbb80e87cf23f183399c9bbefd))
+* **deps:** update better-auth monorepo to ^1.6.24 ([c0aa99f](https://github.com/thebentobot/bento-web/commit/c0aa99f5bda71d38526de592bbe4834dd959a36b))
+* **deps:** update better-auth monorepo to ^1.6.24 ([6284096](https://github.com/thebentobot/bento-web/commit/6284096b6a67a98fad79ea6e3a0d8a20c4e5a90a))
+
 ## [0.3.1](https://github.com/thebentobot/bento-web/compare/v0.3.0...v0.3.1) (2026-07-20)
 
 
