@@ -2,16 +2,16 @@
 export const prerender = true;
 
 import MarkdownContent from "../components/markdown/MarkdownContent.astro";
+import ChangelogFeed from "../components/markdown/ChangelogFeed.svelte";
 import { CHANGELOG_URL, loadChangelogPages } from "../library/server/changelog.ts";
 import AppLayout from "../layouts/app/AppLayout.astro";
 import SectionWrapper from "../layouts/SectionWrapper.astro";
 
 const changelogPages = await loadChangelogPages();
 const firstPage = changelogPages[0];
-
-if (!firstPage) {
-    throw new Error("The changelog did not produce an initial page.");
-}
+const initialHtml = firstPage
+    ? `<h1>Changelog</h1>${firstPage.html}`
+    : "<h1>Changelog</h1><p>No releases yet.</p>";
 ---
 
 <AppLayout
@@ -19,27 +19,12 @@ if (!firstPage) {
     description="View the changelog of Bento Bot, the Discord bot that provides media and entertainment commands."
 >
     <SectionWrapper>
-        <div data-changelog-feed data-next-page="2" data-total-pages={firstPage.totalPages}>
-            <MarkdownContent id="changelog-entries" html={`<h1>Changelog</h1>${firstPage.html}`} />
+        <div>
+            <MarkdownContent html={initialHtml} />
 
             {
-                firstPage.totalPages > 1 && (
-                    <div class="mx-auto mt-10 flex max-w-prose flex-col items-center gap-3">
-                        <button
-                            data-changelog-load-more
-                            type="button"
-                            aria-controls="changelog-entries"
-                            class="cursor-pointer rounded-lg bg-yellow-400 px-6 py-3 font-semibold text-black transition-colors duration-300 hover:bg-yellow-500 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-yellow-500 dark:hover:bg-yellow-600"
-                        >
-                            Load more
-                        </button>
-                        <p
-                            data-changelog-status
-                            role="status"
-                            aria-live="polite"
-                            class="min-h-6 text-center text-sm text-zinc-600 dark:text-zinc-400"
-                        />
-                    </div>
+                firstPage && firstPage.totalPages > 1 && (
+                    <ChangelogFeed client:load totalPages={firstPage.totalPages} />
                 )
             }
 
@@ -57,75 +42,3 @@ if (!firstPage) {
         </div>
     </SectionWrapper>
 </AppLayout>
-
-<script>
-    interface ChangelogChunk {
-        html: string;
-        page: number;
-        releaseCount: number;
-        totalPages: number;
-    }
-
-    const setupChangelogFeed = () => {
-        const feed = document.querySelector<HTMLElement>("[data-changelog-feed]");
-        if (!feed || feed.dataset.initialized === "true") return;
-
-        const button = feed.querySelector<HTMLButtonElement>("[data-changelog-load-more]");
-        const entries = feed.querySelector<HTMLElement>("#changelog-entries");
-        const status = feed.querySelector<HTMLElement>("[data-changelog-status]");
-        if (!button || !entries || !status) return;
-
-        feed.dataset.initialized = "true";
-
-        const totalPages = Number(feed.dataset.totalPages);
-        let nextPage = Number(feed.dataset.nextPage);
-
-        button.addEventListener("click", async () => {
-            button.disabled = true;
-            button.textContent = "Loading…";
-            status.textContent = "";
-            entries.setAttribute("aria-busy", "true");
-
-            try {
-                const response = await fetch(`/changelog/chunks/${nextPage}.json`, {
-                    headers: { Accept: "application/json" },
-                });
-                if (!response.ok) {
-                    throw new Error(`Changelog chunk request failed with ${response.status}.`);
-                }
-
-                const chunk = (await response.json()) as ChangelogChunk;
-                if (
-                    chunk.page !== nextPage ||
-                    chunk.totalPages !== totalPages ||
-                    typeof chunk.html !== "string"
-                ) {
-                    throw new Error("Changelog chunk response was invalid.");
-                }
-
-                entries.insertAdjacentHTML("beforeend", chunk.html);
-                nextPage += 1;
-                feed.dataset.nextPage = String(nextPage);
-
-                if (nextPage > totalPages) {
-                    button.remove();
-                    status.textContent = "All releases loaded.";
-                } else {
-                    button.disabled = false;
-                    button.textContent = "Load more";
-                    status.textContent = `${chunk.releaseCount} older releases loaded.`;
-                }
-            } catch (error) {
-                console.error("Failed to load older changelog releases.", error);
-                button.disabled = false;
-                button.textContent = "Try again";
-                status.textContent = "Could not load older releases. Please try again.";
-            } finally {
-                entries.removeAttribute("aria-busy");
-            }
-        });
-    };
-
-    setupChangelogFeed();
-    document.addEventListener("astro:page-load", setupChangelogFeed);
-</script>

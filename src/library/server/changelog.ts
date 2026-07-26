@@ -7,13 +7,12 @@ export const RELEASES_PER_CHUNK = 5;
 export interface ChangelogPage {
     html: string;
     page: number;
-    releaseCount: number;
     totalPages: number;
 }
 
 type ChangelogFetcher = (url: string) => Promise<Response>;
 
-export function splitChangelogReleases(markdown: string): string[] {
+export const splitChangelogReleases = (markdown: string): string[] => {
     const normalizedMarkdown = markdown.replace(/\r\n?/g, "\n").trim();
     const lines = normalizedMarkdown.split("\n");
     const releaseStarts = lines.reduce<number[]>((starts, line, index) => {
@@ -22,7 +21,7 @@ export function splitChangelogReleases(markdown: string): string[] {
     }, []);
 
     if (releaseStarts.length === 0) {
-        throw new Error("Changelog must contain at least one level-two release heading.");
+        return [];
     }
 
     const preamble = lines.slice(0, releaseStarts[0]).join("\n");
@@ -34,12 +33,12 @@ export function splitChangelogReleases(markdown: string): string[] {
         const end = releaseStarts[index + 1] ?? lines.length;
         return lines.slice(start, end).join("\n").trim();
     });
-}
+};
 
-export function groupChangelogReleases(
+export const groupChangelogReleases = (
     releases: string[],
     pageSize = RELEASES_PER_CHUNK
-): string[][] {
+): string[][] => {
     if (!Number.isInteger(pageSize) || pageSize <= 0) {
         throw new Error("Changelog page size must be a positive integer.");
     }
@@ -49,9 +48,11 @@ export function groupChangelogReleases(
         pages.push(releases.slice(index, index + pageSize));
     }
     return pages;
-}
+};
 
-async function buildChangelogPages(fetcher: ChangelogFetcher): Promise<ChangelogPage[]> {
+export const loadChangelogPages = async (
+    fetcher: ChangelogFetcher = (url) => fetch(url)
+): Promise<ChangelogPage[]> => {
     const response = await fetcher(CHANGELOG_URL);
     if (!response.ok) {
         throw new Error(
@@ -67,23 +68,7 @@ async function buildChangelogPages(fetcher: ChangelogFetcher): Promise<Changelog
         chunks.map(async (chunk, index) => ({
             html: await renderMarkdown(chunk.join("\n\n")),
             page: index + 1,
-            releaseCount: chunk.length,
             totalPages,
         }))
     );
-}
-
-let changelogPagesPromise: Promise<ChangelogPage[]> | undefined;
-
-const defaultFetcher: ChangelogFetcher = (url) => fetch(url);
-
-export function loadChangelogPages(
-    fetcher: ChangelogFetcher = defaultFetcher
-): Promise<ChangelogPage[]> {
-    if (fetcher !== defaultFetcher) {
-        return buildChangelogPages(fetcher);
-    }
-
-    changelogPagesPromise ??= buildChangelogPages(defaultFetcher);
-    return changelogPagesPromise;
-}
+};

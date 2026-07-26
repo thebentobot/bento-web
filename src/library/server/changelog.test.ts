@@ -41,11 +41,12 @@ test("groups releases and keeps a partial final chunk", () => {
     ]);
 });
 
-test("rejects malformed changelog content", () => {
-    assert.throws(
-        () => splitChangelogReleases("# Changelog\n\nNothing released yet."),
-        /at least one level-two release heading/
-    );
+test("returns an empty array when the changelog has no releases", () => {
+    assert.deepEqual(splitChangelogReleases("# Changelog\n\nNothing released yet."), []);
+    assert.deepEqual(splitChangelogReleases(""), []);
+});
+
+test("rejects release headings without a changelog title", () => {
     assert.throws(() => splitChangelogReleases("## 1.0.0"), /must contain a title/);
 });
 
@@ -58,4 +59,12 @@ test("fails when the upstream changelog request fails", async () => {
         loadChangelogPages(async () => new Response("", { status: 503 })),
         /Failed to fetch changelog: 503/
     );
+});
+
+test("returns no pages when the upstream changelog has no releases", async () => {
+    const pages = await loadChangelogPages(
+        async () => new Response("# Changelog\n\nNothing released yet.")
+    );
+
+    assert.deepEqual(pages, []);
 });
