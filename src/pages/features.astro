@@ -8,7 +8,7 @@ import FeatureImagePreview, {
 } from "../components/homepage/FeatureImagePreview.astro";
 import DiscordFeaturesPage from "../components/features/DiscordFeaturesPage.svelte";
 import DiscordProfilesSetup from "../components/discord/DiscordProfilesSetup.astro";
-import { DISCORD_INVITE_URL } from "../consts";
+import { DISCORD_INVITE_URL, DOCS_URL } from "../consts";
 
 const profileFeatures: Feature[] = [
     {
@@ -105,12 +105,18 @@ const leaderboardFeatures: Feature[] = [
             designed to be useful, fun, and easy to use. Explore some of Bento&apos;s feature
             highlights below. Add Bento to your server to discover the rest of the commands.
         </Paragraph>
-        <div class="flex justify-center">
+        <div class="flex flex-col sm:flex-row justify-center gap-3">
             <a
                 href={DISCORD_INVITE_URL}
                 class="inline-flex items-center justify-center px-7 py-3.5 rounded-xl font-bold text-zinc-900 bg-amber-400 hover:bg-amber-500 dark:bg-yellow-400 dark:hover:bg-yellow-500 transition-all duration-200 shadow-lg shadow-amber-400/25 dark:shadow-yellow-400/15 text-sm sm:text-base"
             >
                 Add Bento to your server
+            </a>
+            <a
+                href={DOCS_URL}
+                class="inline-flex items-center justify-center px-7 py-3.5 rounded-xl font-bold text-zinc-800 dark:text-zinc-200 bg-white/60 dark:bg-zinc-900/60 border border-zinc-300 dark:border-zinc-700 hover:border-amber-400 dark:hover:border-amber-400 hover:text-amber-700 dark:hover:text-amber-400 transition-all duration-200 backdrop-blur-sm text-sm sm:text-base"
+            >
+                Browse the documentation
             </a>
         </div>
     </SectionWrapper>
