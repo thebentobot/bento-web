@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.0](https://github.com/thebentobot/bento-web/compare/v0.4.1...v0.5.0) (2026-08-03)
+
+
+### Features
+
+* link to Bento documentation ([67dad29](https://github.com/thebentobot/bento-web/commit/67dad29c39a74dcb4ba7ca213cf61a56fcf529e2))
+* link to Bento documentation ([c43d372](https://github.com/thebentobot/bento-web/commit/c43d372d208d53b2857673a5cd6d0f38e783d27b))
+
 ## [0.4.1](https://github.com/thebentobot/bento-web/compare/v0.4.0...v0.4.1) (2026-07-29)
 
 
