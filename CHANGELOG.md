@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.5.1](https://github.com/thebentobot/bento-web/compare/v0.5.0...v0.5.1) (2026-08-05)
+
+
+### Bug Fixes
+
+* restore TypeScript tooling compatibility ([e0a694e](https://github.com/thebentobot/bento-web/commit/e0a694ed3977557cd4f62cb75a1ffde751d728c6))
+* restore TypeScript tooling compatibility ([d28af20](https://github.com/thebentobot/bento-web/commit/d28af2087fa4c2d32534d1bfcffbf1323e2a8bbb))
+* use supported TypeScript version ([c4a3c76](https://github.com/thebentobot/bento-web/commit/c4a3c76a157ed280c16362ab20f07133644cf45f))
+
 ## [0.5.0](https://github.com/thebentobot/bento-web/compare/v0.4.1...v0.5.0) (2026-08-03)
 
 
