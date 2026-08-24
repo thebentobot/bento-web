@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.5.2](https://github.com/thebentobot/bento-web/compare/v0.5.1...v0.5.2) (2026-08-24)
+
+
+### Bug Fixes
+
+* **deps:** update better-auth monorepo to ^1.7.1 ([f1ae807](https://github.com/thebentobot/bento-web/commit/f1ae807e43ed6b5d72eea79580a4c7ffa65b74e0))
+* **deps:** update better-auth monorepo to ^1.7.1 ([8c1fb45](https://github.com/thebentobot/bento-web/commit/8c1fb45867592bbf6acf304859fa72cde841becd))
+* **deps:** update dependency astro-font to ^1.2.0 ([9537aff](https://github.com/thebentobot/bento-web/commit/9537aff7223c65065e6ad2442f584af4ed2dff07))
+* **deps:** update dependency astro-font to ^1.2.0 ([9502d91](https://github.com/thebentobot/bento-web/commit/9502d91753ece1e8bbcfd796e819a5196c6b5b1e))
+* **deps:** update dependency astro-icon to ^1.2.0 ([d34efdc](https://github.com/thebentobot/bento-web/commit/d34efdcb221db6724a96e9343bf38508d80cf676))
+* **deps:** update dependency astro-icon to ^1.2.0 ([1822a5e](https://github.com/thebentobot/bento-web/commit/1822a5e33fd6079c38528f76adcf2b4b7949e029))
+
 ## [0.5.1](https://github.com/thebentobot/bento-web/compare/v0.5.0...v0.5.1) (2026-08-05)
 
 
