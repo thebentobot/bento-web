@@ -71,7 +71,7 @@
         "@libsql/client": "^0.17.4",
         "@skyra/discord-components-core": "4.0.2",
         "astro-font": "^1.2.0",
-        "astro-icon": "^1.1.5",
+        "astro-icon": "^1.2.0",
         "astro-loading-indicator": "^0.9.0",
         "better-auth": "^1.7.1",
         "dotenv": "^17.4.2",
