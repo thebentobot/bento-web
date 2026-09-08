@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.3](https://github.com/thebentobot/bento-web/compare/v0.5.2...v0.5.3) (2026-09-08)
+
+
+### Bug Fixes
+
+* Merge pull request [#806](https://github.com/thebentobot/bento-web/issues/806) from thebentobot/dependabot/npm_and_yarn/postcss-selector-parser-7.1.6 ([880ae75](https://github.com/thebentobot/bento-web/commit/880ae758cb1266bbf6e16da302b55f4547491b5f))
+
 ## [0.5.2](https://github.com/thebentobot/bento-web/compare/v0.5.1...v0.5.2) (2026-08-24)
 
 
