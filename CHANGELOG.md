@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.5.5](https://github.com/thebentobot/bento-web/compare/v0.5.4...v0.5.5) (2026-09-30)
+
+
+### Bug Fixes
+
+* **deps:** update better-auth monorepo to ^1.7.6 ([8343f75](https://github.com/thebentobot/bento-web/commit/8343f75ba85a35b7834590f502ecc212ce9cdb21))
+* **deps:** update better-auth monorepo to ^1.7.6 ([2f09ed8](https://github.com/thebentobot/bento-web/commit/2f09ed83e654f38ecb9749a7c39dc7b7846d0c0b))
+* **deps:** update dependency @libsql/client to ^0.18.0 ([d60d42f](https://github.com/thebentobot/bento-web/commit/d60d42f5ebd51d8549d9588eb0f77e5d4446d976))
+* **deps:** update dependency dotenv to v18 ([d3ff1b1](https://github.com/thebentobot/bento-web/commit/d3ff1b1f0cf67fc3dbc173e3d287cc214029d03f))
+* **deps:** update dependency drizzle-orm to ^0.45.3 ([ab6d4d2](https://github.com/thebentobot/bento-web/commit/ab6d4d23e20e0b0c332d27d6bba6de6503c85183))
+* **deps:** update dependency drizzle-orm to ^0.45.3 ([67742be](https://github.com/thebentobot/bento-web/commit/67742be86fe57d140a38fc3433f3b8c5602ada04))
+
 ## [0.5.4](https://github.com/thebentobot/bento-web/compare/v0.5.3...v0.5.4) (2026-09-20)
 
 
