@@ -75,7 +75,7 @@
         "astro-loading-indicator": "^0.9.0",
         "better-auth": "^1.7.5",
         "dotenv": "^17.4.2",
-        "drizzle-orm": "^0.45.2",
+        "drizzle-orm": "^0.45.3",
         "luxon": "^3.7.2",
         "mode-watcher": "^1.1.0",
         "rehype-stringify": "^10.0.1",
