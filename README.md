@@ -49,7 +49,7 @@ Quick reference:
 
 ## Development
 
-This website is mainly developed by [Christian](https://github.com/banner4422).
+This website is mainly developed by [Christian](https://github.com/christianhook).
 
 Pull requests are very welcome if the features/changes makes sense and are up to par in quality.
 
