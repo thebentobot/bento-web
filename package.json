@@ -64,7 +64,7 @@
         "typescript": "^6.0.3",
         "typescript-eslint": "^8.71.0",
         "vitest": "^5.0.3",
-        "wrangler": "^4.144.0"
+        "wrangler": "^4.145.0"
     },
     "dependencies": {
         "@better-auth/drizzle-adapter": "^1.7.7",
