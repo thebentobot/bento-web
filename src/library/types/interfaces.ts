@@ -16,13 +16,13 @@ export interface PatreonUserDto {
 
 export interface LeaderboardUserDto {
     rank: number;
-    userId: bigint;
+    userId: string | number | bigint;
     level: number;
     xp: number;
     username: string;
     // TODO: remove discriminator when Discord removes it from the API
     discriminator: string;
-    avatarUrl: string;
+    avatarUrl: string | null;
     private?: boolean;
 }
 
@@ -109,9 +109,7 @@ export interface GuildLeaderboardNotFound {
 }
 
 export type GuildLeaderboardAccessResult =
-    | GuildLeaderboardAccessible
-    | GuildLeaderboardNotPublic
-    | GuildLeaderboardNotFound;
+    GuildLeaderboardAccessible | GuildLeaderboardNotPublic | GuildLeaderboardNotFound;
 
 export type LeaderboardDenialReason = "not_bot_user" | "not_member";
 

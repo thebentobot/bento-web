@@ -1,5 +1,6 @@
 ---
-import type { LeaderboardRankingsInterface } from "./Leaderboard.astro";
+import type { LeaderboardUserDto } from "../../library/types/interfaces";
+import { getDiscordDefaultAvatarUrl, resolveDiscordAvatarUrl } from "../../library/discordAvatar";
 
 const rankToNumber = (rank: number) => {
     switch (rank) {
@@ -28,9 +29,16 @@ const {
     level,
     xp,
     avatarUrl,
+    userId,
+    discriminator,
     username,
     private: isPrivate,
-} = Astro.props as LeaderboardRankingsInterface & { private?: boolean };
+} = Astro.props as LeaderboardUserDto;
+
+const defaultAvatarUrl = isPrivate ? undefined : getDiscordDefaultAvatarUrl(userId, discriminator);
+const resolvedAvatarUrl = defaultAvatarUrl
+    ? resolveDiscordAvatarUrl(avatarUrl, defaultAvatarUrl)
+    : undefined;
 
 const rankNumber = Number(rank);
 const topUsersStyle = rankToNumber(rankNumber);
@@ -66,14 +74,15 @@ const messagesToNextLevel = Math.round((level * level * 100 - xp) / 46);
                 <>
                     <img
                         class="w-16 dark:bg-zinc-800 bg-zinc-200 rounded-full inline-block mx-4 whitespace-nowrap overflow-hidden"
-                        src={avatarUrl}
+                        src={resolvedAvatarUrl}
+                        data-default-avatar={defaultAvatarUrl}
                         alt={`${username}'s Avatar`}
                         style={{ textIndent: "100%" }}
                         width={64}
                         height={64}
                         loading="lazy"
                         decoding="async"
-                        onerror="this.style.opacity='0'"
+                        onerror="this.onerror=null;this.src=this.dataset.defaultAvatar"
                     />
                     <span
                         title={username}

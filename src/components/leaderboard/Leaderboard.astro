@@ -4,7 +4,10 @@ import {
     fetchLeaderboardUsersForServer,
 } from "../../library/server/bentoApi";
 import LeaderboardUser from "./LeaderboardUser.astro";
-import { type LeaderboardResponseDto } from "../../library/types/interfaces";
+import {
+    type LeaderboardResponseDto,
+    type LeaderboardUserDto,
+} from "../../library/types/interfaces";
 import { Icon } from "astro-icon/components";
 
 interface Props {
@@ -13,14 +16,7 @@ interface Props {
 
 const { serverId } = Astro.props;
 
-export interface LeaderboardRankingsInterface {
-    rank: number;
-    level: number;
-    xp: number;
-    userID: bigint;
-    avatarUrl: string;
-    username: string;
-}
+export type LeaderboardRankingsInterface = LeaderboardUserDto;
 
 export interface userRankingsInterface {
     users: LeaderboardRankingsInterface[];
