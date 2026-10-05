@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.5.8](https://github.com/thebentobot/bento-web/compare/v0.5.7...v0.5.8) (2026-10-05)
+
+
+### Bug Fixes
+
+* **deps:** update dependency dotenv to ^18.0.5 ([b9078f8](https://github.com/thebentobot/bento-web/commit/b9078f8d139a301865227b932ba373667d83c599))
+* **deps:** update dependency dotenv to ^18.0.5 ([526e9e7](https://github.com/thebentobot/bento-web/commit/526e9e70d3d8d0325241e10095c976437ec8e72a))
+
 ## [0.5.7](https://github.com/thebentobot/bento-web/compare/v0.5.6...v0.5.7) (2026-10-04)
 
 
