@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.5.9](https://github.com/thebentobot/bento-web/compare/v0.5.8...v0.5.9) (2026-10-06)
+
+
+### Bug Fixes
+
+* fall back to Discord default avatars on leaderboards ([ebadcc0](https://github.com/thebentobot/bento-web/commit/ebadcc0b678c32b08bdc4b28ce5c36996018f0d2))
+* fall back to Discord default avatars on leaderboards ([2984e10](https://github.com/thebentobot/bento-web/commit/2984e10a3e991112b565d48693041088f2324cf8))
+* use Discord avatar 3 as leaderboard fallback ([0e8cece](https://github.com/thebentobot/bento-web/commit/0e8cece82b30634c422353c1d5e53ee6b5ac512a))
+* use Discord avatar 3 for missing leaderboard avatars ([59c0d83](https://github.com/thebentobot/bento-web/commit/59c0d83e97ccfe2f6f4316f58561d6b089d1aede))
+* use Discord avatar 4 for missing leaderboard avatars ([401eb22](https://github.com/thebentobot/bento-web/commit/401eb22454d173acbc30d7092104396dcd8a0d2a))
+
 ## [0.5.8](https://github.com/thebentobot/bento-web/compare/v0.5.7...v0.5.8) (2026-10-05)
 
 
