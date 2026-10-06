@@ -1,6 +1,6 @@
 ---
 import type { LeaderboardUserDto } from "../../library/types/interfaces";
-import { getDiscordDefaultAvatarUrl, resolveDiscordAvatarUrl } from "../../library/discordAvatar";
+import { DISCORD_DEFAULT_AVATAR_URL, resolveDiscordAvatarUrl } from "../../library/discordAvatar";
 
 const rankToNumber = (rank: number) => {
     switch (rank) {
@@ -29,16 +29,11 @@ const {
     level,
     xp,
     avatarUrl,
-    userId,
-    discriminator,
     username,
     private: isPrivate,
 } = Astro.props as LeaderboardUserDto;
 
-const defaultAvatarUrl = isPrivate ? undefined : getDiscordDefaultAvatarUrl(userId, discriminator);
-const resolvedAvatarUrl = defaultAvatarUrl
-    ? resolveDiscordAvatarUrl(avatarUrl, defaultAvatarUrl)
-    : undefined;
+const resolvedAvatarUrl = isPrivate ? undefined : resolveDiscordAvatarUrl(avatarUrl);
 
 const rankNumber = Number(rank);
 const topUsersStyle = rankToNumber(rankNumber);
@@ -75,7 +70,7 @@ const messagesToNextLevel = Math.round((level * level * 100 - xp) / 46);
                     <img
                         class="w-16 dark:bg-zinc-800 bg-zinc-200 rounded-full inline-block mx-4 whitespace-nowrap overflow-hidden"
                         src={resolvedAvatarUrl}
-                        data-default-avatar={defaultAvatarUrl}
+                        data-default-avatar={DISCORD_DEFAULT_AVATAR_URL}
                         alt={`${username}'s Avatar`}
                         style={{ textIndent: "100%" }}
                         width={64}
