@@ -3,10 +3,10 @@ import { resolveDiscordAvatarUrl } from "../src/library/discordAvatar";
 
 describe("Leaderboard avatar URLs", () => {
     it.each([null, undefined, "", "   ", "not a URL", "javascript:alert(1)"])(
-        "uses Discord avatar 4 for missing or invalid avatar %j",
+        "uses Discord avatar 3 for missing or invalid avatar %j",
         (avatar) => {
             expect(resolveDiscordAvatarUrl(avatar)).toBe(
-                "https://cdn.discordapp.com/embed/avatars/4.png"
+                "https://cdn.discordapp.com/embed/avatars/3.png"
             );
         }
     );

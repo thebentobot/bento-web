@@ -1,4 +1,4 @@
-export const DISCORD_DEFAULT_AVATAR_URL = "https://cdn.discordapp.com/embed/avatars/4.png";
+export const DISCORD_DEFAULT_AVATAR_URL = "https://cdn.discordapp.com/embed/avatars/3.png";
 
 export function resolveDiscordAvatarUrl(avatarUrl: string | null | undefined): string {
     try {
