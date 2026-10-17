@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.5.10](https://github.com/thebentobot/bento-web/compare/v0.5.9...v0.5.10) (2026-10-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency dotenv to ^18.0.7 ([8134e14](https://github.com/thebentobot/bento-web/commit/8134e14400a6e6a24e21fd86b1fd20e86ca85b94))
+* **deps:** update dependency dotenv to ^18.0.7 ([74605ed](https://github.com/thebentobot/bento-web/commit/74605ede0af349e7b9daf282a5fd9306bb436290))
+* **deps:** update dependency drizzle-orm to ^0.45.4 ([3b7e87f](https://github.com/thebentobot/bento-web/commit/3b7e87fa1d6b76822dc89239acb019cca18b7aa2))
+* **deps:** update dependency drizzle-orm to ^0.45.4 ([c88aa00](https://github.com/thebentobot/bento-web/commit/c88aa00e28e812c7b0c72614d6888a3762d900a3))
+
 ## [0.5.9](https://github.com/thebentobot/bento-web/compare/v0.5.8...v0.5.9) (2026-10-06)
 
 
