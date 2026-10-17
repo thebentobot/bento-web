@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.12](https://github.com/thebentobot/bento-web/compare/v0.5.11...v0.5.12) (2026-10-17)
+
+
+### Bug Fixes
+
+* npm audit fix ([70d08e0](https://github.com/thebentobot/bento-web/commit/70d08e001a1b6b9261bb2dc881692bde1c8c342e))
+
 ## [0.5.11](https://github.com/thebentobot/bento-web/compare/v0.5.10...v0.5.11) (2026-10-17)
 
 
