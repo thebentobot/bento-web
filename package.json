@@ -35,9 +35,9 @@
         "prepare": "husky"
     },
     "devDependencies": {
-        "@astrojs/cloudflare": "^14.3.4",
+        "@astrojs/cloudflare": "^14.4.2",
         "@astrojs/sitemap": "^3.7.4",
-        "@astrojs/svelte": "^9.0.1",
+        "@astrojs/svelte": "^9.1.1",
         "@commitlint/cli": "^21.2.4",
         "@commitlint/config-conventional": "^21.2.4",
         "@eslint/js": "^10.0.1",
@@ -45,10 +45,10 @@
         "@tailwindcss/vite": "^4.3.3",
         "@types/luxon": "^3.7.6",
         "@types/node": "^25.9.9",
-        "@typescript-eslint/parser": "^8.71.2",
-        "astro": "^7.3.8",
+        "@typescript-eslint/parser": "^8.72.0",
+        "astro": "^7.4.2",
         "drizzle-kit": "^0.31.11",
-        "eslint": "^10.12.0",
+        "eslint": "^10.13.0",
         "eslint-config-prettier": "^10.1.8",
         "eslint-plugin-astro": "^3.2.1",
         "eslint-plugin-svelte": "^3.23.1",
@@ -62,9 +62,9 @@
         "svelte": "^5.57.2",
         "tailwindcss": "^4.3.3",
         "typescript": "^6.0.3",
-        "typescript-eslint": "^8.71.2",
+        "typescript-eslint": "^8.72.0",
         "vitest": "^5.0.5",
-        "wrangler": "^4.151.3"
+        "wrangler": "^4.152.0"
     },
     "dependencies": {
         "@better-auth/drizzle-adapter": "^1.7.12",
