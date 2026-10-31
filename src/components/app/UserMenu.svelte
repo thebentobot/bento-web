@@ -7,6 +7,7 @@
     import MenuItem from "./Menu/MenuItem.svelte";
     import IconToggleButton from "./Menu/IconToggleButton.svelte";
     import type { BentoBetterAuthUser } from "../../library/auth.ts";
+    import { handleDiscordAvatarError } from "../../library/discordAvatar.ts";
 
     interface Props {
         user: BentoBetterAuthUser | null;
@@ -100,6 +101,7 @@
                 alt={currentUser?.name ?? "User"}
                 class="h-8 w-8 rounded-full object-cover"
                 referrerpolicy="no-referrer"
+                onerror={handleDiscordAvatarError}
             />
         {:else}
             <Icon name="user" class="h-7 w-7 text-zinc-800 dark:text-zinc-200" />
@@ -125,6 +127,7 @@
                             alt=""
                             class="h-5 w-5 rounded-full object-cover"
                             referrerpolicy="no-referrer"
+                            onerror={handleDiscordAvatarError}
                         />
                     {:else}
                         <Icon name="user" class="h-5 w-5" />

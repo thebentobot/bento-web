@@ -95,6 +95,10 @@ export const createAuth = (d1: D1Database, request?: Request, env?: AuthEnv) => 
                 disableDefaultScope: true,
                 scope: ["identify"],
                 enabled: discordConfigured,
+                // Refresh the stored name/image (and Discord additional fields) on every sign-in.
+                // Without this, image keeps pointing at an avatar hash Discord has since deleted
+                // whenever the user changes their avatar after first signing up.
+                overrideUserInfoOnSignIn: true,
                 clientId: DISCORD_CLIENT_ID || "",
                 clientSecret: DISCORD_CLIENT_SECRET || "",
                 mapProfileToUser: (profile: DiscordProfile) => {

@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { ProfileDto } from "../../library/types/interfaces";
     import { DateTime } from "luxon";
+    import { handleDiscordAvatarError } from "../../library/discordAvatar.ts";
 
     type Target = "background" | "description" | "sidebar" | "lastfm" | "xp";
 
@@ -250,7 +251,12 @@
                 style="left:100px; transform: translate(-50%, 16px); width:96px; height:96px; border-radius:50%; overflow:hidden; z-index:2;"
             >
                 {#if avatarUrl}
-                    <img src={avatarUrl} alt="avatar" class="w-24 h-24 object-cover" />
+                    <img
+                        src={avatarUrl}
+                        alt="avatar"
+                        class="w-24 h-24 object-cover"
+                        onerror={handleDiscordAvatarError}
+                    />
                 {:else}
                     <div class="w-24 h-24 bg-zinc-700"></div>
                 {/if}
