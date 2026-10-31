@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.5.17](https://github.com/thebentobot/bento-web/compare/v0.5.16...v0.5.17) (2026-10-31)
+
+
+### Bug Fixes
+
+* **deps:** update better-auth monorepo to ^1.7.14 ([2db263a](https://github.com/thebentobot/bento-web/commit/2db263adc6749e435d3a4ef2bf177f15a98d0b6b))
+* **deps:** update better-auth monorepo to ^1.7.14 ([2878efe](https://github.com/thebentobot/bento-web/commit/2878efe957c53097a62f6e618b93ccb608490bda))
+* refresh Discord avatars on sign-in and fall back when stale ([944720e](https://github.com/thebentobot/bento-web/commit/944720e7b5a3437a8aad409feb854c457b19ac68))
+* refresh Discord avatars on sign-in and fall back when stale ([80f534c](https://github.com/thebentobot/bento-web/commit/80f534cc1e182081482ace288f6697c86e946a65))
+
 ## [0.5.16](https://github.com/thebentobot/bento-web/compare/v0.5.15...v0.5.16) (2026-10-31)
 
 
