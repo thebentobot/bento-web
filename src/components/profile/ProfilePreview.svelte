@@ -1,7 +1,7 @@
 <script lang="ts">
     import type { ProfileDto } from "../../library/types/interfaces";
     import { DateTime } from "luxon";
-    import { DISCORD_DEFAULT_AVATAR_URL } from "../../library/discordAvatar.ts";
+    import { handleDiscordAvatarError } from "../../library/discordAvatar.ts";
 
     type Target = "background" | "description" | "sidebar" | "lastfm" | "xp";
 
@@ -43,12 +43,6 @@
             e.preventDefault();
             cb();
         }
-    }
-
-    function onAvatarError(event: Event) {
-        const img = event.currentTarget as HTMLImageElement;
-        img.onerror = null;
-        img.src = DISCORD_DEFAULT_AVATAR_URL;
     }
 
     function convertOpacityToHex(opacity?: number | null) {
@@ -261,7 +255,7 @@
                         src={avatarUrl}
                         alt="avatar"
                         class="w-24 h-24 object-cover"
-                        onerror={onAvatarError}
+                        onerror={handleDiscordAvatarError}
                     />
                 {:else}
                     <div class="w-24 h-24 bg-zinc-700"></div>

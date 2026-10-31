@@ -7,7 +7,7 @@
     import MenuItem from "./Menu/MenuItem.svelte";
     import IconToggleButton from "./Menu/IconToggleButton.svelte";
     import type { BentoBetterAuthUser } from "../../library/auth.ts";
-    import { DISCORD_DEFAULT_AVATAR_URL } from "../../library/discordAvatar.ts";
+    import { handleDiscordAvatarError } from "../../library/discordAvatar.ts";
 
     interface Props {
         user: BentoBetterAuthUser | null;
@@ -24,14 +24,6 @@
 
     const Toggle = () => (open = !open);
     const Close = () => (open = false);
-
-    // Discord deletes old CDN avatar URLs when a user changes their avatar. Until the
-    // stored image is refreshed on the next sign-in, fall back to a default avatar.
-    function HandleAvatarError(event: Event) {
-        const img = event.currentTarget as HTMLImageElement;
-        img.onerror = null;
-        img.src = DISCORD_DEFAULT_AVATAR_URL;
-    }
 
     // Attach Escape + click-outside listeners only while open
     $effect(() => {
@@ -109,7 +101,7 @@
                 alt={currentUser?.name ?? "User"}
                 class="h-8 w-8 rounded-full object-cover"
                 referrerpolicy="no-referrer"
-                onerror={HandleAvatarError}
+                onerror={handleDiscordAvatarError}
             />
         {:else}
             <Icon name="user" class="h-7 w-7 text-zinc-800 dark:text-zinc-200" />
@@ -135,7 +127,7 @@
                             alt=""
                             class="h-5 w-5 rounded-full object-cover"
                             referrerpolicy="no-referrer"
-                            onerror={HandleAvatarError}
+                            onerror={handleDiscordAvatarError}
                         />
                     {:else}
                         <Icon name="user" class="h-5 w-5" />
