@@ -21,6 +21,12 @@ jobs:
               id: release
               with:
                   release-type: node
+                  # Release PRs opened with the default GITHUB_TOKEN trigger CI in
+                  # an "action_required" state, which needs a manual approval click
+                  # before checks can run. A PAT makes the release PR a normal
+                  # first-party PR so CI runs automatically. Falls back to
+                  # GITHUB_TOKEN if the secret has not been configured yet.
+                  token: ${{ secrets.RELEASE_PLEASE_TOKEN || secrets.GITHUB_TOKEN }}
 
     deploy:
         needs: release-please
