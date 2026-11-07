@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.5.19](https://github.com/thebentobot/bento-web/compare/v0.5.18...v0.5.19) (2026-11-07)
+
+
+### Bug Fixes
+
+* **deps:** update better-auth monorepo to ^1.7.17 ([a5a0c4c](https://github.com/thebentobot/bento-web/commit/a5a0c4c1252573ef1e570fa0b1ef1c9ae8c3bcaf))
+* **deps:** update better-auth monorepo to ^1.7.17 ([0728614](https://github.com/thebentobot/bento-web/commit/07286146b6a37d518dbfb2229a81bcb4828c90d3))
+* lock file ([e6ae052](https://github.com/thebentobot/bento-web/commit/e6ae052c587295878eb02765a567ddd044587b50))
+* ran npm audit fix ([78392bd](https://github.com/thebentobot/bento-web/commit/78392bd08202a17b026a6c0ed933e0c2b2657084))
+* ran npm audit fix ([8166c82](https://github.com/thebentobot/bento-web/commit/8166c82b3c1de8c381d880f31976596a7e3722ad))
+
 ## [0.5.18](https://github.com/thebentobot/bento-web/compare/v0.5.17...v0.5.18) (2026-11-05)
 
 
