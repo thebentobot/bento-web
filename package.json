@@ -6,7 +6,7 @@
         "url": "https://chrkn.dev"
     },
     "type": "module",
-    "version": "0.5.18",
+    "version": "0.5.19",
     "engines": {
         "node": ">=26.13.0"
     },
