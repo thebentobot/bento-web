@@ -1,5 +1,15 @@
 # Changelog
 
+## [0.5.22](https://github.com/thebentobot/bento-web/compare/v0.5.21...v0.5.22) (2026-11-12)
+
+
+### Bug Fixes
+
+* **deps:** update better-auth monorepo to ^1.7.18 ([49bcbbb](https://github.com/thebentobot/bento-web/commit/49bcbbbaec5388058699fa0dd9cada80160c2e05))
+* **deps:** update better-auth monorepo to ^1.7.18 ([7cef227](https://github.com/thebentobot/bento-web/commit/7cef227c2a2e406c59f3dfbb06528569baefca10))
+* **deps:** update dependency dotenv to ^18.0.10 ([4bb9abb](https://github.com/thebentobot/bento-web/commit/4bb9abbb3bdb1daf3ce71056c5ab4b0c8d4073b3))
+* **deps:** update dependency dotenv to ^18.0.10 ([529211a](https://github.com/thebentobot/bento-web/commit/529211a34ace066d538f206380d76433ea794db1))
+
 ## [0.5.21](https://github.com/thebentobot/bento-web/compare/v0.5.20...v0.5.21) (2026-11-10)
 
 
